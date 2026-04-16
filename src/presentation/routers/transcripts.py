@@ -1,0 +1,370 @@
+"""Transcript intelligence router — analyze, search, list, SSE stream."""
+from __future__ import annotations
+
+import asyncio
+import json
+import logging
+import time
+
+from fastapi import APIRouter, HTTPException, Request
+from sse_starlette.sse import EventSourceResponse
+
+from src.application.dto.schemas import AnalyzeRequest, SearchRequest
+
+logger = logging.getLogger(__name__)
+
+router = APIRouter(prefix="/api/transcripts", tags=["transcripts"])
+
+# Injected by composition root
+_analyze_use_case = None
+_search_use_case = None
+_store = None
+_index = None
+
+
+def init_transcript_router(analyze_use_case, search_use_case, store, index=None):
+    global _analyze_use_case, _search_use_case, _store, _index
+    _analyze_use_case = analyze_use_case
+    _search_use_case = search_use_case
+    _store = store
+    _index = index
+
+
+# ── List transcripts ─────────────────────────────────────────────────────
+
+
+@router.get("")
+async def list_transcripts():
+    """Return all transcript IDs."""
+    ids = _store.list_ids()
+    return {"transcripts": sorted(ids, reverse=True)}
+
+
+# ── Get single transcript ────────────────────────────────────────────────
+
+
+@router.get("/{transcript_id}")
+async def get_transcript(transcript_id: str):
+    """Load and return a transcript by ID."""
+    transcript = _store.load(transcript_id)
+    if transcript is None:
+        raise HTTPException(status_code=404, detail=f"Transcript not found: {transcript_id}")
+    return {
+        "transcript_id": transcript.transcript_id,
+        "source_file": transcript.source_file,
+        "language": transcript.language,
+        "segments": [
+            {
+                "index": s.index,
+                "speaker": s.speaker.label,
+                "start": s.start,
+                "end": s.end,
+                "duration": s.duration,
+                "text": s.text,
+            }
+            for s in transcript.segments
+        ],
+    }
+
+
+# ── Analyze with Claude ──────────────────────────────────────────────────
+
+
+@router.post("/analyze")
+async def analyze_transcript(payload: AnalyzeRequest):
+    """Run Claude analysis on a transcript."""
+    if _analyze_use_case is None:
+        raise HTTPException(
+            status_code=503,
+            detail="Transcript analysis not configured. Set DEEPSEEK_API_KEY or ANTHROPIC_API_KEY.",
+        )
+    try:
+        result = await _analyze_use_case.execute(
+            payload.transcript_id, instructions=payload.instructions
+        )
+        return result.model_dump()
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e)) from e
+    except Exception as e:
+        logger.exception("[error] analysis failed")
+        raise HTTPException(status_code=500, detail=str(e)) from e
+
+
+# ── Semantic search ──────────────────────────────────────────────────────
+
+
+@router.post("/search")
+async def search_transcripts(payload: SearchRequest):
+    """Semantic search across all indexed transcripts."""
+    if _search_use_case is None:
+        raise HTTPException(
+            status_code=503,
+            detail="Transcript search not configured. Set QDRANT_URL.",
+        )
+    try:
+        result = await _search_use_case.execute(payload.query, limit=payload.limit)
+        return result.model_dump()
+    except Exception as e:
+        logger.exception("[error] search failed")
+        raise HTTPException(status_code=500, detail=str(e)) from e
+
+
+# ── Re-index a transcript ───────────────────────────────────────────────
+
+
+@router.post("/{transcript_id}/index")
+async def index_transcript(transcript_id: str):
+    """Manually index (or re-index) a transcript into Qdrant."""
+    if _index is None:
+        raise HTTPException(
+            status_code=503,
+            detail="Vector indexing not configured. Set QDRANT_URL.",
+        )
+    transcript = _store.load(transcript_id)
+    if transcript is None:
+        raise HTTPException(status_code=404, detail=f"Transcript not found: {transcript_id}")
+
+    n = await _index.index(transcript)
+    return {"transcript_id": transcript_id, "segments_indexed": n}
+
+
+# ── Bulk re-index all transcripts ────────────────────────────────────────
+
+
+@router.post("/index-all")
+async def index_all_transcripts():
+    """Re-index all stored transcripts into Qdrant (admin operation)."""
+    if _index is None:
+        raise HTTPException(
+            status_code=503,
+            detail="Vector indexing not configured. Set QDRANT_URL.",
+        )
+    ids = _store.list_ids()
+    total = 0
+    errors = []
+    for tid in ids:
+        transcript = _store.load(tid)
+        if transcript is None:
+            continue
+        try:
+            n = await _index.index(transcript)
+            total += n
+        except Exception as e:
+            errors.append({"transcript_id": tid, "error": str(e)})
+
+    return {
+        "transcripts_processed": len(ids),
+        "segments_indexed": total,
+        "errors": errors,
+    }
+
+
+# ── SSE: Stream transcription progress ──────────────────────────────────
+
+# In-memory progress store (keyed by transcript-in-progress job id)
+_progress: dict[str, list[dict]] = {}
+_jobs: dict[str, dict] = {}
+_JOB_RETENTION_SEC = 3600
+
+
+def _now_ts() -> float:
+    return time.time()
+
+
+def _cleanup_jobs() -> None:
+    now = _now_ts()
+    stale_ids = []
+    for job_id, job in _jobs.items():
+        updated_at = float(job.get("updated_at", now))
+        if now - updated_at > _JOB_RETENTION_SEC:
+            stale_ids.append(job_id)
+    for job_id in stale_ids:
+        _jobs.pop(job_id, None)
+        _progress.pop(job_id, None)
+
+
+def start_progress_job(job_id: str, filename: str | None = None) -> None:
+    """Initialize an in-memory progress job with queued status."""
+    _cleanup_jobs()
+    now = _now_ts()
+    _jobs[job_id] = {
+        "job_id": job_id,
+        "status": "queued",
+        "stage": "upload",
+        "progress": 0,
+        "message": "Job enfileirado",
+        "filename": filename,
+        "created_at": now,
+        "updated_at": now,
+        "started_at": None,
+        "ended_at": None,
+        "elapsed_s": 0.0,
+        "result": None,
+        "error": None,
+    }
+    _progress[job_id] = []
+    emit_progress(job_id, "queued", {
+        "job_id": job_id,
+        "status": "queued",
+        "stage": "upload",
+        "progress": 0,
+        "message": "Job enfileirado",
+    })
+
+
+def update_progress_job(
+    job_id: str,
+    *,
+    stage: str,
+    progress: int,
+    message: str,
+    status: str = "running",
+    extra: dict | None = None,
+) -> None:
+    """Update in-memory job status and emit SSE progress event."""
+    now = _now_ts()
+    job = _jobs.get(job_id)
+    if job is None:
+        start_progress_job(job_id)
+        job = _jobs[job_id]
+
+    if job.get("started_at") is None and status == "running":
+        job["started_at"] = now
+
+    job.update({
+        "status": status,
+        "stage": stage,
+        "progress": max(0, min(100, int(progress))),
+        "message": message,
+        "updated_at": now,
+    })
+
+    started_at = job.get("started_at") or job.get("created_at") or now
+    job["elapsed_s"] = round(max(0.0, now - float(started_at)), 2)
+
+    payload = {
+        "job_id": job_id,
+        "status": job["status"],
+        "stage": job["stage"],
+        "progress": job["progress"],
+        "message": job["message"],
+        "elapsed_s": job["elapsed_s"],
+    }
+    if extra:
+        payload.update(extra)
+
+    emit_progress(job_id, "progress", payload)
+
+
+def complete_progress_job(job_id: str, result: dict) -> None:
+    """Mark job complete, attach final result, and emit terminal SSE event."""
+    now = _now_ts()
+    job = _jobs.get(job_id)
+    if job is None:
+        start_progress_job(job_id)
+        job = _jobs[job_id]
+
+    started_at = job.get("started_at") or job.get("created_at") or now
+    elapsed_s = round(max(0.0, now - float(started_at)), 2)
+
+    job.update({
+        "status": "done",
+        "stage": "transcription",
+        "progress": 100,
+        "message": "Concluído",
+        "result": result,
+        "updated_at": now,
+        "ended_at": now,
+        "elapsed_s": elapsed_s,
+        "error": None,
+    })
+
+    emit_progress(job_id, "done", {
+        "job_id": job_id,
+        "status": "done",
+        "stage": "transcription",
+        "progress": 100,
+        "message": "Concluído",
+        "elapsed_s": elapsed_s,
+    })
+
+
+def fail_progress_job(job_id: str, error: str) -> None:
+    """Mark job failed and emit terminal error SSE event."""
+    now = _now_ts()
+    job = _jobs.get(job_id)
+    if job is None:
+        start_progress_job(job_id)
+        job = _jobs[job_id]
+
+    started_at = job.get("started_at") or job.get("created_at") or now
+    elapsed_s = round(max(0.0, now - float(started_at)), 2)
+
+    job.update({
+        "status": "error",
+        "message": error,
+        "updated_at": now,
+        "ended_at": now,
+        "elapsed_s": elapsed_s,
+        "error": error,
+    })
+
+    emit_progress(job_id, "error", {
+        "job_id": job_id,
+        "status": "error",
+        "message": error,
+        "stage": job.get("stage") or "transcription",
+        "progress": int(job.get("progress") or 0),
+        "elapsed_s": elapsed_s,
+    })
+
+
+def get_progress_job(job_id: str) -> dict | None:
+    """Return current in-memory status for a job, if any."""
+    _cleanup_jobs()
+    job = _jobs.get(job_id)
+    if job is None:
+        return None
+    return dict(job)
+
+
+def emit_progress(job_id: str, event_type: str, data: dict) -> None:
+    """Called by the transcription use case to emit progress events."""
+    if job_id not in _progress:
+        _progress[job_id] = []
+    _progress[job_id].append({"event": event_type, "data": data})
+
+
+@router.get("/status/{job_id}")
+async def get_progress_status(job_id: str):
+    """Return current transcription job progress/status snapshot."""
+    job = get_progress_job(job_id)
+    if job is None:
+        raise HTTPException(status_code=404, detail=f"Job not found: {job_id}")
+    return job
+
+
+@router.get("/stream/{job_id}")
+async def stream_progress(job_id: str, request: Request):
+    """SSE endpoint — streams transcription progress events."""
+
+    async def event_generator():
+        cursor = 0
+        while True:
+            if await request.is_disconnected():
+                break
+            events = _progress.get(job_id, [])
+            while cursor < len(events):
+                ev = events[cursor]
+                yield {
+                    "event": ev["event"],
+                    "data": json.dumps(ev["data"]),
+                }
+                cursor += 1
+                if ev["event"] in ("done", "error"):
+                    # Clean up after terminal events
+                    _progress.pop(job_id, None)
+                    return
+            await asyncio.sleep(0.3)
+
+    return EventSourceResponse(event_generator())

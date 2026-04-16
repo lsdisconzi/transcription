@@ -1,0 +1,82 @@
+name: Deploy to RunPod Serverless
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  DOCKER_IMAGE: leandrodisconzi/pinocchio-transcription
+  RUNPOD_ENDPOINT_ID: 5j22h5dqpbj6kh
+
+jobs:
+  build-and-push:
+    name: Build & Push Docker Image
+    runs-on: ubuntu-latest
+    outputs:
+      image_tag: ${{ steps.meta.outputs.tags }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.DOCKER_IMAGE }}
+          tags: |
+            type=raw,value=serverless
+            type=sha,prefix=serverless-
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    name: Update RunPod Endpoint
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update RunPod endpoint image
+        run: |
+          IMAGE="${{ env.DOCKER_IMAGE }}:serverless"
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.runpod.io/graphql" \
+            -H "Authorization: Bearer ${{ secrets.RUNPOD_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "query": "mutation { saveEndpoint(input: { id: \"${{ env.RUNPOD_ENDPOINT_ID }}\", templateId: null, name: \"pinocchio-transcription\", dockerArgs: \"python -u src/runpod_handler.py\", imageName: \"'"$IMAGE"'\", gpuIds: \"AMPERE_48\", workersMin: 0, workersMax: 3, idleTimeout: 5, env: [ { key: \"PYANNOTE_AUTH_TOKEN\", value: \"${{ secrets.PYANNOTE_AUTH_TOKEN }}\" }, { key: \"HUGGINGFACE_HUB_TOKEN\", value: \"${{ secrets.HUGGINGFACE_HUB_TOKEN }}\" }, { key: \"use_auth_token\", value: \"${{ secrets.PYANNOTE_AUTH_TOKEN }}\" } ] }) { id name } }"
+            }')
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | head -n -1)
+          echo "Response: $BODY"
+          if [ "$HTTP_CODE" -ge 400 ]; then
+            echo "::error::RunPod API returned HTTP $HTTP_CODE"
+            exit 1
+          fi
+
+      - name: Verify endpoint status
+        run: |
+          sleep 5
+          RESPONSE=$(curl -s -X POST "https://api.runpod.io/graphql" \
+            -H "Authorization: Bearer ${{ secrets.RUNPOD_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "query": "query { myself { endpoints { id name gpuIds workersMin workersMax idleTimeout } } }"
+            }')
+          echo "Endpoints: $RESPONSE"

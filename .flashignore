@@ -1,0 +1,9 @@
+.venv-flash/
+.venv/
+__pycache__/
+data/
+src/
+tests/
+scripts/
+docs/
+.git/
