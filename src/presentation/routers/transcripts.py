@@ -4,12 +4,16 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import os
+import re
 import time
 
 from fastapi import APIRouter, HTTPException, Request
+from pydantic import BaseModel, Field
 from sse_starlette.sse import EventSourceResponse
 
 from src.application.dto.schemas import AnalyzeRequest, SearchRequest
+from src.domain.entities.transcript import Segment, Speaker, Transcript
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +32,50 @@ def init_transcript_router(analyze_use_case, search_use_case, store, index=None)
     _search_use_case = search_use_case
     _store = store
     _index = index
+
+
+class ImportSegmentPayload(BaseModel):
+    index: int | None = None
+    speaker: str | None = None
+    start: float | int | None = 0.0
+    end: float | int | None = None
+    text: str | None = ""
+
+
+class ImportRunPayload(BaseModel):
+    transcript_id: str | None = None
+    source_file: str | None = None
+    filename: str | None = None
+    language: str | None = None
+    timestamp: str | None = None
+    provider: str | None = None
+    metadata: dict | None = None
+    segments: list[ImportSegmentPayload] = Field(default_factory=list)
+
+
+class ImportTranscriptsPayload(BaseModel):
+    runs: list[ImportRunPayload] = Field(default_factory=list)
+    overwrite: bool = False
+    # When True, derive transcript_id from the source filename (stem), falling
+    # back to the caller-supplied transcript_id only if no filename is given.
+    rename_by_filename: bool = True
+
+
+_SAFE_NAME_RE = re.compile(r"[^A-Za-z0-9._-]+")
+
+
+def _sanitize_filename_stem(name: str) -> str:
+    """Turn a user-facing filename into a safe transcript_id stem.
+
+    Strips directory components, drops the extension, and replaces unsafe
+    characters with `_`. Returns empty string when nothing usable remains.
+    """
+    if not name:
+        return ""
+    base = os.path.basename(str(name)).strip()
+    stem, _ext = os.path.splitext(base)
+    cleaned = _SAFE_NAME_RE.sub("_", stem).strip("._-")
+    return cleaned[:180]
 
 
 # ── List transcripts ─────────────────────────────────────────────────────
@@ -53,6 +101,10 @@ async def get_transcript(transcript_id: str):
         "transcript_id": transcript.transcript_id,
         "source_file": transcript.source_file,
         "language": transcript.language,
+        "timestamp": transcript.timestamp,
+        "provider": transcript.provider,
+        "original_transcript_id": transcript.original_transcript_id,
+        "metadata": transcript.metadata or {},
         "segments": [
             {
                 "index": s.index,
@@ -64,6 +116,111 @@ async def get_transcript(transcript_id: str):
             }
             for s in transcript.segments
         ],
+    }
+
+
+@router.post("/import")
+async def import_transcripts(payload: ImportTranscriptsPayload):
+    """Import one or more transcripts into persistent JSON store."""
+    if _store is None:
+        raise HTTPException(status_code=503, detail="Transcript store not initialized")
+    if not payload.runs:
+        raise HTTPException(status_code=400, detail="No runs provided for import")
+
+    existing_ids = set(_store.list_ids())
+    imported_ids: list[str] = []
+    skipped: list[dict] = []
+    errors: list[dict] = []
+
+    for idx, run in enumerate(payload.runs):
+        try:
+            segments: list[Segment] = []
+            for seg_idx, seg in enumerate(run.segments):
+                start = float(seg.start or 0.0)
+                if start < 0:
+                    start = 0.0
+
+                end_raw = seg.end if seg.end is not None else start
+                end = float(end_raw)
+                if end < start:
+                    end = start
+
+                speaker_label = (seg.speaker or f"SPEAKER_{seg_idx:02d}").strip() or f"SPEAKER_{seg_idx:02d}"
+                segment_index = seg.index if seg.index is not None else seg_idx
+                segments.append(
+                    Segment(
+                        index=int(segment_index),
+                        speaker=Speaker(label=speaker_label),
+                        start=start,
+                        end=end,
+                        text=str(seg.text or ""),
+                    )
+                )
+
+            if not segments:
+                skipped.append({"index": idx, "reason": "empty_segments"})
+                continue
+
+            incoming_id = (run.transcript_id or "").strip()
+            source_file = (run.source_file or run.filename or "").strip()
+            filename_stem = _sanitize_filename_stem(run.filename or run.source_file or "")
+
+            # Prefer filename-based id (WhatsApp audio names already encode
+            # date/time), fall back to caller-supplied id, finally generate.
+            if payload.rename_by_filename and filename_stem:
+                desired_id = filename_stem
+            elif incoming_id:
+                desired_id = incoming_id
+            elif filename_stem:
+                desired_id = filename_stem
+            else:
+                desired_id = f"imported_{int(time.time() * 1000)}_{idx + 1}"
+
+            transcript_id = desired_id
+            if not payload.overwrite and transcript_id in existing_ids:
+                nonce = 1
+                while transcript_id in existing_ids:
+                    nonce += 1
+                    transcript_id = f"{desired_id}_{nonce}"
+
+            if not payload.overwrite and transcript_id in existing_ids:
+                skipped.append(
+                    {
+                        "index": idx,
+                        "transcript_id": transcript_id,
+                        "reason": "already_exists",
+                    }
+                )
+                continue
+
+            transcript = Transcript(
+                transcript_id=transcript_id,
+                segments=segments,
+                source_file=source_file,
+                language=(run.language or "es"),
+                metadata=(run.metadata or {}),
+                timestamp=(run.timestamp or ""),
+                provider=(run.provider or ""),
+                original_transcript_id=(incoming_id if incoming_id and incoming_id != transcript_id else ""),
+            )
+            _store.save(transcript)
+            existing_ids.add(transcript_id)
+            imported_ids.append(transcript_id)
+        except Exception as e:
+            errors.append(
+                {
+                    "index": idx,
+                    "transcript_id": run.transcript_id,
+                    "error": str(e),
+                }
+            )
+
+    return {
+        "total_runs": len(payload.runs),
+        "imported": len(imported_ids),
+        "imported_ids": imported_ids,
+        "skipped": skipped,
+        "errors": errors,
     }
 
 

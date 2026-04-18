@@ -43,6 +43,10 @@ class Transcript:
     segments: list[Segment] = field(default_factory=list)
     source_file: str = ""
     language: str = "es"
+    metadata: dict = field(default_factory=dict)
+    timestamp: str = ""
+    provider: str = ""
+    original_transcript_id: str = ""
 
 
 @dataclass(frozen=True)
