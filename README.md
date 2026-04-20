@@ -124,6 +124,106 @@ make lint          # Ruff linter
 make typecheck     # Mypy type checking
 ```
 
+## MCP Server (Transcription)
+
+Pinocchio now includes MCP servers that expose service capabilities as MCP tools
+over stdio.
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run locally
+
+```bash
+make run-mcp-transcription
+make run-mcp-transcripts
+make run-mcp-meta
+# or
+python -m src.mcp.servers.transcription_server
+python -m src.mcp.servers.transcripts_server
+python -m src.mcp.servers.meta_server
+```
+
+### Tools exposed (transcription server)
+
+- `transcribe_audio`
+- `transcribe_audio_async`
+- `get_transcription_job`
+- `diarize_excerpt`
+
+### Tools exposed (transcripts server)
+
+- `list_transcripts`
+- `get_transcript`
+- `import_transcripts`
+- `analyze_transcript`
+- `search_transcripts`
+- `index_transcript`
+- `index_all_transcripts`
+
+### Tools exposed (meta server)
+
+- `health`
+- `health_full`
+- `list_parameter_definitions`
+- `list_whisper_models`
+
+### MCP client config example
+
+```json
+{
+  "mcpServers": {
+    "pinocchio-transcription": {
+      "command": "python",
+      "args": [
+        "-m",
+        "src.mcp.servers.transcription_server"
+      ],
+      "env": {
+        "PYANNOTE_AUTH_TOKEN": "<your_token>",
+        "HF_TOKEN": "<your_token>",
+        "ORIGINALS_DIR": "data/originals",
+        "TRANSCRIPT_DIR": "data/transcripts",
+        "QDRANT_URL": "http://localhost:6333"
+      }
+    },
+    "pinocchio-transcripts": {
+      "command": "python",
+      "args": [
+        "-m",
+        "src.mcp.servers.transcripts_server"
+      ],
+      "env": {
+        "TRANSCRIPT_DIR": "data/transcripts",
+        "ANTHROPIC_API_KEY": "<optional>",
+        "DEEPSEEK_API_KEY": "<optional>",
+        "QDRANT_URL": "http://localhost:6333"
+      }
+    },
+    "pinocchio-meta": {
+      "command": "python",
+      "args": [
+        "-m",
+        "src.mcp.servers.meta_server"
+      ],
+      "env": {}
+    }
+  }
+}
+```
+
+Full ready-to-use config file is available at `docs/mcp-servers.example.json`.
+
+Input mode for `transcribe_audio` and `diarize_excerpt`:
+- Use `file_path` for server-side files
+- Or use `audio_base64` + optional `filename`
+
+Both MCP servers and FastAPI now share the same dependency container in
+`src/composition.py`, keeping service wiring consistent across interfaces.
+
 ## Security
 
 - **No wildcard CORS** — explicit origins only

@@ -7,6 +7,15 @@ run:
 dev:
 	uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
 
+run-mcp-transcription:
+	python -m src.mcp.servers.transcription_server
+
+run-mcp-transcripts:
+	python -m src.mcp.servers.transcripts_server
+
+run-mcp-meta:
+	python -m src.mcp.servers.meta_server
+
 # ── Testing ──────────────────────────────────────────────────
 test:
 	python -m pytest tests/ -v
