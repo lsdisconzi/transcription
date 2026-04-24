@@ -2,7 +2,7 @@
 name = "sa-pinocchio"
 version = "1.0.0"
 description = "Chilean Spanish audio transcription & speaker diarization service"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.13"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
