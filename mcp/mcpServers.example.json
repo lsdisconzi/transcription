@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "pinocchio-transcription": {
+      "command": ".venv/bin/python3",
+      "args": [
+        "mcp/servers/transcription_server.py"
+      ],
+      "env": {
+        "PYANNOTE_AUTH_TOKEN": "<your_token>",
+        "HF_TOKEN": "<your_token>",
+        "ORIGINALS_DIR": "data/originals",
+        "TRANSCRIPT_DIR": "data/transcripts"
+      }
+    },
+    "pinocchio-transcripts": {
+      "command": ".venv/bin/python3",
+      "args": [
+        "mcp/servers/transcripts_server.py"
+      ],
+      "env": {
+        "TRANSCRIPT_DIR": "data/transcripts",
+        "QDRANT_URL": "http://localhost:6333",
+        "ANTHROPIC_API_KEY": "<optional>",
+        "DEEPSEEK_API_KEY": "<optional>"
+      }
+    },
+    "pinocchio-meta": {
+      "command": ".venv/bin/python3",
+      "args": [
+        "mcp/servers/meta_server.py"
+      ],
+      "env": {}
+    }
+  }
+}
