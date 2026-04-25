@@ -1,4 +1,4 @@
-"""Pinocchio MCP server: transcript intelligence and indexing tools.
+"""transcription MCP server: transcript intelligence and indexing tools.
 
 Launch with:
     python -m src.mcp.servers.transcripts_server
@@ -25,7 +25,7 @@ _SEARCH_USE_CASE = _RUNTIME.search_use_case
 _STORE = _RUNTIME.store_adapter
 _INDEX = _RUNTIME.qdrant_adapter
 
-mcp = FastMCP("pinocchio-transcripts")
+mcp = FastMCP("transcription-transcripts")
 
 _SAFE_NAME_RE = re.compile(r"[^A-Za-z0-9._-]+")
 

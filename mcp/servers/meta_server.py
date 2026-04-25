@@ -1,4 +1,4 @@
-"""Pinocchio MCP metadata server (bootstrap standard).
+"""transcription MCP metadata server (bootstrap standard).
 
 Launch with:
     python mcp/servers/meta_server.py
@@ -18,29 +18,29 @@ if str(ROOT) not in sys.path:
 
 from src.mcp.servers import meta_server as src_meta
 
-mcp = FastMCP("pinocchio-meta")
+mcp = FastMCP("transcription-meta")
 
 
 @mcp.tool()
-def pinocchio_health_root() -> dict[str, Any]:
+def transcription_health_root() -> dict[str, Any]:
     """Return health payload mapped to GET /."""
     return src_meta.health()
 
 
 @mcp.tool()
-def pinocchio_health() -> dict[str, Any]:
+def transcription_health() -> dict[str, Any]:
     """Return extended health payload mapped to GET /health."""
     return src_meta.health_full()
 
 
 @mcp.tool()
-def pinocchio_list_parameter_definitions() -> dict[str, Any]:
+def transcription_list_parameter_definitions() -> dict[str, Any]:
     """Return transcription parameter metadata."""
     return src_meta.list_parameter_definitions()
 
 
 @mcp.tool()
-def pinocchio_list_whisper_models() -> dict[str, Any]:
+def transcription_list_whisper_models() -> dict[str, Any]:
     """Return available Whisper model names."""
     return src_meta.list_whisper_models()
 

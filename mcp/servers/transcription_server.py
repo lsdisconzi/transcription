@@ -1,4 +1,4 @@
-"""Pinocchio MCP transcription server (bootstrap standard).
+"""transcription MCP transcription server (bootstrap standard).
 
 Launch with:
     python mcp/servers/transcription_server.py
@@ -18,11 +18,11 @@ if str(ROOT) not in sys.path:
 
 from src.mcp.servers import transcription_server as src_transcription
 
-mcp = FastMCP("pinocchio-transcription")
+mcp = FastMCP("transcription-transcription")
 
 
 @mcp.tool()
-async def pinocchio_transcribe_audio(
+async def transcription_transcribe_audio(
     file_path: str | None = None,
     audio_base64: str | None = None,
     filename: str | None = None,
@@ -48,7 +48,7 @@ async def pinocchio_transcribe_audio(
 
 
 @mcp.tool()
-async def pinocchio_transcribe_audio_async(
+async def transcription_transcribe_audio_async(
     file_path: str | None = None,
     audio_base64: str | None = None,
     filename: str | None = None,
@@ -72,13 +72,13 @@ async def pinocchio_transcribe_audio_async(
 
 
 @mcp.tool()
-def pinocchio_get_transcription_job(job_id: str) -> dict[str, Any]:
+def transcription_get_transcription_job(job_id: str) -> dict[str, Any]:
     """Return current status for an async transcription job."""
     return src_transcription.get_transcription_job(job_id)
 
 
 @mcp.tool()
-def pinocchio_stream_transcription_job(job_id: str, cursor: int = 0) -> dict[str, Any]:
+def transcription_stream_transcription_job(job_id: str, cursor: int = 0) -> dict[str, Any]:
     """Return incremental job events as an MCP-safe stream snapshot."""
     job = src_transcription.get_transcription_job(job_id)
     events = job.get("events") or []
@@ -94,7 +94,7 @@ def pinocchio_stream_transcription_job(job_id: str, cursor: int = 0) -> dict[str
 
 
 @mcp.tool()
-def pinocchio_diarize_excerpt(
+def transcription_diarize_excerpt(
     start: float,
     end: float,
     file_path: str | None = None,
@@ -118,7 +118,7 @@ def pinocchio_diarize_excerpt(
 
 
 @mcp.tool()
-def pinocchio_diarize_excerpt_by_path(
+def transcription_diarize_excerpt_by_path(
     file_path: str,
     start: float,
     end: float,

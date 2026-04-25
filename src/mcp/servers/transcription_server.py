@@ -1,4 +1,4 @@
-"""Pinocchio MCP server: transcription and diarization tools.
+"""transcription MCP server: transcription and diarization tools.
 
 Launch with:
     python -m src.mcp.servers.transcription_server
@@ -186,7 +186,7 @@ _EXCERPT_USE_CASE = _RUNTIME.excerpt_use_case
 _AUDIO_FILES = _RUNTIME.audio_file_adapter
 _JOBS: dict[str, JobState] = {}
 
-mcp = FastMCP("pinocchio-transcription")
+mcp = FastMCP("transcription-transcription")
 
 
 @mcp.tool()

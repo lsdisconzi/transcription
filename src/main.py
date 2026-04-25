@@ -1,4 +1,4 @@
-"""SA-Pinocchio — Composition Root.
+"""SA-transcription — Composition Root.
 
 Wires domain ports → infrastructure adapters → use cases → routers.
 This file is the ONLY place where all layers know about each other.
@@ -41,7 +41,7 @@ init_transcript_router(
 )
 
 # ── FastAPI App ──────────────────────────────────────────────────────────
-app = FastAPI(title="SA Pinocchio Transcription API")
+app = FastAPI(title="SA transcription Transcription API")
 
 # CORS — explicit origins, not wildcard
 app.add_middleware(

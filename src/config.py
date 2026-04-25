@@ -6,10 +6,10 @@ import torch
 from dotenv import load_dotenv
 
 _THIS_FILE = Path(__file__).resolve()
-_PINOCCHIO_ROOT = _THIS_FILE.parents[1]
+_transcription_ROOT = _THIS_FILE.parents[1]
 _REPO_ROOT = _THIS_FILE.parents[2]
 _SHARED_ENV = _REPO_ROOT / "_shared" / ".env"
-_LOCAL_ENV = _PINOCCHIO_ROOT / ".env"
+_LOCAL_ENV = _transcription_ROOT / ".env"
 
 # Load shared first, then allow local project overrides.
 if _SHARED_ENV.exists():

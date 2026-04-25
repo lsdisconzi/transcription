@@ -26,7 +26,7 @@ def _get_allowed_roots() -> list[Path]:
                 break
 
         # Allow adding extra dirs via env (colon-separated).
-        extra = os.getenv("PINOCCHIO_EXTRA_ALLOWED_DIRS", "")
+        extra = os.getenv("transcription_EXTRA_ALLOWED_DIRS", "")
         if extra:
             for d in extra.split(":"):
                 d = d.strip()

@@ -12,7 +12,7 @@ router = APIRouter(tags=["health"])
 def health_check():
     return {
         "status": "ok",
-        "service": "pinocchio",
+        "service": "transcription",
         "timestamp": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
     }
 
@@ -21,6 +21,6 @@ def health_check():
 def health():
     return {
         "status": "ok",
-        "service": "pinocchio",
+        "service": "transcription",
         "timestamp": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
     }

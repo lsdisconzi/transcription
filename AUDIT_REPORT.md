@@ -1,15 +1,15 @@
-# SA-PINOCCHIO — Architectural Audit Report
+# SA-transcription — Architectural Audit Report
 
 **Date:** 2026-03-09
 **Auditor:** Awareness Architectural Auditor v2.0
 **Mode:** Audit (Read-Only) → Proposal
-**Target:** `sa-pinocchio` — Audio Transcription & Diarization Service
+**Target:** `sa-transcription` — Audio Transcription & Diarization Service
 
 ---
 
 ## 1. Executive Structural Summary
 
-SA-Pinocchio is a **FastAPI-based audio transcription service** specializing in Chilean Spanish. It combines OpenAI Whisper (local inference) with Pyannote speaker diarization, audio preprocessing (noise reduction, silence removal, gain normalization), and Runpod serverless deployment.
+SA-transcription is a **FastAPI-based audio transcription service** specializing in Chilean Spanish. It combines OpenAI Whisper (local inference) with Pyannote speaker diarization, audio preprocessing (noise reduction, silence removal, gain normalization), and Runpod serverless deployment.
 
 **Current state:** The project is a functional prototype with **critical security vulnerabilities**, **zero Clean Architecture compliance**, **zero AI-First retrieval integration**, and **no observability infrastructure**. The codebase is a flat monolith with business logic, routing, and I/O tightly coupled in a single 450+ line file.
 
@@ -60,7 +60,7 @@ SA-Pinocchio is a **FastAPI-based audio transcription service** specializing in 
 ## 4. Repository Map
 
 ```
-sa-pinocchio/                           
+sa-transcription/                           
 ├── .env                      ← 🔴 CRITICAL: Contains real API keys, no .gitignore
 ├── .env.example              ← ✅ Template with placeholders
 ├── .github/                  ← Copilot instructions (correct)
@@ -77,7 +77,7 @@ sa-pinocchio/
 ├── runpod_client_example.js  ← Client example
 ├── runpod_client_example.py  ← Client example
 ├── RUNPOD_SETUP.md           ← 🔴 Contains hardcoded API tokens
-├── sa-pinocchio.md           ← Project tree documentation
+├── sa-transcription.md           ← Project tree documentation
 └── src/
     ├── config.py             ← Settings class (no gitignore for .env)
     ├── diarization.py        ← 🔴 God file: 450+ lines, routing + logic + I/O
@@ -235,7 +235,7 @@ runpod_handler.py ──→ diarization.py ──→ (same graph)
 | Anthropic Claude integration | Yes | No | 0 |
 | `context_assemble` tool | Yes | No | 0 |
 
-**Assessment:** SA-Pinocchio has no AI-native infrastructure. It is a pure ML inference service (Whisper + Pyannote) with no semantic retrieval, no knowledge graph, no LLM integration, and no observability pipeline.
+**Assessment:** SA-transcription has no AI-native infrastructure. It is a pure ML inference service (Whisper + Pyannote) with no semantic retrieval, no knowledge graph, no LLM integration, and no observability pipeline.
 
 ---
 
@@ -683,7 +683,7 @@ class ClaudeTranscriptAnalyzer:
 | Document | Purpose | Priority |
 |----------|---------|----------|
 | `.gitignore` | Exclude secrets, caches, data files | 🔴 IMMEDIATE |
-| `README.md` | Replace `sa-pinocchio.md` with proper README | 🟡 High |
+| `README.md` | Replace `sa-transcription.md` with proper README | 🟡 High |
 | `ARCHITECTURE.md` | Document Clean Architecture layers and ports | 🟡 High |
 | `API.md` | OpenAPI-generated API documentation | 🟡 High |
 | `CONTRIBUTING.md` | Development setup, testing, PR guidelines | 🟢 Medium |

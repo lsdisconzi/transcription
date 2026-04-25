@@ -1,10 +1,10 @@
 version: '3.8'
 
 services:
-  pinocchio:
-    image: leandrodisconzi/pinocchio-transcription:serverless
+  transcription:
+    image: leandrodisconzi/transcription-transcription:serverless
     build: .
-    container_name: pinocchio-transcription
+    container_name: transcription-transcription
     ports:
       - "8000:8000"
     volumes:
@@ -35,7 +35,7 @@ services:
 
   qdrant:
     image: qdrant/qdrant:v1.12.6
-    container_name: pinocchio-qdrant
+    container_name: transcription-qdrant
     ports:
       - "6333:6333"
     volumes:

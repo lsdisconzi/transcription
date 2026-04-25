@@ -1,4 +1,4 @@
-"""Pinocchio MCP server: health and model/parameter metadata tools.
+"""transcription MCP server: health and model/parameter metadata tools.
 
 Launch with:
     python -m src.mcp.servers.meta_server
@@ -15,7 +15,7 @@ from whisper import available_models
 
 from src.config import settings
 
-mcp = FastMCP("pinocchio-meta")
+mcp = FastMCP("transcription-meta")
 
 
 @mcp.tool()
@@ -23,7 +23,7 @@ def health() -> dict[str, Any]:
     """Return basic service health metadata."""
     return {
         "status": "ok",
-        "service": "pinocchio",
+        "service": "transcription",
         "timestamp": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
     }
 
@@ -33,7 +33,7 @@ def health_full() -> dict[str, Any]:
     """Return extended runtime health metadata."""
     return {
         "status": "ok",
-        "service": "pinocchio",
+        "service": "transcription",
         "timestamp": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "torch_device": settings.TORCH_DEVICE,
         "torch_float": settings.TORCH_FLOAT,

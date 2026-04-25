@@ -1,1 +1,1 @@
-"""MCP server modules for Pinocchio services."""
+"""MCP server modules for transcription services."""

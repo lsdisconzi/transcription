@@ -22,7 +22,7 @@ def _patch_hf_hub_download_compat() -> None:
         return
 
     original = huggingface_hub.hf_hub_download
-    if getattr(original, "_pinocchio_compat_patch", False):
+    if getattr(original, "_transcription_compat_patch", False):
         return
 
     def _hf_hub_download_compat(*args, **kwargs):
@@ -31,7 +31,7 @@ def _patch_hf_hub_download_compat() -> None:
             kwargs.setdefault("token", legacy_token)
         return original(*args, **kwargs)
 
-    _hf_hub_download_compat._pinocchio_compat_patch = True  # type: ignore[attr-defined]
+    _hf_hub_download_compat._transcription_compat_patch = True  # type: ignore[attr-defined]
     huggingface_hub.hf_hub_download = _hf_hub_download_compat
     if hf_file_download is not None and hasattr(hf_file_download, "hf_hub_download"):
         hf_file_download.hf_hub_download = _hf_hub_download_compat

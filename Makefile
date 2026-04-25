@@ -38,7 +38,7 @@ typecheck:
 
 # ── Docker ───────────────────────────────────────────────────
 docker-build:
-	docker build -t sa-pinocchio .
+	docker build -t sa-transcription .
 
 docker-up:
 	docker compose up --build

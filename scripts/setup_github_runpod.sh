@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
-# ── Pinocchio: RunPod + GitHub Wiring Script ──
+# ── transcription: RunPod + GitHub Wiring Script ──
 # Run this in a regular terminal (not VS Code integrated terminal)
 # after completing `gh auth login` in that same terminal.
 
 echo "============================================================"
-echo "  Pinocchio — RunPod + GitHub Setup"
+echo "  transcription — RunPod + GitHub Setup"
 echo "============================================================"
 
 # ── Step 1: Verify gh is authenticated ──
@@ -19,7 +19,7 @@ GH_USER=$(gh api user -q .login)
 echo "  Authenticated as: $GH_USER"
 
 # ── Step 2: Create new repo ──
-REPO_NAME="pinocchio-transcription"
+REPO_NAME="transcription-transcription"
 echo ""
 echo "Step 2: Creating repo $GH_USER/$REPO_NAME..."
 if gh repo view "$GH_USER/$REPO_NAME" >/dev/null 2>&1; then

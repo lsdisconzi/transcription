@@ -22,7 +22,7 @@ Every project in the ecosystem should expose MCP tools using one of the approved
 
 - Tool names are snake_case.
 - Tool names must be prefixed by service name.
-- Examples: `pinocchio_transcribe`, `legalpipeline_case_search`.
+- Examples: `transcription_transcribe`, `legalpipeline_case_search`.
 
 ## Safety Rules
 

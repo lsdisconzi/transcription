@@ -1,4 +1,4 @@
-# SA-Pinocchio — Chilean Spanish Audio Transcription & Diarization
+# SA-transcription — Chilean Spanish Audio Transcription & Diarization
 
 High-accuracy transcription service combining **OpenAI Whisper** ASR with **Pyannote** speaker diarization, optimised for Chilean Spanish. Designed for legal and evidentiary audio analysis within the [Awareness-AI](https://github.com/awareness-ai) ecosystem.
 
@@ -26,7 +26,7 @@ High-accuracy transcription service combining **OpenAI Whisper** ASR with **Pyan
 
 ```bash
 # Clone and setup
-git clone <repo-url> && cd sa-pinocchio
+git clone <repo-url> && cd sa-transcription
 cp .env.example .env
 # Edit .env with your HuggingFace/Pyannote tokens
 
@@ -126,7 +126,7 @@ make typecheck     # Mypy type checking
 
 ## MCP Server (Transcription)
 
-Pinocchio now includes MCP servers that expose service capabilities as MCP tools
+transcription now includes MCP servers that expose service capabilities as MCP tools
 over stdio.
 
 ### Install dependencies
@@ -176,7 +176,7 @@ python -m src.mcp.servers.meta_server
 ```json
 {
   "mcpServers": {
-    "pinocchio-transcription": {
+    "transcription-transcription": {
       "command": "python",
       "args": [
         "-m",
@@ -190,7 +190,7 @@ python -m src.mcp.servers.meta_server
         "QDRANT_URL": "http://localhost:6333"
       }
     },
-    "pinocchio-transcripts": {
+    "transcription-transcripts": {
       "command": "python",
       "args": [
         "-m",
@@ -203,7 +203,7 @@ python -m src.mcp.servers.meta_server
         "QDRANT_URL": "http://localhost:6333"
       }
     },
-    "pinocchio-meta": {
+    "transcription-meta": {
       "command": "python",
       "args": [
         "-m",

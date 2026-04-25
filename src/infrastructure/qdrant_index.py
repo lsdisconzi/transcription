@@ -12,7 +12,7 @@ from src.domain.entities.transcript import Transcript
 
 logger = logging.getLogger(__name__)
 
-COLLECTION = "pinocchio_transcripts"
+COLLECTION = "transcription_transcripts"
 VECTOR_DIM = 384  # all-MiniLM-L6-v2 output dimension
 
 

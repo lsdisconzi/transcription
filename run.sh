@@ -4,7 +4,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
-PORT="${PORT:-${PINOCCHIO_PORT:-8039}}"
+PORT="${PORT:-${transcription_PORT:-8039}}"
 VENV_BIN="$SCRIPT_DIR/.venv/bin"
 
 require_py312() {
@@ -22,5 +22,5 @@ else
 	require_py312
 fi
 
-echo "Starting SA-Pinocchio Transcription API on :$PORT..."
+echo "Starting SA-transcription Transcription API on :$PORT..."
 exec "$VENV_BIN/uvicorn" src.main:app --host 0.0.0.0 --port "$PORT" --reload

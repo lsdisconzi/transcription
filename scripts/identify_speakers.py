@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-identify_speakers.py — Re-label speakers in a Pinocchio transcript using the
-voiceprint library, via the gateway endpoint /api/pinocchio/identify_from_file.
+identify_speakers.py — Re-label speakers in a transcription transcript using the
+voiceprint library, via the gateway endpoint /api/transcription/identify_from_file.
 
 Typical usage
 -------------
@@ -53,10 +53,10 @@ from typing import Any, Dict, List, Optional, Tuple
 import requests
 
 DEFAULT_BASE = os.environ.get(
-    "PINOCCHIO_GATEWAY_BASE",
+    "transcription_GATEWAY_BASE",
     "https://www.awareness-ai.com.br",
 ).rstrip("/")
-ENDPOINT = "/api/pinocchio/identify_from_file"
+ENDPOINT = "/api/transcription/identify_from_file"
 
 
 def load_voiceprints(path: Path) -> List[Dict[str, str]]:
@@ -208,7 +208,7 @@ def apply_to_transcript(
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Pinocchio speaker identification CLI")
+    ap = argparse.ArgumentParser(description="transcription speaker identification CLI")
     ap.add_argument("--audio", required=True, type=Path, help="Audio file to analyse")
     ap.add_argument("--voiceprints", required=True, type=Path, help="Voiceprints library JSON")
     ap.add_argument("--transcript", type=Path, help="Existing transcript JSON to apply labels to")

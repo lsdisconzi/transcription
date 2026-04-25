@@ -5,7 +5,7 @@ set -e
 # Runpod Endpoint Setup Script
 # ============================================================
 # This script creates secrets and updates your Runpod endpoint
-# with the pinocchio-transcription serverless image.
+# with the transcription-transcription serverless image.
 #
 # USAGE:
 #   1. Add your Runpod API key below
@@ -26,7 +26,7 @@ fi
 
 # Configuration
 ENDPOINT_ID="9hhc01z23ocyfr"
-IMAGE="leandrodisconzi/pinocchio-transcription:serverless"
+IMAGE="leandrodisconzi/transcription-transcription:serverless"
 GPU_TYPE="NVIDIA RTX A6000"  # 48GB Pro
 GPU_COUNT=1
 EPHEMERAL_STORAGE_GB=5
@@ -119,8 +119,8 @@ echo "============================================================"
 echo ""
 echo "Next steps:"
 echo "  1. Rebuild and push your Docker image:"
-echo "     docker build -t leandrodisconzi/pinocchio-transcription:serverless ."
-echo "     docker push leandrodisconzi/pinocchio-transcription:serverless"
+echo "     docker build -t leandrodisconzi/transcription-transcription:serverless ."
+echo "     docker push leandrodisconzi/transcription-transcription:serverless"
 echo ""
 echo "  2. Check your endpoint status at: https://www.runpod.io/console/serverless"
 echo "  3. Wait for endpoint to show status: RUNNING"

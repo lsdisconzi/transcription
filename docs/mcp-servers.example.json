@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "pinocchio-transcription": {
+    "transcription-transcription": {
       "command": ".venv/bin/python3",
       "args": [
         "-m",
@@ -14,7 +14,7 @@
         "QDRANT_URL": "http://localhost:6333"
       }
     },
-    "pinocchio-transcripts": {
+    "transcription-transcripts": {
       "command": ".venv/bin/python3",
       "args": [
         "-m",
@@ -27,7 +27,7 @@
         "QDRANT_URL": "http://localhost:6333"
       }
     },
-    "pinocchio-meta": {
+    "transcription-meta": {
       "command": ".venv/bin/python3",
       "args": [
         "-m",

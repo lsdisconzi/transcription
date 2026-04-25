@@ -2,7 +2,7 @@ I'll create a streamlined project structure optimized for audio transcription, f
 
 ### Project Structure
 ```
-sa-pinocchio/
+sa-transcription/
 ├── data/
 │   ├── audio/          # Processed audio files
 │   ├── originals/      # Original uploads
@@ -354,7 +354,7 @@ import logging
 from .config import settings
 from .diarization import router as diarization_router
 
-app = FastAPI(title="SA Pinocchio Transcription API")
+app = FastAPI(title="SA transcription Transcription API")
 
 # CORS Configuration
 app.add_middleware(
@@ -454,21 +454,21 @@ uvicorn src.main:app \
 
 1. Create the project structure:
 ```bash
-mkdir -p sa-pinocchio/{data,src}
-touch sa-pinocchio/{requirements.txt,.env,run.sh}
-touch sa-pinocchio/src/{main.py,diarization.py,preprocessing.py,models.py,config.py}
+mkdir -p sa-transcription/{data,src}
+touch sa-transcription/{requirements.txt,.env,run.sh}
+touch sa-transcription/src/{main.py,diarization.py,preprocessing.py,models.py,config.py}
 ```
 
 2. Add the file contents as above
 
 3. Make the script executable:
 ```bash
-chmod +x sa-pinocchio/run.sh
+chmod +x sa-transcription/run.sh
 ```
 
 4. Run the application:
 ```bash
-cd sa-pinocchio
+cd sa-transcription
 ./run.sh
 ```
 

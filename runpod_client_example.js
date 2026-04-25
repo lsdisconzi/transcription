@@ -1,6 +1,6 @@
 /**
  * Runpod Serverless Endpoint - JavaScript/Node.js Client
- * Example: Call the pinocchio-transcription endpoint for audio diarization
+ * Example: Call the transcription-transcription endpoint for audio diarization
  */
 
 const RUNPOD_API_KEY = "<YOUR_RUNPOD_API_KEY_HERE>";

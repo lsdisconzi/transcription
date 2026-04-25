@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_DIR_DEFAULT="/workspace/sa-pinocchio"
+REPO_DIR_DEFAULT="/workspace/sa-transcription"
 APP_PORT_DEFAULT="8888"
 PYTHON_BIN_DEFAULT="python3"
 
@@ -97,7 +97,7 @@ ensure_repo_location() {
   fi
 
   if [ ! -f "$REPO_DIR/pyproject.toml" ]; then
-    die "$REPO_DIR exists but does not look like the sa-pinocchio repository"
+    die "$REPO_DIR exists but does not look like the sa-transcription repository"
   fi
 }
 
@@ -130,7 +130,7 @@ print_summary() {
 
   printf '\n'
   printf '============================================================\n'
-  printf 'SA-Pinocchio Pod bootstrap complete\n'
+  printf 'SA-transcription Pod bootstrap complete\n'
   printf '============================================================\n'
   printf 'Repo: %s\n' "$REPO_DIR"
   printf 'Port: %s\n' "$APP_PORT"

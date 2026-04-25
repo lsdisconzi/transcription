@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 
 
 @dataclass
-class PinocchioRuntime:
+class transcriptionRuntime:
     """Fully wired runtime dependencies and use cases."""
 
     model_manager: ModelManager
@@ -45,7 +45,7 @@ class PinocchioRuntime:
     guided_transcribe_use_case: ReferenceGuidedTranscribeUseCase | None = None
 
 
-def build_runtime() -> PinocchioRuntime:
+def build_runtime() -> transcriptionRuntime:
     """Build full runtime dependency graph from environment settings."""
     model_manager = ModelManager()
     asr_adapter = WhisperASRAdapter(model_manager)
@@ -56,7 +56,7 @@ def build_runtime() -> PinocchioRuntime:
     ref_store_adapter = ReferenceStoreAdapter(settings.REFERENCE_DIR)
     narrative_store_adapter = NarrativeStoreAdapter(settings.NARRATIVE_DIR)
 
-    runtime = PinocchioRuntime(
+    runtime = transcriptionRuntime(
         model_manager=model_manager,
         asr_adapter=asr_adapter,
         diarizer_adapter=diarizer_adapter,

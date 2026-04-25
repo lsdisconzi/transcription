@@ -1,4 +1,4 @@
-"""Pinocchio MCP transcripts server (bootstrap standard).
+"""transcription MCP transcripts server (bootstrap standard).
 
 Launch with:
     python mcp/servers/transcripts_server.py
@@ -18,23 +18,23 @@ if str(ROOT) not in sys.path:
 
 from src.mcp.servers import transcripts_server as src_transcripts
 
-mcp = FastMCP("pinocchio-transcripts")
+mcp = FastMCP("transcription-transcripts")
 
 
 @mcp.tool()
-def pinocchio_list_transcripts() -> dict[str, Any]:
+def transcription_list_transcripts() -> dict[str, Any]:
     """Return all transcript ids."""
     return src_transcripts.list_transcripts()
 
 
 @mcp.tool()
-def pinocchio_get_transcript(transcript_id: str) -> dict[str, Any]:
+def transcription_get_transcript(transcript_id: str) -> dict[str, Any]:
     """Load one transcript by id."""
     return src_transcripts.get_transcript(transcript_id)
 
 
 @mcp.tool()
-def pinocchio_import_transcripts(
+def transcription_import_transcripts(
     runs: list[dict[str, Any]],
     overwrite: bool = False,
     rename_by_filename: bool = True,
@@ -48,7 +48,7 @@ def pinocchio_import_transcripts(
 
 
 @mcp.tool()
-async def pinocchio_analyze_transcript(transcript_id: str, instructions: str = "") -> dict[str, Any]:
+async def transcription_analyze_transcript(transcript_id: str, instructions: str = "") -> dict[str, Any]:
     """Run transcript analysis for one transcript id."""
     return await src_transcripts.analyze_transcript(
         transcript_id=transcript_id,
@@ -57,19 +57,19 @@ async def pinocchio_analyze_transcript(transcript_id: str, instructions: str = "
 
 
 @mcp.tool()
-async def pinocchio_search_transcripts(query: str, limit: int = 5) -> dict[str, Any]:
+async def transcription_search_transcripts(query: str, limit: int = 5) -> dict[str, Any]:
     """Run semantic search across indexed transcript segments."""
     return await src_transcripts.search_transcripts(query=query, limit=limit)
 
 
 @mcp.tool()
-async def pinocchio_index_transcript(transcript_id: str) -> dict[str, Any]:
+async def transcription_index_transcript(transcript_id: str) -> dict[str, Any]:
     """Index one transcript into Qdrant."""
     return await src_transcripts.index_transcript(transcript_id)
 
 
 @mcp.tool()
-async def pinocchio_index_all_transcripts() -> dict[str, Any]:
+async def transcription_index_all_transcripts() -> dict[str, Any]:
     """Index all transcripts into Qdrant."""
     return await src_transcripts.index_all_transcripts()
 

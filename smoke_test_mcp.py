@@ -1,4 +1,4 @@
-"""Smoke-test MCP tool registration for all 3 Pinocchio servers."""
+"""Smoke-test MCP tool registration for all 3 transcription servers."""
 import sys
 import types
 import os

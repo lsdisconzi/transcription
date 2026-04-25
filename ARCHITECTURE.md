@@ -1,4 +1,4 @@
-# SA-Pinocchio Architecture
+# SA-transcription Architecture
 
 ## Clean Architecture (Onion)
 

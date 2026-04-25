@@ -1,4 +1,4 @@
-# Pinocchio MCP Architecture
+# transcription MCP Architecture
 
 This folder follows the canonical MCP architecture standard at:
 `/Users/leandrodisconzi/2026/garage-main/mcp/MCP_ARCHITECTURE.md`.
@@ -12,14 +12,14 @@ This folder follows the canonical MCP architecture standard at:
 
 ## Servers
 
-- `mcp/servers/transcription_server.py` (`pinocchio-transcription`)
-- `mcp/servers/transcripts_server.py` (`pinocchio-transcripts`)
-- `mcp/servers/meta_server.py` (`pinocchio-meta`)
+- `mcp/servers/transcription_server.py` (`transcription-transcription`)
+- `mcp/servers/transcripts_server.py` (`transcription-transcripts`)
+- `mcp/servers/meta_server.py` (`transcription-meta`)
 
 ## Naming Rules
 
 - Tool names are snake_case
-- Tool names are prefixed with `pinocchio_`
+- Tool names are prefixed with `transcription_`
 
 ## Safety Rules
 

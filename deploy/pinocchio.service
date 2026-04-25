@@ -1,22 +1,22 @@
 [Unit]
-Description=SA Pinocchio Transcription API (Whisper + Diarization)
+Description=SA transcription Transcription API (Whisper + Diarization)
 After=network.target
 Wants=network-online.target
 
 [Service]
 Type=simple
 User=root
-WorkingDirectory=/root/vps_ecosystem/vps_projects_/awareness-ai/pinocchio
-ExecStart=/root/vps_ecosystem/vps_projects_/awareness-ai/pinocchio/.venv/bin/uvicorn src.main:app --host 0.0.0.0 --port 8039
+WorkingDirectory=/root/vps_ecosystem/vps_projects_/awareness-ai/transcription
+ExecStart=/root/vps_ecosystem/vps_projects_/awareness-ai/transcription/.venv/bin/uvicorn src.main:app --host 0.0.0.0 --port 8039
 Restart=on-failure
 RestartSec=5
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=pinocchio
+SyslogIdentifier=transcription
 Environment="PORT=8039"
-Environment="PINOCCHIO_PORT=8039"
+Environment="transcription_PORT=8039"
 EnvironmentFile=-/root/vps_ecosystem/vps_projects_/awareness-ai/_shared/.env
-EnvironmentFile=-/root/vps_ecosystem/vps_projects_/awareness-ai/pinocchio/.env
+EnvironmentFile=-/root/vps_ecosystem/vps_projects_/awareness-ai/transcription/.env
 
 [Install]
 WantedBy=multi-user.target

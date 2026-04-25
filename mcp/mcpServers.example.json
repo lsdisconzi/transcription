@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "pinocchio-transcription": {
+    "transcription-transcription": {
       "command": ".venv/bin/python3",
       "args": [
         "mcp/servers/transcription_server.py"
@@ -12,7 +12,7 @@
         "TRANSCRIPT_DIR": "data/transcripts"
       }
     },
-    "pinocchio-transcripts": {
+    "transcription-transcripts": {
       "command": ".venv/bin/python3",
       "args": [
         "mcp/servers/transcripts_server.py"
@@ -24,7 +24,7 @@
         "DEEPSEEK_API_KEY": "<optional>"
       }
     },
-    "pinocchio-meta": {
+    "transcription-meta": {
       "command": ".venv/bin/python3",
       "args": [
         "mcp/servers/meta_server.py"

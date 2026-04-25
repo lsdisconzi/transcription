@@ -1,41 +1,41 @@
-# Pinocchio MCP Bootstrap
+# transcription MCP Bootstrap
 
 This directory provides a bootstrap MCP surface for this project using the
 `python-fastmcp-multi` pattern.
 
 ## Servers
 
-- `pinocchio-transcription` → `mcp/servers/transcription_server.py`
-- `pinocchio-transcripts` → `mcp/servers/transcripts_server.py`
-- `pinocchio-meta` → `mcp/servers/meta_server.py`
+- `transcription-transcription` → `mcp/servers/transcription_server.py`
+- `transcription-transcripts` → `mcp/servers/transcripts_server.py`
+- `transcription-meta` → `mcp/servers/meta_server.py`
 
 ## Tool Inventory
 
-### pinocchio-transcription
+### transcription-transcription
 
-- `pinocchio_transcribe_audio`
-- `pinocchio_transcribe_audio_async`
-- `pinocchio_get_transcription_job`
-- `pinocchio_stream_transcription_job`
-- `pinocchio_diarize_excerpt`
-- `pinocchio_diarize_excerpt_by_path`
+- `transcription_transcribe_audio`
+- `transcription_transcribe_audio_async`
+- `transcription_get_transcription_job`
+- `transcription_stream_transcription_job`
+- `transcription_diarize_excerpt`
+- `transcription_diarize_excerpt_by_path`
 
-### pinocchio-transcripts
+### transcription-transcripts
 
-- `pinocchio_list_transcripts`
-- `pinocchio_get_transcript`
-- `pinocchio_import_transcripts`
-- `pinocchio_analyze_transcript`
-- `pinocchio_search_transcripts`
-- `pinocchio_index_transcript`
-- `pinocchio_index_all_transcripts`
+- `transcription_list_transcripts`
+- `transcription_get_transcript`
+- `transcription_import_transcripts`
+- `transcription_analyze_transcript`
+- `transcription_search_transcripts`
+- `transcription_index_transcript`
+- `transcription_index_all_transcripts`
 
-### pinocchio-meta
+### transcription-meta
 
-- `pinocchio_health_root`
-- `pinocchio_health`
-- `pinocchio_list_parameter_definitions`
-- `pinocchio_list_whisper_models`
+- `transcription_health_root`
+- `transcription_health`
+- `transcription_list_parameter_definitions`
+- `transcription_list_whisper_models`
 
 ## Generate Readiness Report
 

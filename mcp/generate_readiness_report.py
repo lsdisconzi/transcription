@@ -1,4 +1,4 @@
-"""Generate MCP readiness report for Pinocchio bootstrap servers."""
+"""Generate MCP readiness report for transcription bootstrap servers."""
 
 from __future__ import annotations
 
@@ -11,23 +11,23 @@ SERVERS_DIR = ROOT / "mcp" / "servers"
 REPORT_PATH = ROOT / "mcp" / "MCP_READINESS_REPORT.md"
 
 TOOL_ROUTE_MAP: dict[str, str] = {
-    "pinocchio_health_root": "GET /",
-    "pinocchio_health": "GET /health",
-    "pinocchio_list_parameter_definitions": "GET /api/diarization/parameters",
-    "pinocchio_list_whisper_models": "GET /api/diarization/models/whisper",
-    "pinocchio_transcribe_audio": "POST /api/diarization/transcribe",
-    "pinocchio_transcribe_audio_async": "POST /api/diarization/transcribe/async",
-    "pinocchio_diarize_excerpt": "POST /api/diarization/excerpt",
-    "pinocchio_diarize_excerpt_by_path": "POST /api/diarization/excerpt_by_path",
-    "pinocchio_list_transcripts": "GET /api/transcripts",
-    "pinocchio_get_transcript": "GET /api/transcripts/{transcript_id}",
-    "pinocchio_import_transcripts": "POST /api/transcripts/import",
-    "pinocchio_analyze_transcript": "POST /api/transcripts/analyze",
-    "pinocchio_search_transcripts": "POST /api/transcripts/search",
-    "pinocchio_index_transcript": "POST /api/transcripts/{transcript_id}/index",
-    "pinocchio_index_all_transcripts": "POST /api/transcripts/index-all",
-    "pinocchio_get_transcription_job": "GET /api/transcripts/status/{job_id}",
-    "pinocchio_stream_transcription_job": "GET /api/transcripts/stream/{job_id}",
+    "transcription_health_root": "GET /",
+    "transcription_health": "GET /health",
+    "transcription_list_parameter_definitions": "GET /api/diarization/parameters",
+    "transcription_list_whisper_models": "GET /api/diarization/models/whisper",
+    "transcription_transcribe_audio": "POST /api/diarization/transcribe",
+    "transcription_transcribe_audio_async": "POST /api/diarization/transcribe/async",
+    "transcription_diarize_excerpt": "POST /api/diarization/excerpt",
+    "transcription_diarize_excerpt_by_path": "POST /api/diarization/excerpt_by_path",
+    "transcription_list_transcripts": "GET /api/transcripts",
+    "transcription_get_transcript": "GET /api/transcripts/{transcript_id}",
+    "transcription_import_transcripts": "POST /api/transcripts/import",
+    "transcription_analyze_transcript": "POST /api/transcripts/analyze",
+    "transcription_search_transcripts": "POST /api/transcripts/search",
+    "transcription_index_transcript": "POST /api/transcripts/{transcript_id}/index",
+    "transcription_index_all_transcripts": "POST /api/transcripts/index-all",
+    "transcription_get_transcription_job": "GET /api/transcripts/status/{job_id}",
+    "transcription_stream_transcription_job": "GET /api/transcripts/stream/{job_id}",
 }
 
 
@@ -78,7 +78,7 @@ def main() -> None:
     mapped_endpoints = {route for route in TOOL_ROUTE_MAP.values() if route in endpoints}
     missing = sorted(set(endpoints) - mapped_endpoints)
 
-    bad_prefix = sorted([name for name in tools if not name.startswith("pinocchio_")])
+    bad_prefix = sorted([name for name in tools if not name.startswith("transcription_")])
     bad_case = sorted([name for name in tools if not is_snake_case(name)])
 
     coverage = 0.0
