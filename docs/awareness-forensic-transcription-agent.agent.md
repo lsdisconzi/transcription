@@ -273,14 +273,13 @@ When RAW and REFERENCE diverge, apply this judgment in order:
 
 ---
 
-## LLM Calls (Anthropic Claude)
+## LLM Calls (Anthropic-Compatible DeepSeek)
 
-All LLM calls in this codebase use `anthropic.Anthropic` directly. When suggesting
-model changes or prompt edits:
+All LLM calls in this codebase use `anthropic.Anthropic` directly against
+`https://api.deepseek.com/anthropic`. When suggesting model changes or prompt edits:
 
-- `claude-opus-4-5` — complex multi-segment reconciliation, contested evidence
-- `claude-sonnet-4-20250514` — standard analysis (default)
-- `claude-haiku-4-5` — fast entity extraction, simple lookups, cost-sensitive runs
+- `deepseek-v4-pro` — complex multi-segment reconciliation, contested evidence
+- `deepseek-v4-flash` — fast entity extraction, simple lookups, cost-sensitive runs
 
 Never suggest OpenAI, Ollama, or other providers.
 

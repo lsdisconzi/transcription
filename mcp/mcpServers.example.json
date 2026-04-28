@@ -21,6 +21,7 @@
         "TRANSCRIPT_DIR": "data/transcripts",
         "QDRANT_URL": "http://localhost:6333",
         "ANTHROPIC_API_KEY": "<optional>",
+        "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
         "DEEPSEEK_API_KEY": "<optional>"
       }
     },

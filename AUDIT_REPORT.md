@@ -663,14 +663,14 @@ class ClaudeTranscriptAnalyzer:
             for s in transcript.segments
         )
         response = self._client.messages.create(
-            model="claude-sonnet-4-20250514",
+            model="deepseek-v4-pro",
             max_tokens=4096,
             system="You are a legal transcript analyst specializing in Chilean Spanish.",
             messages=[{"role": "user", "content": f"Analyze this transcript:\n\n{text}"}]
         )
         return {
             "summary": response.content[0].text,
-            "model": "claude-sonnet-4-20250514",
+            "model": "deepseek-v4-pro",
             "tokens_in": response.usage.input_tokens,
             "tokens_out": response.usage.output_tokens,
         }

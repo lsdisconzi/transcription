@@ -75,6 +75,7 @@ def build_runtime() -> transcriptionRuntime:
         claude_adapter = ClaudeAnalyzerAdapter(
             api_key=settings.ANTHROPIC_API_KEY,
             model=settings.ANTHROPIC_MODEL,
+            base_url=settings.ANTHROPIC_BASE_URL,
         )
         runtime.analyze_use_case = AnalyzeTranscriptUseCase(
             analyzer=claude_adapter,
@@ -97,6 +98,7 @@ def build_runtime() -> transcriptionRuntime:
             runtime.reconciler_adapter = ClaudeReconcilerAdapter(
                 api_key=settings.ANTHROPIC_API_KEY,
                 model=settings.ANTHROPIC_MODEL,
+                base_url=settings.ANTHROPIC_BASE_URL,
             )
             logger.info("[ai] Claude reconciler configured (model=%s)", settings.ANTHROPIC_MODEL)
     elif settings.DEEPSEEK_API_KEY:
@@ -106,7 +108,7 @@ def build_runtime() -> transcriptionRuntime:
 
         deepseek_analyzer = DeepSeekAnalyzerAdapter(
             api_key=settings.DEEPSEEK_API_KEY,
-            model="deepseek-chat",
+            model=settings.DEEPSEEK_ANALYZER_MODEL,
         )
         runtime.analyze_use_case = AnalyzeTranscriptUseCase(
             analyzer=deepseek_analyzer,

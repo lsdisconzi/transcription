@@ -107,8 +107,9 @@ All settings are loaded from environment variables. See [.env.example](.env.exam
 | `TRANSCRIPT_DIR` | JSON transcript storage | `data/transcripts` |
 | `CORS_ORIGINS` | Comma-separated allowed origins | `http://localhost:3000,http://localhost:8000` |
 | `LOG_LEVEL` | Logging level | `INFO` |
-| `ANTHROPIC_API_KEY` | Anthropic API key (enables AI analysis) | — |
-| `ANTHROPIC_MODEL` | Claude model for analysis | `claude-sonnet-4-20250514` |
+| `ANTHROPIC_API_KEY` | Anthropic-compatible API key (enables AI analysis) | — |
+| `ANTHROPIC_BASE_URL` | Anthropic-compatible base URL | `https://api.deepseek.com/anthropic` |
+| `ANTHROPIC_MODEL` | Anthropic-compatible model for analysis | `deepseek-v4-pro` |
 | `QDRANT_URL` | Qdrant server URL (enables semantic search) | `http://localhost:6333` |
 | `QDRANT_API_KEY` | Qdrant API key (if secured) | — |
 

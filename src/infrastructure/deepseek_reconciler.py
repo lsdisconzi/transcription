@@ -1,7 +1,7 @@
 """DeepSeek-powered transcript reconciliation.
 
 Implements TranscriptReconcilerPort using the DeepSeek API (OpenAI-compatible).
-Uses deepseek-reasoner for structured chain-of-thought reconciliation.
+Uses deepseek-v4-pro for structured chain-of-thought reconciliation.
 """
 from __future__ import annotations
 
@@ -66,7 +66,7 @@ No markdown fences. No commentary outside the JSON."""
 _BATCH_SIZE = 30
 _DEEPSEEK_BASE_URL = "https://api.deepseek.com"
 
-# deepseek-reasoner pricing (USD per million tokens, as of 2025)
+# deepseek-v4-pro pricing (USD per million tokens, as of 2025)
 _PRICE_INPUT_PER_M = 0.55
 _PRICE_OUTPUT_PER_M = 2.19
 
@@ -74,7 +74,7 @@ _PRICE_OUTPUT_PER_M = 2.19
 class DeepSeekReconcilerAdapter:
     """Reconcile transcripts using DeepSeek reasoner. Implements TranscriptReconcilerPort."""
 
-    def __init__(self, api_key: str, model: str = "deepseek-reasoner"):
+    def __init__(self, api_key: str, model: str = "deepseek-v4-pro"):
         self._client = openai.OpenAI(
             api_key=api_key,
             base_url=_DEEPSEEK_BASE_URL,
@@ -250,7 +250,7 @@ class DeepSeekReconcilerAdapter:
         return result
 
     def _estimate_cost(self, tokens_in: int, tokens_out: int) -> float:
-        """Estimate cost based on deepseek-reasoner pricing ($0.55/M in, $2.19/M out)."""
+        """Estimate cost based on deepseek-v4-pro pricing ($0.55/M in, $2.19/M out)."""
         return round(
             (tokens_in * _PRICE_INPUT_PER_M + tokens_out * _PRICE_OUTPUT_PER_M) / 1_000_000,
             6,

@@ -21,7 +21,8 @@ services:
       - QUEUE_PATH=${QUEUE_PATH:-./data/queue.json}
       # AI-Native (Phase 2)
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
-      - ANTHROPIC_MODEL=${ANTHROPIC_MODEL:-claude-sonnet-4-20250514}
+      - ANTHROPIC_BASE_URL=${ANTHROPIC_BASE_URL:-https://api.deepseek.com/anthropic}
+      - ANTHROPIC_MODEL=${ANTHROPIC_MODEL:-deepseek-v4-pro}
       - QDRANT_URL=${QDRANT_URL:-http://qdrant:6333}
       - QDRANT_API_KEY=${QDRANT_API_KEY:-}
     restart: unless-stopped

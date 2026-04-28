@@ -24,11 +24,11 @@ class TestAnalyzeResult:
         r = AnalyzeResult(
             transcript_id="t_1",
             analysis={"summary": "test"},
-            meta={"model": "claude-sonnet-4-20250514", "tokens_in": 10},
+            meta={"model": "deepseek-v4-pro", "tokens_in": 10},
         )
         d = r.model_dump()
         assert d["analysis"]["summary"] == "test"
-        assert d["meta"]["model"] == "claude-sonnet-4-20250514"
+        assert d["meta"]["model"] == "deepseek-v4-pro"
 
 
 class TestSearchRequest:

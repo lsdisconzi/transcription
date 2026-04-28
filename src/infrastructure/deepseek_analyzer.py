@@ -33,7 +33,7 @@ Respond ONLY with valid JSON. No markdown fences, no commentary.
 
 _DEEPSEEK_BASE_URL = "https://api.deepseek.com"
 
-# Approximate pricing in USD per million tokens for deepseek-chat.
+# Approximate pricing in USD per million tokens for deepseek-v4-flash.
 _PRICE_INPUT_PER_M = 0.27
 _PRICE_OUTPUT_PER_M = 1.10
 
@@ -41,7 +41,7 @@ _PRICE_OUTPUT_PER_M = 1.10
 class DeepSeekAnalyzerAdapter:
     """Analyze transcripts using DeepSeek chat models."""
 
-    def __init__(self, api_key: str, model: str = "deepseek-chat"):
+    def __init__(self, api_key: str, model: str = "deepseek-v4-flash"):
         self._client = openai.OpenAI(api_key=api_key, base_url=_DEEPSEEK_BASE_URL)
         self._model = model
 

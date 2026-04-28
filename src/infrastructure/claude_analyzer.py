@@ -29,8 +29,13 @@ Respond ONLY with valid JSON. No markdown fences, no commentary."""
 class ClaudeAnalyzerAdapter:
     """Analyze transcripts using Anthropic Claude. Implements TranscriptAnalyzerPort."""
 
-    def __init__(self, api_key: str, model: str = "claude-sonnet-4-20250514"):
-        self._client = anthropic.Anthropic(api_key=api_key)
+    def __init__(
+        self,
+        api_key: str,
+        model: str = "deepseek-v4-pro",
+        base_url: str = "https://api.deepseek.com/anthropic",
+    ):
+        self._client = anthropic.Anthropic(api_key=api_key, base_url=base_url)
         self._model = model
 
     async def analyze(

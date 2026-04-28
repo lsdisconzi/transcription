@@ -65,9 +65,11 @@ class Settings:
 
     # AI-Native (Phase 2)
     ANTHROPIC_API_KEY: str = os.getenv("ANTHROPIC_API_KEY", "")
-    ANTHROPIC_MODEL: str = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-20250514")
+    ANTHROPIC_MODEL: str = os.getenv("ANTHROPIC_MODEL", "deepseek-v4-pro")
+    ANTHROPIC_BASE_URL: str = os.getenv("ANTHROPIC_BASE_URL", "https://api.deepseek.com/anthropic")
     DEEPSEEK_API_KEY: str = os.getenv("DEEPSEEK_API_KEY", "")
-    DEEPSEEK_RECONCILER_MODEL: str = os.getenv("DEEPSEEK_RECONCILER_MODEL", "deepseek-reasoner")
+    DEEPSEEK_ANALYZER_MODEL: str = os.getenv("DEEPSEEK_ANALYZER_MODEL", "deepseek-v4-flash")
+    DEEPSEEK_RECONCILER_MODEL: str = os.getenv("DEEPSEEK_RECONCILER_MODEL", "deepseek-v4-pro")
     QDRANT_URL: str = _normalize_qdrant_url(os.getenv("QDRANT_URL", "http://localhost:6333"))
     QDRANT_API_KEY: str = _normalize_qdrant_api_key(os.getenv("QDRANT_API_KEY", ""))
 
