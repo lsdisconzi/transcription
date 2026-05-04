@@ -129,9 +129,16 @@ class ReferenceStoreAdapter:
     def _parse_reference(
         self, data: dict, canonical_name: str
     ) -> ReferenceTranscript:
-        """Parse the rich reference transcript format."""
+        """Parse the rich reference transcript format.
+
+        Accepts both ``content`` (canonical key) and ``segments`` (used by
+        earlier-review exports such as LA8159 first_latam_case_version).
+        """
+        raw_segments = data.get("content")
+        if not isinstance(raw_segments, list) or not raw_segments:
+            raw_segments = data.get("segments") or []
         content = []
-        for seg in data.get("content", []):
+        for seg in raw_segments:
             content.append(
                 ReferenceSegment(
                     id=str(seg.get("id", "")),
@@ -176,7 +183,10 @@ class ReferenceStoreAdapter:
             try:
                 with open(path, encoding="utf-8") as f:
                     data = json.load(f)
-                if isinstance(data, dict) and "content" in data and isinstance(data["content"], list):
+                if isinstance(data, dict) and (
+                    (isinstance(data.get("content"), list) and data["content"])
+                    or (isinstance(data.get("segments"), list) and data["segments"])
+                ):
                     ref = self._parse_reference(data, canonical_name)
                     if ref.content:
                         ref.source = fname

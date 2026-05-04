@@ -23,7 +23,7 @@
       "canonical_name": "aeropuerto_stg_12",
       "audio_path": "",
       "title": "aeropuerto_STG_12",
-      "recording_datetime": "",
+      "recording_datetime": "2024-07-06T09:13:00",
       "notes": ""
     },
     {
@@ -34,143 +34,150 @@
       "notes": ""
     },
     {
+      "canonical_name": "aeropuerto_stg_15",
+      "audio_path": "",
+      "title": "Aeropuerto Arturo Merino Benítez 15",
+      "recording_datetime": "2024-07-05T16:26:00",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_stg_16",
+      "audio_path": "",
+      "title": "Aeropuerto Arturo Merino Benítez 16",
+      "recording_datetime": "2024-07-05T16:47:00",
+      "notes": ""
+    },
+    {
       "canonical_name": "aeropuerto_stg_18",
       "audio_path": "",
       "title": "aeropuerto_STG_18",
-      "recording_datetime": "2024-07-05T15:57",
+      "recording_datetime": "2024-07-05T15:57:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_19",
       "audio_path": "",
       "title": "aeropuerto_STG_19",
-      "recording_datetime": "2024-07-05T16:03",
+      "recording_datetime": "2024-07-05T16:03:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_2",
       "audio_path": "",
       "title": "aeropuerto_STG_2",
-      "recording_datetime": "2024-07-05T12:08",
+      "recording_datetime": "2024-07-05T12:08:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_20",
       "audio_path": "",
       "title": "aeropuerto_STG_20",
-      "recording_datetime": "2024-07-05T16:46",
+      "recording_datetime": "2024-07-05T16:46:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_22",
       "audio_path": "",
       "title": "aeropuerto_STG_22",
-      "recording_datetime": "2024-07-05T17:49",
+      "recording_datetime": "2024-07-05T17:49:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_23",
       "audio_path": "",
       "title": "aeropuerto_STG_23",
-      "recording_datetime": "2024-07-05T18:11",
+      "recording_datetime": "2024-07-05T18:11:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_26",
       "audio_path": "",
       "title": "aeropuerto_STG_26",
-      "recording_datetime": "2024-07-05T20:23",
+      "recording_datetime": "2024-07-05T20:23:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_27",
       "audio_path": "",
       "title": "aeropuerto_STG_27",
-      "recording_datetime": "2024-07-05T20:26",
+      "recording_datetime": "2024-07-05T20:26:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_28",
       "audio_path": "",
       "title": "aeropuerto_STG_28",
-      "recording_datetime": "2024-07-05T20:39",
+      "recording_datetime": "2024-07-05T20:39:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_29",
       "audio_path": "",
       "title": "aeropuerto_STG_29",
-      "recording_datetime": "2024-07-05T20:51",
+      "recording_datetime": "2024-07-05T20:51:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_3",
       "audio_path": "",
       "title": "aeropuerto_STG_3",
-      "recording_datetime": "2024-07-05T20:09",
+      "recording_datetime": "2024-07-05T20:09:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_4",
       "audio_path": "",
       "title": "aeropuerto_STG_4",
-      "recording_datetime": "2024-07-05T20:10",
+      "recording_datetime": "2024-07-05T20:10:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_5",
       "audio_path": "data/audio/aeropuerto_STG_5.m4a",
       "title": "aeropuerto_STG_5",
-      "recording_datetime": "2024-07-05T12:30",
+      "recording_datetime": "2024-07-05T12:30:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_6",
       "audio_path": "",
       "title": "aeropuerto_STG_6",
-      "recording_datetime": "2024-07-05T13:47",
+      "recording_datetime": "2024-07-05T13:47:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_7",
       "audio_path": "data/audio/aeropuerto_STG_7.m4a",
       "title": "aeropuerto_STG_7",
-      "recording_datetime": "2024-07-05T14:16",
+      "recording_datetime": "2024-07-05T14:16:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_7_8_corruption",
       "audio_path": "",
       "title": "aeropuerto_STG_7_8_corruption",
-      "recording_datetime": "2024-07-05T14:16",
+      "recording_datetime": "2024-07-05T14:16:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_8",
       "audio_path": "",
       "title": "aeropuerto_STG_8",
-      "recording_datetime": "2024-07-05T14:19",
+      "recording_datetime": "2024-07-05T14:19:00",
       "notes": ""
     },
     {
       "canonical_name": "aeropuerto_stg_9",
       "audio_path": "",
       "title": "aeropuerto_STG_9",
-      "recording_datetime": "2024-07-05T14:30",
+      "recording_datetime": "2024-07-05T14:30:00",
       "notes": ""
     },
     {
       "canonical_name": "carabineros_ppdartnel_1",
       "audio_path": "",
       "title": "carabineros_PPDartnel_1",
-      "recording_datetime": "2024-07-06T06:03",
-      "notes": ""
-    },
-    {
-      "canonical_name": "guarulhos_airport_bd_marinho",
-      "audio_path": "",
-      "title": "Guarulhos_4th_April_2025",
-      "recording_datetime": "",
+      "recording_datetime": "2024-07-06T06:03:00",
       "notes": ""
     },
     {
@@ -182,216 +189,377 @@
     },
     {
       "canonical_name": "latam_stg_3",
-      "audio_path": "",
+      "audio_path": "data/audio/Nova Gravação 3.m4a",
       "title": "latam_STG_3",
-      "recording_datetime": "2024-07-05T22:05",
+      "recording_datetime": "2024-07-05T22:05:00",
       "notes": ""
     },
     {
       "canonical_name": "latam_stg_4",
-      "audio_path": "",
+      "audio_path": "data/audio/Nova Gravação 4.m4a",
       "title": "latam_STG_4",
+      "recording_datetime": "2024-07-05T22:10:00",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez.m4a",
+      "title": "transcript_1748788581",
+      "recording_datetime": "2025-06-03T06:18:00",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_12",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 12.m4a",
+      "title": "transcript_1747748091",
+      "recording_datetime": "2024-07-06T10:13",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_13",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 13.m4a",
+      "title": "transcript_1748781751",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_15",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 15.m4a",
+      "title": "transcript_1748737897",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_16",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 16.m4a",
+      "title": "transcript_1748772820",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_17",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 17.m4a",
+      "title": "transcript_1748764291",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_18",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 18.m4a",
+      "title": "transcript_1747734359",
+      "recording_datetime": "2024-07-05T16:57",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_19",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 19.m4a",
+      "title": "Aeropuerto Arturo Merino Benítez 19",
+      "recording_datetime": "2024-07-06T14:13",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_2",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 2.m4a",
+      "title": "Aeropuerto Arturo Merino Benítez 2",
+      "recording_datetime": "2024-07-06T14:13",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_20",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 20.m4a",
+      "title": "transcript_1747739278",
+      "recording_datetime": "2024-07-05T17:46",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_22",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 22.m4a",
+      "title": "transcript_1748769324",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_23",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 23.m4a",
+      "title": "Aeropuerto_Arturo_Merino_Beni_tez_23.2",
       "recording_datetime": "",
       "notes": ""
     },
     {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_11",
+      "canonical_name": "aeropuerto_arturo_merino_benitez_26",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 26.m4a",
+      "title": "transcript_1748751089",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_27",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 27.m4a",
+      "title": "transcript_1747720797",
+      "recording_datetime": "2024-07-05T21:26",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_28",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 28.m4a",
+      "title": "transcript_1748741582",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_29",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 29.m4a",
+      "title": "transcript_1748748694",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_3",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 3.m4a",
+      "title": "Aeropuerto_Arturo_Merino_Beni_tez_3",
+      "recording_datetime": "",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_4",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 4.m4a",
+      "title": "transcript_1748787542",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_5",
+      "audio_path": "",
+      "title": "transcript_1747736250",
+      "recording_datetime": "2024-07-05T13:30",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_7",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 7.m4a",
+      "title": "Aeropuerto_Arturo_Merino_Beni_tez_7",
+      "recording_datetime": "",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_8",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 8.m4a",
+      "title": "transcript_1748773860",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_9",
+      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 9.m4a",
+      "title": "transcript_1747729569",
+      "recording_datetime": "2024-07-05T15:30",
+      "notes": ""
+    },
+    {
+      "canonical_name": "dgac_contradictions_meet_jose",
+      "audio_path": "",
+      "title": "DGAC_contradictions_meet_jose",
+      "recording_datetime": "2024-07-05T14:53",
+      "notes": ""
+    },
+    {
+      "canonical_name": "nova_gravac_a_o_2",
+      "audio_path": "",
+      "title": "transcript_1748793968",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "nova_gravac_a_o_3",
+      "audio_path": "",
+      "title": "transcript_1748793339",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "nova_gravac_a_o_4",
+      "audio_path": "",
+      "title": "Nova_Gravac_a_o_4",
+      "recording_datetime": "",
+      "notes": ""
+    },
+    {
+      "canonical_name": "pdi_dgac_latam_resolve_to_use_brute_force",
+      "audio_path": "",
+      "title": "PDI_DGAC_LATAM_resolve_to_use_brute_force",
+      "recording_datetime": "2024-07-05T14:55",
+      "notes": ""
+    },
+    {
+      "canonical_name": "pdi_outside_where_the_magic_happens",
+      "audio_path": "",
+      "title": "PDI_outside_where_the_magic_happens",
+      "recording_datetime": "2024-07-05T15:16",
+      "notes": ""
+    },
+    {
+      "canonical_name": "pedro_pablo_dartnell",
+      "audio_path": "data/audio/Pedro Pablo Dartnell.m4a",
+      "title": "Pedro_Pablo_Dartnell",
+      "recording_datetime": "",
+      "notes": ""
+    },
+    {
+      "canonical_name": "t2_dgac_sends_to_latam_counter",
+      "audio_path": "",
+      "title": "T2_DGAC_sends_to_Latam_counter",
+      "recording_datetime": "",
+      "notes": ""
+    },
+    {
+      "canonical_name": "audio_12_full",
+      "audio_path": "",
+      "title": "audio_12_full",
+      "recording_datetime": "",
+      "notes": ""
+    },
+    {
+      "canonical_name": "audio_22_full",
+      "audio_path": "",
+      "title": "audio_22_full",
+      "recording_datetime": "2024-07-05T18:49",
+      "notes": ""
+    },
+    {
+      "canonical_name": "audio_3_full",
+      "audio_path": "",
+      "title": "audio_3_full_name",
+      "recording_datetime": "2024-07-05T21:09",
+      "notes": ""
+    },
+    {
+      "canonical_name": "audio_4_full",
+      "audio_path": "",
+      "title": "audio_4_full",
+      "recording_datetime": "2024-07-05T21:10",
+      "notes": ""
+    },
+    {
+      "canonical_name": "audio_7_plot_part_2",
+      "audio_path": "",
+      "title": "audio_7_plot_part_2",
+      "recording_datetime": "2024-07-05T15:20",
+      "notes": ""
+    },
+    {
+      "canonical_name": "boarding_gate_question_about_boarding",
+      "audio_path": "",
+      "title": "boarding_gate_question_about_boarding",
+      "recording_datetime": "2024-07-05T13:08",
+      "notes": ""
+    },
+    {
+      "canonical_name": "boarding_gate_question_to_pilots",
+      "audio_path": "",
+      "title": "boarding_gate_question_to_pilots",
+      "recording_datetime": "2024-07-05T12:56",
+      "notes": ""
+    },
+    {
+      "canonical_name": "inside_plane_1st_defamation_told_to_leave",
+      "audio_path": "",
+      "title": "inside_plane_1st_defamation_told_to_leave",
+      "recording_datetime": "2024-07-05T14:47",
+      "notes": ""
+    },
+    {
+      "canonical_name": "inside_plane_2nd_defamation_got_intimidated_to_leave_or_else",
+      "audio_path": "",
+      "title": "inside_plane_2nd_defamation_got_intimidated_to_leave_or_else",
+      "recording_datetime": "2024-07-05T14:49",
+      "notes": ""
+    },
+    {
+      "canonical_name": "inside_plane_publicly_blamed_for_delay_and_threatned_police_action",
+      "audio_path": "",
+      "title": "inside_plane_publicly_blamed_for_delay_and_threatned_police_action",
+      "recording_datetime": "2024-07-05T14:51",
+      "notes": ""
+    },
+    {
+      "canonical_name": "masterplan_latam_sup_diego_strategizing_delete_traces_print_in_desk_upstairs",
+      "audio_path": "",
+      "title": "latam_sup_diego_strategizing_delete_traces_print_in_desk_upstairs",
+      "recording_datetime": "2024-07-05T21:51",
+      "notes": ""
+    },
+    {
+      "canonical_name": "nova_gravacao_2",
+      "audio_path": "data/audio/Nova Gravação 2.m4a",
+      "title": "nova_gravacao_2",
+      "recording_datetime": "2024-07-05T22:59",
+      "notes": ""
+    },
+    {
+      "canonical_name": "portaste_mal",
+      "audio_path": "",
+      "title": "portaste_mal",
+      "recording_datetime": "2024-07-05T15:19",
+      "notes": ""
+    },
+    {
+      "canonical_name": "response_1748668067564",
+      "audio_path": "",
+      "title": "response_1748668067564",
+      "recording_datetime": "",
+      "notes": ""
+    },
+    {
+      "canonical_name": "transcript_1748818294",
+      "audio_path": "",
+      "title": "transcript_1748818294",
+      "recording_datetime": "2025-06-03T06:18",
+      "notes": ""
+    },
+    {
+      "canonical_name": "aeropuerto_arturo_merino_benitez_11",
       "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 11.m4a",
       "title": "Aeropuerto Arturo Merino Benítez 11",
       "recording_datetime": "",
       "notes": "auto-discovered in data/audio (no reference yet)"
     },
     {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_12",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 12.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 12",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_13",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 13.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 13",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_15",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 15.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 15",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_16",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 16.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 16",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_17",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 17.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 17",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_18",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 18.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 18",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_19",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 19.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 19",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_2",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 2.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 2",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_20",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 20.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 20",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_22",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 22.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 22",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_23",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 23.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 23",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_24",
+      "canonical_name": "aeropuerto_arturo_merino_benitez_24",
       "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 24.m4a",
       "title": "Aeropuerto Arturo Merino Benítez 24",
       "recording_datetime": "",
       "notes": "auto-discovered in data/audio (no reference yet)"
     },
     {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_25",
+      "canonical_name": "aeropuerto_arturo_merino_benitez_25",
       "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 25.m4a",
       "title": "Aeropuerto Arturo Merino Benítez 25",
       "recording_datetime": "",
       "notes": "auto-discovered in data/audio (no reference yet)"
     },
     {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_26",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 26.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 26",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_27",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 27.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 27",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_28",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 28.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 28",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_29",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 29.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 29",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_3",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 3.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 3",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_4",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 4.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 4",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_6",
+      "canonical_name": "aeropuerto_arturo_merino_benitez_6",
       "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 6.m4a",
       "title": "Aeropuerto Arturo Merino Benítez 6",
       "recording_datetime": "",
       "notes": "auto-discovered in data/audio (no reference yet)"
     },
     {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_7",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 7.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 7",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_8",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 8.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 8",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez_9",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez 9.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez 9",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "aeropuerto_arturo_merino_benítez",
-      "audio_path": "data/audio/Aeropuerto Arturo Merino Benítez.m4a",
-      "title": "Aeropuerto Arturo Merino Benítez",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "nova_gravação_2",
-      "audio_path": "data/audio/Nova Gravação 2.m4a",
-      "title": "Nova Gravação 2",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "nova_gravação_3",
+      "canonical_name": "nova_gravacao_3",
       "audio_path": "data/audio/Nova Gravação 3.m4a",
       "title": "Nova Gravação 3",
       "recording_datetime": "",
       "notes": "auto-discovered in data/audio (no reference yet)"
     },
     {
-      "canonical_name": "nova_gravação_4",
+      "canonical_name": "nova_gravacao_4",
       "audio_path": "data/audio/Nova Gravação 4.m4a",
       "title": "Nova Gravação 4",
       "recording_datetime": "",
       "notes": "auto-discovered in data/audio (no reference yet)"
     },
     {
-      "canonical_name": "nova_gravação",
+      "canonical_name": "nova_gravacao",
       "audio_path": "data/audio/Nova Gravação.m4a",
       "title": "Nova Gravação",
       "recording_datetime": "",
@@ -408,13 +576,6 @@
       "canonical_name": "pedro_pablo_dartnell_3",
       "audio_path": "data/audio/Pedro Pablo Dartnell 3.m4a",
       "title": "Pedro Pablo Dartnell 3",
-      "recording_datetime": "",
-      "notes": "auto-discovered in data/audio (no reference yet)"
-    },
-    {
-      "canonical_name": "pedro_pablo_dartnell",
-      "audio_path": "data/audio/Pedro Pablo Dartnell.m4a",
-      "title": "Pedro Pablo Dartnell",
       "recording_datetime": "",
       "notes": "auto-discovered in data/audio (no reference yet)"
     }
@@ -1197,6 +1358,6 @@
     }
   ],
   "qdrant_filter_tag": "project:la8159",
-  "created_at": "2026-05-04T07:35:42.490798Z",
-  "updated_at": "2026-05-04T07:49:56.506986Z"
+  "created_at": "2026-05-04T07:51:13.908837Z",
+  "updated_at": "2026-05-04T07:59:10.956861Z"
 }

@@ -28,6 +28,7 @@ import os
 import re
 import shutil
 import sys
+import unicodedata
 from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -74,9 +75,17 @@ FIRST_REVIEW_QUALITY = 0.70  # earlier draft, useful but lower confidence
 MAIN_CASE_TAG = "la8159_main_case"
 FIRST_REVIEW_TAG = "la8159_first_review"
 
+# Outside LA8159 incident scope; exclude to prevent retrieval drift.
+EXCLUDED_CANONICALS = {
+    "guarulhos_airport_bd_marinho",
+}
+
 
 def canonical_name(filename: str) -> str:
     name = Path(filename).stem.lower()
+    # Normalize to NFC so combining diacritics (common on macOS HFS+) collapse
+    # into precomposed code points before the replacement table runs.
+    name = unicodedata.normalize("NFC", name)
     repl = {"á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u", "ñ": "n", "ü": "u", "ç": "c", "â": "a", "ê": "e", "ô": "o", "ã": "a", "õ": "o"}
     for old, new in repl.items():
         name = name.replace(old, new)
@@ -160,6 +169,18 @@ def collect_context_docs() -> list[ContextDocument]:
     return docs
 
 
+def prune_excluded_reference_dirs(*, dry_run: bool) -> None:
+    for canonical in sorted(EXCLUDED_CANONICALS):
+        ref_dir = REFERENCE_DIR / canonical
+        if not ref_dir.exists():
+            continue
+        if dry_run:
+            logger.info("[dry] would remove excluded reference dir: %s", ref_dir)
+            continue
+        shutil.rmtree(ref_dir)
+        logger.info("removed excluded reference dir: %s", ref_dir)
+
+
 def ingest_reference_dir(
     src_dir: Path,
     *,
@@ -189,14 +210,21 @@ def ingest_reference_dir(
         except (OSError, json.JSONDecodeError) as exc:
             logger.warning("skip %s (%s)", src.name, exc)
             continue
-        if not isinstance(data.get("content"), list):
-            logger.warning("skip %s (no content list)", src.name)
+        # Accept both `content` (main_case) and `segments` (first_review)
+        seg_list = data.get("content")
+        if not isinstance(seg_list, list) or not seg_list:
+            seg_list = data.get("segments")
+        if not isinstance(seg_list, list):
+            logger.warning("skip %s (no content/segments list)", src.name)
             continue
-        if not data["content"]:
-            logger.info("skip %s (empty content)", src.name)
+        if not seg_list:
+            logger.info("skip %s (empty content/segments)", src.name)
             continue
 
         target_canonical = base_canonical(src.stem)
+        if target_canonical in EXCLUDED_CANONICALS:
+            logger.info("skip %s (excluded canonical: %s)", src.name, target_canonical)
+            continue
         dest_dir = REFERENCE_DIR / target_canonical
         dest_file = dest_dir / src.name
         link_or_copy(src, dest_file, copy, dry_run)
@@ -228,7 +256,7 @@ def ingest_reference_dir(
                     type="reference",
                     source=tag,
                     quality_score=quality,
-                    segments=len(data["content"]),
+                    segments=len(seg_list),
                     created_at=datetime.now(timezone.utc).isoformat(),
                     notes=notes,
                 ),
@@ -274,6 +302,9 @@ def attach_audio_files(
         if audio.suffix.lower() not in audio_exts:
             continue
         canon = base_canonical(audio.stem)
+        if canon in EXCLUDED_CANONICALS:
+            logger.info("  audio %s skipped (excluded canonical: %s)", audio.name, canon)
+            continue
         rel_path = str(audio.relative_to(ROOT))
         target = by_canonical.get(canon)
         if target is None:
@@ -315,6 +346,8 @@ def main() -> int:
 
     ref_store = ReferenceStoreAdapter(str(REFERENCE_DIR))
     project_store = ProjectStoreAdapter(str(PROJECTS_DIR))
+
+    prune_excluded_reference_dirs(dry_run=args.dry_run)
 
     # ── Pass 1: main_latam_case_version (high-quality manual transcripts)
     main_audios, main_seen = ingest_reference_dir(
@@ -384,6 +417,15 @@ def main() -> int:
                 prev.recording_datetime = a.recording_datetime
             if a.title and not prev.title:
                 prev.title = a.title
+
+    # Remove any excluded canonicals that may have existed from earlier runs.
+    before_prune = len(project.audios)
+    project.audios = [a for a in project.audios if a.canonical_name not in EXCLUDED_CANONICALS]
+    if before_prune != len(project.audios):
+        logger.info(
+            "pruned %d excluded project audios",
+            before_prune - len(project.audios),
+        )
 
     # Merge context docs (dedup by path)
     existing_paths = {d.path for d in project.context_docs}
