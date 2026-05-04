@@ -3,8 +3,11 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import os
+import re
 import tempfile
 import time
+from pathlib import Path
 
 from src.application.dto.schemas import (
     SegmentResult,
@@ -25,6 +28,8 @@ from src.domain.ports.interfaces import (
 
 logger = logging.getLogger(__name__)
 
+_SAFE_TRANSCRIPT_ID_RE = re.compile(r"[^A-Za-z0-9._-]+")
+
 LANGUAGE_MAP = {
     "es-CL": "es",
     "es": "es",
@@ -33,6 +38,13 @@ LANGUAGE_MAP = {
     "pt": "pt",
     "pt-BR": "pt",
 }
+
+
+def _transcript_id_from_saved_audio(saved_audio_path: str) -> str:
+    """Build a filesystem-safe transcript id from a backend-saved audio path."""
+    stem = Path(saved_audio_path).stem
+    cleaned = _SAFE_TRANSCRIPT_ID_RE.sub("_", stem).strip("._-")
+    return cleaned or f"transcript_{int(time.time())}"
 
 
 class TranscribeAudioUseCase:
@@ -68,6 +80,7 @@ class TranscribeAudioUseCase:
         max_speakers = params.get("max_speakers", 2)
         vad_threshold = params.get("vad_threshold", 0.25)
         keep_cache = params.get("keep_cache", True)
+        keep_audio_artifacts = params.get("keep_audio_artifacts", True)
         progress_callback = params.get("progress_callback")
         current_progress = 0
 
@@ -83,6 +96,7 @@ class TranscribeAudioUseCase:
 
         audio_path = None
         processed_path = None
+        transcript_source_file = ""
 
         # Parse suppress_tokens
         suppress_tokens_raw = params.get("suppress_tokens", "-1")
@@ -104,10 +118,13 @@ class TranscribeAudioUseCase:
             logger.info(f"[save] stored {audio_path} size={len(content)}B elapsed={save_elapsed:.2f}s")
             await emit_progress("upload", 10, "Arquivo salvo", {"bytes": len(content)})
 
+            transcript_id = _transcript_id_from_saved_audio(audio_path)
+
             # 2. Convert to WAV
             t_step = time.time()
             audio_path = self._audio_files.convert_to_wav(audio_path)
             convert_elapsed = time.time() - t_step
+            transcript_source_file = os.path.basename(audio_path)
             await emit_progress("preprocess", 18, "Convertendo para WAV")
 
             # 3. Preprocess
@@ -250,7 +267,6 @@ class TranscribeAudioUseCase:
                 transcription_elapsed_total += seg_elapsed
 
                 # Clean up temp segment file
-                import os
                 if os.path.exists(seg_path):
                     os.remove(seg_path)
 
@@ -282,7 +298,6 @@ class TranscribeAudioUseCase:
                 ))
 
             # 6. Persist transcript
-            transcript_id = f"transcript_{int(time.time())}"
             domain_segments = [
                 Segment(
                     index=s.index,
@@ -296,8 +311,12 @@ class TranscribeAudioUseCase:
             transcript = Transcript(
                 transcript_id=transcript_id,
                 segments=domain_segments,
-                source_file=filename,
+                source_file=transcript_source_file or filename,
                 language=language,
+                metadata={
+                    "saved_audio_file": transcript_source_file,
+                    "processed_audio_file": os.path.basename(processed_path) if processed_path else "",
+                },
             )
             self._store.save(transcript)
             await emit_progress("transcription", 95, "Transcrição consolidada")
@@ -350,6 +369,9 @@ class TranscribeAudioUseCase:
                     "silence_thresh": params.get("silence_thresh", -45),
                     "min_silence_len": params.get("min_silence_len", 250),
                     "word_timestamps": params.get("word_timestamps", False),
+                    "keep_audio_artifacts": keep_audio_artifacts,
+                    "saved_audio_file": transcript_source_file,
+                    "processed_audio_file": os.path.basename(processed_path) if processed_path else "",
                 },
             )
 
@@ -358,13 +380,14 @@ class TranscribeAudioUseCase:
             raise
 
         finally:
-            import contextlib
-            import os
-            if processed_path and os.path.exists(processed_path):
-                with contextlib.suppress(Exception):
-                    os.remove(processed_path)
-            if audio_path and os.path.exists(audio_path):
-                with contextlib.suppress(Exception):
-                    os.remove(audio_path)
+            if not keep_audio_artifacts:
+                import contextlib
+
+                if processed_path and os.path.exists(processed_path):
+                    with contextlib.suppress(Exception):
+                        os.remove(processed_path)
+                if audio_path and os.path.exists(audio_path):
+                    with contextlib.suppress(Exception):
+                        os.remove(audio_path)
             if not keep_cache and hasattr(self._asr, "clear_cache"):
                 self._asr.clear_cache()
