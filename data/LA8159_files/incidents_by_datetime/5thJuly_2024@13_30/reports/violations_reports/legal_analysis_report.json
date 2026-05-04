@@ -1,0 +1,242 @@
+{
+  "report_metadata": {
+    "case_id": "STG_30",
+    "title": "URGENT: LATAM Airlines Passenger Removal Incident",
+    "generated_date": "2025-12-10T07:07:30.597276",
+    "document_analyzed": "aeropuerto_STG_5.json",
+    "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
+    "date": "2024-07-05T13:30:00",
+    "incident_type": "PASSENGER_REMOVAL_ATTEMPT",
+    "risk_level": "HIGH",
+    "urgency": "IMMEDIATE_ACTION_REQUIRED"
+  },
+  "executive_summary": {
+    "overall_risk": "HIGH",
+    "critical_issues": [
+      "Due process violations in passenger removal",
+      "Unsubstantiated allegations without evidence",
+      "Cultural insensitivity in international context",
+      "Premature security escalation",
+      "Procedural fairness violations"
+    ],
+    "total_violations": 5,
+    "severity_distribution": {
+      "HIGH": 2,
+      "MEDIUM_HIGH": 1,
+      "MEDIUM": 2
+    },
+    "immediate_actions_required": true
+  },
+  "violations": [
+    {
+      "id": "VIO-STG30-001",
+      "type": "DUE_PROCESS_VIOLATION",
+      "framework": "ICAO Annex 9 — Facilitation",
+      "article": "Standard 8.7",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "description": "Failure to provide evidence or proper justification for passenger removal",
+      "evidence": "Passenger repeatedly demanded proof of alleged aggression",
+      "evidence_quotes": [
+        "Me muestran donde fui agresivo. ¿Tiene prueba?",
+        "ya donde está la prueba porque yo no fui agresivo"
+      ],
+      "legal_principle": "Audi alteram partem - right to be heard and see evidence",
+      "recommendation": "Establish evidence-based removal procedures",
+      "timeline": "00:14-00:30",
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "VIO-STG30-002",
+      "type": "PROCEDURAL_FAIRNESS_VIOLATION",
+      "framework": "Montreal Convention 1999",
+      "article": "Article 17",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "description": "Lack of procedural fairness in handling passenger complaints",
+      "evidence": "Passenger not given opportunity to explain cultural context",
+      "evidence_quotes": [
+        "Y yo toque sin querer, yo soy de Brasil, nosotros nos tocamos"
+      ],
+      "legal_principle": "Right to explain actions before punitive measures",
+      "recommendation": "Cultural sensitivity protocols and mediation procedures",
+      "timeline": "01:19",
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "VIO-STG30-003",
+      "type": "EXCESSIVE_FORCE_THREAT",
+      "framework": "ICAO Annex 17 — Security",
+      "article": "Standard 4.2.1",
+      "severity": "MEDIUM_HIGH",
+      "confidence": 0.8,
+      "description": "Premature escalation to security/police without de-escalation attempts",
+      "evidence": "Staff immediately activated security within first minute",
+      "evidence_quotes": [
+        "Ya activamos seguridad. Igual va a tener que bajar"
+      ],
+      "legal_principle": "Force as last resort principle",
+      "recommendation": "De-escalation training and protocols for cabin crew",
+      "timeline": "00:50",
+      "risk_level": "MEDIUM_HIGH"
+    },
+    {
+      "id": "VIO-STG30-004",
+      "type": "DOCUMENTATION_FAILURE",
+      "framework": "ANAC Resolution 400/2016",
+      "article": "Article 15",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "description": "Failure to properly document incident before punitive action",
+      "evidence": "Evidence gathering mentioned after removal decision",
+      "evidence_quotes": [
+        "Podemos pedir las cameras del aeropuerto."
+      ],
+      "legal_principle": "Documentation before action",
+      "recommendation": "Incident reporting system with real-time documentation",
+      "timeline": "01:30",
+      "risk_level": "MEDIUM"
+    },
+    {
+      "id": "VIO-STG30-005",
+      "type": "CULTURAL_COMPETENCE_DEFICIENCY",
+      "framework": "IATA Recommended Practices",
+      "article": "RP 1740",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "description": "Lack of cultural competence in interpreting passenger behavior",
+      "evidence": "Cultural misunderstanding about physical contact norms",
+      "evidence_quotes": [
+        "yo soy de Brasil, nosotros nos tocamos"
+      ],
+      "legal_principle": "Duty to understand passenger cultural context",
+      "recommendation": "Cultural awareness training for international routes",
+      "timeline": "01:19",
+      "risk_level": "MEDIUM"
+    }
+  ],
+  "incident_timeline": {
+    "phase_1_escalation": {
+      "start": "00:00",
+      "end": "00:30",
+      "events": [
+        "Passenger acknowledges presence",
+        "Staff orders immediate removal",
+        "Passenger asks for explanation",
+        "Staff alleges aggressive behavior",
+        "Passenger demands evidence"
+      ]
+    },
+    "phase_2_security": {
+      "start": "00:30",
+      "end": "01:00",
+      "events": [
+        "Passenger refuses removal without evidence",
+        "Staff activates security"
+      ]
+    },
+    "phase_3_allegations": {
+      "start": "01:00",
+      "end": "01:30",
+      "events": [
+        "Staff mentions flight delay complaints",
+        "New allegation: inappropriate touching",
+        "Passenger explains cultural context"
+      ]
+    },
+    "phase_4_legal": {
+      "start": "01:30",
+      "end": "02:00",
+      "events": [
+        "Staff mentions airport cameras",
+        "Passenger threatens legal action"
+      ]
+    }
+  },
+  "risk_assessment": {
+    "regulatory_risks": [
+      {
+        "type": "ICAO Compliance",
+        "level": "HIGH",
+        "description": "Potential investigation by international aviation body"
+      },
+      {
+        "type": "ANAC Enforcement",
+        "level": "HIGH",
+        "description": "Brazilian aviation authority jurisdiction"
+      },
+      {
+        "type": "Consumer Protection",
+        "level": "HIGH",
+        "description": "Multiple jurisdictions (Chile, Brazil, international)"
+      }
+    ],
+    "financial_risks": [
+      {
+        "type": "Lawsuit Exposure",
+        "level": "HIGH",
+        "description": "Passenger explicitly threatened legal action"
+      },
+      {
+        "type": "Compensation Claims",
+        "level": "MEDIUM_HIGH",
+        "description": "Montreal Convention liability"
+      },
+      {
+        "type": "Regulatory Fines",
+        "level": "MEDIUM",
+        "description": "Potential penalties from multiple authorities"
+      }
+    ],
+    "reputational_risks": [
+      {
+        "type": "Public Relations",
+        "level": "HIGH",
+        "description": "Incident involves recording and potential publicity"
+      },
+      {
+        "type": "Customer Trust",
+        "level": "HIGH",
+        "description": "Appears as arbitrary passenger removal"
+      },
+      {
+        "type": "International Standing",
+        "level": "MEDIUM_HIGH",
+        "description": "Cross-border cultural insensitivity"
+      }
+    ]
+  },
+  "recommendations": {
+    "immediate": [
+      "Suspend removal decision pending proper investigation",
+      "Review all evidence (airport cameras, crew statements)",
+      "Document incident with proper chain of evidence",
+      "Offer passenger mediation with cultural interpreter"
+    ],
+    "urgent": [
+      "Implement de-escalation protocols for cabin crew",
+      "Establish evidence-based removal procedures",
+      "Conduct cultural sensitivity briefing for Santiago-based crew",
+      "Review security escalation protocols"
+    ],
+    "short_term": [
+      "Develop cultural competence training for international routes",
+      "Implement incident documentation system",
+      "Establish passenger complaint review process",
+      "Create Latin American cultural guide for crew"
+    ],
+    "long_term": [
+      "Audit all passenger removal incidents from past year",
+      "Develop international passenger rights policy",
+      "Establish independent review board for contentious removals",
+      "Implement customer service excellence program"
+    ]
+  },
+  "warning_flags": [
+    "Immediate escalation without investigation",
+    "Cultural insensitivity in international context",
+    "Evidence after decision procedural error",
+    "Legal threat ignored by staff",
+    "Recording acknowledged but procedure continued"
+  ]
+}

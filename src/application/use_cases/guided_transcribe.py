@@ -27,6 +27,9 @@ logger = logging.getLogger(__name__)
 # Max characters from reference text to use as Whisper initial_prompt
 _INITIAL_PROMPT_MAX_CHARS = 1500
 
+# Default number of top-quality references to send to the reconciler
+_DEFAULT_TOP_N_REFERENCES = 3
+
 
 class ReferenceGuidedTranscribeUseCase:
     """Transcribe audio using existing corrected transcripts as priors."""
@@ -152,6 +155,8 @@ class ReferenceGuidedTranscribeUseCase:
 
         # ── Step 7: LLM Reconciliation ────────────────────────────────────
         reconciliation: dict = {}
+        top_n = int(params.get("top_n_references", _DEFAULT_TOP_N_REFERENCES))
+        priors = references[:top_n] if references else []
         if best_ref and self._reconciler:
             t_step = time.time()
             reconciliation = await self._reconciler.reconcile(
@@ -159,14 +164,16 @@ class ReferenceGuidedTranscribeUseCase:
                 best_ref,
                 narrative=best_narrative,
                 language=language,
+                references=priors,
             )
             reconcile_elapsed = time.time() - t_step
             reconciled_segments = reconciliation.get("segments", raw_segments)
             speaker_map = reconciliation.get("speaker_map", {})
             reconciliation_meta = reconciliation.get("_meta", {})
             logger.info(
-                "[guided] reconciled %d segments (map=%s) in %.2fs",
+                "[guided] reconciled %d segments using %d priors (map=%s) in %.2fs",
                 len(reconciled_segments),
+                len(priors),
                 speaker_map,
                 reconcile_elapsed,
             )
@@ -231,11 +238,13 @@ class ReferenceGuidedTranscribeUseCase:
         return {
             "transcript_id": transcript_id,
             "canonical_name": canonical_name,
+            "project_id": params.get("project_id", ""),
             "segments": reconciled_segments,
             "speaker_map": speaker_map,
             "participants": reconciliation.get("participants", []) if best_ref else [],
             "reconciliation_notes": reconciliation.get("reconciliation_notes", "") if best_ref else "",
             "references_used": len(references),
+            "priors_sent_to_reconciler": len(priors),
             "narratives_used": len(narratives),
             "timings": {
                 "ref_load_s": round(ref_load_elapsed, 2),

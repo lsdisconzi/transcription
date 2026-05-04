@@ -1,0 +1,25 @@
+{
+  "segments": [
+    {
+      "speaker": "SPEAKER_01",
+      "start": 4.58721875,
+      "end": 11.84346875,
+      "text": " ¿Están viendo el documento? Perfecto, perfecto. Todo lo que quiero es que le pongan por escrito el porqué hicieron eso conmigo.",
+      "id": "0"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 12.552218750000002,
+      "end": 14.020343750000002,
+      "text": " Muchas gracias. Por acá.",
+      "id": "1"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 14.982218750000001,
+      "end": 15.336593750000002,
+      "text": " Muchas gracias.",
+      "id": "2"
+    }
+  ]
+}

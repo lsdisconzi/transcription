@@ -83,6 +83,7 @@ class Settings:
     TRANSCRIPT_DIR: str = os.getenv("TRANSCRIPT_DIR", "data/transcripts")
     REFERENCE_DIR: str = os.getenv("REFERENCE_DIR", "data/transcripts_by_audio")
     NARRATIVE_DIR: str = os.getenv("NARRATIVE_DIR", "data/transcripts_narrative")
+    PROJECTS_DIR: str = os.getenv("PROJECTS_DIR", "data/projects")
 
     # Hardware acceleration
     TORCH_DEVICE: str = "cuda" if torch.cuda.is_available() else "cpu"
@@ -101,6 +102,7 @@ class Settings:
         os.makedirs(self.ORIGINALS_DIR, exist_ok=True)
         os.makedirs(self.TRANSCRIPT_DIR, exist_ok=True)
         os.makedirs(self.REFERENCE_DIR, exist_ok=True)
+        os.makedirs(self.PROJECTS_DIR, exist_ok=True)
 
 
 settings = Settings()

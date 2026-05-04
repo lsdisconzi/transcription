@@ -1,0 +1,669 @@
+{
+  "segments": [
+    {
+      "speaker": "SPEAKER_00",
+      "start": 19.04909375,
+      "end": 21.02346875,
+      "text": " ¿Alguien puede darme un posicionamiento?",
+      "id": "0"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 23.16659375,
+      "end": 27.840968750000002,
+      "text": " Porque estoy como, me estoy dejando como un idiota por ahí.",
+      "id": "1"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 28.11096875,
+      "end": 29.12346875,
+      "text": " ¡Excelente!",
+      "id": "2"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 29.44409375,
+      "end": 32.59971875,
+      "text": " Sí, pero yo te dije que esta carta no tiene una firma.",
+      "id": "3"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 33.93284375,
+      "end": 35.94096875,
+      "text": " No va a tener una firma, un documento.",
+      "id": "4"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 35.94096875,
+      "end": 37.594718750000006,
+      "text": " Eso es que el formato se tiene que acompañar.",
+      "id": "5"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 38.016593750000006,
+      "end": 51.66846875,
+      "text": " y no tener nadie para responsabilizar por esa información, porque eso va a pasar. Ese va a ser un documento que no va a ser válido después, porque no hay nadie para ser responsabilizado. De nuevo, ya está bien, de nuevo. Yo voy a estar hasta más lejos.",
+      "id": "6"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 52.54596875,
+      "end": 54.41909375,
+      "text": " para que vea si todo se ofenda.",
+      "id": "7"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 55.04346875,
+      "end": 64.20659375000001,
+      "text": " ¿Ya? Entonces, por favor, alguien asigne esto. Si responsabiliza. Yo consigo.",
+      "id": "8"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 65.47221875000001,
+      "end": 70.14659375000001,
+      "text": " Si yo quiero la acepto o no, pero un documento legal no debería tener una asignatura, una firma?",
+      "id": "9"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 71.19284375000001,
+      "end": 72.03659375000001,
+      "text": " ¿Eso es un documento?",
+      "id": "10"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 73.09971875000001,
+      "end": 75.00659375000001,
+      "text": " No tiene firma.",
+      "id": "11"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 75.00659375000001,
+      "end": 77.62221875,
+      "text": " Ninguno de nuestros documentos tiene firmas.",
+      "id": "12"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 79.42784375000001,
+      "end": 81.25034375,
+      "text": " ¿Quién escribió eso?",
+      "id": "13"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 81.09846875000001,
+      "end": 83.41034375000001,
+      "text": " La TAM, la TAM es casi una reputable de eso.",
+      "id": "14"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 85.43534375,
+      "end": 87.46034375,
+      "text": " Lo acompañé, porque tiene lobos, lobos, lobos.",
+      "id": "15"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 85.97534375000001,
+      "end": 86.53221875,
+      "text": " Ya, sí.",
+      "id": "16"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 87.98346875,
+      "end": 88.23659375000001,
+      "text": " ava.",
+      "id": "17"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 89.33346875000001,
+      "end": 91.34159375,
+      "text": " Ya, por favor, un timbre.",
+      "id": "18"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 91.34159375,
+      "end": 92.92784375000001,
+      "text": " Larguese el ovatín, ¡no hay señor!",
+      "id": "19"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 94.75034375,
+      "end": 97.61909375,
+      "text": " Yo ya te perdí mi tiempo desde las 11 de la mañana que estoy acá.",
+      "id": "20"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 98.73284375,
+      "end": 101.23034375,
+      "text": " ¿Ya? Ustedes me sacaron la fuerza del vuelo.",
+      "id": "21"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 102.05721875,
+      "end": 103.27221875000001,
+      "text": " Ahí tiene todas las botellas.",
+      "id": "22"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 103.27221875000001,
+      "end": 106.83284375000001,
+      "text": " Sí, claro, ese motivo ya fue comprobado por la PDI.",
+      "id": "23"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 107.47409375000001,
+      "end": 108.18284375,
+      "text": "",
+      "id": "24"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 108.18284375,
+      "end": 108.60471875,
+      "text": " por que...",
+      "id": "25"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 109.09409375000001,
+      "end": 111.94596875,
+      "text": " Porque ese es nuestro logotipo, no podemos hacer nada más que eso.",
+      "id": "26"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 111.94596875,
+      "end": 112.43534375,
+      "text": " ¿No?",
+      "id": "27"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 113.92034375,
+      "end": 120.16409375,
+      "text": " Eh, mira, me da vontad de ver un otro documento de ustedes para enseñar una firma con un timbre.",
+      "id": "28"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 121.29471875,
+      "end": 122.03721875000001,
+      "text": " por favor",
+      "id": "29"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 128.82096875000002,
+      "end": 133.05659375000002,
+      "text": " Simplemente tú ibas a ignorarme y yo estaba ahí esperando.",
+      "id": "30"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 133.05659375000002,
+      "end": 135.97596875000002,
+      "text": " Y yo le informamos, ya se le entregó toda la información.",
+      "id": "31"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 135.97596875000002,
+      "end": 137.15721875,
+      "text": "",
+      "id": "32"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 137.37659375,
+      "end": 141.73034375,
+      "text": " Ah, ese tiene. No, ese no se puede mostrar. Ese no es.",
+      "id": "33"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 144.48096875000002,
+      "end": 145.03784375,
+      "text": " ¡Gracias a todos!",
+      "id": "34"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 152.15909375,
+      "end": 155.97284375,
+      "text": " Alejandro, que cada día ganas un caldito. Esto es.",
+      "id": "35"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 155.97284375,
+      "end": 159.73596875,
+      "text": " certificado de contingencia, tenemos el logo LATAM y solamente nosotros lo llenamos.",
+      "id": "36"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 159.73596875,
+      "end": 161.49096875,
+      "text": " ¿Y sabes por qué no llena ese entonces?",
+      "id": "37"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 161.77784375000002,
+      "end": 165.16971875000002,
+      "text": " Porque esto no dice lo que a usted le pasó, esto es solamente para cancelamientos de vuelo.",
+      "id": "38"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 166.38471875000002,
+      "end": 168.07221875000002,
+      "text": " o cuando el tour está retrasado.",
+      "id": "39"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 168.07221875000002,
+      "end": 171.22784375,
+      "text": " ... ...",
+      "id": "40"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 172.03784375,
+      "end": 175.61534375000002,
+      "text": " ¿Alguien tiene alguna posibilidad para decirnos algo acerca de esto?",
+      "id": "41"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 174.16409375,
+      "end": 175.09221875,
+      "text": " ¡Nadie lo va a asustar!",
+      "id": "42"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 177.28596875000002,
+      "end": 181.94346875000002,
+      "text": " Sí, tú ya me explicó eso y yo ya perdí mucho tiempo, o sea, que tú no entendió todavía.",
+      "id": "43"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 183.34409375,
+      "end": 188.01846875,
+      "text": " Tú entendió, entonces simplemente va a ignorar.",
+      "id": "44"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 188.71034375000002,
+      "end": 192.15284375000002,
+      "text": " Si quiere más que le diga, que le siga repitiendo toda la noche lo mismo.",
+      "id": "45"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 192.15284375000002,
+      "end": 193.94159375,
+      "text": " ¡No me quiero que me filmen eso!",
+      "id": "46"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 193.94159375,
+      "end": 201.16409375,
+      "text": " ¿Por qué? Porque este es nuestro formato, ya lo publiqué. Le acabo de mostrar otro formato igual. Ya, míralo.",
+      "id": "47"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 195.24096875,
+      "end": 195.84846875000002,
+      "text": "",
+      "id": "48"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 200.59034375000002,
+      "end": 203.67846875,
+      "text": " Mira, Sara, Sara Antonella.",
+      "id": "49"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 205.12971875000002,
+      "end": 205.28159375,
+      "text": " ¡Hasta la próxima!",
+      "id": "50"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 205.93971875000003,
+      "end": 206.58096875,
+      "text": " Yo creo...",
+      "id": "51"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 207.34034375000002,
+      "end": 209.71971875000003,
+      "text": " que eso va a quedarse un poco más complicado.",
+      "id": "52"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 210.63096875000002,
+      "end": 211.10346875000002,
+      "text": " ¿Entiendes?",
+      "id": "53"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 211.94721875000002,
+      "end": 215.17034375,
+      "text": " mucho más complejo y todas las personas que están participando",
+      "id": "54"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 216.03096875,
+      "end": 222.13971875000001,
+      "text": " Yo creo que puede ser complicado para usted también. Ya simplemente le informando porque eso no va a quedar así.",
+      "id": "55"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 223.13534375,
+      "end": 225.75096875000003,
+      "text": " Yo fui agredido, yo fui difamado.",
+      "id": "56"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 226.62846875000002,
+      "end": 227.60721875000002,
+      "text": " en el progreso.",
+      "id": "57"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 227.79284375,
+      "end": 230.03721875000002,
+      "text": " Usted puede hacer todas las denuncias y podemos hacer que se le encuentre...",
+      "id": "58"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 229.41284375,
+      "end": 229.42971875,
+      "text": " Subtítulos realizados por la comunidad de Amara.org",
+      "id": "59"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 230.03721875000002,
+      "end": 237.32721875000001,
+      "text": " Yo voy a hacer, sí, totalmente, totalmente, pero eso no es lo que fue pasado a la pelea.",
+      "id": "60"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 236.65221875,
+      "end": 239.09909375,
+      "text": " Eso es lo que violan tres.",
+      "id": "61"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 239.03159375,
+      "end": 243.99284375000002,
+      "text": " Yo no estoy contando versión de realidad.",
+      "id": "62"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 244.70159375000003,
+      "end": 245.52846875,
+      "text": " Eso es la realidad.",
+      "id": "63"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 247.03034375000001,
+      "end": 249.19034375,
+      "text": " Hay cámaras que los muestran y usted cuando vaya...",
+      "id": "64"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 248.61659375000002,
+      "end": 251.16471875000002,
+      "text": " Sí, total, yo puedo tener acceso a las tabletas.",
+      "id": "65"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 251.36721875,
+      "end": 253.54409375000003,
+      "text": " Cuando vea ya, obviamente, vaya al putado.",
+      "id": "66"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 253.54409375000003,
+      "end": 258.96096875,
+      "text": " Ya, entonces yo puedo hablar ahora, tú puedes no me interrumpir. Ya, bacán.",
+      "id": "67"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 261.77909375,
+      "end": 262.16721875,
+      "text": " La...",
+      "id": "68"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 262.89284375,
+      "end": 267.53346875,
+      "text": " carta de desembarque que fue dada por lo piloto",
+      "id": "69"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 270.35159375,
+      "end": 272.66346875,
+      "text": " Aliexplica también.",
+      "id": "70"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 274.43534375,
+      "end": 276.49409375,
+      "text": " Esa información es la misma que está allá.",
+      "id": "71"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 278.55284375,
+      "end": 281.45534375,
+      "text": " Esa información es la misma que está allá.",
+      "id": "72"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 282.11346875000004,
+      "end": 286.02846875,
+      "text": " Yo estoy haciendo una pregunta. Yo estoy haciendo una pregunta.",
+      "id": "73"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 286.02846875,
+      "end": 288.55971875,
+      "text": " No puedo responder a lo que ya no estuve presente, eso es todo lo valiente.",
+      "id": "74"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 288.55971875,
+      "end": 292.03596875,
+      "text": " ¿Pero tú lo escribió eso? ¿Entonces quién lo escribió?",
+      "id": "75"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 292.03596875,
+      "end": 293.53784375000004,
+      "text": " Este es el formato.",
+      "id": "76"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 293.53784375000004,
+      "end": 298.26284375,
+      "text": " El formato, el formato. Ya, bacana. Porque lo que tengo grabado...",
+      "id": "77"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 298.88721875000005,
+      "end": 300.54096875000005,
+      "text": " es que la otra persona...",
+      "id": "78"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 302.02596875,
+      "end": 305.26596875,
+      "text": " y pidió a ti preescribir y modificar la carta.",
+      "id": "79"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 305.87346875000003,
+      "end": 306.98721875,
+      "text": " Mira, yo tengo...",
+      "id": "80"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 307.79721875,
+      "end": 309.02909375,
+      "text": " Ya bueno, era.",
+      "id": "81"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 309.75471875,
+      "end": 310.49721875,
+      "text": " Ehhhh",
+      "id": "82"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 313.24784375,
+      "end": 314.34471875,
+      "text": " ¿Es esto lo que se va a sequedar?",
+      "id": "83"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 315.67784375,
+      "end": 316.60596875000005,
+      "text": " Y básicamente eso.",
+      "id": "84"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 317.48346875000004,
+      "end": 320.58846875,
+      "text": " la información que se le entregó es la única información que hay, no hay más.",
+      "id": "85"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 321.06096875000003,
+      "end": 325.53284375000004,
+      "text": " Claramente que hay, hay una carta de desembarque, ¿dónde hayla? Déjame ver la carta de desembarque.",
+      "id": "86"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 325.53284375000004,
+      "end": 328.16534375000003,
+      "text": " ¿La carta de desembarque? Señor, la carta de desembarque...",
+      "id": "87"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 328.16534375000003,
+      "end": 336.06284375,
+      "text": " No grites, barro. Está así. Está gritando, está gritando. Habla un poco más barro. Está siendo agresiva conmigo.",
+      "id": "88"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 336.16409375,
+      "end": 337.26096875,
+      "text": " ¡Bésame, entonces!",
+      "id": "89"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 337.26096875,
+      "end": 338.91471875,
+      "text": " pero si hablo más bajo, sí.",
+      "id": "90"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 338.91471875,
+      "end": 357.39284375,
+      "text": " ¿Quiere información? Sí, por favor. ¿Me va a escuchar? Estoy escuchando. El personal de APC, que es la autoridad aeronáutica, ellos hacen la carta de desembarque. Es un documento privado que se lanza a los pasajeros. Ahora, si usted requiere esa carta, vaya con PDI, solicite a ver si le permiten ingresar hasta APC y puede solicitar su carta.",
+      "id": "91"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 339.77534375000005,
+      "end": 340.29846875000004,
+      "text": " Sí.",
+      "id": "92"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 341.44596875,
+      "end": 342.74534375,
+      "text": " Estoy te escuchando, si te lo...",
+      "id": "93"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 357.69659375000003,
+      "end": 360.63284375,
+      "text": " Ya, pues yo pedí, entonces yo pedí esto. Ya, muchas gracias.",
+      "id": "94"
+    }
+  ]
+}

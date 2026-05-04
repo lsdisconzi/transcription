@@ -1,0 +1,1173 @@
+{
+  "segments": [
+    {
+      "speaker": "SPEAKER_01",
+      "start": 13.969718750000002,
+      "end": 15.353468750000001,
+      "text": " Gracias.",
+      "id": "0"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 18.79596875,
+      "end": 19.94346875,
+      "text": "",
+      "id": "1"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 21.54659375,
+      "end": 22.52534375,
+      "text": "",
+      "id": "2"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 29.96721875,
+      "end": 31.047218750000003,
+      "text": " ¡Gracias!",
+      "id": "3"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 31.739093750000002,
+      "end": 32.346593750000004,
+      "text": " ¡Gracias!",
+      "id": "4"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 32.36346875,
+      "end": 34.236593750000004,
+      "text": " ¡Gracias!",
+      "id": "5"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 39.46784375,
+      "end": 39.78846875,
+      "text": " Muchas gracias.",
+      "id": "6"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 66.09659375000001,
+      "end": 68.62784375000001,
+      "text": " Gracias.",
+      "id": "7"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 71.96909375,
+      "end": 72.03659375000001,
+      "text": "",
+      "id": "8"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 73.47096875,
+      "end": 74.02784375,
+      "text": " Más información www.alimmenta.com",
+      "id": "9"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 82.48221875,
+      "end": 89.53596875000001,
+      "text": " ¡Gracias por ver el video y por compartirlo con tus amigos!",
+      "id": "10"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 95.89784375,
+      "end": 96.38721875,
+      "text": "",
+      "id": "11"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 97.36596875000001,
+      "end": 98.61471875000001,
+      "text": " ¿Puedo hacerle una pregunta?",
+      "id": "12"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 100.20096875,
+      "end": 100.53846875,
+      "text": " ¿No?",
+      "id": "13"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 100.53846875,
+      "end": 105.21284375,
+      "text": " No, no puede. ¿No? No, lo que pasa es que como espectivo, uno puede hablar con las personas que...",
+      "id": "14"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 101.73659375000001,
+      "end": 101.88846875,
+      "text": " ¿No?",
+      "id": "15"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 105.21284375,
+      "end": 109.51596875000001,
+      "text": " ¿Quién es testigo? Él no es testigo, él también está me acusando.",
+      "id": "16"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 106.19159375000001,
+      "end": 107.72721875,
+      "text": " El no es testigo.",
+      "id": "17"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 109.51596875000001,
+      "end": 137.68034375000002,
+      "text": " Eso es eso mismo. Y cuando hay intercambios sin una declaración, ustedes no pueden. Eso lo va a ver policía. Eso, como le explicó policía, es determinarlo. Como le explicó policía, policía va a tomar su versión, va a tomar la versión de él, va a corroborar los hechos y va a sacar la verdad. Si usted tiene razón en todo lo que ha dicho, se van a tomar las medidas del caso. Si no, se va a tomar lo que corresponda. Pero como lo digo, ya lo está viendo policía, así que se va a ver qué es lo que sucede realmente y se va a dar la resolución que corresponda. Si usted tiene razón en todo lo que ha dicho, tiene que estar tranquilo. Por eso le digo.",
+      "id": "18"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 113.48159375,
+      "end": 113.49846875,
+      "text": "",
+      "id": "19"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 137.32596875000002,
+      "end": 143.53596875,
+      "text": " Yo estoy tranquilísimo, pero estoy muy enojado porque perdí mi vuelo, fui humillado.",
+      "id": "20"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 138.64221875,
+      "end": 139.26659375,
+      "text": " Correcto, muy bien.",
+      "id": "21"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 143.53596875,
+      "end": 151.29846875,
+      "text": " Si usted tiene razón en todo lo que ha dicho, se la va a corroborar y usted va a poder tomar las medidas que correspondan.",
+      "id": "22"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 144.41346875000002,
+      "end": 144.64971875,
+      "text": " ¡Ah!",
+      "id": "23"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 147.92346875,
+      "end": 148.64909375000002,
+      "text": " ya, ya, ya, ya, ya",
+      "id": "24"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 150.40409375000002,
+      "end": 159.90471875,
+      "text": " Y yo voy a tomar, sí, sí, claro. Pero me espanta un poco que llegamos a todo esto que está pasando sin confirmar la verdad.",
+      "id": "25"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 159.63471875000002,
+      "end": 188.62596875,
+      "text": " Lo que pasa es que hay procedimientos y cuando alguien indica que si esta situación pasó y solicita a seguridad para que corrobore y luegamente el capitán da una orden en base a lo que se ha indicado, lo que corresponde es el desembarco. Si usted, como le estaba explicando, usted no hizo nada que usted indique para ser desembarcado, eso lo va a corroborar policía, se le va a dar la razón si es que es así fuera y posteriormente se va a tomar las medidas que correspondan. Si es que usted obviamente no, como usted me dice, la sacaron injustamente y todo eso, se va a corroborar.",
+      "id": "26"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 165.00096875,
+      "end": 165.23721875,
+      "text": " ¿Real?",
+      "id": "27"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 179.15909375,
+      "end": 179.26034375,
+      "text": "",
+      "id": "28"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 187.98471875,
+      "end": 198.53159375,
+      "text": " va a corroborar, es que yo creo que para llegar a ese punto debían probar que yo te hubiese hecho algo primero, ¿entiendes?",
+      "id": "29"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 194.56596875000002,
+      "end": 246.76034375,
+      "text": " Lo que pasa, le explico lo que se dice normalmente para que me entienda. Las personas que están a cargo del proceso, para hablar en general, las personas que están a cargo del proceso indican que cierta persona no cumplió con los procesos. Nosotros vamos y le explicamos que tiene que seguir con los procesos porque no puede estar en la aeronave porque no siguió cierto proceso. Y usted no puede estar lamentablemente en la aeronave porque tiene que seguir todos los procesos. Pero déjeme terminar, así funciona. Si usted no quiere descender, el capitán da la orden de que descienda y posteriormente, como usted vio, vino una persona de seguridad y lo descendió en base a lo que se le estaba indicando que usted no cumplió. Ahora, si usted me dice que eso es todo incorrecto, que usted cumplió, que usted lo hizo todo bien, ahora que está policía en el caso, va a ver la situación, va a corroborar la verdad y va a dar la solución que corresponda. Si efectivamente usted tiene la razón en todo, usted no va a salir afectado, después va a poder tomar... Yo ya estoy afectado. No, pero como le digo, me refiero a algo legal. Y después va a tomar las medidas del caso que le corresponden a usted por verse afectado en la medida que usted me está diciendo.",
+      "id": "30"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 206.63159375,
+      "end": 208.63971875000001,
+      "text": " de la aeronave porque lo suyó cierto proceso.",
+      "id": "31"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 212.36909375000002,
+      "end": 212.80784375000002,
+      "text": " y nos vemos en el próximo video, ¡hasta la próxima!",
+      "id": "32"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 247.77284375000002,
+      "end": 294.02721875000003,
+      "text": " Por eso le digo, ahora tiene que ver que policía desarrolle el caso y todo eso se va a corroborar. A eso voy. Y respondiendo a su pregunta, es por eso, porque si le acusan de que no cumplió procedimiento, lamentablemente funciona así y la persona que indica que usted no cumplió X procedimiento, solicitó la... Pero déjeme terminar. Y solicitó a la misma persona. Por eso. Se va a corroborar, efectivamente, si es así. Si esa persona, en un caso supuesto, estuviera falsificando información e indicando información que no es, para así provocar su descenso, obviamente eso también tiene una repercusión la cual va a ver policía. O sea, como usted dice que no es así, que es transición, policía va a ver todo eso y va a ver, en el supuesto caso, que fuera una falsa acusación, se va a tomar la medida que corresponda. Pero como le digo, el caso está en desarrollo, tiene que ver lo que pasa y se va a solucionar según corresponda. Como le digo, policía le dijo que iba a ver las cámaras y iba a ver su caso.",
+      "id": "33"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 262.75784375,
+      "end": 265.39034375,
+      "text": " la misma persona por eso se va a corroborar",
+      "id": "34"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 294.80346875000004,
+      "end": 307.25721875,
+      "text": " y a ver su caso, y ahí va a salir según corresponde, si esa persona, como usted indica, da un error en todas sus posiciones, se va a ver lo que corresponde ahí según la ley. En el caso contrario, también se vería si no fuese como usted lo indica. Como le digo, policía va a corroborar...",
+      "id": "35"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 307.25721875,
+      "end": 309.68721875,
+      "text": " Como te dije, si yo tuviese hecho algo...",
+      "id": "36"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 310.93596875000003,
+      "end": 314.36159375,
+      "text": " que yo tuviese que salir. Yo, yo soy el último que quiere atrapallar.",
+      "id": "37"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 315.62721875,
+      "end": 316.15034375000005,
+      "text": " Y nos vemos en el próximo video, ¡hasta la próxima!",
+      "id": "38"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 317.26409375000003,
+      "end": 321.75284375,
+      "text": " Hacer la vida de otra persona es difícil. Yo soy el último que quiero... ¿Entiendes?",
+      "id": "39"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 322.95096875,
+      "end": 325.54971875,
+      "text": " Yo hice un vuelo todo parado.",
+      "id": "40"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 326.22471875,
+      "end": 328.72221875,
+      "text": " porque no es la primera vez que Latam trata...",
+      "id": "41"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 329.71784375000004,
+      "end": 352.14471875000004,
+      "text": " de esta forma, ya. Aconteció dos, tres meses atrás, pero no de, de, de, como eso, pero del vuelo llegar atrasado, no avisar nada en San Paulo, perdí el último vuelo de la noche, se quedó hasta las tres de la mañana intentando arreglar un vuelo de, de, de, de, de remarcación por atrocidad, y a las tres y media de la mañana a la latancia le me dieron un hotel para dormir.",
+      "id": "42"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 352.83659375,
+      "end": 354.52409375,
+      "text": " a 30 minutos de distancia.",
+      "id": "43"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 357.98346875000004,
+      "end": 358.77659375,
+      "text": " está siendo chiste.",
+      "id": "44"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 359.33346875,
+      "end": 360.48096875000005,
+      "text": " Ya me imagino que es una situación...",
+      "id": "45"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 360.48096875000005,
+      "end": 363.50159375000004,
+      "text": " Está agradable la costumbre. Ya, ya, todo cómodo. Y de ahí...",
+      "id": "46"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 364.26096875,
+      "end": 371.02784375000005,
+      "text": " Primero acusa de agresión, y ahí no funcionó, y ahí viene con esta historia feroz. Mira, esa no es.",
+      "id": "47"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 376.10721875,
+      "end": 376.95096875,
+      "text": " Hermanos y hermanas, el policía...",
+      "id": "48"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 376.95096875,
+      "end": 384.47721875,
+      "text": " No recibe entrenamiento, no tiene procedimientos a seguir, no fue treinado.",
+      "id": "49"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 387.97034375000004,
+      "end": 395.20971875000004,
+      "text": " Solamente tiene que esperar que el policía le dé la resolución y saber qué sucedió. Yo trabajé dentro de un aeropuerto también. En ese caso debe entender cómo son los procedimientos.",
+      "id": "50"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 393.85971875,
+      "end": 397.94346875,
+      "text": " Muchos años atrás, claramente, claramente, claramente, ¿entiendes?, claramente.",
+      "id": "51"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 415.62846875,
+      "end": 423.03659375,
+      "text": " En este caso, por ese lado, lesiones más que lo que vamos a ver.",
+      "id": "52"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 427.98096875000005,
+      "end": 432.60471875,
+      "text": " Exacto. Yo creo que eso, claro. No sólo por una corta denuncia, pero quizás por otros hechos.",
+      "id": "53"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 433.34721875,
+      "end": 443.20221875000004,
+      "text": " porque nosotros obviamente vamos a regresar a cámara y filmar todo eso. Y en la cámara obviamente se va a ver que la agresión, claro, quizás pueda haber un tema mejor que esa.",
+      "id": "54"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 443.91096875000005,
+      "end": 448.39971875000003,
+      "text": "",
+      "id": "55"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 451.47096875000005,
+      "end": 457.25909375000003,
+      "text": " Eso creo que va por ese sentido ya, del tema, obviamente, de que...",
+      "id": "56"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 458.82846875,
+      "end": 463.53659375,
+      "text": " y hacer parte de eso, y para que sean pasajeros de cultura, como bueno.",
+      "id": "57"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 468.97034375000004,
+      "end": 469.34159375,
+      "text": " Subtítulos realizados por la comunidad de Amara.org",
+      "id": "58"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 470.06721875000005,
+      "end": 473.03721875,
+      "text": "",
+      "id": "59"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 478.97721875,
+      "end": 481.03596875000005,
+      "text": "",
+      "id": "60"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 483.48284375000003,
+      "end": 488.52846875000006,
+      "text": " pero obviamente es antiguo más tarde, hace tu persona, no como la pandemia.",
+      "id": "61"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 489.47346875000005,
+      "end": 497.87721875000005,
+      "text": " que es un usador, en caso de que sea llamado a alguna evidencia posterior, tú como tubers, para que me lo tome.",
+      "id": "62"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 503.66534375000003,
+      "end": 506.77034375000005,
+      "text": " Gracias. Gracias. Gracias. Gracias.",
+      "id": "63"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 512.4740937500001,
+      "end": 515.0390937500001,
+      "text": " ... ... ... ... ... ... ... ... ... ... ... ... ... ...",
+      "id": "64"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 521.14784375,
+      "end": 525.51846875,
+      "text": " Triste, triste, chato.",
+      "id": "65"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 526.48034375,
+      "end": 532.0322187500001,
+      "text": " ¡Gracias por ver el vídeo!",
+      "id": "66"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 528.8259687500001,
+      "end": 529.9734687499999,
+      "text": " Ya, creo que se acabó.",
+      "id": "67"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 538.47846875,
+      "end": 540.58784375,
+      "text": "",
+      "id": "68"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 541.27971875,
+      "end": 546.61221875,
+      "text": " Programadísimo, porque yo iba a llegar como a las 7, yo creo, porque son 2 horas más.",
+      "id": "69"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 547.2197187500001,
+      "end": 552.94034375,
+      "text": " y yo tendría como una hora para salir de allí y ir a la rodoviaria.",
+      "id": "70"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 553.63221875,
+      "end": 564.5503437500001,
+      "text": " tomaron un bus que también tenía pago de 11 horas a mi ciudad, la ciudad de mis papás. Entonces ahora, dependiendo de la hora que voy a llegar a Brasilia, no van a tener más únibus.",
+      "id": "71"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 566.13659375,
+      "end": 581.9822187500001,
+      "text": " Yo voy a hablar en parte de la Dirección General de la Nautica. Lamentamos que haya perdido el suelo, de verdad. Porque esta decisión no la tomamos nosotros, ¿ya? Pero... ¿por qué nada eso? Son malos ratos, son malos ratos que un pasajero de día va a salir. Pero...",
+      "id": "72"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 581.9822187500001,
+      "end": 587.3147187500001,
+      "text": " y que te pasen para que te vayas con la alegría y la comodidad.",
+      "id": "73"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 596.4778437500001,
+      "end": 598.0303437499999,
+      "text": " No, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no",
+      "id": "74"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 598.5872187500001,
+      "end": 610.5347187500001,
+      "text": " No, no, yo sé, mira, yo sé que usted está haciendo sus trabajos, como le expliqué con la policía, yo sé que está haciendo sus trabajos, no peleé con usted, simplemente estaba manteniendo mi actitud.",
+      "id": "75"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 610.5347187500001,
+      "end": 612.2222187500001,
+      "text": " Está muy bien. ¿Lo tiene?",
+      "id": "76"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 612.98159375,
+      "end": 632.10096875,
+      "text": " Y como le digo, nosotros, para que usted igual tenga la noción de que nosotros como Dirección General de Aeronáutica y que somos la seguridad del aeropuerto, para que entienda que nosotros no somos los que decidimos si usted lo bajamos o no, ya. Eso es directamente parte del capitán y de... ¿cómo se llama? Y de la personal de la compañía.",
+      "id": "77"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 632.35409375,
+      "end": 635.49284375,
+      "text": " ¿Vale la pena tener algún tipo de justificación?",
+      "id": "78"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 635.77971875,
+      "end": 638.44596875,
+      "text": " O sea, es que si el capitán hace la tenencia...",
+      "id": "79"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 638.44596875,
+      "end": 639.9309687500001,
+      "text": " Pero el capitán...",
+      "id": "80"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 641.39909375,
+      "end": 661.2778437500001,
+      "text": " El detalle es que yo tengo grabación, no de imagen, pero de voz, hablando con los tres que eran los capitanes antes. Porque cuando llegó el vuelo, yo le pregunté, mira, ¿sabe qué vuelo es ese que está llegando? Ah, no lo sé. Pero es ese que nosotros vamos. Le dije, mira, pero no está un poco atrasado, porque el vuelo era para embarcar y no estamos embarcando.",
+      "id": "81"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 651.0009687500001,
+      "end": 651.0347187500001,
+      "text": "",
+      "id": "82"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 662.20596875,
+      "end": 666.42471875,
+      "text": " pero vamos a estar en el tiempo. Me marcaron, intensificaron porque lo pregunté.",
+      "id": "83"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 667.1840937500001,
+      "end": 669.12471875,
+      "text": " ¿Entiendes? Eso es personal.",
+      "id": "84"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 669.47909375,
+      "end": 672.5334687500001,
+      "text": " ¿El sí o el sí este? ¡Claro!",
+      "id": "85"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 673.5290937500001,
+      "end": 681.46034375,
+      "text": " ¡Muchas gracias! ¡Oh, oh! ¿Qué fue eso? ¡Fue malo verlo!",
+      "id": "86"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 677.1740937500001,
+      "end": 677.49471875,
+      "text": "",
+      "id": "87"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 683.6540937500001,
+      "end": 691.61909375,
+      "text": " Yoreandro, estamos, como te decía hace un rato, estamos verificando qué es lo que va a hacer la compañía. ¿Confirmaron las cámaras?",
+      "id": "88"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 690.9778437500001,
+      "end": 691.46721875,
+      "text": "",
+      "id": "89"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 692.2265937500001,
+      "end": 695.7365937500001,
+      "text": " Están en revisión, tienen que respaldarle y todo lo demás.",
+      "id": "90"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 693.94784375,
+      "end": 694.69034375,
+      "text": " Yo, yo, yo.",
+      "id": "91"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 695.7365937500001,
+      "end": 704.0390937500001,
+      "text": " Yo puedo tener acceso y una copia del momento, de lo que pasó, solamente de lo que pasó.",
+      "id": "92"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 700.2084687500001,
+      "end": 700.5290937500001,
+      "text": "",
+      "id": "93"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 700.5290937500001,
+      "end": 700.8328437499999,
+      "text": " Eso.",
+      "id": "94"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 704.0390937500001,
+      "end": 707.02596875,
+      "text": " Ya, pero ven, tú solo vas a tener claridad de qué es lo que pasó.",
+      "id": "95"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 710.46846875,
+      "end": 718.46721875,
+      "text": " ahora todo bien, ¿cierto? el embarque se apuró un poco más debido a que eran muy pocos pasajeros",
+      "id": "96"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 718.46721875,
+      "end": 733.60409375,
+      "text": " y se apuró un poco más, fue porque el vuelo que llegó, las personas estaban desembarcando a las 1.40, no, 12.40, las personas estaban recién desembarcando del vuelo.",
+      "id": "97"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 734.22846875,
+      "end": 736.16909375,
+      "text": " Entonces lo que hice fue preguntarle al piloto...",
+      "id": "98"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 736.97909375,
+      "end": 745.56846875,
+      "text": " Entonces se picaron conmigo allí y después el otro funcionario también se picó conmigo porque yo simplemente fui... Mira, este vuelo, ¿sabes de dónde está llegando este vuelo?",
+      "id": "99"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 746.5134687500001,
+      "end": 750.1415937500001,
+      "text": " Es en este que nosotros vamos a Brasilia.",
+      "id": "100"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 750.93471875,
+      "end": 775.4709687500001,
+      "text": " Si no embarque a las 12.35, el vuelo está llegando ahora. Porque yo tuve que correr harto y dejar muchas cosas para llegar acá en el tiempo. Entonces, simplemente, mira, pero no es... Ah, no, pero nosotros vamos a estar dentro del tiempo, pero podrían avisar a los clientes. ¿Entiendes? Simple, simple. Porque de ahí, yo no tenía casi un ataque del corazón que iba a perder el vuelo, pero perdí. ¿Entiendes?",
+      "id": "101"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 767.25284375,
+      "end": 768.7209687500001,
+      "text": " ¿Entiendes?",
+      "id": "102"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 770.1553437500002,
+      "end": 771.16784375,
+      "text": "",
+      "id": "103"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 776.83784375,
+      "end": 778.22159375,
+      "text": " No hubo una aplicación...",
+      "id": "104"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 778.22159375,
+      "end": 780.5672187499999,
+      "text": " No, la explicación fue no, vamos a estar dentro del tiempo.",
+      "id": "105"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 781.32659375,
+      "end": 782.84534375,
+      "text": "",
+      "id": "106"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 788.48159375,
+      "end": 802.2009687500001,
+      "text": " ¿Quién quiere meter su maleta abajo? Simplemente porque están apurados para... Claramente, lo entiendo. Pero no me hagan de estúpido, por favor. Estoy te haciendo una pregunta, simplemente. Se picaron.",
+      "id": "107"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 803.4834687500002,
+      "end": 806.9765937500001,
+      "text": " Y todo eso, eso es legal.",
+      "id": "108"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 806.9765937500001,
+      "end": 812.96721875,
+      "text": " Pasa esto, tú vas a la fila, chequeas tu pasaje, ¿cierto? con tu teléfono. Pasas por la mesa.",
+      "id": "109"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 812.96721875,
+      "end": 816.05534375,
+      "text": " No, no, fue con teléfono. ¿Ahí? El ticket. ¿Cuál?",
+      "id": "110"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 816.05534375,
+      "end": 823.21034375,
+      "text": " Cuando pasaste por el escáner, antes de entrar al avión, pasas por el escáner y chequeas tu pasaporte o tu pasaporte.",
+      "id": "111"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 823.21034375,
+      "end": 830.53409375,
+      "text": " ¿Dónde? ¿Dónde? Justo en el control, a la entrada. ¿O hay una persona que te saca y fue esa persona? Ya, perfecto.",
+      "id": "112"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 824.47596875,
+      "end": 825.5222187500001,
+      "text": "",
+      "id": "113"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 827.3447187500001,
+      "end": 828.13784375,
+      "text": "",
+      "id": "114"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 830.53409375,
+      "end": 838.0265937500001,
+      "text": " Pasas ahí, tú le haces algo, lo tocas, ¿haces algo a esta persona?",
+      "id": "115"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 838.8703437500001,
+      "end": 839.14034375,
+      "text": " y nos vemos en el próximo video, ¡hasta la próxima!",
+      "id": "116"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 839.4609687500001,
+      "end": 843.5278437500001,
+      "text": " No, no, yo lo hice. Yo tengo que grabarlo todo lo más rápido posible.",
+      "id": "117"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 846.4809687500001,
+      "end": 855.71159375,
+      "text": " Yo estoy acá necesitando simplemente para manejar un documento de divorcio de mi esposa. Simplemente por eso.",
+      "id": "118"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 859.06971875,
+      "end": 867.50721875,
+      "text": " Ya, perfecto.",
+      "id": "119"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 868.1315937500001,
+      "end": 870.9834687500002,
+      "text": " Y ahora, una acusación testa.",
+      "id": "120"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 870.5615937500002,
+      "end": 879.5390937500001,
+      "text": " ¿Performer?",
+      "id": "121"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 879.5390937500001,
+      "end": 894.3215937500001,
+      "text": " Sí, pero yo ya fui danado, yo ya perdí mi vuelo, voy a perder el bus que tengo para mi casa que son más de 700 kilómetros de distancia después del vuelo. ¿Eso va a causarme un trastorno? ¿Ya está causándome un trastorno?",
+      "id": "122"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 900.7678437500001,
+      "end": 911.0278437500001,
+      "text": " Yo te agradezco mucho. Si, si mira, como te explico, si para mí no es una gracia tenerte acá, ni tenerte jugando acá. Para mí no es gracioso. Yo tengo muchas cosas que hacer.",
+      "id": "123"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 915.9722187500001,
+      "end": 929.52284375,
+      "text": " ¡Claro! Esto es un problema, Pato. Para mí, lo más fácil es deshacerme de esto rápido. ¡Claro, claro! Por mí, yo iría al tiro, guiándote para allá, a ver qué hay de libre. ¡Claro! Pero yo lo que estoy tratando de hacer es bajarle un poco el tema a este hueón.",
+      "id": "124"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 931.3115937500002,
+      "end": 933.1003437500001,
+      "text": " ¡Ay, qué me doy mal, qué mentira!",
+      "id": "125"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 933.4209687500002,
+      "end": 936.9478437500002,
+      "text": " ¡Mira! ¡Ahí la cámara! ¡Ahí la cámara! ¡Mira! ¡Esa cámara! ¡Esa cámara!",
+      "id": "126"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 939.1922187500002,
+      "end": 946.54971875,
+      "text": " No hay nada en la cámara? No, pero yo puedo tener la parte de la grabación que fui acusado de?",
+      "id": "127"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 939.66471875,
+      "end": 939.8334687500001,
+      "text": "",
+      "id": "128"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 946.95471875,
+      "end": 949.67159375,
+      "text": " Nosotros vamos a tratar de recuperarlos y ni nosotros lo tenemos todavía.",
+      "id": "129"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 949.8234687500001,
+      "end": 954.85221875,
+      "text": " pero ya fue, ya no me pasó nada pero no podrían hacer eso en cuanto yo estaba en el vuelo",
+      "id": "130"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 951.2747187500001,
+      "end": 951.5615937500002,
+      "text": "",
+      "id": "131"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 960.91034375,
+      "end": 965.53409375,
+      "text": " Lo que tu puedas hacer es hacer el reclamo directamente a la compañía, ni siquiera a la compañía.",
+      "id": "132"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 969.48284375,
+      "end": 971.01846875,
+      "text": " para ir ya en damento.",
+      "id": "133"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 971.28846875,
+      "end": 971.5247187500001,
+      "text": " video.",
+      "id": "134"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 972.4697187500001,
+      "end": 975.25409375,
+      "text": " Va a ser otro, va a ser otro.",
+      "id": "135"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 973.3134687500001,
+      "end": 974.0390937500001,
+      "text": " va a ser otro",
+      "id": "136"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 974.83221875,
+      "end": 977.3803437500001,
+      "text": " va a ser otro, ¿entiendes?",
+      "id": "137"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 978.6797187500001,
+      "end": 986.5265937500001,
+      "text": " Es todo el desperdicio también de tiempo de ustedes y de los otros funcionarios que tuvieron que ir allá.",
+      "id": "138"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 987.6909687500001,
+      "end": 1004.8697187500002,
+      "text": " ¿Entiendes? Los pasajeros que se quedaron en el vuelo, que muchos van a perder su vuelo de conexión, ¿entiendes? Todo eso por una persona intentando se victimizar.",
+      "id": "139"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1005.47721875,
+      "end": 1005.5278437500001,
+      "text": " ¡Gracias por ver el video!",
+      "id": "140"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1012.48034375,
+      "end": 1013.0034687500001,
+      "text": "",
+      "id": "141"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1013.1047187500001,
+      "end": 1021.23846875,
+      "text": " ¿Qué hago yo? Espera un momento, vamos a hacer un control de identidad, que verificamos que tu pasaporte está bien y todo eso, ¿ya?",
+      "id": "142"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1022.7065937500001,
+      "end": 1025.9803437500002,
+      "text": " Vamos, vas a poder seguir con tu... tratás de reesquentar el juego de los dos lados.",
+      "id": "143"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1025.1028437500001,
+      "end": 1027.75221875,
+      "text": " Ya, pero ¿y qué va a pasar con mi vuelo?",
+      "id": "144"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1028.6128437500001,
+      "end": 1030.67159375,
+      "text": " Tienes que arreglarlo, si ya obviamente...",
+      "id": "145"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1030.78971875,
+      "end": 1033.77659375,
+      "text": " No, sí, pero ¿yo tengo que ir a agendarlo?",
+      "id": "146"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1034.58659375,
+      "end": 1036.6790937500002,
+      "text": " tiene que viajar",
+      "id": "147"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1036.6790937500002,
+      "end": 1038.97409375,
+      "text": " Sí, no, yo entiendo que sí, pero...",
+      "id": "148"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1039.22721875,
+      "end": 1041.7247187500002,
+      "text": " Pero claro, ahí ya lo ves, es un tema entre varios.",
+      "id": "149"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1041.2859687500002,
+      "end": 1048.79534375,
+      "text": " Sí, pero entre yo y la compañía, ¿eh? Sí, claro, pero tú te preguntando...",
+      "id": "150"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1049.53784375,
+      "end": 1061.8565937500002,
+      "text": " como alguien que tal vez sabe de desinformación, no quise ser de tu parte, pero pasó eso, tú sacas a una persona del vuelo sin justificación, sin motivo, sin razón.",
+      "id": "151"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1061.8565937500002,
+      "end": 1067.22284375,
+      "text": " Eso tienes que tratar de explicarlo cuando vayas a reagendarlo.",
+      "id": "152"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1067.22284375,
+      "end": 1069.65284375,
+      "text": " No, pero, pero...",
+      "id": "153"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1069.4165937500002,
+      "end": 1087.4053437500002,
+      "text": " Porque ellos en el sistema van a tener que tu llegaste a la hora, que tu estuviste todo bien y no hay ninguna denuncia en tu contra, ya, y van a decir, ok, acá hubo un problema, un problema quizás entre el particular de la persona a quien te atendió, contigo, pero no hay nada que sea que hayas llegado tarde, no tuviste ningún problema, no llegaste a la hora correcta.",
+      "id": "154"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1087.74284375,
+      "end": 1093.4465937500001,
+      "text": " Pero que ahora después del vuelo, entendí, pero entonces el detalle es que ahora yo tengo un problema más, ¿verdad? ¿Qué es?",
+      "id": "155"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1094.1722187500002,
+      "end": 1102.6434687500002,
+      "text": " ¿Podría agendar mi pasaje con la compañía aérea? Exacto. ¿Ellos no van a se prontificar y arreglar eso todo?",
+      "id": "156"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1103.67284375,
+      "end": 1104.8709687500002,
+      "text": " ¡Claro!",
+      "id": "157"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1108.4822187500001,
+      "end": 1113.52784375,
+      "text": " Yo soy policía y aquí veo lo que hay detenido. Yo aquí veo si hay detenciones o no.",
+      "id": "158"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1113.52784375,
+      "end": 1117.57784375,
+      "text": " ¿Hay algún lugar donde pueda pegar un poco de agua?",
+      "id": "159"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1159.47846875,
+      "end": 1161.5372187500002,
+      "text": " y nos vemos en el próximo vídeo, ¡hasta la próxima!",
+      "id": "160"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 1168.47284375,
+      "end": 1170.3797187500002,
+      "text": " ¡Adiós!",
+      "id": "161"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1193.7515937500002,
+      "end": 1212.65159375,
+      "text": " Como te digo, al final nosotros lo que buscamos es ser lo más objetivo posible, ver qué pasó y escuchar ambas partes. Porque si viene una persona a decirme, oye me agredió y nunca pasó nada, de hecho hasta nosotros mismos estamos incurriendo en un error. ¿Ya? Y no es la idea, ¿ya? Por eso es que ves todo lo que ha sucedido y todo lo demás. Y yo te entiendo. ¿Ya? Por eso yo hablé contigo directamente.",
+      "id": "162"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1224.9703437500002,
+      "end": 1229.93159375,
+      "text": " Ahora, como te digo, espérame un momento. Quiero explicarme un poco el tema.",
+      "id": "163"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1231.0115937500002,
+      "end": 1231.5347187500001,
+      "text": "",
+      "id": "164"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 1233.57659375,
+      "end": 1235.3653437500002,
+      "text": " Tenemos que ir un momento, tenemos que ir de un lado.",
+      "id": "165"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 1270.9715937500002,
+      "end": 1271.2247187500002,
+      "text": " Subtítulos realizados por la comunidad de Amara.org",
+      "id": "166"
+    }
+  ]
+}

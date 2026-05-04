@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from typing import Protocol, runtime_checkable
 
+from src.domain.entities.project import Project
 from src.domain.entities.reference import AudioManifest, IncidentNarrative, ReferenceTranscript
 from src.domain.entities.transcript import DiarizationTurn, Transcript
 
@@ -203,6 +204,31 @@ class TranscriptReconcilerPort(Protocol):
         *,
         narrative: IncidentNarrative | None = None,
         language: str = "es",
+        references: list[ReferenceTranscript] | None = None,
     ) -> dict:
-        """Return reconciled segments + metadata (tokens, cost, speaker_map)."""
+        """Return reconciled segments + metadata (tokens, cost, speaker_map).
+
+        ``reference`` is the primary (highest-quality) reference. ``references``
+        is an optional ranked list of additional priors; when provided, the
+        reconciler should weight earlier entries more heavily but use the full
+        set as cross-checks. Implementations remain backward-compatible when
+        ``references`` is omitted.
+        """
         ...
+
+
+# ---------------------------------------------------------------------------
+# Project Store
+# ---------------------------------------------------------------------------
+@runtime_checkable
+class ProjectStorePort(Protocol):
+    """Persist and load Project (event journey) records."""
+
+    def save(self, project: Project) -> str: ...
+
+    def load(self, project_id: str) -> Project | None: ...
+
+    def delete(self, project_id: str) -> bool: ...
+
+    def list_projects(self) -> list[Project]: ...
+

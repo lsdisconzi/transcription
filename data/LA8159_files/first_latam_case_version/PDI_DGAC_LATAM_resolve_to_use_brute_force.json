@@ -1,0 +1,602 @@
+{
+  "title": "PDI_DGAC_LATAM_resolve_to_use_brute_force",
+  "recordingDateTime": "2024-07-05T14:55",
+  "segments": [
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 4.2497187499999995,
+      "end": 4.50284375,
+      "text": " ¿Eh?",
+      "id": "0"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 8.485343750000002,
+      "end": 9.278468750000002,
+      "text": " ¿Puedo preguntar?",
+      "id": "1"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 10.476593750000003,
+      "end": 14.83034375,
+      "text": " ¿Cuál fue el primer motivo por el que te fuiste a sacar? Porque yo tenía agredido a alguien.",
+      "id": "2"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 16.46721875,
+      "end": 16.51784375,
+      "text": "",
+      "id": "3"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 24.60096875,
+      "end": 26.136593750000003,
+      "text": " Ya, ¿puedes parar con el drama?",
+      "id": "4"
+    },
+    {
+      "speaker": "PDI",
+      "start": 27.08159375,
+      "end": 27.53721875,
+      "text": " Si, eso es.",
+      "id": "5"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 29.528468750000002,
+      "end": 30.81096875,
+      "text": " ¿Ya? ¿Y ahora?",
+      "id": "6"
+    },
+    {
+      "speaker": "PDI",
+      "start": 31.97534375,
+      "end": 32.025968750000004,
+      "text": "",
+      "id": "7"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 32.88659375,
+      "end": 33.96659375,
+      "text": " Me voy a soltar un poco porque quiero...",
+      "id": "8"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 34.70909375,
+      "end": 34.979093750000004,
+      "text": " ",
+      "id": "9"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 34.979093750000004,
+      "end": 35.11409375,
+      "text": "",
+      "id": "10"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 35.78909375,
+      "end": 44.53034375,
+      "text": " ¿Ya? Entrego entonces los caracoles de cuando yo estaba listo que no fue por el segundo nivel para ganar la situación. ¿Para que se vea maíz, eh? Por eso, lo entrego de nuevo. Ya, chiquillo. ¿Estás listo? Ya. Ya. Ya.",
+      "id": "11"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 41.00346875,
+      "end": 41.54346875,
+      "text": "",
+      "id": "12"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 49.45784375,
+      "end": 51.12846875,
+      "text": " Yo no sé, pero yo no voy a me acercar.",
+      "id": "13"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 52.984718750000006,
+      "end": 54.705968750000004,
+      "text": " ¿Qué vamos a hacer? ¿Qué estamos haciendo?",
+      "id": "14"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 56.477843750000005,
+      "end": 56.98409375000001,
+      "text": " algún policía.",
+      "id": "15"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 57.77721875,
+      "end": 58.688468750000006,
+      "text": " ¡Vamos con policía!",
+      "id": "16"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 59.49846875,
+      "end": 60.24096875,
+      "text": " Ya, bueno.",
+      "id": "17"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 61.38846875,
+      "end": 62.99159375000001,
+      "text": " Bueno, bueno. La, la.",
+      "id": "18"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 64.08846875,
+      "end": 65.99534375,
+      "text": " ¿La grabación de las cámaras también?",
+      "id": "19"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 67.10909375,
+      "end": 69.03284375,
+      "text": " La grabación de las cámaras también, ¿no?",
+      "id": "20"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 71.96909375,
+      "end": 72.00284375000001,
+      "text": "",
+      "id": "21"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 73.89284375000001,
+      "end": 74.90534375,
+      "text": " Era eso, ¡eh!",
+      "id": "22"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 76.82909375,
+      "end": 77.65596875,
+      "text": " es un absurdo",
+      "id": "23"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 84.70971875000001,
+      "end": 86.83596875,
+      "text": " Tiene la cámara, ¿cierto? Tiene la grabación.",
+      "id": "24"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 87.42659375000001,
+      "end": 88.03409375000001,
+      "text": " Ya.",
+      "id": "25"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 88.03409375000001,
+      "end": 91.35846875,
+      "text": " Ya, si se tiene la grabación bacana, pero si no...",
+      "id": "26"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 91.98284375,
+      "end": 91.99971875,
+      "text": "",
+      "id": "27"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 101.97284375000001,
+      "end": 110.56221875000001,
+      "text": " ¡Espera! ¡Espera! ¡Espera! ¡Espera!",
+      "id": "28"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 111.03471875000001,
+      "end": 113.16096875000001,
+      "text": " ¡Mira! ¡Querido Utes!",
+      "id": "29"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 117.22784375,
+      "end": 122.72909375,
+      "text": " No, no es, no es, no. Mira, agresión, agresión. Agresión, agresión.",
+      "id": "30"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 123.52221875000001,
+      "end": 125.26034375,
+      "text": " ¡No toques, tú no puedes tocarme!",
+      "id": "31"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 128.01096875000002,
+      "end": 128.02784375000002,
+      "text": "",
+      "id": "32"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 133.07346875000002,
+      "end": 134.06909375,
+      "text": " ???¡Paita!",
+      "id": "33"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 134.82846875,
+      "end": 135.90846875,
+      "text": " !Está cómico eso!",
+      "id": "34"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 156.74909375000001,
+      "end": 157.94721875000002,
+      "text": " ¿Quiere un tiquete?",
+      "id": "35"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 158.92596875,
+      "end": 165.25409375,
+      "text": " Si, pero camina, pero camina. No, si tu te paras ahí yo te voy a empujar, porque tienes que seguirnos.",
+      "id": "36"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 165.86159375,
+      "end": 167.07659375,
+      "text": " Ya no era hacer lo que tú quieras.",
+      "id": "37"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 167.75159375,
+      "end": 170.53596875000002,
+      "text": " Ah, ya no es así, lo que yo quiera. Yo nunca he hecho lo que yo quiera.",
+      "id": "38"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 170.53596875000002,
+      "end": 179.02409375000002,
+      "text": " Tú estás en un país, en Chile, donde la seguridad la vemos nosotros, donde tú tienes que cumplir lo que te dice la seguridad.",
+      "id": "39"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 179.02409375000002,
+      "end": 182.97284375,
+      "text": "Yo cumplí. Y ahora sí tú me pruebas que yo no cumplí, bacana, pero yo la cumplí.",
+      "id": "40"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 183.68159375000002,
+      "end": 189.16596875000002,
+      "text": " Cuando yo te dije, bajémonos, conversemos abajo, hagamos las cosas bien, hubiese sido distinto.",
+      "id": "41"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 189.16596875000002,
+      "end": 192.18659375000001,
+      "text": " Para mi amigo, para mi amigo ¡Mira!",
+      "id": "42"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 193.94159375,
+      "end": 195.86534375000002,
+      "text": " Tiene que tener un motivo para me sacar del avión.",
+      "id": "43"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 196.38846875000002,
+      "end": 198.36284375000002,
+      "text": " Los motivos los dio la compañía y es lo más importante.",
+      "id": "44"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 197.85659375,
+      "end": 211.32284375,
+      "text": " Y los motivos son cambiados, ¿por qué fue cambiado? Pero, pero, pero, pero, yo esperaría que tú, ya que eres de la Segurancia, fuese a verificar esas informaciones. Si no son correctas, no son correctas. ",
+      "id": "45"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 197.85659375,
+      "end": 211.32284375,
+      "text": "Eso tú lo tienes que conversar con la compañia.",
+      "id": "46"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 208.30221875,
+      "end": 208.79159375,
+      "text": " ¡Eso es informa-!",
+      "id": "4"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 209.44971875000002,
+      "end": 209.82096875000002,
+      "text": "",
+      "id": "47"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 210.47909375,
+      "end": 216.03096875,
+      "text": " Claro, pero se verifica con la compañía, no lo podemos verificar en el avión",
+      "id": "48"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 216.03096875,
+      "end": 223.48971875,
+      "text": "Entonces, un funcionario... porque si picó una pregunta puede decidir de atrasar el vuelo",
+      "id": "49"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 222.89909375000002,
+      "end": 223.82721875000001,
+      "text": " El límite de la huésped.??????????????????????",
+      "id": "50"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 224.46846875000003,
+      "end": 224.77221875,
+      "text": " Vale.",
+      "id": "51"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 225.73409375000003,
+      "end": 226.74659375000002,
+      "text": " Ya a lo mejor está bien o está mal.",
+      "id": "52"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 227.50596875000002,
+      "end": 228.01221875000002,
+      "text": " ¡Pero lo hace!",
+      "id": "53"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 232.61909375000002,
+      "end": 235.84221875000003,
+      "text": " Pero ahí va a tener que tener algún tipo de justificación para eso!.",
+      "id": "54"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 240.48284375000003,
+      "end": 241.19159375,
+      "text": "Claro ¡Ahí va el trozo!",
+      "id": "55"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 243.65534375000001,
+      "end": 244.02659375000002,
+      "text": "",
+      "id": "56"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 244.02659375000002,
+      "end": 244.04346875000002,
+      "text": "",
+      "id": "57"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 245.59596875000003,
+      "end": 246.33846875,
+      "text": " ¿Tienes que estar milagrosa?",
+      "id": "58"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 270.97596875,
+      "end": 274.13159375000004,
+      "text": " Será que se cuenta esa historia? No.",
+      "id": "59"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 277.77659375,
+      "end": 278.02971875000003,
+      "text": "",
+      "id": "60"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 281.64096875,
+      "end": 283.41284375000004,
+      "text": " ¿Qué sabes de Bogotá o más cosas?",
+      "id": "61"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 284.03721875,
+      "end": 285.89346875,
+      "text": " a veces hemos evitado más cosas",
+      "id": "62"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 285.89346875,
+      "end": 319.57596875,
+      "text": " Pero si hubiese accedido al diálogo con nosotros, ya estaría caminando. ",
+      "id": "63"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 299.56221875,
+      "end": 300.33846875,
+      "text": " Espera. Sí.",
+      "id": "64"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 320.85846875000004,
+      "end": 337.26096875,
+      "text": " Primero intento que yo lo agredí, y de ahí claramente que vieron la cámara y que eso no pasó y de ahí vieron cualquier otra cosa, pero fue él mismo que estaba allí, que recibió mi pasaporte Ahora, si él no sacó mi boarding pass de dentro de mi pasaporte que estaba allí adentro",
+      "id": "65"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 357.67971875,
+      "end": 366.47159375,
+      "text": " Pero ahora empecé a ver que, alén de un proceso a la latam, yo puedo desarrollar un panapara cada uno....",
+      "id": "66"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 367.61909375000005,
+      "end": 368.54721875,
+      "text": " simplemente porque...",
+      "id": "67"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 370.62284375,
+      "end": 372.00659375000004,
+      "text": "la attitude fue ",
+      "id": "68"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 373.74471875,
+      "end": 374.09909375,
+      "text": " ",
+      "id": "69"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 374.72346875000005,
+      "end": 375.51659375,
+      "text": "Inadequada!!",
+      "id": "70"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 377.69346875,
+      "end": 383.97096875,
+      "text": " La agresión, no, no, no, la agresión, la justificativa para me sacar del vuelo.",
+      "id": "71"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 388.98284375000003,
+      "end": 389.03346875,
+      "text": "",
+      "id": "72"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 390.43409375000005,
+      "end": 391.37909375000004,
+      "text": " Y ahí está el problema.",
+      "id": "73"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 394.97346875000005,
+      "end": 398.43284375,
+      "text": " Es por eso que aquí me sacaste a engañar, ¿entiendes?",
+      "id": "74"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 398.07846875,
+      "end": 404.03534375000004,
+      "text": " Nosotros lo hacemos porque la compañía informa, ellos son los protocolos de seguridad de los aeropuertos, en general.",
+      "id": "75"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 410.98784375,
+      "end": 418.69971875000005,
+      "text": " De hecho, a la policía tú le podés colocar igual una denuncia al tiro, una denuncia. A la policía tú le explicas que fue justo y que... No, pero... Y todo lo que decías.",
+      "id": "76"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 419.25659375000004,
+      "end": 424.03221875,
+      "text": " Pero ahora van a tener que darme algún tipo de prueba por qué me sacaron del vuelo.",
+      "id": "77"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 425.48346875000004,
+      "end": 430.25909375000003,
+      "text": " Ya, pero ahí igual, ¿por qué el comandante lo pidió?",
+      "id": "78"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 431.35596875000005,
+      "end": 434.52846875,
+      "text": " Eso se lo dice a la policía.",
+      "id": "79"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 443.97846875000005,
+      "end": 444.24846875000003,
+      "text": "",
+      "id": "80"
+    },
+    {
+      "speaker": "DGAC & PDI",
+      "start": 444.24846875000003,
+      "end": 444.95721875000004,
+      "text": " ¿Acá de vacaciones?",
+      "id": "81"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 444.95721875000004,
+      "end": 450.72846875000005,
+      "text": " No, yo estoy un año viviendo acá. No, estoy viviendo acá y estoy divorciando de una chilena en este dato momento.",
+      "id": "82"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 451.85909375000006,
+      "end": 456.02721875000003,
+      "text": " Venía acá simplemente para ver a mi hija y a ver a mi esposa.",
+      "id": "83"
+    }
+  ],
+  "audio_file": "PDI_DGAC_LATAM_resolve_to_use_brute_force.mp3"
+}

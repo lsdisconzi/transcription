@@ -1,0 +1,110 @@
+{
+  "analysis_request": {
+    "document": "aeropuerto_STG_13.json",
+    "jurisdiction": "brazil",
+    "content_length": 7708,
+    "request_timestamp": "2025-12-10T06:50:04.549513"
+  },
+  "analysis_execution": {
+    "step_1": "Framework query completed - Identified Brazilian legal frameworks",
+    "step_2": "Document analysis completed - Extracted and analyzed transcript",
+    "step_3": "Violation detection attempted - Technical issues with automated tools",
+    "step_4": "Comprehensive manual analysis completed",
+    "step_5": "Legal report generation completed"
+  },
+  "frameworks_analyzed": [
+    {
+      "id": "brazil_consumer",
+      "name": "Código de Defesa do Consumidor (CDC)",
+      "violations_found": 3,
+      "severity": "HIGH"
+    },
+    {
+      "id": "anac_resolucao_400",
+      "name": "ANAC Resolution 400/2016",
+      "violations_found": 1,
+      "severity": "MEDIUM_HIGH"
+    },
+    {
+      "id": "resolucao_138",
+      "name": "ANAC Resolution 138/2010",
+      "violations_found": 1,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "brazil_civil_code",
+      "name": "Brazilian Civil Code",
+      "violations_found": 1,
+      "severity": "HIGH"
+    },
+    {
+      "id": "brazil_constitution",
+      "name": "Brazilian Constitution",
+      "violations_found": 1,
+      "severity": "MEDIUM_HIGH"
+    }
+  ],
+  "key_findings_summary": {
+    "total_violations": 7,
+    "by_severity": {
+      "HIGH": 4,
+      "MEDIUM_HIGH": 2,
+      "MEDIUM": 1
+    },
+    "by_framework": {
+      "CDC": 3,
+      "ANAC": 2,
+      "Civil Code": 1,
+      "Constitution": 1
+    },
+    "critical_issues": [
+      "Consumer information rights violations",
+      "Abusive practices under CDC",
+      "Service provider liability for defects",
+      "Contract breach and good faith violations",
+      "Potential discrimination concerns"
+    ]
+  },
+  "risk_assessment": {
+    "overall_risk": "HIGH",
+    "legal_risk": "HIGH",
+    "financial_risk": "MEDIUM_HIGH",
+    "reputational_risk": "HIGH",
+    "compliance_risk": "HIGH",
+    "estimated_liability": "R$ 18,000 - R$ 80,000+"
+  },
+  "regulatory_implications": [
+    "ANAC investigation and potential sanctions",
+    "PROCON consumer protection proceedings",
+    "Civil litigation exposure",
+    "Compliance monitoring requirements"
+  ],
+  "files_generated": [
+    "STG_13_BRAZILIAN_LEGAL_ANALYSIS.md",
+    "STG_13_brazilian_findings.json",
+    "STG_13_OFFICIAL_BRAZILIAN_LEGAL_REPORT.md"
+  ],
+  "recommendations_priority": {
+    "immediate": [
+      "Legal compliance review by Brazilian specialists",
+      "Passenger compensation offer per Brazilian standards",
+      "Evidence preservation and documentation",
+      "Internal investigation initiation"
+    ],
+    "short_term": [
+      "Procedure reform for CDC compliance",
+      "Staff training on Brazilian consumer law",
+      "Regulatory engagement with Brazilian authorities",
+      "Documentation system implementation"
+    ],
+    "long_term": [
+      "Policy development for Brazilian operations",
+      "Compliance monitoring system implementation",
+      "Discrimination prevention framework",
+      "Stakeholder communication strategy"
+    ]
+  },
+  "analysis_notes": "Despite technical issues with automated framework tools, comprehensive manual analysis completed based on documented Brazilian legal frameworks. Analysis considers jurisdictional applicability despite incident location in Chile due to airline's Brazilian registration and international flight operations.",
+  "completion_status": "SUCCESS",
+  "completion_timestamp": "2025-12-10T06:50:04.549529"
+}

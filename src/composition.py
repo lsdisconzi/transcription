@@ -14,6 +14,7 @@ from .infrastructure.audio_file_adapter import AudioFileAdapter
 from .infrastructure.json_store import JSONTranscriptStore
 from .infrastructure.model_manager import ModelManager
 from .infrastructure.narrative_store_adapter import NarrativeStoreAdapter
+from .infrastructure.project_store_adapter import ProjectStoreAdapter
 from .infrastructure.pyannote_adapter import PyAnnoteDiarizerAdapter
 from .infrastructure.pydub_processor import PydubProcessorAdapter
 from .infrastructure.reference_store_adapter import ReferenceStoreAdapter
@@ -34,6 +35,7 @@ class transcriptionRuntime:
     audio_file_adapter: AudioFileAdapter
     ref_store_adapter: ReferenceStoreAdapter
     narrative_store_adapter: NarrativeStoreAdapter
+    project_store_adapter: ProjectStoreAdapter
 
     qdrant_adapter: Any = None
     reconciler_adapter: Any = None
@@ -55,6 +57,7 @@ def build_runtime() -> transcriptionRuntime:
     audio_file_adapter = AudioFileAdapter()
     ref_store_adapter = ReferenceStoreAdapter(settings.REFERENCE_DIR)
     narrative_store_adapter = NarrativeStoreAdapter(settings.NARRATIVE_DIR)
+    project_store_adapter = ProjectStoreAdapter(settings.PROJECTS_DIR)
 
     runtime = transcriptionRuntime(
         model_manager=model_manager,
@@ -65,6 +68,7 @@ def build_runtime() -> transcriptionRuntime:
         audio_file_adapter=audio_file_adapter,
         ref_store_adapter=ref_store_adapter,
         narrative_store_adapter=narrative_store_adapter,
+        project_store_adapter=project_store_adapter,
     )
 
     if settings.ANTHROPIC_API_KEY:

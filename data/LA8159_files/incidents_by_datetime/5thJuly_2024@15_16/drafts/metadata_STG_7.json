@@ -1,0 +1,10 @@
+{
+  "case_id": "STG_7",
+  "title": "Relatório de Conformidade Legal",
+  "date": "2023-07-05",
+  "location": "Aeroporto STG",
+  "investigating_authorities": ["Autoridade Aérea"],
+  "risk_level": "Alto",
+  "confidence_overall": "Média",
+  "items_pending": []
+}

@@ -1,0 +1,93 @@
+{
+  "title": "aeropuerto_STG_7_segment_7",
+  "filename": "aeropuerto_STG_7_segment_7",
+  "recordingdatetime": "2024-07-05T15:16:00",
+  "audio_id": "aeropuerto_STG_7_segment_7",
+  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
+  "content": [
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 0.03,
+      "end": 3.84,
+      "text": " No, no, tu viviendo acá y tu me divorciando de una chilena en el segundo momento.",
+      "id": "0"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 4.98,
+      "end": 8.49,
+      "text": " vine acá simplemente para venir y arreglar mis cosas.",
+      "id": "1"
+    },
+    {
+      "speaker": "DGAC",
+      "start": 8.49,
+      "end": 9.53,
+      "text": " ¿Le sigo? Sí.",
+      "id": "2"
+    },
+    {
+      "speaker": "DGAC Officials",
+      "start": 26.27,
+      "end": 27.17,
+      "text": " Me cago en un tigre.",
+      "id": "3"
+    },
+    {
+      "speaker": "DGAC Officials",
+      "start": 29.33,
+      "end": 31.1,
+      "text": " Que le vaya bien, ahí le explica todo.",
+      "id": "4"
+    },
+    {
+      "speaker": "PDI-FELIPE",
+      "start": 33.14,
+      "end": 34.22,
+      "text": "",
+      "id": "5"
+    },
+    {
+      "speaker": "PDI-FELIPE",
+      "start": 34.81,
+      "end": 41.29,
+      "text": " Leandro, ¿puedes explicarme primero por qué te sacaron del vuelo?",
+      "id": "6"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 44.36,
+      "end": 45.04,
+      "text": " Me he perdido me he perdido",
+      "id": "7"
+    },
+    {
+      "speaker": "PDI-FELIPE",
+      "start": 46.37,
+      "end": 47.03,
+      "text": "",
+      "id": "8"
+    },
+    {
+      "speaker": "PDI-FELIPE",
+      "start": 48.66,
+      "end": 56.83,
+      "text": " de las antecedentes de ambas partes, ¿vale? Quiero saber qué pasó por parte de la compañía y qué pasó por tu parte, ¿ya? Para ser totalmente objetivos en el tema, ¿ya?",
+      "id": "9"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 57.76,
+      "end": 63.57,
+      "text": " Yo tengo que decir lo que pasó? Usted tiene que me explicar por qué me saco? A mí no pasó nada?",
+      "id": "10"
+    },
+    {
+      "speaker": "PDI-FELIPE",
+      "start": 63.95,
+      "end": 67.95,
+      "text": " Por eso yo quiero saber qué pasó, por qué te bajaron, te dieron alguna explicación, algo.",
+      "id": "11"
+    }
+  ]
+}

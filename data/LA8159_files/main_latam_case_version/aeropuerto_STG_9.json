@@ -1,0 +1,89 @@
+{
+  "title": "aeropuerto_STG_9",
+  "filename": "aeropuerto_STG_9",
+  "recordingdatetime": "2024-07-05T16:30:00",
+  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
+  "content": [
+    {
+      "speaker": "SPEAKER_03",
+      "start": 11.657843750000001,
+      "end": 18.82971875,
+      "text": " Es solo una pregunta, no tengo ni idea de tiempo para saber si empiezo a trabajar o no, es solo para entender",
+      "id": "0"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 18.82971875,
+      "end": 20.19659375,
+      "text": " 15 minutos como máximo",
+      "id": "1"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 20.19659375,
+      "end": 21.52971875,
+      "text": " Ya. Bacalao. Gracias.",
+      "id": "2"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 34.47284375,
+      "end": 45.57659375,
+      "text": " ¡Suscríbete y activa la campanita para recibir notificaciones de los próximos videos!",
+      "id": "3"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 80.98034375,
+      "end": 81.19971875,
+      "text": "",
+      "id": "4"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 81.92534375000001,
+      "end": 86.02596875,
+      "text": " ¡Ah! Ahí, ahí. Cuidma, cuidma. Me interesa.",
+      "id": "5"
+    }
+  ],
+  "metadata_extracted_at": "2025-10-22T10:06:36.699082",
+  "recordingDateTime": "2024-07-05T14:30",
+  "metadata": {
+    "timestamps": {
+      "QuickTime Movie Header.Created": "2024-07-05T22:30:30.000Z",
+      "QuickTime Movie Header[0].Preview Time": "0",
+      "QuickTime Movie Header[0].Poster Time": "0",
+      "QuickTime Movie Header[0].Selection Time": "0",
+      "QuickTime Movie Header[0].Current Time": "0",
+      "File[0].File Modified Date": "Sun Jul 06 12:53:47 -03:00 2025"
+    },
+    "audioProperties": {
+      "Duration": "00:01:55.0933333",
+      "QuickTime Movie Header[0].TrackId": "48000",
+      "QuickTime Movie Header[0].Duration": "00:01:55.0933333",
+      "QuickTime Movie Header[0].Preferred Volume": "1",
+      "QuickTime Movie Header[0].Preview Duration": "0",
+      "QuickTime Movie Header[0].Selection Duration": "0",
+      "QuickTime Movie Header[0].Next Track Id": "2",
+      "QuickTime Track Header[0].TrackId": "1",
+      "QuickTime Track Header[0].Duration": "5524480",
+      "QuickTime Track Header[0].Volume": "1"
+    },
+    "fileInfo": {
+      "File Size": "987347 bytes",
+      "Major Brand": "M4A ",
+      "fileName": "aeropuerto_STG_9.m4a",
+      "fileSizeBytes": 987347,
+      "fileSize": "964.21 KB",
+      "contentType": "audio/mp4",
+      "physicalPath": "/Users/leandrodisconzi/Documents/sa_server/ollama/static/transcripts/transcripts_audio/aeropuerto_STG_9.m4a"
+    },
+    "location": {},
+    "deviceInfo": {
+      "QuickTime Movie Header[0].Version": "0",
+      "QuickTime Track Header[0].Version": "0"
+    }
+  },
+  "audio_id": "aeropuerto_STG_9"
+}

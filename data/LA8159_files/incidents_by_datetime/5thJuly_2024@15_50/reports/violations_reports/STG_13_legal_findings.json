@@ -1,0 +1,123 @@
+{
+  "case_id": "STG_13",
+  "incident_date": "2024-07-05T15:50:00",
+  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
+  "airline": "LATAM Airlines",
+  "passenger": "Leandro Disconzi",
+  "security_officer": "Joaquin Barraza (Chief of security Latam?)",
+  "analysis_date": "2025-12-10T06:37:18.070499",
+  "jurisdiction": "Chile",
+  "frameworks_applied": [
+    "Chilean Consumer Protection Law (Ley 19.496)",
+    "Chilean Constitution",
+    "DGAC Regulations",
+    "ICAO Annex 9",
+    "Montreal Convention 1999"
+  ],
+  "violations": [
+    {
+      "id": "VIO-001",
+      "category": "CONSUMER_RIGHTS",
+      "severity": "HIGH",
+      "description": "Denial of written explanation for service denial",
+      "legal_basis": "Ley 19.496 Artículo 3 - Right to adequate information",
+      "evidence": [
+        "Passenger request: '¡Por escrito!'",
+        "Officer response: 'No hai nada por escrito'",
+        "Passenger confirmation: 'No hay nada por escrito'"
+      ],
+      "risk_level": "HIGH",
+      "recommendation": "Provide written explanation within 24 hours"
+    },
+    {
+      "id": "VIO-002",
+      "category": "DUE_PROCESS",
+      "severity": "HIGH",
+      "description": "Refusal to show alleged evidence (CCTV footage)",
+      "legal_basis": "Right to defense and procedural fairness",
+      "evidence": [
+        "Officer claim: 'Yo lo vi en camera'",
+        "Passenger request: 'pero muestrame!'",
+        "Officer refusal: 'No te puedo mostrar la camera'"
+      ],
+      "risk_level": "HIGH",
+      "recommendation": "Preserve and provide access to evidence"
+    },
+    {
+      "id": "VIO-003",
+      "category": "COMPLAINT_HANDLING",
+      "severity": "HIGH",
+      "description": "Blocking complaint escalation to supervisor",
+      "legal_basis": "Ley 19.496 Artículo 17 - Right to claim and obtain redress",
+      "evidence": [
+        "Passenger request: 'Ya, me lleva por favor a alguien que pueda hablar que no sea tú'",
+        "Officer refusal: 'Nadie le va a dar una solución'",
+        "Further refusal: 'Pero nadie más le va a entregar información'"
+      ],
+      "risk_level": "HIGH",
+      "recommendation": "Establish clear escalation procedures"
+    },
+    {
+      "id": "VIO-004",
+      "category": "POTENTIAL_DISCRIMINATION",
+      "severity": "MEDIUM_HIGH",
+      "description": "Passenger concern about discrimination based on immigration status",
+      "legal_basis": "Chilean Constitution Artículo 19 - Equality before the law",
+      "evidence": [
+        "Passenger question: '¿Eso es porque yo soy inmigrante? ... ¿Eso es racismo?'",
+        "Requires investigation of differential treatment"
+      ],
+      "risk_level": "HIGH",
+      "recommendation": "Investigate for potential discriminatory practices"
+    },
+    {
+      "id": "VIO-005",
+      "category": "DOCUMENTATION",
+      "severity": "MEDIUM",
+      "description": "Failure to document security incident properly",
+      "legal_basis": "DGAC Resolution 138/2010 - Incident reporting requirements",
+      "evidence": [
+        "No written incident report mentioned",
+        "No documentation provided to passenger",
+        "No supervisor review documented"
+      ],
+      "risk_level": "MEDIUM",
+      "recommendation": "Implement standardized incident documentation"
+    },
+    {
+      "id": "VIO-006",
+      "category": "COMMUNICATION",
+      "severity": "MEDIUM",
+      "description": "Unprofessional and dismissive communication",
+      "legal_basis": "Industry standards for customer service",
+      "evidence": [
+        "Officer statement: 'Usted es el ridículo que está haciendo el ridículo acá'",
+        "Dismissive tone throughout conversation",
+        "Lack of empathy for passenger situation"
+      ],
+      "risk_level": "MEDIUM",
+      "recommendation": "Customer service training for security staff"
+    }
+  ],
+  "risk_assessment": {
+    "overall_risk": "HIGH",
+    "financial_risk": "MEDIUM_HIGH",
+    "legal_risk": "HIGH",
+    "reputational_risk": "HIGH",
+    "operational_risk": "MEDIUM_HIGH"
+  },
+  "key_issues": [
+    "Systemic failure in passenger removal procedures",
+    "Lack of transparency in security decisions",
+    "Absence of proper documentation protocols",
+    "Deficient complaint handling mechanisms",
+    "Potential human rights concerns"
+  ],
+  "immediate_actions": [
+    "Preserve all CCTV footage from incident",
+    "Document written explanation of removal reasons",
+    "Initiate internal investigation",
+    "Contact passenger with formal response",
+    "Review and suspend current removal procedures"
+  ]
+}

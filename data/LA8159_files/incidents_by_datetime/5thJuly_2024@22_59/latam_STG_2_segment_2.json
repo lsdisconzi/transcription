@@ -1,0 +1,85 @@
+{
+  "title": "latam_STG_2_segment_2",
+  "subtitle": "Imported segment",
+  "filename": "latam_STG_2_segment_2",
+  "recordingdatetime": "2024-07-05T22:59:00",
+  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
+  "content": [
+    {
+      "id": "0",
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 0.03,
+      "end": 1.84,
+      "text": "...agresión...."
+    },
+    {
+      "id": "1",
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 2.9,
+      "end": 9.38,
+      "text": " ¿Y la entrada, ingresar a la aeronave sin autorización, si usted tiene alguna prueba para eso?"
+    },
+    {
+      "speaker": "Latam Supervisora (Antonela)",
+      "start": 8.74,
+      "end": 13,
+      "text": " Eso lo tiene que ver después con el área legal, cuando los contactam.. Eso no lo vemos  nosotros"
+    },
+    {
+      "speaker": "Latam Supervisora (Antonela)",
+      "start": 14,
+      "end": 15,
+      "text": "la area legal."
+    },
+    {
+      "speaker": "Latam Supervisora (Antonela)",
+      "start": 15,
+      "end": 17,
+      "text": "entonces, quien llego a esta conclusion  entonces?"
+    },
+    {
+      "speaker": "Latam Supervisora (Antonela)",
+      "start": 17,
+      "end": 19.2,
+      "text": "Eso nos vamos ver la area legal, ellos "
+    },
+    {
+      "speaker": "Latam Supervisora (Antonela)",
+      "start": 19.2,
+      "end": 23,
+      "text": "tienen neste momento las imagens e ...?????"
+    },
+    {
+      "speaker": "Latam Supervisora (Antonela)",
+      "start": 23,
+      "end": 34.2,
+      "text": "Bacana. Y yo? como passagero, como cliente? Me quedo botado, sin mi pasage, proibido de volar con la Latam..."
+    },
+    {
+      "speaker": "Latam Supervisora (Antonela)",
+      "start": 34.2,
+      "end": 38.1,
+      "text": "Segundo la informacion que nosotros tenemos, NO LE PODEMOS DAR OUTRA OPCION."
+    },
+    {
+      "speaker": "Latam Supervisora (Antonela)",
+      "start": 38.1,
+      "end": 40,
+      "text": "Ya, muchas gracias."
+    },
+    {
+      "id": "8",
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 40.94,
+      "end": 43.25,
+      "text": " Buenas noches. Muchas gracias."
+    }
+  ],
+  "segmentNumber": 2,
+  "isInnerSegment": true,
+  "parentFilename": "latam_STG_2",
+  "audio_file": "transcript_1745489310.wav",
+  "startTime": 0.03096875,
+  "endTime": 43.24784375,
+  "duration": 43.216875
+}

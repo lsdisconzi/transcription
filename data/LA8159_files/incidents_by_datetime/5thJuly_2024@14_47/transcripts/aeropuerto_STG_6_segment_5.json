@@ -1,0 +1,141 @@
+{
+  "title": "aeropuerto_STG_6_segment_5",
+  "subtitle": "Imported segment",
+  "filename": "aeropuerto_STG_6_segment_5",
+  "recordingdatetime": "2024-07-05T14:47:00",
+  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
+  "content": [
+    {
+      "speaker": "DGAC",
+      "start": 0.03,
+      "end": 7.5,
+      "text": " discriminación. ¿Y sabes por qué soy extranjero? ¿Por qué soy inmigrante? No le autorizaron el embarque y usted ingresó igual al avión. ¿Ah? No le autorizaron el embarque y usted ingresó igual.",
+      "id": 0
+    },
+    {
+      "speaker": "DGAC",
+      "start": 7.5,
+      "end": 9.53,
+      "text": "",
+      "id": 1
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 12.47,
+      "end": 15.86,
+      "text": " Sí, sí, claro, no, la historia ya está, como...",
+      "id": 2
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 16.86,
+      "end": 17.43,
+      "text": " es porque to...",
+      "id": 3
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 21.07,
+      "end": 25.9,
+      "text": " Usted está... ¡Mira! ¡Mira dónde está entrando! ¡Mira dónde usted está entrando!",
+      "id": 4
+    },
+    {
+      "speaker": "DGAC",
+      "start": 26.64,
+      "end": 32.97,
+      "text": " ¿Cómo le explico? Si usted tiene razón en lo que está diciendo, todo eso lo puede aclarar ahí y se lo va a tomar.  Eso no es necesario.",
+      "id": 5
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 32.97,
+      "end": 39.3,
+      "text": " Mira, yo tengo que estar en Brasilia, yo compré el vuelo y estoy acá, amigo. Si quiere me saca, me saca, acá. A fuerza, a fuerza, a fuerza, a fuerza.",
+      "id": 6
+    },
+    {
+      "speaker": "DGAC",
+      "start": 39.97,
+      "end": 41.22,
+      "text": " y puedes solucionarlo todo",
+      "id": 7
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 41.97,
+      "end": 56.01,
+      "text": " Yo no tengo que solucionar y limpiar nada, usted tiene que parar de intentar encontrar una solución, una forma de me sacar de acá, porque el piloto no quiere, el piloto no quiere, entonces ustedes están haciendo todo, ya cambiaron de narrativa, ya están con otra.",
+      "id": 8
+    },
+    {
+      "speaker": "DGAC",
+      "start": 56.66,
+      "end": 57.29,
+      "text": "",
+      "id": 9
+    },
+    {
+      "speaker": "DGAC",
+      "start": 60.04,
+      "end": 64.07,
+      "text": " es un diálogo de ser y un placer lo haga por eso le digo que tenemos que descender para que así podamos ver la situación ",
+      "id": 10
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 64.07,
+      "end": 68.1,
+      "text": "yo no voy, y cuando yo tengo otra opción yo no voy, punto",
+      "id": 11
+    },
+    {
+      "speaker": "DGAC",
+      "start": 69.64,
+      "end": 74.84,
+      "text": " No depende de mí, yo no soy quien lo ve, solamente vengo aquí a ver el procedimiento.",
+      "id": 12
+    },
+    {
+      "speaker": "DGAC",
+      "start": 76.78,
+      "end": 77.03,
+      "text": " Si",
+      "id": 13
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 78.35,
+      "end": 84.83,
+      "text": " Sí, sí, claro. Mira, por ti, se cuida dentro de tu zona, de la... Mira.",
+      "id": 14
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 86.58,
+      "end": 89.82,
+      "text": " Yo no hice nada de incorrecto, fui acusado primero.",
+      "id": 15
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 90.63,
+      "end": 100.77,
+      "text": " Falsa acusación de que yo pegué a un funcionario y ahora falsa acusación de que yo no mostré mi billete. Es ridículo lo que están haciendo, ridículo.",
+      "id": 16
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 101.91,
+      "end": 110.63,
+      "text": " Usted sabe muy bien, y eso que da mas rabia, usted sabe, usted sabe",
+      "id": 17
+    }
+  ],
+  "segmentNumber": 5,
+  "isInnerSegment": true,
+  "parentFilename": "Aeropuerto Arturo Merino Benítez 6",
+  "startTime": 0.03096875,
+  "endTime": 110.62971875000001,
+  "duration": 110.59875000000001
+}

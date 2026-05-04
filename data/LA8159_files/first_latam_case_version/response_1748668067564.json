@@ -1,0 +1,744 @@
+{
+  "segments": [
+    {
+      "speaker": "SPEAKER_01",
+      "start": 51.48284375,
+      "end": 53.03534375,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 53.03534375,
+      "end": 53.91284375,
+      "text": " Subtítulos por la comunidad de Amara.org"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 54.672218750000006,
+      "end": 55.06034375,
+      "text": " Subtítulos por la comunidad de Amara.org"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 58.705343750000004,
+      "end": 59.78534375,
+      "text": " y la verdad es que sí."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 68.47596875,
+      "end": 68.59409375,
+      "text": " Subtítulos por la comunidad de Amara.org"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 69.75846875,
+      "end": 71.02409375,
+      "text": " No, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 79.63034375000001,
+      "end": 80.03534375000001,
+      "text": " por allá."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 80.62596875,
+      "end": 82.07721875,
+      "text": " por ahí atrás me explica lo que está pasando"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 82.75221875000001,
+      "end": 83.03909375,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 83.03909375,
+      "end": 83.62971875000001,
+      "text": " en nuestro país."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 84.22034375000001,
+      "end": 85.41846875,
+      "text": " Y vos te ingresas al país."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 91.25721875,
+      "end": 93.07971875000001,
+      "text": " ¿Por qué me sacaron del vuelo?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 94.69971875,
+      "end": 104.45346875000001,
+      "text": " No, no, porque necesito algo por escrito para saber por qué me sacaron del vuelo. Porque ahora voy a tener que ir atrás de una otra, un otro pasaje, otra cosa."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 104.45346875000001,
+      "end": 105.41534375,
+      "text": " las instrucciones del personaje."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 106.15784375000001,
+      "end": 108.04784375000001,
+      "text": " Ya, pero ¿fue comprobado algo?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 108.70596875000001,
+      "end": 109.53284375000001,
+      "text": " lo que fue comprobado"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 113.85284375,
+      "end": 117.07596875,
+      "text": " Entonces creo que tenemos que volver a hablar con la policía, porque la policía ya se quedó."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 117.76784375000001,
+      "end": 122.20596875000001,
+      "text": " Me parece que no es eso. La policía no quiere hablar más con usted?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 124.72034375000001,
+      "end": 130.52534375000002,
+      "text": " Yo quiero, yo quiero por escrito el porqué que me sacaron de aquí."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 127.31909375000001,
+      "end": 128.75346875,
+      "text": " Yo quiero, yo quiero..."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 156.47909375,
+      "end": 160.51221875000002,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 161.98034375,
+      "end": 162.03096875,
+      "text": " Subtítulos realizados por la comunidad de Amara.org"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 175.61534375000002,
+      "end": 177.52221875,
+      "text": " ¿Quién volvió a estar?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 178.97346875000002,
+      "end": 179.53034375000001,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 179.53034375000001,
+      "end": 185.97659375,
+      "text": " Buenas tardes, gracias."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 185.97659375,
+      "end": 187.02284375000002,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 199.79721875,
+      "end": 202.34534375,
+      "text": " Ahora, ¿puedo explicar por qué me sacaron del vuelo?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 202.93596875,
+      "end": 210.29346875000002,
+      "text": " Pero algo por escrito, porque yo tengo que ahora ir a comprar otro pasaportes. Yo necesito algo por escrito porque me sacaron del vuelo."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 211.32284375,
+      "end": 212.63909375,
+      "text": " La lata, ¿puede dar eso?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 215.25471875000002,
+      "end": 216.28409375,
+      "text": " ¿Latén? ¿Tú eres latén?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 217.53284375,
+      "end": 217.98846875,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 218.59596875000003,
+      "end": 219.03471875000002,
+      "text": " ¿Ya?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 225.04221875000002,
+      "end": 225.26159375,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 227.13471875000002,
+      "end": 228.43409375000002,
+      "text": " ¿Dónde está por escrito?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 229.12596875000003,
+      "end": 230.03721875000002,
+      "text": " lo van a preguntar y ahí nada más."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 230.50971875000002,
+      "end": 241.36034375000003,
+      "text": " El señor pedió una carta explicando los motivos por qué me sacaron. Eso tiene que ver con la carta. Yo simplemente quiero la carta para entender por qué me sacaron, porque todavía no sé."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 241.54596875000001,
+      "end": 242.74409375000002,
+      "text": " tiene que ir a verlo con la tampa"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 244.24596875,
+      "end": 244.63409375,
+      "text": " natal."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 245.02221875,
+      "end": 245.51159375,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 245.51159375,
+      "end": 246.72659375,
+      "text": " Ya, yo estoy liberado."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 247.40159375000002,
+      "end": 248.14409375000002,
+      "text": " Muchas gracias."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 268.96784375000004,
+      "end": 271.11096875000004,
+      "text": " ¿Puede ser? Dale playa. Vamos."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 271.92096875000004,
+      "end": 278.83971875000003,
+      "text": " 40 minutos estuvimos arriba del avión explicándole todo. ¿Y fue comprobado eso? ¿Por qué tú no sabes?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 287.47971875,
+      "end": 287.78346875,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 288.45846875,
+      "end": 290.51721875000004,
+      "text": " Mira, si fuese..."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 291.17534375,
+      "end": 292.52534375,
+      "text": " Toda una tarea y me dejando salir."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 304.08471875000004,
+      "end": 306.59909375,
+      "text": " Ahí está. Fica hacia adelante. Vuelve, vuelve."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 308.05034375,
+      "end": 308.42159375,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 309.46784375000004,
+      "end": 313.70346875,
+      "text": " No, me sacaron del vuelo. Me sacaron del vuelo."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 314.78346875,
+      "end": 315.05346875000004,
+      "text": " Gracias."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 324.90846875,
+      "end": 326.20784375,
+      "text": " ni cancelar el vuelo, eh."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 327.72659375,
+      "end": 330.29159375,
+      "text": " No, tú me sacó del vuelo, es distinto."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 331.13534375,
+      "end": 331.45596875,
+      "text": " ¡Sí!"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 334.17284375,
+      "end": 335.57346875,
+      "text": " La dificultad de medir las cosas."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 336.58596875,
+      "end": 336.68721875,
+      "text": " ¡Gracias!"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 338.08784375000005,
+      "end": 339.42096875000004,
+      "text": " Tú no le respondes más nada, ¿cierto?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 388.02096875,
+      "end": 394.16346875000005,
+      "text": " Ahora eso, tú me sacas del vuelo y ahora tú me llevas hasta afuera del aeropuerto."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 394.78784375000004,
+      "end": 395.81721875000005,
+      "text": " Yo vuelvo."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 396.44159375000004,
+      "end": 397.97721875,
+      "text": " A cuatro horas atrás."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 447.21846875000006,
+      "end": 453.56346875,
+      "text": " No tiene la carta en tu teléfono, porque tú no muestras la explicación porque tú me sacaste de luego."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 454.42409375000005,
+      "end": 464.81909375000004,
+      "text": " No, pero yo creo que por escrito, amigo, por escrito. Usted me explicaron mentiras. Son lo que están me explicando hasta ahora. Son mentiras, mentiras, mentiras."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 465.78096875000006,
+      "end": 467.04659375000006,
+      "text": " y no conseguen probar una."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 522.97034375,
+      "end": 524.52284375,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 526.61534375,
+      "end": 527.50971875,
+      "text": " Hay que tener cuidado."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 528.21846875,
+      "end": 531.4753437500001,
+      "text": " Si se pone muy complicado me avisa y yo tengo que ir a ventas, ya pedí y ya voy."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 531.4753437500001,
+      "end": 531.52596875,
+      "text": " Subtítulos realizados por la comunidad de Amara.org"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 532.2178437499999,
+      "end": 540.53721875,
+      "text": " Pero explica por qué me sacaron del vuelo. Porque yo necesito ahora volar a Brasilia inmediatamente. Yo necesito por escrito y tú te... Voy a mandar..."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 544.2665937500001,
+      "end": 547.57409375,
+      "text": " Yo no puedo viajar todavía y yo no voy a poder viajar. Con la TAM."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 548.14784375,
+      "end": 550.52721875,
+      "text": " Cualquier otra helo linea, si, con la tango."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 554.4253437500001,
+      "end": 557.74971875,
+      "text": " Yo perdí mi vuelo, yo perdí la plata de mi vuelo."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 560.4834687499999,
+      "end": 573.8315937500001,
+      "text": " Ya. ¿Dónde está la explicación por escrito? Pasamos 40 minutos explicando... ¿Dónde está la explicación por escrito? Porque si tú estás me avisando... No explica ninguna explicación por escrito. Yo pasé 40 minutos explicándole arriba del avión."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 565.9678437499999,
+      "end": 566.0859687500001,
+      "text": " Subtítulos realizados por la comunidad de Amara.org"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 574.57409375,
+      "end": 600.5615937499999,
+      "text": " Tu tuve que entregar una copia por escrito a la policía para que me liberase Tu tenes... Eso es entre la aerolínea y la policía, con usted ya le explicamos bastante Espera aquí su equipaje Si, tu estas explicando incorrecto Tu estas mintiendo Más información no se le puede ofrecer, ya? Ya, comenta un nombre por favor Joaquín Joaquín o que? Joaquín Joaquín o que? Joaquín Joaquín Barraza Si, ya lo metió en el avión Si, exactamente Ya? Si, ya"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 587.51721875,
+      "end": 588.22596875,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 601.4053437499999,
+      "end": 603.00846875,
+      "text": " lo vamos a hablar en algún tiempo"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 605.1684687500001,
+      "end": 607.53096875,
+      "text": " Dije, yo solo le puedo ayudar con el tema del infarto."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 607.80096875,
+      "end": 610.8215937500001,
+      "text": " Yo sé que tú estás haciendo otro trabajo, no tengo nada que ver."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 611.4797187500001,
+      "end": 611.5303437499999,
+      "text": " ¡Gracias por ver el video!"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 612.98159375,
+      "end": 613.36971875,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 617.50409375,
+      "end": 625.36784375,
+      "text": " Porque él tenía en su teléfono, porque yo estaba allá y yo lo grabé lo audio igual. La policía pidió que solo iban a liberarme."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 631.4765937500001,
+      "end": 632.08409375,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 633.68721875,
+      "end": 635.77971875,
+      "text": " Hicieron dos falsas alegaciones sobre mí."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 636.47159375,
+      "end": 637.5515937499999,
+      "text": " y me sacaron del vuelo."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 641.0109687500001,
+      "end": 643.94721875,
+      "text": " Fue la hora, todavía estoy siendo tratado como loco."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 649.1953437500001,
+      "end": 653.9540937500001,
+      "text": " son los procedimientos que tengo que hacer yo ahora, porque uno tiene que ir a Brasil."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 654.5615937499999,
+      "end": 657.29534375,
+      "text": " tenía comprado mi pasaje, yo estaba dentro del vuelo."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 658.10534375,
+      "end": 664.2478437500001,
+      "text": " Tiene que preguntar en el tercer piso si hay alguna forma de reprogramar el vuelo."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 664.90596875,
+      "end": 666.0365937500001,
+      "text": " y siquiera una explicación."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 668.24721875,
+      "end": 672.43221875,
+      "text": " No, mira, mira, mira."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 673.1072187500001,
+      "end": 673.17471875,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 673.17471875,
+      "end": 674.42346875,
+      "text": " aquí, aquí"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 676.4822187500001,
+      "end": 681.1059687500001,
+      "text": " tiene la explicación por escrito porque fue dada la policía por escrito"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 682.16909375,
+      "end": 686.3034687500001,
+      "text": " Mi punto es, me sacaron del vuelo, me cargaron"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 687.92346875,
+      "end": 687.9909687500001,
+      "text": " Subtítulos por la comunidad de Amara.org"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 690.64034375,
+      "end": 703.65096875,
+      "text": " Todo filmado, me acusaron de agresión primero, eso no funcionó porque vieron las cámaras no tenía. Entonces la misma persona que me acusó de agresión, me acusó que yo no le dé el borde en paz. ¿Entiendes?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 704.6128437500001,
+      "end": 707.7009687500001,
+      "text": " La cosa va a quedar muy muy muy fea, muy fea."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 707.34659375,
+      "end": 716.5265937500001,
+      "text": " Como le digo, ya allí tiene que ir a reclamar en el tercer piso o hablar con personal de la policía, ¿me entiende?, o hacer una denuncia."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 719.4797187500001,
+      "end": 725.03159375,
+      "text": " La policía, la policía, me informó que si yo quiero..."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 730.4822187500001,
+      "end": 732.1528437500001,
+      "text": " y sacó de la vela y fue allá."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 734.0090937500001,
+      "end": 734.02596875,
+      "text": " ¡Gracias por ver el video!"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 737.97471875,
+      "end": 741.07971875,
+      "text": " manda de vuelta a la policía es como un juego de ping pong."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 741.07971875,
+      "end": 743.1047187500001,
+      "text": " Tengo la información de Polonia en la hojada."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 742.3115937500002,
+      "end": 743.61096875,
+      "text": " teatro, teatro..."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 744.75846875,
+      "end": 744.9778437500001,
+      "text": " ¡Gracias!"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 744.9778437500001,
+      "end": 746.58096875,
+      "text": " porque luego no sé qué pasó, no sé..."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 746.7665937500001,
+      "end": 753.02721875,
+      "text": " Ya, entonces, pero tú tienes alguien arriba de ti que tú puedas hacer esa pregunta, entonces yo te pido por favor..."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 753.02721875,
+      "end": 760.9584687500001,
+      "text": " Este departamento es aparte. Usted le pasó ese problema en el embarque. Usted tiene que hablar con personal de embarque y ellos están en el tercer piso."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 761.5659687500001,
+      "end": 766.0378437500001,
+      "text": " porque tanto yo como mi supervisora o quien sea no tenemos como que el no saber."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 762.35909375,
+      "end": 763.03409375,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 766.7465937500001,
+      "end": 766.7634687500001,
+      "text": " ¡Gracias por ver el video!"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 766.7634687500001,
+      "end": 772.3828437500001,
+      "text": " Era un diálogo tan grave que había una carta explicando lo que pasó, hasta que no la tenían."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 773.2265937500001,
+      "end": 777.0234687500001,
+      "text": " En este departamento, no. Tienen que preguntar a nuestro servicio."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 779.8584687500002,
+      "end": 782.18721875,
+      "text": " Yo como les digo, solo lo puedo ayudar con la maleta."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 783.11534375,
+      "end": 783.25034375,
+      "text": " y nos vemos en el próximo video, ¡hasta la próxima!"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 783.25034375,
+      "end": 786.94596875,
+      "text": " ¡Pueden ayudarme! ¡Qué bueno! ¡Muchas gracias por ayudarme!"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 789.5278437500001,
+      "end": 791.6203437500001,
+      "text": " No estoy queriendo ser peruano aquí."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 793.98284375,
+      "end": 796.95284375,
+      "text": " y necesito que, por favor, vean lo que se cree por WhatsApp."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 803.5678437500001,
+      "end": 804.10784375,
+      "text": " ¿Ya la tienes?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 807.6684687500001,
+      "end": 807.88784375,
+      "text": " video."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 834.2634687500001,
+      "end": 836.6259687500001,
+      "text": " Estoy buscando la información de la maleta."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 837.26721875,
+      "end": 840.8615937500001,
+      "text": " Gracias. Se puede preguntar también la información de la carta."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 842.2453437500001,
+      "end": 843.49409375,
+      "text": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 844.59096875,
+      "end": 845.46846875,
+      "text": ""
+    }
+  ],
+  "transcript_id": "transcript_1748668067",
+  "audio_url": "/data/audio/Aeropuerto Arturo Merino Benítez 13.m4a"
+}

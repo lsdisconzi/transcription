@@ -6,6 +6,8 @@ Launch with:
 
 from __future__ import annotations
 
+import os
+from dataclasses import asdict
 from datetime import datetime, timezone
 from typing import Any
 
@@ -14,8 +16,15 @@ from mcp.server.fastmcp import FastMCP
 from whisper import available_models
 
 from src.config import settings
+from src.infrastructure.narrative_store_adapter import NarrativeStoreAdapter
+from src.infrastructure.project_store_adapter import ProjectStoreAdapter
+from src.infrastructure.reference_store_adapter import ReferenceStoreAdapter
 
 mcp = FastMCP("transcription-meta")
+
+_project_store = ProjectStoreAdapter(settings.PROJECTS_DIR)
+_ref_store = ReferenceStoreAdapter(settings.REFERENCE_DIR)
+_narrative_store = NarrativeStoreAdapter(settings.NARRATIVE_DIR)
 
 
 @mcp.tool()
@@ -88,6 +97,127 @@ def list_parameter_definitions() -> dict[str, Any]:
 def list_whisper_models() -> dict[str, Any]:
     """Return locally available Whisper model names."""
     return {"available_models": available_models()}
+
+
+# ── Project / Event Journey tools ────────────────────────────────────────
+
+
+@mcp.tool()
+def list_projects() -> dict[str, Any]:
+    """List all transcription projects (event journeys) on disk."""
+    projects = _project_store.list_projects()
+    return {
+        "count": len(projects),
+        "projects": [
+            {
+                "id": p.id,
+                "name": p.name,
+                "description": p.description,
+                "language": p.language,
+                "location": p.location,
+                "n_audios": len(p.audios),
+                "n_context_docs": len(p.context_docs),
+                "n_narratives": len(p.narrative_ids),
+                "qdrant_filter_tag": p.qdrant_filter_tag,
+                "updated_at": p.updated_at,
+            }
+            for p in projects
+        ],
+    }
+
+
+@mcp.tool()
+def get_project(project_id: str) -> dict[str, Any]:
+    """Return the full project record (audios, references, narratives, context docs)."""
+    project = _project_store.load(project_id)
+    if not project:
+        return {"error": f"project {project_id} not found"}
+    data = asdict(project)
+    # Augment with reference manifest summaries
+    summaries = []
+    for cn in project.canonical_names():
+        m = _ref_store.load_manifest(cn)
+        summaries.append({
+            "canonical_name": cn,
+            "has_manifest": m is not None,
+            "n_references": len([v for v in m.versions if v.type == "reference"]) if m else 0,
+            "n_versions": len(m.versions) if m else 0,
+        })
+    data["references_summary"] = summaries
+    return data
+
+
+@mcp.tool()
+def list_project_references(project_id: str) -> dict[str, Any]:
+    """For each audio in a project, list its reference versions."""
+    project = _project_store.load(project_id)
+    if not project:
+        return {"error": f"project {project_id} not found"}
+    out = []
+    for audio in project.audios:
+        refs = _ref_store.load_references(audio.canonical_name)
+        out.append({
+            "canonical_name": audio.canonical_name,
+            "audio_path": audio.audio_path,
+            "n_references": len(refs),
+            "references": [
+                {
+                    "title": r.title,
+                    "source": r.source,
+                    "quality_score": r.quality_score,
+                    "n_segments": len(r.content),
+                }
+                for r in refs
+            ],
+        })
+    return {"project_id": project_id, "audios": out}
+
+
+@mcp.tool()
+def read_project_context_doc(project_id: str, path: str, max_chars: int = 12000) -> dict[str, Any]:
+    """Read a context document attached to a project (limited to attached paths).
+
+    The agent must pass a ``path`` that is registered as one of the project's
+    context_docs — this prevents arbitrary filesystem reads.
+    """
+    project = _project_store.load(project_id)
+    if not project:
+        return {"error": f"project {project_id} not found"}
+    allowed = {d.path for d in project.context_docs}
+    if path not in allowed:
+        return {"error": "path not attached to this project", "attached": sorted(allowed)}
+    if not os.path.isfile(path):
+        return {"error": f"file missing on disk: {path}"}
+    try:
+        with open(path, encoding="utf-8") as f:
+            text = f.read(max_chars + 1)
+    except OSError as exc:
+        return {"error": f"read failed: {exc}"}
+    truncated = len(text) > max_chars
+    return {
+        "path": path,
+        "truncated": truncated,
+        "content": text[:max_chars],
+    }
+
+
+@mcp.tool()
+def list_project_narratives(project_id: str) -> dict[str, Any]:
+    """List narratives linked to a project (resolves via narrative store)."""
+    project = _project_store.load(project_id)
+    if not project:
+        return {"error": f"project {project_id} not found"}
+    out = []
+    for cn in project.canonical_names():
+        for n in _narrative_store.load_narratives(cn):
+            out.append({
+                "audio_id": n.audio_id,
+                "title": n.title,
+                "timeline_time": n.timeline_time,
+                "source_file": n.source_file,
+                "preview": n.text[:300] + ("..." if len(n.text) > 300 else ""),
+            })
+    return {"project_id": project_id, "count": len(out), "narratives": out}
 
 
 def main() -> None:

@@ -19,6 +19,11 @@ from .presentation.routers.diarization import router as diarization_router
 # Presentation routers
 from .presentation.routers.health import router as health_router
 from .presentation.routers.parameters import router as parameters_router
+from .presentation.routers.pinocchio import router as pinocchio_router
+from .presentation.routers.projects import init_projects_router
+from .presentation.routers.projects import router as projects_router
+from .presentation.routers.references import init_references_router
+from .presentation.routers.references import router as references_router
 from .presentation.routers.transcription import init_transcription_router
 from .presentation.routers.transcription import router as transcription_router
 from .presentation.routers.transcripts import init_transcript_router
@@ -32,12 +37,24 @@ runtime = build_runtime()
 
 # ── Router Injection ─────────────────────────────────────────────────────
 init_diarization_router(runtime.excerpt_use_case, runtime.audio_file_adapter, settings.TRANSCRIPT_DIR)
-init_transcription_router(runtime.transcribe_use_case, settings.ORIGINALS_DIR)
+init_transcription_router(
+    runtime.transcribe_use_case,
+    settings.ORIGINALS_DIR,
+    guided_use_case=runtime.guided_transcribe_use_case,
+    audio_file_adapter=runtime.audio_file_adapter,
+    project_store=runtime.project_store_adapter,
+)
 init_transcript_router(
     runtime.analyze_use_case,
     runtime.search_use_case,
     runtime.store_adapter,
     runtime.qdrant_adapter,
+)
+init_projects_router(runtime.project_store_adapter, runtime.ref_store_adapter)
+init_references_router(
+    runtime.ref_store_adapter,
+    runtime.narrative_store_adapter,
+    settings.REFERENCE_DIR,
 )
 
 # ── FastAPI App ──────────────────────────────────────────────────────────
@@ -58,6 +75,9 @@ app.include_router(parameters_router)
 app.include_router(diarization_router)
 app.include_router(transcription_router)
 app.include_router(transcripts_router)
+app.include_router(projects_router)
+app.include_router(references_router)
+app.include_router(pinocchio_router)
 
 # Serve static data directories
 app.mount("/audio", StaticFiles(directory=settings.AUDIO_DIR), name="audio")

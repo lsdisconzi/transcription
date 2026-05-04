@@ -1,0 +1,71 @@
+{
+  "title": "aeropuerto_STG_29_segment_4",
+  "subtitle": "Imported segment",
+  "filename": "aeropuerto_STG_29_segment_4",
+  "recordingdatetime": "2024-07-05T21:51:00",
+  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
+  "content": [
+    {
+      "speaker": "Latam Supervisor (maybe higher)",
+      "start": 0.03,
+      "end": 33.24,
+      "text": " ¿Usted me había visto a mí durante el turno?   ¿Qué pasa? Mira, tú no me haga eso. No me haga una carta explicando lo que no pasó. Señor, si usted continúa en eso, yo de verdad que... La carta, entonces, no simplemente porque lo quiera ayudar, ¿no? Pero si continúa... Pero usted lo conoce. Responde que yo le traigo la carta.",
+      "id": "0"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 12.72,
+      "end": 12.81,
+      "text": " ¡No.!",
+      "id": "1"
+    },
+    {
+      "speaker": "Latam Supervisor (maybe higher)",
+      "start": 12.8,
+      "end": 15.81,
+      "text": "Yo acabo de ingresar.  Usted lo acabo de conocer. ",
+      "id": "2"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 15.72,
+      "end": 16.21,
+      "text": "Ya?!",
+      "id": "3"
+    },
+    {
+      "speaker": "Latam Supervisor (maybe higher)",
+      "start": 16.22,
+      "end": 34.81,
+      "text": "Las personas que están adentro también tienen la misma información. Entonces van a sacar lo global que pasó, porque nadie estuvo en el hecho.",
+      "id": "4"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 34.1,
+      "end": 37.53,
+      "text": " Podría llamar a la PDI. Por favor, va a la PDI. La PDI sabe, por favor. No, no me haga eso.",
+      "id": "5"
+    },
+    {
+      "speaker": "Latam Supervisor (maybe higher)",
+      "start": 38.25,
+      "end": 46.74,
+      "text": "no corresponde. Si usted le diga, de hecho, absento, usted lo sacó y se lo va a documentar. Por eso le digo, si no se calma, que nos ayudemos... ",
+      "id": "6"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 43.47,
+      "end": 43.67,
+      "text": " Ya, ya, pero! ¿Vuelvo a mirar más? Pónete en mi lugar, pónete en mi lugar, pónete en mi lugar.",
+      "id": "7"
+    }
+  ],
+  "segmentNumber": 4,
+  "isInnerSegment": true,
+  "parentFilename": "aeropuerto_STG_29",
+  "startTime": 0.03096875,
+  "endTime": 43.66971875,
+  "duration": 43.63875
+}

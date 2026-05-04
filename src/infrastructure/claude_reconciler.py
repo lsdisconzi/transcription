@@ -20,25 +20,31 @@ logger = logging.getLogger(__name__)
 _SYSTEM_PROMPT = """\
 You are a transcript reconciliation specialist for Chilean Spanish audio recordings.
 
-You receive up to three inputs:
+You receive up to four kinds of inputs:
 1. RAW — a new transcription from Whisper with generic speaker labels (SPEAKER_00, etc.)
-2. REFERENCE — a previously corrected transcript of the SAME audio with named speakers
-3. NARRATIVE (optional) — a first-person chronological account of events during this audio, \
+2. REFERENCE (primary) — a previously corrected transcript of the SAME audio with named \
+speakers. This is the highest-quality prior.
+3. ADDITIONAL REFERENCES (optional) — earlier or alternate corrected versions of the same \
+audio. Treat them as cross-checks: if the primary REFERENCE and an ADDITIONAL one disagree, \
+prefer the primary; if RAW and the primary disagree but multiple ADDITIONAL references match \
+the primary, weight that strongly. Use them ONLY to resolve ambiguity, never to overwrite the \
+primary.
+4. NARRATIVE (optional) — a first-person chronological account of events during this audio, \
 written by the passenger. Contains timestamped descriptions, named individuals, and exact \
 quotes that describe what was happening at each moment.
 
 Your task:
 1. MAP speakers: Match SPEAKER_00/01/02 to named roles (passenger, airline_staff, \
-police_officer, etc.) by comparing what each speaker says in RAW against the REFERENCE \
+police_officer, etc.) by comparing what each speaker says in RAW against the REFERENCEs \
 and NARRATIVE. The narrative identifies real names and roles.
-2. CORRECT text: Fix obvious Whisper errors using the REFERENCE and NARRATIVE as ground \
+2. CORRECT text: Fix obvious Whisper errors using the REFERENCEs and NARRATIVE as ground \
 truth. Whisper often hallucinates repetitions, drops words, or misrecognizes names.
-3. PRESERVE novelty: If the RAW transcript contains valid content NOT in the REFERENCE, \
-keep it — the reference may be incomplete.
+3. PRESERVE novelty: If the RAW transcript contains valid content NOT in the references, \
+keep it — references may be incomplete.
 4. KEEP timing: Use start/end times from the RAW transcript (they come from this run). \
 Reference timing may differ due to different preprocessing.
-5. FLAG disagreements: When RAW and REFERENCE significantly disagree on a segment, \
-add "confidence": 0.5 and "flag": "disagree" to that segment.
+5. FLAG disagreements: When RAW and the primary REFERENCE significantly disagree, add \
+"confidence": 0.5 and "flag": "disagree" to that segment.
 6. MAINTAIN dialect: Keep Chilean Spanish as-is. Do NOT "correct" dialect to standard \
 Spanish. Terms like "cachai", "po", "wea" are correct.
 7. USE NARRATIVE for context: The narrative provides situational context — who is speaking, \
@@ -88,12 +94,23 @@ class ClaudeReconcilerAdapter:
         *,
         narrative: IncidentNarrative | None = None,
         language: str = "es",
+        references: list[ReferenceTranscript] | None = None,
     ) -> dict:
         if not raw_segments:
             return {"segments": [], "speaker_map": {}, "reconciliation_notes": "Empty input"}
 
         # Build reference context (truncated to budget)
         ref_context = self._build_reference_context(reference)
+
+        # Additional references = the ranked list minus the primary, deduped by title
+        extras: list[ReferenceTranscript] = []
+        if references:
+            seen = {reference.title}
+            for r in references:
+                if r.title in seen:
+                    continue
+                seen.add(r.title)
+                extras.append(r)
 
         # Build narrative context if available
         narrative_context = self._build_narrative_context(narrative) if narrative else ""
@@ -117,10 +134,22 @@ class ClaudeReconcilerAdapter:
             ref_overlap = self._find_overlapping_reference_segments(
                 reference, batch_start_time, batch_end_time
             )
+            extra_overlaps = [
+                {
+                    "title": r.title,
+                    "source": r.source,
+                    "quality_score": r.quality_score,
+                    "segments": self._find_overlapping_reference_segments(
+                        r, batch_start_time, batch_end_time
+                    ),
+                }
+                for r in extras
+            ]
 
             result = await self._reconcile_batch(
                 batch, ref_overlap, ref_context, narrative_context,
                 language, batch_idx + 1, num_batches,
+                extra_overlaps=extra_overlaps,
             )
 
             all_reconciled.extend(result.get("segments", []))
@@ -157,6 +186,7 @@ class ClaudeReconcilerAdapter:
                 "cost_usd": cost,
                 "batches": num_batches,
                 "reference_used": reference.title,
+                "additional_references": [r.title for r in extras],
             },
         }
 
@@ -169,6 +199,7 @@ class ClaudeReconcilerAdapter:
         language: str,
         batch_num: int,
         total_batches: int,
+        extra_overlaps: list[dict] | None = None,
     ) -> dict:
         raw_text = json.dumps(raw_batch, ensure_ascii=False)
         ref_text = json.dumps(ref_segments, ensure_ascii=False)
@@ -176,8 +207,18 @@ class ClaudeReconcilerAdapter:
         user_prompt = (
             f"Batch {batch_num}/{total_batches}. Language: {language}\n\n"
             f"REFERENCE CONTEXT:\n{ref_context}\n\n"
-            f"REFERENCE SEGMENTS (time-overlapping):\n{ref_text}\n\n"
+            f"PRIMARY REFERENCE SEGMENTS (time-overlapping):\n{ref_text}\n\n"
         )
+        if extra_overlaps:
+            for idx, extra in enumerate(extra_overlaps, start=1):
+                if not extra["segments"]:
+                    continue
+                user_prompt += (
+                    f"ADDITIONAL REFERENCE {idx} "
+                    f"(title={extra['title']}, source={extra['source']}, "
+                    f"quality={extra['quality_score']:.2f}):\n"
+                    f"{json.dumps(extra['segments'], ensure_ascii=False)}\n\n"
+                )
         if narrative_context:
             user_prompt += f"INCIDENT NARRATIVE (passenger account):\n{narrative_context}\n\n"
         user_prompt += f"RAW WHISPER OUTPUT:\n{raw_text}"
