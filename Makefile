@@ -2,10 +2,10 @@
 
 # ── Run ──────────────────────────────────────────────────────
 run:
-	uvicorn src.main:app --host 0.0.0.0 --port 8000
+	uvicorn src.main:app --host 0.0.0.0 --port 8039
 
 dev:
-	uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+	uvicorn src.main:app --host 0.0.0.0 --port 8039 --reload
 
 run-mcp-transcription:
 	python -m src.mcp.servers.transcription_server

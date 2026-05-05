@@ -30,7 +30,7 @@ IMAGE="leandrodisconzi/transcription-transcription:serverless"
 GPU_TYPE="NVIDIA RTX A6000"  # 48GB Pro
 GPU_COUNT=1
 EPHEMERAL_STORAGE_GB=5
-CONTAINER_PORT=8000
+CONTAINER_PORT=8039
 START_CMD="python -u src/runpod_handler.py"
 
 # Load tokens from .env
@@ -92,7 +92,7 @@ UPDATE_RESPONSE=$(curl -s -X POST "https://api.runpod.io/graphql" \
           imageName: \\\"$IMAGE\\\",
           dockerArgs: \\\"$START_CMD\\\",
           containerDiskInGb: $EPHEMERAL_STORAGE_GB,
-          ports: \\\"8000/http\\\",
+          ports: \\\"8039/http\\\",
           env: [
             { key: \\\"PYANNOTE_AUTH_TOKEN\\\", value: \\\"{{PYANNOTE_AUTH_TOKEN}}\\\" },
             { key: \\\"HF_TOKEN\\\", value: \\\"{{PYANNOTE_AUTH_TOKEN}}\\\" },

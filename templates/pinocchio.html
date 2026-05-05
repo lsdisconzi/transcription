@@ -2074,7 +2074,7 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss√
           for (var c = 0; c < numChannels; c++) {
             var sample = channels[c][i] || 0;
             var clamped = Math.max(-1, Math.min(1, sample));
-            view.setInt16(offset, clamped < 0 ? clamped * 0x8000 : clamped * 0x7fff, true);
+            view.setInt16(offset, clamped < 0 ? clamped * 0x8039 : clamped * 0x7fff, true);
             offset += 2;
           }
         }
@@ -3456,7 +3456,7 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss√
         if(!endpoint) return showToast('Configure AI endpoint');
         $('preAnalyzerReasoning').textContent = 'Analisando‚Ä¶';
         $('preAnalyzerResults').textContent = '';
-        var prompt = 'You are a legal pre-analyzer. Analyze the following transcript for potential legal violations, rights infringements, and compliance issues. Structure your output as:\n1. REASONING (step by step)\n2. VIOLATIONS FOUND (structured list)\n3. RECOMMENDATIONS\n\nTranscript:\n'+input.substring(0,8000);
+        var prompt = 'You are a legal pre-analyzer. Analyze the following transcript for potential legal violations, rights infringements, and compliance issues. Structure your output as:\n1. REASONING (step by step)\n2. VIOLATIONS FOUND (structured list)\n3. RECOMMENDATIONS\n\nTranscript:\n'+input.substring(0,8039);
         try {
           var token = ($('cfg_llm_token')||{}).value||'';
           var headers = {'Content-Type':'application/json'};
