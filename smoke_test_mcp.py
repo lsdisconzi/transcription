@@ -59,11 +59,21 @@ def _install_stubs() -> None:
     pydub_silence.detect_nonsilent = lambda seg, **kw: []
     sys.modules["pydub.silence"] = pydub_silence
 
+    # openai
+    openai_stub = _make_stub("openai")
+
+    class _OpenAI:
+        def __init__(self, *a, **kw):
+            pass
+
+    openai_stub.OpenAI = _OpenAI
+    sys.modules["openai"] = openai_stub
+
     # misc heavy deps
     for mod in [
         "noisereduce", "scipy", "scipy.io", "scipy.io.wavfile",
         "numpy", "numpy.typing", "runpod", "huggingface_hub",
-        "openai", "sentence_transformers", "torchaudio",
+        "sentence_transformers", "torchaudio",
     ]:
         sys.modules[mod] = _make_stub(mod)
 

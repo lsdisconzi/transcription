@@ -9,7 +9,10 @@
         "PYANNOTE_AUTH_TOKEN": "<your_token>",
         "HF_TOKEN": "<your_token>",
         "ORIGINALS_DIR": "data/originals",
-        "TRANSCRIPT_DIR": "data/transcripts"
+        "TRANSCRIPT_DIR": "data/transcripts",
+        "REFERENCE_DIR": "data/transcripts_by_audio",
+        "NARRATIVE_DIR": "data/transcripts_narrative",
+        "PROJECTS_DIR": "data/projects"
       }
     },
     "transcription-transcripts": {
@@ -30,7 +33,11 @@
       "args": [
         "mcp/servers/meta_server.py"
       ],
-      "env": {}
+      "env": {
+        "REFERENCE_DIR": "data/transcripts_by_audio",
+        "NARRATIVE_DIR": "data/transcripts_narrative",
+        "PROJECTS_DIR": "data/projects"
+      }
     }
   }
 }

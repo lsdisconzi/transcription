@@ -31,9 +31,9 @@ cp .env.example .env
 # Edit .env with your HuggingFace/Pyannote tokens
 
 # Install
-python3.12 -m venv venv && source .venv/bin/activate
+python3.12 -m venv venv && source venv/bin/activate
 pip install --upgrade pip setuptools
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 
 # Run
 make run
@@ -147,6 +147,11 @@ python -m src.mcp.servers.transcription_server
 python -m src.mcp.servers.transcripts_server
 python -m src.mcp.servers.meta_server
 ```
+
+Important:
+- Run one MCP server per terminal session.
+- After a server starts, do not type additional shell commands in that terminal. MCP servers read stdin as JSON-RPC transport.
+- To run multiple servers manually, use separate terminal tabs/windows.
 
 ### Tools exposed (transcription server)
 

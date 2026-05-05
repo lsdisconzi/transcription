@@ -11,6 +11,9 @@
         "HF_TOKEN": "<your_token>",
         "ORIGINALS_DIR": "data/originals",
         "TRANSCRIPT_DIR": "data/transcripts",
+        "REFERENCE_DIR": "data/transcripts_by_audio",
+        "NARRATIVE_DIR": "data/transcripts_narrative",
+        "PROJECTS_DIR": "data/projects",
         "QDRANT_URL": "http://localhost:6333"
       }
     },
@@ -34,7 +37,11 @@
         "-m",
         "src.mcp.servers.meta_server"
       ],
-      "env": {}
+      "env": {
+        "REFERENCE_DIR": "data/transcripts_by_audio",
+        "NARRATIVE_DIR": "data/transcripts_narrative",
+        "PROJECTS_DIR": "data/projects"
+      }
     }
   }
 }

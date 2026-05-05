@@ -72,6 +72,92 @@ async def transcription_transcribe_audio_async(
 
 
 @mcp.tool()
+async def transcription_transcribe_audio_guided(
+    file_path: str | None = None,
+    audio_base64: str | None = None,
+    filename: str | None = None,
+    canonical_name: str | None = None,
+    project_id: str | None = None,
+    top_n_references: int = 3,
+    language: str = "es",
+    model_size: str = "large-v3",
+    min_speakers: int = 1,
+    max_speakers: int = 4,
+    vad_threshold: float = 0.25,
+    noise_reduce: bool = True,
+    reduction_db: int = 25,
+    voice_enhance: bool = True,
+    apply_gain: bool = True,
+    target_lufs: float = -16.0,
+    remove_silence: bool = True,
+    silence_thresh: int = -45,
+    min_silence_len: int = 250,
+    beam_size: int = 5,
+    best_of: int = 5,
+    whisper_temp: float = 0.0,
+    condition_on_previous_text: bool = False,
+    word_timestamps: bool = False,
+) -> dict[str, Any]:
+    """Run reference-guided transcription and return transcript payload."""
+    return await src_transcription.transcribe_audio_guided(
+        file_path=file_path,
+        audio_base64=audio_base64,
+        filename=filename,
+        canonical_name=canonical_name,
+        project_id=project_id,
+        top_n_references=top_n_references,
+        language=language,
+        model_size=model_size,
+        min_speakers=min_speakers,
+        max_speakers=max_speakers,
+        vad_threshold=vad_threshold,
+        noise_reduce=noise_reduce,
+        reduction_db=reduction_db,
+        voice_enhance=voice_enhance,
+        apply_gain=apply_gain,
+        target_lufs=target_lufs,
+        remove_silence=remove_silence,
+        silence_thresh=silence_thresh,
+        min_silence_len=min_silence_len,
+        beam_size=beam_size,
+        best_of=best_of,
+        whisper_temp=whisper_temp,
+        condition_on_previous_text=condition_on_previous_text,
+        word_timestamps=word_timestamps,
+    )
+
+
+@mcp.tool()
+async def transcription_transcribe_audio_guided_async(
+    file_path: str | None = None,
+    audio_base64: str | None = None,
+    filename: str | None = None,
+    canonical_name: str | None = None,
+    project_id: str | None = None,
+    top_n_references: int = 3,
+    language: str = "es",
+    model_size: str = "large-v3",
+    min_speakers: int = 1,
+    max_speakers: int = 4,
+    vad_threshold: float = 0.25,
+) -> dict[str, Any]:
+    """Queue guided transcription and return asynchronous job state."""
+    return await src_transcription.transcribe_audio_guided_async(
+        file_path=file_path,
+        audio_base64=audio_base64,
+        filename=filename,
+        canonical_name=canonical_name,
+        project_id=project_id,
+        top_n_references=top_n_references,
+        language=language,
+        model_size=model_size,
+        min_speakers=min_speakers,
+        max_speakers=max_speakers,
+        vad_threshold=vad_threshold,
+    )
+
+
+@mcp.tool()
 def transcription_get_transcription_job(job_id: str) -> dict[str, Any]:
     """Return current status for an async transcription job."""
     return src_transcription.get_transcription_job(job_id)

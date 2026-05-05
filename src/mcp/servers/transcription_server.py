@@ -183,7 +183,9 @@ def _job_public(job: JobState) -> dict[str, Any]:
 _RUNTIME = build_runtime()
 _TRANSCRIBE_USE_CASE = _RUNTIME.transcribe_use_case
 _EXCERPT_USE_CASE = _RUNTIME.excerpt_use_case
+_GUIDED_USE_CASE = _RUNTIME.guided_transcribe_use_case
 _AUDIO_FILES = _RUNTIME.audio_file_adapter
+_PROJECT_STORE = _RUNTIME.project_store_adapter
 _JOBS: dict[str, JobState] = {}
 
 mcp = FastMCP("transcription-transcription")
@@ -357,6 +359,70 @@ async def _run_transcription_job(job: JobState, kwargs: dict[str, Any]) -> None:
         logger.exception("[mcp] async transcription job failed")
 
 
+def _resolve_canonical_audio(
+    canonical_name: str | None,
+    project_id: str | None,
+    upload_filename: str,
+) -> str:
+    if canonical_name:
+        return canonical_name
+
+    if project_id:
+        project = _PROJECT_STORE.load(project_id)
+        if project is None:
+            raise ValueError(f"Project {project_id} not found")
+
+        stem = upload_filename.rsplit(".", 1)[0].lower()
+        stem_compact = stem.replace("_", "")
+        for audio in project.audios:
+            if audio.audio_path and os.path.basename(audio.audio_path) == upload_filename:
+                return audio.canonical_name
+            if audio.canonical_name.lower().replace("_", "") == stem_compact:
+                return audio.canonical_name
+
+        if project.audios:
+            return project.audios[0].canonical_name
+
+    base = upload_filename.rsplit(".", 1)[0].lower()
+    normalized = "".join(ch if ch.isalnum() else "_" for ch in base)
+    while "__" in normalized:
+        normalized = normalized.replace("__", "_")
+    return normalized.strip("_") or "audio"
+
+
+async def _run_guided_job(job: JobState, kwargs: dict[str, Any]) -> None:
+    try:
+        job.status = "running"
+        job.progress = 15
+        job.message = "Running guided transcription"
+        job.updated_at = time.time()
+        job.events.append(
+            {
+                "stage": "guided",
+                "progress": job.progress,
+                "message": job.message,
+                "timestamp": job.updated_at,
+            }
+        )
+
+        result = await _GUIDED_USE_CASE.execute(
+            audio_path=kwargs["audio_path"],
+            canonical_name=kwargs["canonical_name"],
+            params=kwargs["params"],
+        )
+        job.status = "done"
+        job.progress = 100
+        job.message = "Completed"
+        job.result = result
+        job.updated_at = time.time()
+    except Exception as exc:
+        job.status = "error"
+        job.error = str(exc)
+        job.message = f"Error: {exc}"
+        job.updated_at = time.time()
+        logger.exception("[mcp] async guided transcription job failed")
+
+
 @mcp.tool()
 async def transcribe_audio_async(
     file_path: str | None = None,
@@ -436,6 +502,123 @@ async def transcribe_audio_async(
     }
     asyncio.create_task(_run_transcription_job(job, task_kwargs))
     return _job_public(job)
+
+
+@mcp.tool()
+async def transcribe_audio_guided(
+    file_path: str | None = None,
+    audio_base64: str | None = None,
+    filename: str | None = None,
+    canonical_name: str | None = None,
+    project_id: str | None = None,
+    top_n_references: int = 3,
+    language: str = "es",
+    model_size: str = "large-v3",
+    min_speakers: int = 1,
+    max_speakers: int = 4,
+    vad_threshold: float = 0.25,
+    noise_reduce: bool = True,
+    reduction_db: int = 25,
+    voice_enhance: bool = True,
+    apply_gain: bool = True,
+    target_lufs: float = -16.0,
+    remove_silence: bool = True,
+    silence_thresh: int = -45,
+    min_silence_len: int = 250,
+    beam_size: int = 5,
+    best_of: int = 5,
+    whisper_temp: float = 0.0,
+    condition_on_previous_text: bool = False,
+    word_timestamps: bool = False,
+) -> dict[str, Any]:
+    """Run reference-guided transcription aligned with POST /api/diarization/transcribe/guided."""
+    input_filename, content = _decode_audio_input(
+        file_path=file_path,
+        audio_base64=audio_base64,
+        filename=filename,
+    )
+    saved_path = await _AUDIO_FILES.save_upload(input_filename, content, settings.ORIGINALS_DIR)
+    resolved_canonical = _resolve_canonical_audio(canonical_name, project_id, input_filename)
+
+    params = {
+        "language": language,
+        "model_size": model_size,
+        "min_speakers": min_speakers,
+        "max_speakers": max_speakers,
+        "vad_threshold": vad_threshold,
+        "noise_reduce": noise_reduce,
+        "reduction_db": reduction_db,
+        "voice_enhance": voice_enhance,
+        "apply_gain": apply_gain,
+        "target_lufs": target_lufs,
+        "remove_silence": remove_silence,
+        "silence_thresh": silence_thresh,
+        "min_silence_len": min_silence_len,
+        "beam_size": beam_size,
+        "best_of": best_of,
+        "whisper_temp": whisper_temp,
+        "condition_on_previous_text": condition_on_previous_text,
+        "word_timestamps": word_timestamps,
+        "top_n_references": top_n_references,
+        "project_id": project_id or "",
+    }
+    return await _GUIDED_USE_CASE.execute(
+        audio_path=saved_path,
+        canonical_name=resolved_canonical,
+        params=params,
+    )
+
+
+@mcp.tool()
+async def transcribe_audio_guided_async(
+    file_path: str | None = None,
+    audio_base64: str | None = None,
+    filename: str | None = None,
+    canonical_name: str | None = None,
+    project_id: str | None = None,
+    top_n_references: int = 3,
+    language: str = "es",
+    model_size: str = "large-v3",
+    min_speakers: int = 1,
+    max_speakers: int = 4,
+    vad_threshold: float = 0.25,
+) -> dict[str, Any]:
+    """Queue guided transcription aligned with POST /api/diarization/transcribe/guided/async."""
+    input_filename, content = _decode_audio_input(
+        file_path=file_path,
+        audio_base64=audio_base64,
+        filename=filename,
+    )
+    saved_path = await _AUDIO_FILES.save_upload(input_filename, content, settings.ORIGINALS_DIR)
+    resolved_canonical = _resolve_canonical_audio(canonical_name, project_id, input_filename)
+
+    job_id = str(uuid.uuid4())
+    job = JobState(job_id=job_id)
+    _JOBS[job_id] = job
+
+    params = {
+        "language": language,
+        "model_size": model_size,
+        "min_speakers": min_speakers,
+        "max_speakers": max_speakers,
+        "vad_threshold": vad_threshold,
+        "top_n_references": top_n_references,
+        "project_id": project_id or "",
+        "job_id": job_id,
+    }
+    asyncio.create_task(
+        _run_guided_job(
+            job,
+            {
+                "audio_path": saved_path,
+                "canonical_name": resolved_canonical,
+                "params": params,
+            },
+        )
+    )
+    payload = _job_public(job)
+    payload["canonical_name"] = resolved_canonical
+    return payload
 
 
 @mcp.tool()
