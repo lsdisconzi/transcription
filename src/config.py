@@ -96,6 +96,14 @@ class Settings:
         if o.strip()
     ]
 
+    # Validate-and-refine
+    ENABLE_ACOUSTIC_PROBES: bool = os.getenv("ENABLE_ACOUSTIC_PROBES", "true").lower() == "true"
+    ACOUSTIC_PROBE_TARGET_SR: int = int(os.getenv("ACOUSTIC_PROBE_TARGET_SR", "16000"))
+    REFINE_GAP_THRESHOLD_S: float = float(os.getenv("REFINE_GAP_THRESHOLD_S", "4.0"))
+    REFINE_SNR_ESCALATION_DB: float = float(os.getenv("REFINE_SNR_ESCALATION_DB", "6.0"))
+    REFINE_SILENCE_DROP_RATIO: float = float(os.getenv("REFINE_SILENCE_DROP_RATIO", "0.6"))
+    REFINE_MAX_ACOUSTIC_WINDOWS: int = int(os.getenv("REFINE_MAX_ACOUSTIC_WINDOWS", "8"))
+
     def __init__(self):
         # Create data directories at runtime, not import time
         os.makedirs(self.AUDIO_DIR, exist_ok=True)

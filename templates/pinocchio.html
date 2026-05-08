@@ -1279,6 +1279,67 @@ tbody tr:hover td {
         </div>
       </section>
 
+      <!-- Validate & Refine ────────────────────────────────────────────── -->
+      <section id="refineSection" class="card">
+        <h3 style="display:flex;align-items:center;gap:12px;">
+          Validate &amp; Refine Transcript
+          <span class="badge-soft">audit · auto-fix · acoustic probe</span>
+          <span style="margin-left:auto;display:flex;gap:6px;">
+            <button id="refineRefreshIdsBtn" class="btn small ghost" type="button">↻ IDs</button>
+          </span>
+        </h3>
+        <div class="content">
+          <div class="row" style="gap:8px;flex-wrap:wrap;align-items:flex-end;">
+            <div class="field" style="flex:1 1 260px;">
+              <label for="refineTranscriptSelect">Transcript ID</label>
+              <select id="refineTranscriptSelect"></select>
+            </div>
+            <div class="field" style="flex:1 1 200px;">
+              <label for="refineCanonicalName">Canonical name (optional)</label>
+              <input type="text" id="refineCanonicalName" placeholder="e.g. aeropuerto_STG_20">
+            </div>
+            <div class="field" style="flex:0 0 110px;">
+              <label for="refineMaxWindows">Max acoustic windows</label>
+              <input type="number" id="refineMaxWindows" min="0" max="64" value="8">
+            </div>
+          </div>
+          <div class="row" style="gap:14px;flex-wrap:wrap;align-items:center;">
+            <label class="inline"><input type="checkbox" id="refineUseAcoustic" checked> use_acoustic_probes</label>
+            <label class="inline"><input type="checkbox" id="refineApplyPatches" checked> apply_patches</label>
+            <label class="inline"><input type="checkbox" id="refineSaveAsNew" checked> save_as_new_id</label>
+            <span style="flex:1"></span>
+            <button id="refineAuditBtn" class="btn small" type="button">Audit only</button>
+            <button id="refineRunBtn" class="btn small primary" type="button">Run validate &amp; refine</button>
+          </div>
+          <div id="refineStatus" class="inline" style="margin-top:6px;color:var(--muted);"></div>
+          <div class="row" style="gap:14px;flex-wrap:wrap;margin-top:12px;">
+            <div class="field" style="flex:1 1 280px;">
+              <label>Audit summary</label>
+              <table id="refineAuditTable" style="width:100%;font-size:12px;">
+                <thead><tr><th style="text-align:left">Anomaly kind</th><th style="text-align:right">Before</th><th style="text-align:right">After</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <div class="field" style="flex:1 1 280px;">
+              <label>Refinement metrics</label>
+              <pre id="refineMetricsPre" class="pre" style="max-height:160px;">—</pre>
+            </div>
+          </div>
+          <div class="field" style="margin-top:8px;">
+            <label>Anomalies (top 25)</label>
+            <pre id="refineAnomaliesPre" class="pre" style="max-height:240px;">—</pre>
+          </div>
+          <div class="field">
+            <label>Patches applied</label>
+            <pre id="refinePatchesPre" class="pre" style="max-height:200px;">—</pre>
+          </div>
+          <div class="field">
+            <label>Raw response</label>
+            <pre id="refineResultPre" class="pre" style="max-height:240px;">—</pre>
+          </div>
+        </div>
+      </section>
+
         <!-- RIGHT SIDE -->
         <aside class="card">
           <h3>Detalhes Técnicos</h3>
@@ -4430,6 +4491,147 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
       reload: fetchProjects,
       current: function(){ return state.current; }
     };
+  })();
+
+  // ── Validate & Refine panel ────────────────────────────────────────────
+  (function(){
+    var sel = document.getElementById('refineTranscriptSelect');
+    var refreshBtn = document.getElementById('refineRefreshIdsBtn');
+    var auditBtn = document.getElementById('refineAuditBtn');
+    var runBtn = document.getElementById('refineRunBtn');
+    var statusEl = document.getElementById('refineStatus');
+    var auditTbody = document.querySelector('#refineAuditTable tbody');
+    var metricsPre = document.getElementById('refineMetricsPre');
+    var anomaliesPre = document.getElementById('refineAnomaliesPre');
+    var patchesPre = document.getElementById('refinePatchesPre');
+    var resultPre = document.getElementById('refineResultPre');
+    if (!sel || !auditBtn || !runBtn) return;
+
+    function setStatus(msg, isError){
+      statusEl.textContent = msg || '';
+      statusEl.style.color = isError ? '#c0392b' : 'var(--muted)';
+    }
+
+    function renderCounts(before, after){
+      var keys = {};
+      Object.keys(before || {}).forEach(function(k){ keys[k] = 1; });
+      Object.keys(after || {}).forEach(function(k){ keys[k] = 1; });
+      var rows = Object.keys(keys).sort();
+      auditTbody.innerHTML = '';
+      if (rows.length === 0) {
+        auditTbody.innerHTML = '<tr><td colspan="3" style="color:var(--muted)">no anomalies</td></tr>';
+        return;
+      }
+      rows.forEach(function(k){
+        var b = (before && before[k]) || 0;
+        var a = (after && after[k]) || 0;
+        var tr = document.createElement('tr');
+        tr.innerHTML = '<td>'+k+'</td><td style="text-align:right">'+b+'</td><td style="text-align:right">'+a+'</td>';
+        auditTbody.appendChild(tr);
+      });
+    }
+
+    async function loadIds(){
+      try {
+        setStatus('loading transcript ids…');
+        var res = await fetch('/api/transcripts');
+        if (!res.ok) throw new Error('HTTP '+res.status);
+        var payload = await res.json();
+        var ids = Array.isArray(payload) ? payload
+          : (payload.transcripts || payload.ids || []);
+        var prev = sel.value;
+        sel.innerHTML = '';
+        ids.forEach(function(item){
+          var id = (typeof item === 'string') ? item : (item.transcript_id || item.id || '');
+          if (!id) return;
+          var opt = document.createElement('option');
+          opt.value = id;
+          opt.textContent = id;
+          sel.appendChild(opt);
+        });
+        if (prev) sel.value = prev;
+        setStatus(sel.options.length + ' transcripts loaded.');
+      } catch (e) {
+        setStatus('failed to load transcript ids: '+(e && e.message || e), true);
+      }
+    }
+
+    async function runAudit(){
+      var tid = sel.value;
+      if (!tid) { setStatus('select a transcript_id first', true); return; }
+      try {
+        setStatus('auditing '+tid+'…');
+        auditBtn.disabled = true;
+        var res = await fetch('/api/transcripts/'+encodeURIComponent(tid)+'/audit', { method:'POST' });
+        var data = await res.json();
+        if (!res.ok) throw new Error(data && (data.detail || data.error) || ('HTTP '+res.status));
+        renderCounts(data.counts_by_kind || {}, null);
+        anomaliesPre.textContent = JSON.stringify((data.anomalies || []).slice(0, 25), null, 2);
+        metricsPre.textContent = JSON.stringify(data.counts_by_severity || {}, null, 2);
+        patchesPre.textContent = '—';
+        resultPre.textContent = JSON.stringify(data, null, 2);
+        setStatus('audit done — '+(data.anomalies || []).length+' anomalies.');
+      } catch (e) {
+        setStatus('audit failed: '+(e && e.message || e), true);
+      } finally {
+        auditBtn.disabled = false;
+      }
+    }
+
+    async function runRefine(){
+      var tid = sel.value;
+      if (!tid) { setStatus('select a transcript_id first', true); return; }
+      var body = {
+        canonical_name: (document.getElementById('refineCanonicalName').value || '').trim() || null,
+        use_acoustic_probes: document.getElementById('refineUseAcoustic').checked,
+        apply_patches: document.getElementById('refineApplyPatches').checked,
+        save_as_new_id: document.getElementById('refineSaveAsNew').checked,
+        max_acoustic_windows: parseInt(document.getElementById('refineMaxWindows').value, 10) || 0
+      };
+      try {
+        setStatus('refining '+tid+'…');
+        runBtn.disabled = true;
+        var res = await fetch('/api/transcripts/'+encodeURIComponent(tid)+'/refine', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify(body)
+        });
+        var data = await res.json();
+        if (!res.ok) throw new Error(data && (data.detail || data.error) || ('HTTP '+res.status));
+        var before = (data.audit_before && data.audit_before.counts_by_kind) || {};
+        var after = (data.audit_after && data.audit_after.counts_by_kind) || {};
+        renderCounts(before, after);
+        anomaliesPre.textContent = JSON.stringify(((data.audit_after && data.audit_after.anomalies) || []).slice(0, 25), null, 2);
+        metricsPre.textContent = JSON.stringify({
+          transcript_id_in: data.transcript_id_in,
+          transcript_id_out: data.transcript_id_out,
+          audio_available: data.audio_available,
+          acoustic_probes_run: data.acoustic_probes_run,
+          reconciler_calls: data.reconciler_calls,
+          notes: data.notes || []
+        }, null, 2);
+        patchesPre.textContent = JSON.stringify(data.patches_applied || [], null, 2);
+        resultPre.textContent = JSON.stringify(data, null, 2);
+        setStatus('refine done → '+(data.transcript_id_out || tid));
+        if (data.transcript_id_out && data.transcript_id_out !== tid) {
+          loadIds();
+        }
+      } catch (e) {
+        setStatus('refine failed: '+(e && e.message || e), true);
+      } finally {
+        runBtn.disabled = false;
+      }
+    }
+
+    refreshBtn && refreshBtn.addEventListener('click', loadIds);
+    auditBtn.addEventListener('click', runAudit);
+    runBtn.addEventListener('click', runRefine);
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadIds);
+    } else {
+      loadIds();
+    }
   })();
 </script>
   <script src="/static/js/awareness-nav.js" defer></script>

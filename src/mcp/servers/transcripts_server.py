@@ -24,6 +24,9 @@ _ANALYZE_USE_CASE = _RUNTIME.analyze_use_case
 _SEARCH_USE_CASE = _RUNTIME.search_use_case
 _STORE = _RUNTIME.store_adapter
 _INDEX = _RUNTIME.qdrant_adapter
+_AUDITOR = _RUNTIME.auditor
+_PATCHER = _RUNTIME.patcher
+_VALIDATE_REFINE_USE_CASE = _RUNTIME.validate_refine_use_case
 
 mcp = FastMCP("transcription-transcripts")
 
@@ -239,6 +242,134 @@ async def index_all_transcripts() -> dict[str, Any]:
         "transcripts_processed": len(ids),
         "segments_indexed": total,
         "errors": errors,
+    }
+
+
+# ── Validate-and-refine tools ──────────────────────────────────────────
+
+
+@mcp.tool()
+def audit_transcript(transcript_id: str) -> dict[str, Any]:
+    """Run structural audit on a stored transcript. No audio, no LLM."""
+    transcript = _STORE.load(transcript_id)
+    if transcript is None:
+        raise ValueError(f"Transcript not found: {transcript_id}")
+    report = _AUDITOR.audit(transcript)
+    return {
+        "transcript_id": report.transcript_id,
+        "counts_by_kind": report.kind_counts(),
+        "counts_by_severity": report.severity_counts(),
+        "anomalies": [
+            {
+                "kind": a.kind.value,
+                "severity": a.severity.value,
+                "segment_indices": list(a.segment_indices),
+                "start": a.start,
+                "end": a.end,
+                "hint": a.hint,
+                "detail": a.detail_dict(),
+            }
+            for a in report.anomalies
+        ],
+    }
+
+
+@mcp.tool()
+async def validate_and_refine_transcript(
+    transcript_id: str,
+    canonical_name: str | None = None,
+    use_acoustic_probes: bool = True,
+    apply_patches: bool = True,
+    save_as_new_id: bool = True,
+    max_acoustic_windows: int = 8,
+) -> dict[str, Any]:
+    """Audit + auto-fix deterministic anomalies + reconcile flagged windows
+    + (optionally) probe audio and re-diarize/re-ASR low-SNR clips."""
+    if _VALIDATE_REFINE_USE_CASE is None:
+        raise ValueError("Validate-refine use case not configured.")
+    result = await _VALIDATE_REFINE_USE_CASE.execute(
+        transcript_id,
+        canonical_name=canonical_name,
+        use_acoustic_probes=use_acoustic_probes,
+        apply_patches=apply_patches,
+        save_as_new_id=save_as_new_id,
+        max_acoustic_windows=max_acoustic_windows,
+    )
+    return result.model_dump()
+
+
+@mcp.tool()
+def patch_transcript_segments(
+    transcript_id: str,
+    patches: list[dict[str, Any]],
+    save_as_new_id: bool = True,
+) -> dict[str, Any]:
+    """Apply agent-supplied patches. Each patch dict must include 'op' and
+    'segment_indices'; other fields per Patch dataclass."""
+    from src.domain.entities.patch import Patch, PatchOp
+
+    transcript = _STORE.load(transcript_id)
+    if transcript is None:
+        raise ValueError(f"Transcript not found: {transcript_id}")
+
+    parsed: list[Patch] = []
+    for raw in patches:
+        op_value = raw.get("op")
+        if not op_value:
+            raise ValueError("patch missing 'op'")
+        try:
+            op = PatchOp(op_value)
+        except ValueError as exc:
+            raise ValueError(f"unknown patch op: {op_value}") from exc
+        parsed.append(
+            Patch(
+                op=op,
+                segment_indices=tuple(int(i) for i in raw.get("segment_indices", [])),
+                new_text=raw.get("new_text"),
+                new_speaker=raw.get("new_speaker"),
+                new_start=(
+                    float(raw["new_start"]) if raw.get("new_start") is not None else None
+                ),
+                new_end=(
+                    float(raw["new_end"]) if raw.get("new_end") is not None else None
+                ),
+                insert_after_index=(
+                    int(raw["insert_after_index"])
+                    if raw.get("insert_after_index") is not None
+                    else None
+                ),
+                note=str(raw.get("note", "")),
+            )
+        )
+
+    patched, applied = _PATCHER.apply(transcript, parsed)
+    if save_as_new_id:
+        new_id = f"{transcript_id}_patched_{int(time.time())}"
+        from dataclasses import replace as _replace
+        patched = _replace(
+            patched,
+            transcript_id=new_id,
+            original_transcript_id=transcript_id,
+        )
+    _STORE.save(patched)
+
+    return {
+        "transcript_id_in": transcript_id,
+        "transcript_id_out": patched.transcript_id,
+        "transcript": _serialize_transcript(patched),
+        "patches_applied": [
+            {
+                "op": p.op.value,
+                "segment_indices": list(p.segment_indices),
+                "new_text": p.new_text,
+                "new_speaker": p.new_speaker,
+                "new_start": p.new_start,
+                "new_end": p.new_end,
+                "insert_after_index": p.insert_after_index,
+                "note": p.note,
+            }
+            for p in applied
+        ],
     }
 
 

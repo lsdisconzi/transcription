@@ -24,14 +24,30 @@ _analyze_use_case = None
 _search_use_case = None
 _store = None
 _index = None
+_auditor = None
+_patcher = None
+_validate_refine_use_case = None
 
 
-def init_transcript_router(analyze_use_case, search_use_case, store, index=None):
+def init_transcript_router(
+    analyze_use_case,
+    search_use_case,
+    store,
+    index=None,
+    *,
+    auditor=None,
+    patcher=None,
+    validate_refine_use_case=None,
+):
     global _analyze_use_case, _search_use_case, _store, _index
+    global _auditor, _patcher, _validate_refine_use_case
     _analyze_use_case = analyze_use_case
     _search_use_case = search_use_case
     _store = store
     _index = index
+    _auditor = auditor
+    _patcher = patcher
+    _validate_refine_use_case = validate_refine_use_case
 
 
 class ImportSegmentPayload(BaseModel):
@@ -525,3 +541,145 @@ async def stream_progress(job_id: str, request: Request):
             await asyncio.sleep(0.3)
 
     return EventSourceResponse(event_generator())
+
+
+# ── Validate / Refine / Patch ────────────────────────────────────────────
+
+
+class PatchPayload(BaseModel):
+    op: str
+    segment_indices: list[int] = Field(default_factory=list)
+    new_text: str | None = None
+    new_speaker: str | None = None
+    new_start: float | None = None
+    new_end: float | None = None
+    insert_after_index: int | None = None
+    note: str | None = ""
+
+
+class RefinePayload(BaseModel):
+    canonical_name: str | None = None
+    use_acoustic_probes: bool = True
+    apply_patches: bool = True
+    save_as_new_id: bool = True
+    max_acoustic_windows: int = 8
+
+
+class PatchSegmentsPayload(BaseModel):
+    patches: list[PatchPayload] = Field(default_factory=list)
+    save_as_new_id: bool = True
+
+
+def _audit_to_payload(report) -> dict:
+    return {
+        "transcript_id": report.transcript_id,
+        "counts_by_kind": report.kind_counts(),
+        "counts_by_severity": report.severity_counts(),
+        "anomalies": [
+            {
+                "kind": a.kind.value,
+                "severity": a.severity.value,
+                "segment_indices": list(a.segment_indices),
+                "start": a.start,
+                "end": a.end,
+                "hint": a.hint,
+                "detail": a.detail_dict(),
+            }
+            for a in report.anomalies
+        ],
+    }
+
+
+@router.post("/{transcript_id}/audit")
+async def audit_transcript_route(transcript_id: str):
+    """Run structural audit on a stored transcript. No audio, no LLM."""
+    if _auditor is None or _store is None:
+        raise HTTPException(status_code=503, detail="Auditor not configured.")
+    transcript = _store.load(transcript_id)
+    if transcript is None:
+        raise HTTPException(status_code=404, detail=f"Transcript not found: {transcript_id}")
+    return _audit_to_payload(_auditor.audit(transcript))
+
+
+@router.post("/{transcript_id}/refine")
+async def refine_transcript_route(transcript_id: str, payload: RefinePayload | None = None):
+    """Audit + auto-fix + (optional) acoustic escalation. Returns ValidateAndRefineResult."""
+    if _validate_refine_use_case is None:
+        raise HTTPException(status_code=503, detail="Validate/refine use case not configured.")
+    body = payload or RefinePayload()
+    try:
+        result = await _validate_refine_use_case.execute(
+            transcript_id,
+            canonical_name=body.canonical_name,
+            use_acoustic_probes=body.use_acoustic_probes,
+            apply_patches=body.apply_patches,
+            save_as_new_id=body.save_as_new_id,
+            max_acoustic_windows=body.max_acoustic_windows,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e)) from e
+    except Exception as e:
+        logger.exception("[error] refine failed")
+        raise HTTPException(status_code=500, detail=str(e)) from e
+    return result.model_dump()
+
+
+@router.post("/{transcript_id}/patch")
+async def patch_transcript_route(transcript_id: str, payload: PatchSegmentsPayload):
+    """Apply an explicit list of patches and persist."""
+    if _patcher is None or _store is None:
+        raise HTTPException(status_code=503, detail="Patcher not configured.")
+    from dataclasses import replace as _replace
+
+    from src.domain.entities.patch import Patch, PatchOp
+
+    transcript = _store.load(transcript_id)
+    if transcript is None:
+        raise HTTPException(status_code=404, detail=f"Transcript not found: {transcript_id}")
+
+    parsed: list[Patch] = []
+    for raw in payload.patches:
+        try:
+            op = PatchOp(raw.op)
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=f"unknown patch op: {raw.op}") from exc
+        parsed.append(
+            Patch(
+                op=op,
+                segment_indices=tuple(int(i) for i in raw.segment_indices),
+                new_text=raw.new_text,
+                new_speaker=raw.new_speaker,
+                new_start=raw.new_start,
+                new_end=raw.new_end,
+                insert_after_index=raw.insert_after_index,
+                note=raw.note or "",
+            )
+        )
+
+    patched, applied = _patcher.apply(transcript, parsed)
+    if payload.save_as_new_id:
+        new_id = f"{transcript_id}_patched_{int(time.time())}"
+        patched = _replace(
+            patched,
+            transcript_id=new_id,
+            original_transcript_id=transcript_id,
+        )
+    _store.save(patched)
+
+    return {
+        "transcript_id_in": transcript_id,
+        "transcript_id_out": patched.transcript_id,
+        "patches_applied": [
+            {
+                "op": p.op.value,
+                "segment_indices": list(p.segment_indices),
+                "new_text": p.new_text,
+                "new_speaker": p.new_speaker,
+                "new_start": p.new_start,
+                "new_end": p.new_end,
+                "insert_after_index": p.insert_after_index,
+                "note": p.note,
+            }
+            for p in applied
+        ],
+    }

@@ -232,3 +232,33 @@ class ProjectStorePort(Protocol):
 
     def list_projects(self) -> list[Project]: ...
 
+
+# ---------------------------------------------------------------------------
+# Acoustic Probe (lightweight numerical audio measurements)
+# ---------------------------------------------------------------------------
+@runtime_checkable
+class AcousticProbePort(Protocol):
+    """Acoustic measurement and clip extraction.
+
+    Lightweight numerical probes only — no ASR, no diarization. Implementations
+    may use torchaudio, soundfile, etc.
+    """
+
+    def audio_info(self, path: str) -> dict:
+        """Return ``{sample_rate, channels, duration, peak_db, rms_db, clipping_pct}``."""
+        ...
+
+    def window_stats(self, path: str, start: float, end: float) -> dict:
+        """Return per-window stats.
+
+        Keys: ``duration``, ``rms_db``, ``peak_db``, ``silence_ratio``,
+        ``voiced_ratio``, ``snr_estimate``.
+        """
+        ...
+
+    def extract_window(
+        self, src_path: str, start: float, end: float, dst_path: str
+    ) -> str:
+        """Write ``[start, end]`` of ``src_path`` as 16 kHz mono WAV to ``dst_path``."""
+        ...
+

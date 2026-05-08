@@ -2,10 +2,10 @@
 
 # ── Run ──────────────────────────────────────────────────────
 run:
-	uvicorn src.main:app --host 0.0.0.0 --port 8039
+	PYTHONWARNINGS="ignore:invalid escape sequence:SyntaxWarning:pydub.utils" uvicorn src.main:app --host 0.0.0.0 --port 8039
 
 dev:
-	uvicorn src.main:app --host 0.0.0.0 --port 8039 --reload
+	PYTHONWARNINGS="ignore:invalid escape sequence:SyntaxWarning:pydub.utils" uvicorn src.main:app --host 0.0.0.0 --port 8039 --reload
 
 run-mcp-transcription:
 	python -m src.mcp.servers.transcription_server
@@ -25,6 +25,12 @@ test-unit:
 
 test-integration:
 	python -m pytest tests/integration/ -v
+
+test-refine:
+	python -m pytest tests/unit/test_transcript_auditor.py \
+	       tests/unit/test_transcript_patcher.py \
+	       tests/unit/test_validate_and_refine_transcript.py \
+	       tests/unit/test_validate_refine_mcp.py -v
 
 # ── Quality ──────────────────────────────────────────────────
 lint:

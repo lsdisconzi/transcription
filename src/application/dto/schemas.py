@@ -121,3 +121,46 @@ class SearchHit(BaseModel):
 class SearchResult(BaseModel):
     query: str
     hits: list[SearchHit]
+
+
+# ── Validate-and-refine ─────────────────────────────────────────────────
+
+
+class AnomalyDTO(BaseModel):
+    kind: str
+    severity: str
+    segment_indices: list[int]
+    start: float
+    end: float
+    hint: str
+    detail: dict[str, str] = Field(default_factory=dict)
+
+
+class AuditReportDTO(BaseModel):
+    transcript_id: str
+    anomalies: list[AnomalyDTO]
+    counts_by_kind: dict[str, int] = Field(default_factory=dict)
+    counts_by_severity: dict[str, int] = Field(default_factory=dict)
+
+
+class PatchDTO(BaseModel):
+    op: str
+    segment_indices: list[int] = Field(default_factory=list)
+    new_text: str | None = None
+    new_speaker: str | None = None
+    new_start: float | None = None
+    new_end: float | None = None
+    insert_after_index: int | None = None
+    note: str = ""
+
+
+class ValidateAndRefineResult(BaseModel):
+    transcript_id_in: str
+    transcript_id_out: str
+    audit_before: AuditReportDTO
+    audit_after: AuditReportDTO
+    patches_applied: list[PatchDTO] = Field(default_factory=list)
+    acoustic_probes_run: int = 0
+    reconciler_calls: int = 0
+    audio_available: bool = True
+    notes: list[str] = Field(default_factory=list)

@@ -49,6 +49,9 @@ init_transcript_router(
     runtime.search_use_case,
     runtime.store_adapter,
     runtime.qdrant_adapter,
+    auditor=runtime.auditor,
+    patcher=runtime.patcher,
+    validate_refine_use_case=runtime.validate_refine_use_case,
 )
 init_projects_router(runtime.project_store_adapter, runtime.ref_store_adapter)
 init_references_router(
@@ -97,7 +100,7 @@ async def preload():
                 runtime.model_manager.get_diarization_pipeline,
                 settings.RESOLVED_HF_TOKEN,
             )
-            await asyncio.to_thread(runtime.model_manager.get_whisper_model, "small")
+            await asyncio.to_thread(runtime.model_manager.get_whisper_model, "large-v3")
             log.info(f"Preload done in {time.time()-t:.2f}s")
         except Exception as e:
             log.warning(f"Preload skipped: {e}")

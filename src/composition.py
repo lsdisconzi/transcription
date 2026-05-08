@@ -46,6 +46,11 @@ class transcriptionRuntime:
     excerpt_use_case: DiarizeExcerptUseCase | None = None
     guided_transcribe_use_case: ReferenceGuidedTranscribeUseCase | None = None
 
+    auditor: Any = None
+    patcher: Any = None
+    probe_adapter: Any = None
+    validate_refine_use_case: Any = None
+
 
 def build_runtime() -> transcriptionRuntime:
     """Build full runtime dependency graph from environment settings."""
@@ -164,5 +169,49 @@ def build_runtime() -> transcriptionRuntime:
         reconciler=runtime.reconciler_adapter,
         narrative_store=narrative_store_adapter,
         index=runtime.qdrant_adapter,
+    )
+
+    # Validate-and-refine wiring
+    from .application.services.transcript_auditor import TranscriptAuditor
+    from .application.services.transcript_patcher import TranscriptPatcher
+    from .application.use_cases.validate_and_refine_transcript import (
+        ValidateAndRefineTranscriptUseCase,
+    )
+
+    runtime.auditor = TranscriptAuditor(
+        gap_threshold_s=settings.REFINE_GAP_THRESHOLD_S,
+    )
+    runtime.patcher = TranscriptPatcher()
+
+    if settings.ENABLE_ACOUSTIC_PROBES:
+        try:
+            from .infrastructure.torchaudio_probe_adapter import TorchaudioProbeAdapter
+
+            runtime.probe_adapter = TorchaudioProbeAdapter(
+                target_sample_rate=settings.ACOUSTIC_PROBE_TARGET_SR,
+            )
+            logger.info("[refine] acoustic probes enabled (torchaudio)")
+        except Exception as exc:
+            logger.warning(
+                "[refine] acoustic probes disabled — torchaudio import failed: %s",
+                exc,
+            )
+            runtime.probe_adapter = None
+    else:
+        runtime.probe_adapter = None
+        logger.info("[refine] acoustic probes disabled by ENABLE_ACOUSTIC_PROBES=false")
+
+    runtime.validate_refine_use_case = ValidateAndRefineTranscriptUseCase(
+        store=store_adapter,
+        ref_store=ref_store_adapter,
+        narrative_store=narrative_store_adapter,
+        reconciler=runtime.reconciler_adapter,
+        auditor=runtime.auditor,
+        patcher=runtime.patcher,
+        processor=processor_adapter,
+        diarizer=diarizer_adapter,
+        asr=asr_adapter,
+        audio_files=audio_file_adapter,
+        probe=runtime.probe_adapter,
     )
     return runtime
