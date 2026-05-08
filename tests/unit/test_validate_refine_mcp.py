@@ -4,6 +4,9 @@ These tests bypass the FastMCP wire layer and call the underlying tool
 functions directly through ``mcp._tool_manager``.  They confirm that the
 ``audit_transcript`` and ``patch_transcript_segments`` tools are registered
 and route to the wired use cases / services produced by ``build_runtime``.
+
+The store is monkey-patched onto a ``tmp_path`` JSON store per-test so the
+tests never write into ``data/transcripts/``.
 """
 from __future__ import annotations
 
@@ -17,7 +20,17 @@ import pytest
 # Ensure the runtime does not try to load torchaudio for these smoke tests.
 os.environ.setdefault("ENABLE_ACOUSTIC_PROBES", "false")
 
+from src.infrastructure.json_store import JSONTranscriptStore
 from src.mcp.servers import transcripts_server as srv
+
+
+@pytest.fixture
+def tmp_store(tmp_path, monkeypatch):
+    """Swap the module-level _STORE for a JSONTranscriptStore rooted at tmp_path."""
+    store = JSONTranscriptStore(str(tmp_path))
+    monkeypatch.setattr(srv, "_STORE", store)
+    monkeypatch.setattr(srv._RUNTIME, "store_adapter", store)
+    return store
 
 
 def _call_tool(name: str, **kwargs):
@@ -29,9 +42,8 @@ def _call_tool(name: str, **kwargs):
     return result
 
 
-def _seed_transcript(tmp_path: Path) -> str:
-    """Write a minimal Transcript JSON into the wired store and return its id."""
-    store = srv._RUNTIME.store_adapter
+def _seed_transcript(store: JSONTranscriptStore) -> str:
+    """Write a minimal Transcript JSON via the store and return its id."""
     payload = {
         "transcript_id": "mcp_smoke",
         "segments": [
@@ -42,15 +54,7 @@ def _seed_transcript(tmp_path: Path) -> str:
         "source_file": "",
         "original_transcript_id": "mcp_smoke",
     }
-    base = (
-        getattr(store, "_directory", None)
-        or getattr(store, "_dir", None)
-        or getattr(store, "directory", None)
-        or getattr(store, "base_dir", None)
-        or tmp_path
-    )
-    target = Path(base) / "mcp_smoke.json"
-    target.parent.mkdir(parents=True, exist_ok=True)
+    target = Path(store._dir) / "mcp_smoke.json"
     target.write_text(json.dumps(payload), encoding="utf-8")
     return "mcp_smoke"
 
@@ -60,8 +64,8 @@ def test_tools_are_registered():
     assert {"audit_transcript", "patch_transcript_segments", "validate_and_refine_transcript"} <= names
 
 
-def test_audit_transcript_smoke(tmp_path):
-    tid = _seed_transcript(tmp_path)
+def test_audit_transcript_smoke(tmp_store):
+    tid = _seed_transcript(tmp_store)
     out = _call_tool("audit_transcript", transcript_id=tid)
     assert isinstance(out, dict)
     assert out.get("transcript_id") == tid
@@ -69,8 +73,8 @@ def test_audit_transcript_smoke(tmp_path):
     assert "counts_by_kind" in out
 
 
-def test_patch_transcript_segments_smoke(tmp_path):
-    tid = _seed_transcript(tmp_path)
+def test_patch_transcript_segments_smoke(tmp_store):
+    tid = _seed_transcript(tmp_store)
     patches = [{"op": "replace_text", "segment_indices": [1], "new_text": "MUNDO"}]
     out = _call_tool(
         "patch_transcript_segments",
