@@ -47,6 +47,69 @@ def _transcript_id_from_saved_audio(saved_audio_path: str) -> str:
     return cleaned or f"transcript_{int(time.time())}"
 
 
+def _merge_short_turns(
+    turns: list[DiarizationTurn],
+    *,
+    min_turn_duration_s: float,
+    merge_gap_s: float,
+    max_segments: int,
+) -> list[DiarizationTurn]:
+    """Normalize diarization output to avoid micro-segment explosion.
+
+    On CPU runs, many tiny turns can make Whisper calls extremely slow due to
+    per-segment invocation overhead. This merge pass keeps timeline continuity
+    while reducing pathological segmentation.
+    """
+    if not turns:
+        return turns
+
+    min_turn_duration_s = max(0.05, float(min_turn_duration_s))
+    merge_gap_s = max(0.0, float(merge_gap_s))
+    max_segments = max(1, int(max_segments))
+
+    sorted_turns = sorted(turns, key=lambda t: (t.start, t.end))
+
+    merged: list[DiarizationTurn] = []
+    current = sorted_turns[0]
+
+    for nxt in sorted_turns[1:]:
+        # Merge adjacent turns of same speaker when they are contiguous enough.
+        if nxt.speaker == current.speaker and (nxt.start - current.end) <= merge_gap_s:
+            current = DiarizationTurn(
+                speaker=current.speaker,
+                start=current.start,
+                end=max(current.end, nxt.end),
+            )
+            continue
+        merged.append(current)
+        current = nxt
+    merged.append(current)
+
+    if not merged:
+        return merged
+
+    total_duration = max(0.0, merged[-1].end - merged[0].start)
+    if len(merged) <= max_segments and total_duration <= 0:
+        return merged
+
+    # Keep tiny turns only if they are proportionally meaningful for the file.
+    adaptive_floor = total_duration / max_segments if total_duration > 0 else min_turn_duration_s
+    effective_min = max(min_turn_duration_s, adaptive_floor)
+
+    filtered = [t for t in merged if t.duration >= effective_min]
+    if not filtered:
+        # If everything is tiny, keep at least the longest chunk.
+        longest = max(merged, key=lambda t: t.duration)
+        filtered = [longest]
+
+    if len(filtered) <= max_segments:
+        return filtered
+
+    # If still too fragmented, keep the longest segments first and restore time order.
+    trimmed = sorted(filtered, key=lambda t: t.duration, reverse=True)[:max_segments]
+    return sorted(trimmed, key=lambda t: (t.start, t.end))
+
+
 class TranscribeAudioUseCase:
     """Orchestrates: save → preprocess → diarize → transcribe → persist."""
 
@@ -81,6 +144,12 @@ class TranscribeAudioUseCase:
         vad_threshold = params.get("vad_threshold", 0.25)
         keep_cache = params.get("keep_cache", True)
         keep_audio_artifacts = params.get("keep_audio_artifacts", True)
+        diarization_timeout_s = float(params.get("diarization_timeout_s", 180.0))
+        # Keep GPU-first behavior by default; only normalize segments when
+        # explicitly requested by params.
+        min_turn_duration_s = float(params.get("min_turn_duration_s", 0.0))
+        merge_gap_s = float(params.get("merge_gap_s", 0.0))
+        max_diarization_segments = int(params.get("max_diarization_segments", 1000))
         progress_callback = params.get("progress_callback")
         current_progress = 0
 
@@ -149,11 +218,34 @@ class TranscribeAudioUseCase:
             diarization_fallback_reason = None
             await emit_progress("diarization", 50, "Iniciando diarização")
             try:
-                turns = self._diarizer.diarize(
-                    processed_path,
-                    min_speakers=min_speakers,
-                    max_speakers=max_speakers,
-                    vad_threshold=vad_threshold,
+                # Run diarization in a worker thread and cap execution time.
+                # On CPU-only environments, pyannote can become very slow for
+                # longer files and block synchronous requests.
+                turns = await asyncio.wait_for(
+                    asyncio.to_thread(
+                        self._diarizer.diarize,
+                        processed_path,
+                        min_speakers=min_speakers,
+                        max_speakers=max_speakers,
+                        vad_threshold=vad_threshold,
+                    ),
+                    timeout=diarization_timeout_s,
+                )
+            except asyncio.TimeoutError:
+                duration_s = float(self._audio_files.get_duration(processed_path))
+                turns = [
+                    DiarizationTurn(
+                        speaker="SPEAKER_00",
+                        start=0.0,
+                        end=duration_s,
+                    )
+                ]
+                diarization_fallback = True
+                diarization_fallback_reason = "pyannote_timeout"
+                logger.warning(
+                    "[diarization] timeout after %.1fs; fallback to single-speaker mode duration=%.2fs",
+                    diarization_timeout_s,
+                    duration_s,
                 )
             except ValueError as e:
                 if "Pyannote auth token missing" not in str(e):
@@ -205,14 +297,33 @@ class TranscribeAudioUseCase:
                     duration_s,
                 )
 
+            raw_turn_count = len(turns)
+            if (
+                min_turn_duration_s > 0
+                or merge_gap_s > 0
+                or max_diarization_segments < raw_turn_count
+            ):
+                turns = _merge_short_turns(
+                    turns,
+                    min_turn_duration_s=min_turn_duration_s,
+                    merge_gap_s=merge_gap_s,
+                    max_segments=max_diarization_segments,
+                )
+
             diarization_elapsed = time.time() - t_step
-            logger.info(f"[diarization] segments={len(turns)} elapsed={diarization_elapsed:.2f}s")
+            logger.info(
+                "[diarization] segments=%d raw=%d elapsed=%.2fs",
+                len(turns),
+                raw_turn_count,
+                diarization_elapsed,
+            )
             await emit_progress(
                 "diarization",
                 65,
                 f"Diarização concluída com {len(turns)} segmentos",
                 {
                     "segments": len(turns),
+                    "raw_segments": raw_turn_count,
                     "fallback": diarization_fallback,
                     "fallback_reason": diarization_fallback_reason,
                 },
@@ -360,6 +471,10 @@ class TranscribeAudioUseCase:
                     "best_of": params.get("best_of", 5),
                     "temperature": params.get("whisper_temp", 0.0),
                     "vad_threshold": vad_threshold,
+                    "diarization_timeout_s": diarization_timeout_s,
+                    "min_turn_duration_s": min_turn_duration_s,
+                    "merge_gap_s": merge_gap_s,
+                    "max_diarization_segments": max_diarization_segments,
                     "noise_reduce": params.get("noise_reduce", True),
                     "reduction_db": params.get("reduction_db", 25),
                     "voice_enhance": params.get("voice_enhance", True),

@@ -83,8 +83,13 @@ _NOT_IMPLEMENTED = {
 
 
 @router.post("/api/pinocchio/transcribe/pyannote", include_in_schema=False)
-async def stub_pyannote() -> JSONResponse:
-    return JSONResponse(_NOT_IMPLEMENTED, status_code=501)
+async def alias_transcribe_pyannote() -> RedirectResponse:
+    """Pyannote provider proxy alias to the canonical transcription route.
+
+    The Pinocchio UI keeps a dedicated provider path. Route it to the same
+    transcription pipeline so localhost deployments keep the refined workflow.
+    """
+    return _redirect("/api/diarization/transcribe")
 
 
 @router.post("/api/pinocchio/voiceprint_from_file", include_in_schema=False)

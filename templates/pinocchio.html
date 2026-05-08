@@ -965,7 +965,7 @@ tbody tr:hover td {
           <span id="runpodHealthStatus" class="runpod-status pending" style="display:none;"><i class="fas fa-circle" style="font-size:6px;"></i> checking…</span>
         </div>
         <div class="provider-info" id="pyannoteInfo">
-          <strong>Pyannote.ai</strong> uses the server-side <span style="font-family:var(--mono);">PYANNOTE_API_KEY</span> and uploads the selected file through a temporary public gateway URL while the job runs. This provider requires the page to be accessed through a public host, not <span style="font-family:var(--mono);">localhost</span>.
+          <strong>Pyannote.ai</strong> is handled via the backend proxy route <span style="font-family:var(--mono);">/api/pinocchio/transcribe/pyannote</span>, so this refined local page can run on <span style="font-family:var(--mono);">localhost</span> using the same transcription pipeline.
         </div>
 
         <div class="split-2">
@@ -2755,9 +2755,6 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
 
       /* ====== PYANNOTE.AI TRANSCRIPTION ====== */
       async function transcribePyannote(file, config){
-        if (isLocalHost()) {
-          throw new Error('Pyannote.ai requires a public host. Open this page via awareness-ai.com.br (or another public domain) instead of localhost.');
-        }
         setStage('upload');
         setProgress(12,'Uploading to gateway…');
         var fd = new FormData();
