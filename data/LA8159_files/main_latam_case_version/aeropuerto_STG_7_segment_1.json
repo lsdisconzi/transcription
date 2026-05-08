@@ -1,7 +1,7 @@
 {
   "title": "aeropuerto_STG_7_segment_1",
-  "filename": "aeropuerto_STG_7_segment_1",
   "audio_id": "aeropuerto_STG_7_segment_1",
+  "filename": "aeropuerto_STG_7_segment_1",
   "recordingdatetime": "2024-07-05T15:16:00",
   "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
   "content": [
@@ -9,134 +9,155 @@
       "speaker": "Leandro Disconzi (passenger)",
       "start": 0.03,
       "end": 20.69,
-      "text": " Yo estoy acá simplemente para manejar un documento de divorcio de mi esposa. Simplemente por eso, yo estoy acá sin querer estar acá, pero estoy acá por mi hija. Entonces, si me quedé un mes, medio, algo, acabo de decirlo, voy a quedarme con un mes, medio, algo, voy a volver. Ya está un infierno en general"
+      "text": " Yo estoy acá simplemente para manejar un documento de divorcio de mi esposa. Simplemente por eso, yo estoy acá sin querer estar acá, pero estoy acá por mi hija. Entonces, si me quedé un mes, medio, algo, acabo de decirlo, voy a quedarme con un mes, medio, algo, voy a volver. Ya está un infierno en general",
+      "id": "0"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 21.34,
       "end": 24.99,
-      "text": " Y ahora, una acusación de esta forma..."
+      "text": " Y ahora, una acusación de esta forma...",
+      "id": "1"
     },
     {
       "speaker": "PDI",
       "start": 24.99,
       "end": 25.28,
-      "text": ""
+      "text": "",
+      "id": "2"
     },
     {
       "speaker": "PDI",
       "start": 26.61,
       "end": 31.98,
-      "text": " Ellos pueden acusar lo que sea, la decisión la tomamos nosotros como policías, nosotros mandamos."
+      "text": " Ellos pueden acusar lo que sea, la decisión la tomamos nosotros como policías, nosotros mandamos.",
+      "id": "3"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 31.98,
       "end": 47.48,
-      "text": " Sí, pero yo ya fui dañado, ahora yo ya perdí mi vuelo, voy a perder el bus que tengo para mi casa, que son más de 700 km de distancia después del vuelo, eso va a causar un transtorno, ya está me causando un transtorno."
+      "text": " Sí, pero yo ya fui dañado, ahora yo ya perdí mi vuelo, voy a perder el bus que tengo para mi casa, que son más de 700 km de distancia después del vuelo, eso va a causar un transtorno, ya está me causando un transtorno.",
+      "id": "4"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 36.87,
       "end": 37.09,
-      "text": ""
+      "text": "",
+      "id": "5"
     },
     {
       "speaker": "PDI",
       "start": 47.48,
       "end": 49.32,
-      "text": " Yo lo entiendo, Yo lo entiendo."
+      "text": " Yo lo entiendo, Yo lo entiendo.",
+      "id": "6"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 53.95,
       "end": 53.96,
-      "text": "yo te agradezco"
+      "text": "yo te agradezco",
+      "id": "7"
     },
     {
       "speaker": "PDI",
       "start": 53.96,
       "end": 64.53,
-      "text": " si, como te digo para mi no es nada gracioso a mi no es gracioso yo tengo muchas cosas que hacer"
+      "text": " si, como te digo para mi no es nada gracioso a mi no es gracioso yo tengo muchas cosas que hacer",
+      "id": "8"
     },
     {
       "speaker": "PDI",
       "start": 69.13,
       "end": 86.18,
-      "text": " Y esto es un problema para mi, para mi lo más fácil es hacerme esto rápido. Claro, claro, yo entiendo. Porque yo le diría el tiro, ya no te vayas a ver tu... qué equilibrio, claro, pero yo lo que estoy tratando de hacer es bajarle un poco el tema este Weon. Que él está llorando ya, que me pegaste, mentira."
+      "text": " Y esto es un problema para mi, para mi lo más fácil es hacerme esto rápido. Claro, claro, yo entiendo. Porque yo le diría el tiro, ya no te vayas a ver tu... qué equilibrio, claro, pero yo lo que estoy tratando de hacer es bajarle un poco el tema este Weon. Que él está llorando ya, que me pegaste, mentira.",
+      "id": "9"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 74.77,
       "end": 75.53,
-      "text": " Lo entiendo."
+      "text": " Lo entiendo.",
+      "id": "10"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 86.6,
       "end": 90.11,
-      "text": " Mira, hay la cámara, hay la cámara."
+      "text": " Mira, hay la cámara, hay la cámara.",
+      "id": "11"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 91.29,
       "end": 91.43,
-      "text": ""
+      "text": "",
+      "id": "12"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 92.37,
       "end": 93.21,
-      "text": " No hay nada en la cámara?"
+      "text": " No hay nada en la cámara?",
+      "id": "13"
     },
     {
       "speaker": "PDI",
       "start": 92.84,
       "end": 94.35,
-      "text": "no vas hacer nada"
+      "text": "no vas hacer nada",
+      "id": "14"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 94.51,
       "end": 99.76,
-      "text": " No, pero ¿yo puedo tener la parte de la grabación que fui acusado de?"
+      "text": " No, pero ¿yo puedo tener la parte de la grabación que fui acusado de?",
+      "id": "15"
     },
     {
       "speaker": "PDI",
       "start": 100.1,
       "end": 102.87,
-      "text": " Nosotros vamos a tratar de recuperarlo si nosotros lo tenemos todavía."
+      "text": " Nosotros vamos a tratar de recuperarlo si nosotros lo tenemos todavía.",
+      "id": "16"
     },
     {
       "speaker": "PDI",
       "start": 103.0,
       "end": 106,
-      "text": " Pero ya fue, ya no pasó nada. "
+      "text": " Pero ya fue, ya no pasó nada. ",
+      "id": "17"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 106,
       "end": 108.03,
-      "text": "No podrían hacer eso en cuanto yo estaba en el vuelo."
+      "text": "No podrían hacer eso en cuanto yo estaba en el vuelo.",
+      "id": "18"
     },
     {
       "speaker": "PDI",
       "start": 104.39,
       "end": 105.16,
-      "text": "😂😂"
+      "text": "😂😂",
+      "id": "19"
     },
     {
       "speaker": "PDI",
       "start": 111.98,
       "end": 112.54,
-      "text": "Tiene que haver algo!"
+      "text": "Tiene que haver algo!",
+      "id": "20"
     },
     {
       "speaker": "PDI",
       "start": 114.07,
       "end": 120.47,
-      "text": " Lo que tú puedas hacer es hacer el reclamo directamente a la compañía, ni siquiera acá, a la compañía directa."
+      "text": " Lo que tú puedas hacer es hacer el reclamo directamente a la compañía, ni siquiera acá, a la compañía directa.",
+      "id": "21"
     }
-  ],
-  "audio_file": "8th - manejando_divorcio - DGAC & PDI removed me by force from the plane.wav"
+  ]
 }

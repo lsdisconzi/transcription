@@ -1,5 +1,6 @@
 {
   "title": "aeropuerto_STG_8",
+  "audio_id": "aeropuerto_STG_8",
   "filename": "aeropuerto_STG_8",
   "recordingdatetime": "2024-07-05T16:01:00",
   "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
@@ -291,44 +292,5 @@
       "text": " Y yo solo me daré salida cuando la lata dé por escrita el motivo? Sí, pero pregúntalo. Y yo también quiero la copia.",
       "id": "40"
     }
-  ],
-  "metadata_extracted_at": "2025-10-22T10:06:31.899659",
-  "recordingDateTime": "2024-07-05T14:19",
-  "metadata": {
-    "timestamps": {
-      "QuickTime Movie Header.Created": "2024-07-05T22:19:01.000Z",
-      "QuickTime Movie Header[0].Preview Time": "0",
-      "QuickTime Movie Header[0].Poster Time": "0",
-      "QuickTime Movie Header[0].Selection Time": "0",
-      "QuickTime Movie Header[0].Current Time": "0",
-      "File[0].File Modified Date": "Sun Jul 06 12:53:46 -03:00 2025"
-    },
-    "audioProperties": {
-      "Duration": "00:09:09.1200000",
-      "QuickTime Movie Header[0].TrackId": "48000",
-      "QuickTime Movie Header[0].Duration": "00:09:09.1200000",
-      "QuickTime Movie Header[0].Preferred Volume": "1",
-      "QuickTime Movie Header[0].Preview Duration": "0",
-      "QuickTime Movie Header[0].Selection Duration": "0",
-      "QuickTime Movie Header[0].Next Track Id": "2",
-      "QuickTime Track Header[0].TrackId": "1",
-      "QuickTime Track Header[0].Duration": "26357760",
-      "QuickTime Track Header[0].Volume": "1"
-    },
-    "fileInfo": {
-      "File Size": "4667317 bytes",
-      "Major Brand": "M4A ",
-      "fileName": "aeropuerto_STG_8.m4a",
-      "fileSizeBytes": 4667317,
-      "fileSize": "4557.93 KB",
-      "contentType": "audio/mp4",
-      "physicalPath": "/Users/leandrodisconzi/Documents/sa_server/ollama/static/transcripts/transcripts_audio/aeropuerto_STG_8.m4a"
-    },
-    "location": {},
-    "deviceInfo": {
-      "QuickTime Movie Header[0].Version": "0",
-      "QuickTime Track Header[0].Version": "0"
-    }
-  },
-  "audio_id": "aeropuerto_STG_8"
+  ]
 }

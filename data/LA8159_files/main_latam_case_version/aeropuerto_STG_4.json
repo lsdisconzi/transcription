@@ -306,43 +306,5 @@
       "text": " Yo te espero",
       "id": "43"
     }
-  ],
-  "recordingDateTime": "2024-07-05T20:10",
-  "metadata": {
-    "timestamps": {
-      "QuickTime Movie Header.Created": "2024-07-06T04:10:28.000Z",
-      "QuickTime Movie Header[0].Preview Time": "0",
-      "QuickTime Movie Header[0].Poster Time": "0",
-      "QuickTime Movie Header[0].Selection Time": "0",
-      "QuickTime Movie Header[0].Current Time": "0",
-      "File[0].File Modified Date": "Sun Jul 06 12:53:46 -03:00 2025"
-    },
-    "audioProperties": {
-      "Duration": "00:04:20.2453333",
-      "QuickTime Movie Header[0].TrackId": "48000",
-      "QuickTime Movie Header[0].Duration": "00:04:20.2453333",
-      "QuickTime Movie Header[0].Preferred Volume": "1",
-      "QuickTime Movie Header[0].Preview Duration": "0",
-      "QuickTime Movie Header[0].Selection Duration": "0",
-      "QuickTime Movie Header[0].Next Track Id": "2",
-      "QuickTime Track Header[0].TrackId": "1",
-      "QuickTime Track Header[0].Duration": "12491776",
-      "QuickTime Track Header[0].Volume": "1"
-    },
-    "fileInfo": {
-      "File Size": "2188839 bytes",
-      "Major Brand": "M4A ",
-      "fileName": "aeropuerto_STG_4.m4a",
-      "fileSizeBytes": 2188839,
-      "fileSize": "2137.54 KB",
-      "contentType": "audio/mp4",
-      "physicalPath": "/Users/leandrodisconzi/Documents/sa_server/ollama/static/transcripts/transcripts_audio/aeropuerto_STG_4.m4a"
-    },
-    "location": {},
-    "deviceInfo": {
-      "QuickTime Movie Header[0].Version": "0",
-      "QuickTime Track Header[0].Version": "0"
-    }
-  },
-  "metadata_extracted_at": "2025-10-12T07:15:33.564848"
+  ]
 }

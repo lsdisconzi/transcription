@@ -1,10 +1,7 @@
-  {
-  "title": "aeropuerto_STG_29",
-  "subtitle": "Imported segment",
-  "filename": "aeropuerto_STG_29",
-  "recordingdatetime": "2024-07-05T21:51:00",
-  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
-  "content": [
+{
+  "title": "latam_sup_diego_strategizing_delete_traces_print_in_desk_upstairs",
+  "recordingDateTime": "2024-07-05T21:51",
+  "segments": [
     {
       "speaker": "Leandro Disconzi",
       "start": 0.03096875,
@@ -110,6 +107,5 @@
       "text": "no poh, ahora si! mejor por que se non ..???",
       "id": "14"
     }
-  ],
-  "audio_id": "aeropuerto_STG_29_att"
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "title": "aeropuerto_STG_23_segment_5",
-  "filename": "aeropuerto_STG_23_segment_5",
   "audio_id": "aeropuerto_STG_23_segment_5",
+  "filename": "aeropuerto_STG_23_segment_5",
   "recordingdatetime": "2024-07-05T19:11:00",
   "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
   "content": [
@@ -10,105 +10,105 @@
       "start": 0.03,
       "end": 3.95,
       "text": " Eso ya no daba más, ¿entiendes? Me perseguieron.",
-      "id": 0
+      "id": "0"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 6.14,
       "end": 6.88,
       "text": " ¿Entiendes?",
-      "id": 1
+      "id": "1"
     },
     {
       "speaker": "DGAC - Don Nicolas",
       "start": 6.88,
       "end": 11.47,
       "text": " Por eso tiene todo el derecho usted de iniciar las acciones que usted...",
-      "id": 2
+      "id": "2"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 11.47,
       "end": 18.73,
       "text": " van a tener las cámaras y van a mostrar lo cuanto que yo estaba siendo... disturbando el vuelo y yo estaba sentado.",
-      "id": 3
+      "id": "3"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 21.23,
       "end": 28.36,
       "text": " Y me llamaron, me llamaron el nombre. Leandro, yo levanté, el primero que hizo fue levantar la mano, yo estoy acá.",
-      "id": 4
+      "id": "4"
     },
     {
       "speaker": "DGAC - Don Nicolas",
       "start": 29.24,
       "end": 37.7,
       "text": "Pero ya del momento en que le digo, usted le dice lo siento, el vuelo no va a salir mientras usted no se baque del avión.",
-      "id": 5
+      "id": "5"
     },
     {
       "speaker": "DGAC - Don Nicolas",
       "start": 38.37,
       "end": 51.13,
       "text": " ¿Y el vuelo se atrasó una hora y media? ¿Cuánto se atrasó? ¿Como una hora y media? Cien horas y media. ¿Sí? Sí. ¿Se atrasó una hora y media? Sí. ¿Y la compañía...? Usted dice que usted tuvo un detenimiento económico. ¿La compañía aérea sabe cuánto paga por una hora y media más a cargo en estacionamiento?",
-      "id": 6
+      "id": "6"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 42,
       "end": 43.47,
       "text": "SI. Y??",
-      "id": 7
+      "id": "7"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 43.5,
       "end": 50,
       "text": "",
-      "id": 8
+      "id": "8"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 51.26,
       "end": 55.9,
       "text": " Por culpa de ellos, yo quiero más que ellos se exploten.",
-      "id": 9
+      "id": "9"
     },
     {
       "speaker": "DGAC - Don Nicolas",
       "start": 55.9,
       "end": 60.8,
       "text": " Le estoy explicando que eso fue porque usted nos bajó de inmediato. Por eso mismo la compañía...********************",
-      "id": 10
+      "id": "10"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 59.89,
       "end": 66.72,
       "text": " Pero entiende que eso ya es una consecuencia de que un funcionario con poco entrenamiento...",
-      "id": 11
+      "id": "11"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 67.9,
       "end": 72.2,
       "text": " hubiese una acusación incorrecta, que llámase una defamación.",
-      "id": 12
+      "id": "12"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 72.1,
       "end": 74.67,
       "text": "Sí, pero son dos cosas diferentes.",
-      "id": 13
+      "id": "13"
     },
     {
       "speaker": "DGAC - Don Nicolas",
       "start": 74.47,
       "end": 76.98,
       "text": " Uno es lo que provocó, lo otro es lo que usted hizo.",
-      "id": 14
+      "id": "14"
     }
   ]
 }

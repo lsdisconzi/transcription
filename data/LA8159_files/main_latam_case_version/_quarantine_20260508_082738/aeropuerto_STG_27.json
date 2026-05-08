@@ -1,0 +1,80 @@
+{
+  "title": "aeropuerto_STG_27",
+  "subtitle": "Imported segment",
+  "filename": "aeropuerto_STG_27",
+  "audio_id": "aeropuerto_STG_27",
+  "recordingdatetime": "2024-07-05T21:26:00",
+  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
+  "content": [
+    {
+      "index": 1,
+      "speaker": "latam supervisor (Diego)",
+      "start": 2.640067911714771,
+      "end": 4.490662139219015,
+      "duration": 1.851,
+      "text": " esta ... un documento de que queria ustedes"
+    },
+    {
+      "index": 2,
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 4.490662139219015,
+      "end": 15.577249575551784,
+      "duration": 11.087,
+      "text": " están viendo el documento? Perfecto, perfecto. Todo lo que quiero. Que le pongan por escrito el por qué hicieron eso conmigo.  Muchas gracias. "
+    },
+    {
+      "index": 3,
+      "speaker": "latam supervisor (Diego)",
+      "start": 15.577249575551784,
+      "end": 16.815573770491802,
+      "duration": 1.238,
+      "text": " Ya."
+    },
+    {
+      "index": 4,
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 16.815573770491802,
+      "end": 20.876061120543294,
+      "duration": 4.061,
+      "text": " Espero acá. Muchas gracias."
+    }
+  ],
+  "recordingDateTime": "2024-07-05T20:26",
+  "metadata": {
+    "timestamps": {
+      "QuickTime Movie Header.Created": "2024-07-06T04:26:45.000Z",
+      "QuickTime Movie Header[0].Preview Time": "0",
+      "QuickTime Movie Header[0].Poster Time": "0",
+      "QuickTime Movie Header[0].Selection Time": "0",
+      "QuickTime Movie Header[0].Current Time": "0",
+      "File[0].File Modified Date": "Sun Jul 06 12:53:47 -03:00 2025"
+    },
+    "audioProperties": {
+      "Duration": "00:00:23.8720000",
+      "QuickTime Movie Header[0].TrackId": "48000",
+      "QuickTime Movie Header[0].Duration": "00:00:23.8720000",
+      "QuickTime Movie Header[0].Preferred Volume": "1",
+      "QuickTime Movie Header[0].Preview Duration": "0",
+      "QuickTime Movie Header[0].Selection Duration": "0",
+      "QuickTime Movie Header[0].Next Track Id": "2",
+      "QuickTime Track Header[0].TrackId": "1",
+      "QuickTime Track Header[0].Duration": "1145856",
+      "QuickTime Track Header[0].Volume": "1"
+    },
+    "fileInfo": {
+      "File Size": "203401 bytes",
+      "Major Brand": "M4A ",
+      "fileName": "aeropuerto_STG_27.m4a",
+      "fileSizeBytes": 203401,
+      "fileSize": "198.63 KB",
+      "contentType": "audio/mp4",
+      "physicalPath": "/Users/leandrodisconzi/Documents/sa_server/ollama/static/transcripts/transcripts_audio/aeropuerto_STG_27.m4a"
+    },
+    "location": {},
+    "deviceInfo": {
+      "QuickTime Movie Header[0].Version": "0",
+      "QuickTime Track Header[0].Version": "0"
+    }
+  },
+  "metadata_extracted_at": "2025-10-22T07:37:26.123692"
+}

@@ -1,5 +1,6 @@
 {
   "title": "aeropuerto_STG_19",
+  "audio_id": "aeropuerto_STG_19",
   "filename": "aeropuerto_STG_19",
   "recordingdatetime": "2024-07-05T17:03:58",
   "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
@@ -102,44 +103,5 @@
       "text": " Yo no, porque pregunté a una persona y dije, ya, yo ya vuelvo, y también no vuelvo. ¿Están me haciendo...? Estamos juntos. Ya, muchas gracias, muchas gracias, porque ya no sé más qué hacer.",
       "id": "13"
     }
-  ],
-  "metadata_extracted_at": "2025-10-22T10:06:41.304176",
-  "recordingDateTime": "2024-07-05T16:03",
-  "metadata": {
-    "timestamps": {
-      "QuickTime Movie Header.Created": "2024-07-06T00:03:58.000Z",
-      "QuickTime Movie Header[0].Preview Time": "0",
-      "QuickTime Movie Header[0].Poster Time": "0",
-      "QuickTime Movie Header[0].Selection Time": "0",
-      "QuickTime Movie Header[0].Current Time": "0",
-      "File[0].File Modified Date": "Sun Jul 06 12:53:47 -03:00 2025"
-    },
-    "audioProperties": {
-      "Duration": "00:01:59.2320000",
-      "QuickTime Movie Header[0].TrackId": "48000",
-      "QuickTime Movie Header[0].Duration": "00:01:59.2320000",
-      "QuickTime Movie Header[0].Preferred Volume": "1",
-      "QuickTime Movie Header[0].Preview Duration": "0",
-      "QuickTime Movie Header[0].Selection Duration": "0",
-      "QuickTime Movie Header[0].Next Track Id": "2",
-      "QuickTime Track Header[0].TrackId": "1",
-      "QuickTime Track Header[0].Duration": "5723136",
-      "QuickTime Track Header[0].Volume": "1"
-    },
-    "fileInfo": {
-      "File Size": "1015482 bytes",
-      "Major Brand": "M4A ",
-      "fileName": "aeropuerto_STG_19.m4a",
-      "fileSizeBytes": 1015482,
-      "fileSize": "991.68 KB",
-      "contentType": "audio/mp4",
-      "physicalPath": "/Users/leandrodisconzi/Documents/sa_server/ollama/static/transcripts/transcripts_audio/aeropuerto_STG_19.m4a"
-    },
-    "location": {},
-    "deviceInfo": {
-      "QuickTime Movie Header[0].Version": "0",
-      "QuickTime Track Header[0].Version": "0"
-    }
-  },
-  "audio_id": "aeropuerto_STG_19"
+  ]
 }

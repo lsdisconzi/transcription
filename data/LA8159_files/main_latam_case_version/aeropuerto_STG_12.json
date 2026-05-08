@@ -1,9 +1,9 @@
 {
   "title": "aeropuerto_STG_12",
-  "subtitle": "Imported segment",
-  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
-  "recordingdatetime": "2024-07-06T09:13",
+  "audio_id": "aeropuerto_STG_12",
   "filename": "aeropuerto_STG_12",
+  "recordingdatetime": "2024-07-06T09:13",
+  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
   "content": [
     {
       "speaker": "Leandro Disconzi (passenger)",
@@ -1125,6 +1125,5 @@
       "text": "",
       "id": "160"
     }
-  ],
-  "audio_id": "aeropuerto_STG_12"
+  ]
 }

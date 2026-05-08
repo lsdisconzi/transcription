@@ -1,5 +1,6 @@
 {
   "title": "aeropuerto_STG_18",
+  "audio_id": "aeropuerto_STG_18",
   "filename": "aeropuerto_STG_18",
   "recordingdatetime": "2024-07-05T16:57:00",
   "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
@@ -60,44 +61,5 @@
       "text": " Let's wait a little bit more to see what will happen.",
       "id": "7"
     }
-  ],
-  "metadata_extracted_at": "2025-10-22T10:06:27.375822",
-  "recordingDateTime": "2024-07-05T15:57",
-  "metadata": {
-    "timestamps": {
-      "QuickTime Movie Header.Created": "2024-07-05T23:57:15.000Z",
-      "QuickTime Movie Header[0].Preview Time": "0",
-      "QuickTime Movie Header[0].Poster Time": "0",
-      "QuickTime Movie Header[0].Selection Time": "0",
-      "QuickTime Movie Header[0].Current Time": "0",
-      "File[0].File Modified Date": "Sun Jul 06 12:53:47 -03:00 2025"
-    },
-    "audioProperties": {
-      "Duration": "00:00:36.1599999",
-      "QuickTime Movie Header[0].TrackId": "48000",
-      "QuickTime Movie Header[0].Duration": "00:00:36.1599999",
-      "QuickTime Movie Header[0].Preferred Volume": "1",
-      "QuickTime Movie Header[0].Preview Duration": "0",
-      "QuickTime Movie Header[0].Selection Duration": "0",
-      "QuickTime Movie Header[0].Next Track Id": "2",
-      "QuickTime Track Header[0].TrackId": "1",
-      "QuickTime Track Header[0].Duration": "1735680",
-      "QuickTime Track Header[0].Volume": "1"
-    },
-    "fileInfo": {
-      "File Size": "308420 bytes",
-      "Major Brand": "M4A ",
-      "fileName": "aeropuerto_STG_18.m4a",
-      "fileSizeBytes": 308420,
-      "fileSize": "301.19 KB",
-      "contentType": "audio/mp4",
-      "physicalPath": "/Users/leandrodisconzi/Documents/sa_server/ollama/static/transcripts/transcripts_audio/aeropuerto_STG_18.m4a"
-    },
-    "location": {},
-    "deviceInfo": {
-      "QuickTime Movie Header[0].Version": "0",
-      "QuickTime Track Header[0].Version": "0"
-    }
-  },
-  "audio_id": "aeropuerto_STG_18"
+  ]
 }

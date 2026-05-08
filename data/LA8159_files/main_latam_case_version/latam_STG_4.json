@@ -1,1018 +1,891 @@
 {
   "title": "latam_STG_4",
-  "subtitle": "SU Carta",
+  "audio_id": "latam_STG_4",
   "filename": "latam_STG_4",
   "recordingdatetime": "2024-07-05T23:20:00",
   "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
   "content": [
     {
-      "index": 1,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 18.90492359932088,
       "end": 21.112054329371816,
-      "duration": 2.207,
-      "text": " ¿alguien puede darme un posicionamiento?"
+      "text": " ¿alguien puede darme un posicionamiento?",
+      "id": "0"
     },
     {
-      "index": 2,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 23.11544991511036,
       "end": 27.869269949066215,
-      "duration": 4.754,
-      "text": " porque me están dejando como un idiota por ahí."
+      "text": " porque me están dejando como un idiota por ahí.",
+      "id": "1"
     },
     {
-      "index": 3,
       "speaker": "",
       "start": 27.886247877758912,
       "end": 29.397283531409172,
-      "duration": 1.511,
-      "text": " !  ."
+      "text": " !  .",
+      "id": "2"
     },
     {
-      "index": 4,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 29.397283531409172,
       "end": 32.36842105263158,
-      "duration": 2.971,
-      "text": " sí, pero yo te dije que esa carta no tenía una firma."
+      "text": " sí, pero yo te dije que esa carta no tenía una firma.",
+      "id": "3"
     },
     {
-      "index": 5,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 31.570458404074706,
       "end": 33.91341256366723,
-      "duration": 2.343,
-      "text": " ¡firma!"
+      "text": " ¡firma!",
+      "id": "4"
     },
     {
-      "index": 6,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 33.91341256366723,
       "end": 35.93378607809847,
-      "duration": 2.02,
-      "text": " no va a tener una firma, un documento?"
+      "text": " no va a tener una firma, un documento?",
+      "id": "5"
     },
     {
-      "index": 7,
       "speaker": "",
       "start": 35.84889643463497,
       "end": 35.89983022071307,
-      "duration": 0.051,
-      "text": " ."
+      "text": " .",
+      "id": "6"
     },
     {
-      "index": 8,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 35.93378607809847,
       "end": 37.63157894736842,
-      "duration": 1.698,
-      "text": " ¿qué es el formato de la compañia?"
+      "text": " ¿qué es el formato de la compañia?",
+      "id": "7"
     },
     {
-      "index": 9,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 37.93718166383701,
       "end": 52.02886247877759,
-      "duration": 14.092,
-      "text": " y no tiene nadie para responsabilizar por esta información, porque eso va a pasar. Este va a ser un documento que no va a ser válido después, porque no hay nadie para responsabilizar."
+      "text": " y no tiene nadie para responsabilizar por esta información, porque eso va a pasar. Este va a ser un documento que no va a ser válido después, porque no hay nadie para responsabilizar.",
+      "id": "8"
     },
     {
-      "index": 10,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 52.35144312393888,
       "end": 62.23259762308999,
-      "duration": 9.881,
-      "text": " De nuevo, ya está bien, de nuevo. Yo voy a estar hasta más lejos pra que tu no se ofendas"
+      "text": " De nuevo, ya está bien, de nuevo. Yo voy a estar hasta más lejos pra que tu no se ofendas",
+      "id": "9"
     },
     {
-      "index": 11,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 62.02886247877759,
       "end": 62.07979626485569,
-      "duration": 0.051,
-      "text": " entnces, por favor, alguien asigne esto, se responsabilice."
+      "text": " entnces, por favor, alguien asigne esto, se responsabilice.",
+      "id": "10"
     },
     {
-      "index": 12,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 62.11375212224109,
       "end": 62.18166383701188,
-      "duration": 0.068,
-      "text": "Esta es la carta."
+      "text": "Esta es la carta.",
+      "id": "11"
     },
     {
-      "index": 13,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 62.23259762308999,
       "end": 62.99660441426146,
-      "duration": 0.764,
-      "text": "la acceptas se quieres o no"
+      "text": "la acceptas se quieres o no",
+      "id": "12"
     },
     {
-      "index": 14,
       "speaker": "SPEAKER_03",
       "start": 62.99660441426146,
       "end": 63.217317487266556,
-      "duration": 0.221,
-      "text": ""
+      "text": "",
+      "id": "13"
     },
     {
-      "index": 15,
       "speaker": "",
       "start": 63.217317487266556,
       "end": 63.26825127334465,
-      "duration": 0.051,
-      "text": ""
+      "text": "",
+      "id": "14"
     },
     {
-      "index": 16,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 63.26825127334465,
       "end": 64.62648556876061,
-      "duration": 1.358,
-      "text": " mira."
+      "text": " mira.",
+      "id": "15"
     },
     {
-      "index": 17,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 65.23769100169778,
       "end": 72.31748726655348,
-      "duration": 7.08,
-      "text": " si yo quiero la acepto o no? Pero, ¿un documento legal no debería tener una asignatura, una firma? Es un documento."
+      "text": " si yo quiero la acepto o no? Pero, ¿un documento legal no debería tener una asignatura, una firma? Es un documento.",
+      "id": "16"
     },
     {
-      "index": 18,
       "speaker": "SPEAKER_02",
       "start": 72.31748726655348,
       "end": 72.50424448217316,
-      "duration": 0.187,
-      "text": " ¡gracias!"
+      "text": " ¡gracias!",
+      "id": "17"
     },
     {
-      "index": 19,
       "speaker": "SPEAKER_03",
       "start": 72.50424448217316,
       "end": 74.9151103565365,
-      "duration": 2.411,
-      "text": " no tiene firma."
+      "text": " no tiene firma.",
+      "id": "18"
     },
     {
-      "index": 20,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 73.16638370118847,
       "end": 73.94736842105263,
-      "duration": 0.781,
-      "text": " eso es nuestro formato..."
+      "text": " eso es nuestro formato...",
+      "id": "19"
     },
     {
-      "index": 21,
       "speaker": "",
       "start": 74.9151103565365,
       "end": 75.0,
-      "duration": 0.085,
-      "text": " !"
+      "text": " !",
+      "id": "20"
     },
     {
-      "index": 22,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 75.84889643463498,
       "end": 77.76740237691001,
-      "duration": 1.919,
-      "text": " ninguno de nuestros documentos tiene firma."
+      "text": " ninguno de nuestros documentos tiene firma.",
+      "id": "21"
     },
     {
-      "index": 23,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 79.36332767402376,
       "end": 81.40067911714772,
-      "duration": 2.037,
-      "text": " ¿quién escribió eso?"
+      "text": " ¿quién escribió eso?",
+      "id": "22"
     },
     {
-      "index": 24,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 81.40067911714772,
       "end": 83.53989813242785,
-      "duration": 2.139,
-      "text": " latam, latam está siendo responsable de eso."
+      "text": " latam, latam está siendo responsable de eso.",
+      "id": "23"
     },
     {
-      "index": 25,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 85.42444821731749,
       "end": 87.51273344651952,
-      "duration": 2.088,
-      "text": "no acompañamos, tiene el logotipo."
+      "text": "no acompañamos, tiene el logotipo.",
+      "id": "24"
     },
     {
-      "index": 26,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 85.98471986417658,
       "end": 86.51103565365025,
-      "duration": 0.526,
-      "text": " ya, sí."
+      "text": " ya, sí.",
+      "id": "25"
     },
     {
-      "index": 27,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 87.83531409168083,
       "end": 91.34974533106961,
-      "duration": 3.514,
-      "text": " por favor, un timbre."
+      "text": " por favor, un timbre.",
+      "id": "26"
     },
     {
-      "index": 28,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 91.28183361629883,
       "end": 94.66044142614601,
-      "duration": 3.379,
-      "text": " nadie se lo va a hacer, señor. Va a perder su tiempo aquí."
+      "text": " nadie se lo va a hacer, señor. Va a perder su tiempo aquí.",
+      "id": "27"
     },
     {
-      "index": 29,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 94.66044142614601,
       "end": 101.4176570458404,
-      "duration": 6.757,
-      "text": " yo ya perdí mi tiempo desde las 11 de la mañana que estoy acá. Ya, porque me sacaron la fuerza del vuelo."
+      "text": " yo ya perdí mi tiempo desde las 11 de la mañana que estoy acá. Ya, porque me sacaron la fuerza del vuelo.",
+      "id": "28"
     },
     {
-      "index": 30,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 101.97792869269949,
       "end": 103.40407470288625,
-      "duration": 1.426,
-      "text": " ahí tiene todos los motivos."
+      "text": " ahí tiene todos los motivos.",
+      "id": "29"
     },
     {
-      "index": 31,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 103.16638370118847,
       "end": 106.74872665534804,
-      "duration": 3.582,
-      "text": " sí, claro, y ese motivo ya fue desprovado por la PDI."
+      "text": " sí, claro, y ese motivo ya fue desprovado por la PDI.",
+      "id": "30"
     },
     {
-      "index": 32,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 105.3565365025467,
       "end": 108.20882852292021,
-      "duration": 2.852,
-      "text": " fueron desprovados por la PDI."
+      "text": " fueron desprovados por la PDI.",
+      "id": "31"
     },
     {
-      "index": 33,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 108.1409168081494,
       "end": 108.65025466893039,
-      "duration": 0.509,
-      "text": " ¿por qué?"
+      "text": " ¿por qué?",
+      "id": "32"
     },
     {
-      "index": 34,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 109.0577249575552,
       "end": 111.893039049236,
-      "duration": 2.835,
-      "text": " porque ese es nuestro logotipo, no podemos hacer nada más que eso."
+      "text": " porque ese es nuestro logotipo, no podemos hacer nada más que eso.",
+      "id": "33"
     },
     {
-      "index": 35,
       "speaker": "",
       "start": 111.893039049236,
       "end": 112.38539898132427,
-      "duration": 0.492,
-      "text": " "
+      "text": " ",
+      "id": "34"
     },
     {
-      "index": 36,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 113.42105263157896,
       "end": 120.63667232597624,
-      "duration": 7.216,
-      "text": " me da la voluntad de ver otro documento de ustedes para ver si no hay una firma o un timbre."
+      "text": " me da la voluntad de ver otro documento de ustedes para ver si no hay una firma o un timbre.",
+      "id": "35"
     },
     {
-      "index": 37,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 120.87436332767402,
       "end": 122.79286926994908,
-      "duration": 1.919,
-      "text": " sí, por favor."
+      "text": " sí, por favor.",
+      "id": "36"
     },
     {
-      "index": 38,
       "speaker": "",
       "start": 122.99660441426147,
       "end": 123.21731748726657,
-      "duration": 0.221,
-      "text": " ."
+      "text": " .",
+      "id": "37"
     },
     {
-      "index": 39,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 128.73514431239389,
       "end": 133.04753820033957,
-      "duration": 4.312,
-      "text": " simplemente tú ibas a ignorarme y yo estaba esperando"
+      "text": " simplemente tú ibas a ignorarme y yo estaba esperando",
+      "id": "38"
     },
     {
-      "index": 40,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 132.94567062818336,
       "end": 137.46179966044144,
-      "duration": 4.516,
-      "text": " y ya le informamos. Ya se le entregó toda la información. No hay más información que..."
+      "text": " y ya le informamos. Ya se le entregó toda la información. No hay más información que...",
+      "id": "39"
     },
     {
-      "index": 41,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 137.32597623089984,
       "end": 141.3497453310696,
-      "duration": 4.024,
-      "text": " ah, ese tiene. "
+      "text": " ah, ese tiene. ",
+      "id": "40"
     },
     {
-      "index": 42,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 139.43123938879458,
       "end": 139.46519524617997,
-      "duration": 0.034,
-      "text": "No, ese no se puede mostrar. Ese no es."
+      "text": "No, ese no se puede mostrar. Ese no es.",
+      "id": "41"
     },
     {
-      "index": 43,
       "speaker": "",
       "start": 139.46519524617997,
       "end": 140.56876061120545,
-      "duration": 1.104,
-      "text": " "
+      "text": " ",
+      "id": "42"
     },
     {
-      "index": 44,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 140.56876061120545,
       "end": 140.77249575551784,
-      "duration": 0.204,
-      "text": " jajaja"
+      "text": " jajaja",
+      "id": "43"
     },
     {
-      "index": 45,
       "speaker": "",
       "start": 140.77249575551784,
       "end": 140.92529711375212,
-      "duration": 0.153,
-      "text": " "
+      "text": " ",
+      "id": "44"
     },
     {
-      "index": 46,
       "speaker": "",
       "start": 141.3497453310696,
       "end": 141.53650254668932,
-      "duration": 0.187,
-      "text": ""
+      "text": "",
+      "id": "45"
     },
     {
-      "index": 47,
       "speaker": "",
       "start": 141.53650254668932,
       "end": 141.723259762309,
-      "duration": 0.187,
-      "text": " "
+      "text": " ",
+      "id": "46"
     },
     {
-      "index": 48,
       "speaker": "",
       "start": 141.7741935483871,
       "end": 142.23259762309,
-      "duration": 0.458,
-      "text": ""
+      "text": "",
+      "id": "47"
     },
     {
-      "index": 49,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 144.38879456706283,
       "end": 146.91850594227506,
-      "duration": 2.53,
-      "text": " está chistoso todo, está muy chistoso."
+      "text": " está chistoso todo, está muy chistoso.",
+      "id": "48"
     },
     {
-      "index": 50,
       "speaker": "Latam Supervisor",
       "start": 152.0797962648557,
       "end": 155.89983022071308,
-      "duration": 3.82,
-      "text": " alejandro, me acabas de llegar a la encendida. Esto es."
+      "text": " alejandro, me acabas de llegar a la encendida. Esto es.",
+      "id": "49"
     },
     {
-      "index": 51,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 155.89983022071308,
       "end": 159.99151103565367,
-      "duration": 4.092,
-      "text": " certificado de contingencia, luego latam y solamente nosotros lo llenamos."
+      "text": " certificado de contingencia, luego latam y solamente nosotros lo llenamos.",
+      "id": "50"
     },
     {
-      "index": 52,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 159.99151103565367,
       "end": 161.6383701188455,
-      "duration": 1.647,
-      "text": " ¿por qué no llena ese entonces?"
+      "text": " ¿por qué no llena ese entonces?",
+      "id": "51"
     },
     {
-      "index": 53,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 161.6383701188455,
       "end": 165.2376910016978,
-      "duration": 3.599,
-      "text": "porque esto no dice lo que a usted le pasó, esto es solamente para cancelamientos de vuelo."
+      "text": "porque esto no dice lo que a usted le pasó, esto es solamente para cancelamientos de vuelo.",
+      "id": "52"
     },
     {
-      "index": 54,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 166.34125636672326,
       "end": 168.17487266553482,
-      "duration": 1.834,
-      "text": " o cuando estuviéramos retrasados."
+      "text": " o cuando estuviéramos retrasados.",
+      "id": "53"
     },
     {
-      "index": 55,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 170.28013582342956,
       "end": 170.60271646859084,
-      "duration": 0.323,
-      "text": " ya."
+      "text": " ya.",
+      "id": "54"
     },
     {
-      "index": 56,
       "speaker": "",
       "start": 170.65365025466895,
       "end": 170.78947368421055,
-      "duration": 0.136,
-      "text": " "
+      "text": " ",
+      "id": "55"
     },
     {
-      "index": 57,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 171.9779286926995,
       "end": 175.5263157894737,
-      "duration": 3.548,
-      "text": " alguien tiene que ser responsable de la informacion."
+      "text": " alguien tiene que ser responsable de la informacion.",
+      "id": "56"
     },
     {
-      "index": 58,
       "speaker": "SPEAKER_02",
       "start": 174.11714770797963,
       "end": 175.88285229202037,
-      "duration": 1.766,
-      "text": " Nadie lo va a hacer."
+      "text": " Nadie lo va a hacer.",
+      "id": "57"
     },
     {
-      "index": 59,
       "speaker": "",
       "start": 177.25806451612905,
       "end": 177.30899830220713,
-      "duration": 0.051,
-      "text": " ."
+      "text": " .",
+      "id": "58"
     },
     {
-      "index": 60,
       "speaker": "",
       "start": 177.30899830220713,
       "end": 177.32597623089984,
-      "duration": 0.017,
-      "text": ""
+      "text": "",
+      "id": "59"
     },
     {
-      "index": 61,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 177.32597623089984,
       "end": 177.56366723259762,
-      "duration": 0.238,
-      "text": " sí."
+      "text": " sí.",
+      "id": "60"
     },
     {
-      "index": 62,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 177.56366723259762,
       "end": 182.0797962648557,
-      "duration": 4.516,
-      "text": " tú ya me explicó eso, yo ya perdí mucho tiempo. O sea, que tú no entendió todavía."
+      "text": " tú ya me explicó eso, yo ya perdí mucho tiempo. O sea, que tú no entendió todavía.",
+      "id": "61"
     },
     {
-      "index": 63,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 182.3853989813243,
       "end": 183.30220713073007,
-      "duration": 0.917,
-      "text": " sí, ya lo entendí."
+      "text": " sí, ya lo entendí.",
+      "id": "62"
     },
     {
-      "index": 64,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 183.30220713073007,
       "end": 188.1918505942275,
-      "duration": 4.89,
-      "text": " ¿tú entendió? ¿y entonces simplemente va a ignorar eso?"
+      "text": " ¿tú entendió? ¿y entonces simplemente va a ignorar eso?",
+      "id": "63"
     },
     {
-      "index": 65,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 188.5823429541596,
       "end": 192.0797962648557,
-      "duration": 3.497,
-      "text": " Que quiere más que le diga, que le siga repitiendo toda la noche lo mismo?"
+      "text": " Que quiere más que le diga, que le siga repitiendo toda la noche lo mismo?",
+      "id": "64"
     },
     {
-      "index": 66,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 192.1307300509338,
       "end": 193.98132427843805,
-      "duration": 1.851,
-      "text": " yo quiero que me firmen eso."
+      "text": " yo quiero que me firmen eso.",
+      "id": "65"
     },
     {
-      "index": 67,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 192.9796264855688,
       "end": 195.20373514431242,
-      "duration": 2.224,
-      "text": " nadie si lo va a hacer."
+      "text": " nadie si lo va a hacer.",
+      "id": "66"
     },
     {
-      "index": 68,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 195.20373514431242,
       "end": 195.79796264855688,
-      "duration": 0.594,
-      "text": " ¿por qué?"
+      "text": " ¿por qué?",
+      "id": "67"
     },
     {
-      "index": 69,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 195.4244482173175,
       "end": 198.02207130730054,
-      "duration": 2.598,
-      "text": " ¿por qué? Porque este es nuestro formato, ya le expliqué."
+      "text": " ¿por qué? Porque este es nuestro formato, ya le expliqué.",
+      "id": "68"
     },
     {
-      "index": 70,
       "speaker": "",
       "start": 198.0730050933786,
       "end": 198.48047538200342,
-      "duration": 0.407,
-      "text": " "
+      "text": " ",
+      "id": "69"
     },
     {
-      "index": 71,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 198.5483870967742,
       "end": 200.60271646859084,
-      "duration": 2.054,
-      "text": " le acabo de mostrar otro formato igual"
+      "text": " le acabo de mostrar otro formato igual",
+      "id": "70"
     },
     {
-      "index": 72,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 200.55178268251274,
       "end": 204.47368421052633,
-      "duration": 3.922,
-      "text": " mira, sara. ¿sara no es antonella?"
+      "text": " mira, sara. ¿sara no es antonella?",
+      "id": "71"
     },
     {
-      "index": 73,
       "speaker": "",
       "start": 204.52461799660443,
       "end": 204.54159592529712,
-      "duration": 0.017,
-      "text": ""
+      "text": "",
+      "id": "72"
     },
     {
-      "index": 74,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 204.59252971137522,
       "end": 210.04244482173175,
-      "duration": 5.45,
-      "text": " mira, yo creo que eso va a quedar un poco más complejo."
+      "text": " mira, yo creo que eso va a quedar un poco más complejo.",
+      "id": "73"
     },
     {
-      "index": 75,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 210.44991511035656,
       "end": 226.0016977928693,
-      "duration": 15.552,
-      "text": " ¿entienden? Mucho más complejo. Y todas las personas que están participando, yo creo que puede ser complicado para ustedes informando porque eso no va a quedar así. Yo fui agredido, yo fui difamado,"
+      "text": " ¿entienden? Mucho más complejo. Y todas las personas que están participando, yo creo que puede ser complicado para ustedes informando porque eso no va a quedar así. Yo fui agredido, yo fui difamado,",
+      "id": "74"
     },
     {
-      "index": 76,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 226.52801358234296,
       "end": 227.64855687606112,
-      "duration": 1.121,
-      "text": " tengo pruebas."
+      "text": " tengo pruebas.",
+      "id": "75"
     },
     {
-      "index": 77,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 227.64855687606112,
       "end": 230.36502546689306,
-      "duration": 2.716,
-      "text": " ¿y usted puede hacer todas las denuncias y podemos ver qué se le entregó?"
+      "text": " ¿y usted puede hacer todas las denuncias y podemos ver qué se le entregó?",
+      "id": "76"
     },
     {
-      "index": 78,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 229.24448217317487,
       "end": 230.14431239388796,
-      "duration": 0.9,
-      "text": " voy a hacer."
+      "text": " voy a hacer.",
+      "id": "77"
     },
     {
-      "index": 79,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 230.36502546689306,
       "end": 236.23938879456708,
-      "duration": 5.874,
-      "text": " lo voy a hacer, sí, totalmente. Pero eso no es lo que fue pasado"
+      "text": " lo voy a hacer, sí, totalmente. Pero eso no es lo que fue pasado",
+      "id": "78"
     },
     {
-      "index": 80,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 236.23938879456708,
       "end": 241.38370118845503,
-      "duration": 5.144,
-      "text": " Por eso! eso es lo que vio la empresa. Ustede puede me contar su versión de la realidad!"
+      "text": " Por eso! eso es lo que vio la empresa. Ustede puede me contar su versión de la realidad!",
+      "id": "79"
     },
     {
-      "index": 82,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 238.6332767402377,
       "end": 244.37181663837012,
-      "duration": 5.739,
-      "text": " ¿usted puede contar su versión de la realidad? No, no estoy contando versión de la realidad."
+      "text": " ¿usted puede contar su versión de la realidad? No, no estoy contando versión de la realidad.",
+      "id": "80"
     },
     {
-      "index": 83,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 244.60950764006793,
       "end": 245.7300509337861,
-      "duration": 1.121,
-      "text": " esa es la realidad."
+      "text": " esa es la realidad.",
+      "id": "81"
     },
     {
-      "index": 84,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 246.95246179966045,
       "end": 249.92359932088286,
-      "duration": 2.971,
-      "text": " hay cámaras que muestran... ahi cuando vaya al.."
+      "text": " hay cámaras que muestran... ahi cuando vaya al..",
+      "id": "82"
     },
     {
-      "index": 85,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 247.63157894736844,
       "end": 251.21392190152804,
-      "duration": 3.582,
-      "text": " yo puedo tener acceso a las cámaras?"
+      "text": " yo puedo tener acceso a las cámaras?",
+      "id": "83"
     },
     {
-      "index": 86,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 251.21392190152804,
       "end": 254.9660441426146,
-      "duration": 3.752,
-      "text": " cuando vea ahí, obviamente, vaya ajustando la realidad.."
+      "text": " cuando vea ahí, obviamente, vaya ajustando la realidad..",
+      "id": "84"
     },
     {
-      "index": 87,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 253.43803056027167,
       "end": 259.02376910016983,
-      "duration": 5.586,
-      "text": " ya, entonces yo puedo hablar ahora, no me interrumpir."
+      "text": " ya, entonces yo puedo hablar ahora, no me interrumpir.",
+      "id": "85"
     },
     {
-      "index": 88,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 257.9541595925298,
       "end": 258.0390492359933,
-      "duration": 0.085,
-      "text": "Uhum. Habla!"
+      "text": "Uhum. Habla!",
+      "id": "86"
     },
     {
-      "index": 89,
       "speaker": "",
       "start": 260.0764006791171,
       "end": 260.4668930390493,
-      "duration": 0.39,
-      "text": ""
+      "text": "",
+      "id": "87"
     },
     {
-      "index": 90,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 261.6893039049236,
       "end": 267.6825127334465,
-      "duration": 5.993,
-      "text": " la carta de desembarque que fue dada por los pilotos"
+      "text": " la carta de desembarque que fue dada por los pilotos",
+      "id": "88"
     },
     {
-      "index": 91,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 270.2971137521223,
       "end": 272.741935483871,
-      "duration": 2.445,
-      "text": " ali explica también."
+      "text": " ali explica también.",
+      "id": "89"
     },
     {
-      "index": 92,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 274.320882852292,
       "end": 276.5449915110356,
-      "duration": 2.224,
-      "text": " esta información es la misma que está allá?"
+      "text": " esta información es la misma que está allá?",
+      "id": "90"
     },
     {
-      "index": 93,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 277.66553480475386,
       "end": 278.17487266553485,
-      "duration": 0.509,
-      "text": " son todos los que nos han informado."
+      "text": " son todos los que nos han informado.",
+      "id": "91"
     },
     {
-      "index": 94,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 278.17487266553485,
       "end": 283.59083191850596,
-      "duration": 5.416,
-      "text": " ¿esa información es la misma que está allá? Esa no es la pregunta."
+      "text": " ¿esa información es la misma que está allá? Esa no es la pregunta.",
+      "id": "92"
     },
     {
-      "index": 95,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 282.7758913412564,
       "end": 284.43972835314094,
-      "duration": 1.664,
-      "text": " Todo eso te van explicar en la área judicial."
+      "text": " Todo eso te van explicar en la área judicial.",
+      "id": "93"
     },
     {
-      "index": 96,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 284.04923599320887,
       "end": 286.03565365025463,
-      "duration": 1.986,
-      "text": " yo estoy haciendo una pregunta."
+      "text": " yo estoy haciendo una pregunta.",
+      "id": "94"
     },
     {
-      "index": 97,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 285.98471986417655,
       "end": 288.63327674023776,
-      "duration": 2.649,
-      "text": " no puedo responder a lo que ya no estuve presente. Eso es todo lo del..."
+      "text": " no puedo responder a lo que ya no estuve presente. Eso es todo lo del...",
+      "id": "95"
     },
     {
-      "index": 98,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 288.446519524618,
       "end": 292.02886247877757,
-      "duration": 3.582,
-      "text": " ¿pero tú lo escribiste? No. Entonces, ¿quién lo escribió?"
+      "text": " ¿pero tú lo escribiste? No. Entonces, ¿quién lo escribió?",
+      "id": "96"
     },
     {
-      "index": 99,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 290.3820033955858,
       "end": 291.2988115449915,
-      "duration": 0.917,
-      "text": " no, yo solamente la entregué."
+      "text": " no, yo solamente la entregué.",
+      "id": "97"
     },
     {
-      "index": 100,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 291.94397283531407,
       "end": 293.2003395585739,
-      "duration": 1.256,
-      "text": " eso es el formato."
+      "text": " eso es el formato.",
+      "id": "98"
     },
     {
-      "index": 101,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 293.47198641765704,
       "end": 300.6366723259763,
-      "duration": 7.165,
-      "text": " el formato..porque lo que tengo grabado es que la otra persona"
+      "text": " el formato..porque lo que tengo grabado es que la otra persona",
+      "id": "99"
     },
     {
-      "index": 102,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 293.13412563667237,
       "end": 294.40747028862484,
-      "duration": 1.273,
-      "text": " Uhum"
+      "text": " Uhum",
+      "id": "100"
     },
     {
-      "index": 103,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 301.9779286926995,
       "end": 305.1358234295416,
-      "duration": 3.158,
-      "text": " te pidió a ti para escribir y modificar la carta."
+      "text": " te pidió a ti para escribir y modificar la carta.",
+      "id": "101"
     },
     {
-      "index": 104,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 294.13412563667237,
       "end": 295.40747028862484,
-      "duration": 1.273,
-      "text": " me pidió para entregarte."
+      "text": " me pidió para entregarte.",
+      "id": "102"
     },
     {
-      "index": 105,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 305.64516129032256,
       "end": 307.1561969439729,
-      "duration": 1.511,
-      "text": " ya, mira, yo tengo grabado."
+      "text": " ya, mira, yo tengo grabado.",
+      "id": "103"
     },
     {
-      "index": 107,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 306.2903225806451,
       "end": 309.39728353140913,
-      "duration": 3.107,
-      "text": " escuchen su grabación."
+      "text": " escuchen su grabación.",
+      "id": "104"
     },
     {
-      "index": 108,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 307.4448217317488,
       "end": 310.56876061120545,
-      "duration": 3.124,
-      "text": " ya, bueno, mira."
+      "text": " ya, bueno, mira.",
+      "id": "105"
     },
     {
-      "index": 109,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 313.1833616298811,
       "end": 314.69439728353143,
-      "duration": 1.511,
-      "text": " ¿es eso que se va a se quedar?"
+      "text": " ¿es eso que se va a se quedar?",
+      "id": "106"
     },
     {
-      "index": 110,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 314.9490662139219,
       "end": 316.7147707979626,
-      "duration": 1.766,
-      "text": " y va a se quedar neso?."
+      "text": " y va a se quedar neso?.",
+      "id": "107"
     },
     {
-      "index": 111,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 316.7147707979626,
       "end": 320.9762308998303,
-      "duration": 4.261,
-      "text": " señor, esta es la información, la que se te entregó es la única información que hay, no hay más."
+      "text": " señor, esta es la información, la que se te entregó es la única información que hay, no hay más.",
+      "id": "108"
     },
     {
-      "index": 112,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 320.9762308998303,
       "end": 324.0662139219015,
-      "duration": 3.09,
-      "text": " claramente que hay una carta de desembarque. ¿dónde hay la carta de desembarque?"
+      "text": " claramente que hay una carta de desembarque. ¿dónde hay la carta de desembarque?",
+      "id": "109"
     },
     {
-      "index": 113,
       "speaker": "",
       "start": 323.38709677419354,
       "end": 323.9983022071308,
-      "duration": 0.611,
-      "text": " "
+      "text": " ",
+      "id": "110"
     },
     {
-      "index": 114,
       "speaker": "",
       "start": 324.0662139219015,
       "end": 324.4227504244483,
-      "duration": 0.357,
-      "text": ""
+      "text": "",
+      "id": "111"
     },
     {
-      "index": 115,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 324.2359932088285,
       "end": 326.4770797962649,
-      "duration": 2.241,
-      "text": " déjame ver la carta de desembarque."
+      "text": " déjame ver la carta de desembarque.",
+      "id": "112"
     },
     {
-      "index": 116,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 325.9168081494058,
       "end": 328.1239388794568,
-      "duration": 2.207,
-      "text": " señor, la carta de desembarque..."
+      "text": " señor, la carta de desembarque...",
+      "id": "113"
     },
     {
-      "index": 117,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 328.1239388794568,
       "end": 331.8421052631579,
-      "duration": 3.718,
-      "text": " no grites, no grites. Está gritando, está gritando."
+      "text": " no grites, no grites. Está gritando, está gritando.",
+      "id": "114"
     },
     {
-      "index": 118,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 329.8217317487266,
       "end": 332.36842105263156,
-      "duration": 2.547,
-      "text": " vas a me escuchar o no?"
+      "text": " vas a me escuchar o no?",
+      "id": "115"
     },
     {
-      "index": 119,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 332.3514431239389,
       "end": 336.018675721562,
-      "duration": 3.667,
-      "text": " si hablas un poco más bajo, está siendo agresiva conmigo."
+      "text": " si hablas un poco más bajo, está siendo agresiva conmigo.",
+      "id": "116"
     },
     {
-      "index": 120,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 333.96434634974537,
       "end": 335.18675721561976,
-      "duration": 1.222,
-      "text": " no voy a te dar informacion entonces."
+      "text": " no voy a te dar informacion entonces.",
+      "id": "117"
     },
     {
-      "index": 121,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 337.1731748726655,
       "end": 339.1086587436333,
-      "duration": 1.935,
-      "text": " pero si hablas más bajo, sí."
+      "text": " pero si hablas más bajo, sí.",
+      "id": "118"
     },
     {
-      "index": 122,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 335.66213921901533,
       "end": 337.9032258064516,
-      "duration": 2.241,
-      "text": " ¿no va a escuchar entonces?"
+      "text": " ¿no va a escuchar entonces?",
+      "id": "119"
     },
     {
-      "index": 123,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 339.1086587436333,
       "end": 341.4685908319185,
-      "duration": 2.36,
-      "text": " sí, por favor"
+      "text": " sí, por favor",
+      "id": "120"
     },
     {
-      "index": 124,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 339.22750424448225,
       "end": 340.8913412563668,
-      "duration": 1.664,
-      "text": "me vas a escuchar?"
+      "text": "me vas a escuchar?",
+      "id": "121"
     },
     {
-      "index": 125,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 341.3157894736843,
       "end": 342.8098471986418,
-      "duration": 1.494,
-      "text": " estoy escuchando."
+      "text": " estoy escuchando.",
+      "id": "122"
     },
     {
-      "index": 126,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 342.23259762309,
       "end": 352.3514431239389,
-      "duration": 10.119,
-      "text": " el personal de asec, que es la autoridad aeronáutica, ellos hacen la carta de desembarque. Es un documento privado. Que no es para los pasageros. Ahora, si usted requiere esa carta..."
+      "text": " el personal de asec, que es la autoridad aeronáutica, ellos hacen la carta de desembarque. Es un documento privado. Que no es para los pasageros. Ahora, si usted requiere esa carta...",
+      "id": "123"
     },
     {
-      "index": 127,
       "speaker": "Latam Supervisor (Antonela)",
       "start": 352.7758913412564,
       "end": 357.4448217317488,
-      "duration": 4.669,
-      "text": " vaya con PDI, solicita a ver si le permiten ingresar a stapsack y puede solicitar su carta."
+      "text": " vaya con PDI, solicita a ver si le permiten ingresar a stapsack y puede solicitar su carta.",
+      "id": "124"
     },
     {
-      "index": 128,
       "speaker": "Leandro Disconzi (passenger)",
       "start": 357.597623089983,
       "end": 360.704584040747,
-      "duration": 3.107,
-      "text": " ya, pues yo pedí, entonces pide eso. Ya, muchas gracias."
+      "text": " ya, pues yo pedí, entonces pide eso. Ya, muchas gracias.",
+      "id": "125"
     }
-  ],
-  "audio_id": "latam_STG_4"
+  ]
 }

@@ -1,7 +1,6 @@
 {
   "title": "aeropuerto_STG_5",
   "audio_id": "aeropuerto_STG_5",
-  "subtitle": "Aeropuerto Arturo Merino Benítez 5",
   "filename": "aeropuerto_STG_5",
   "recordingdatetime": "2024-07-05T13:30:00",
   "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
@@ -209,43 +208,5 @@
       "text": " Llamen a la ventas. No hay caso, el pasagero no quieres bajar , asi que avise avisen quando lleggue securidad",
       "id": "28"
     }
-  ],
-  "recordingDateTime": "2024-07-05T12:30",
-  "metadata": {
-    "timestamps": {
-      "QuickTime Movie Header.Created": "2024-07-05T20:30:02.000Z",
-      "QuickTime Movie Header[0].Preview Time": "0",
-      "QuickTime Movie Header[0].Poster Time": "0",
-      "QuickTime Movie Header[0].Selection Time": "0",
-      "QuickTime Movie Header[0].Current Time": "0",
-      "File[0].File Modified Date": "Sun Jul 06 12:53:46 -03:00 2025"
-    },
-    "audioProperties": {
-      "Duration": "00:03:05.8986666",
-      "QuickTime Movie Header[0].TrackId": "48000",
-      "QuickTime Movie Header[0].Duration": "00:03:05.8986666",
-      "QuickTime Movie Header[0].Preferred Volume": "1",
-      "QuickTime Movie Header[0].Preview Duration": "0",
-      "QuickTime Movie Header[0].Selection Duration": "0",
-      "QuickTime Movie Header[0].Next Track Id": "2",
-      "QuickTime Track Header[0].TrackId": "1",
-      "QuickTime Track Header[0].Duration": "8923136",
-      "QuickTime Track Header[0].Volume": "1"
-    },
-    "fileInfo": {
-      "File Size": "1597387 bytes",
-      "Major Brand": "M4A ",
-      "fileName": "aeropuerto_STG_5.m4a",
-      "fileSizeBytes": 1597387,
-      "fileSize": "1559.95 KB",
-      "contentType": "audio/mp4",
-      "physicalPath": "/Users/leandrodisconzi/Documents/sa_server/ollama/static/transcripts/transcripts_audio/aeropuerto_STG_5.m4a"
-    },
-    "location": {},
-    "deviceInfo": {
-      "QuickTime Movie Header[0].Version": "0",
-      "QuickTime Track Header[0].Version": "0"
-    }
-  },
-  "metadata_extracted_at": "2025-09-24T20:36:17.250519"
+  ]
 }

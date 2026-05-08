@@ -1,6 +1,6 @@
 {
   "title": "aeropuerto_STG_6_segment_2",
-  "subtitle": "Imported segment",
+  "audio_id": "aeropuerto_STG_6_segment_3",
   "filename": "aeropuerto_STG_6_segment_3",
   "recordingdatetime": "2024-07-05T14:47:00",
   "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
@@ -9,501 +9,575 @@
       "speaker": "Pasajera 1",
       "start": 0,
       "end": 1,
-      "text": "Anybody seen anything?"
+      "text": "Anybody seen anything?",
+      "id": "0"
     },
     {
       "speaker": "Pasajera 1",
       "start": 3,
       "end": 5,
-      "text": "Have you checked the information?"
+      "text": "Have you checked the information?",
+      "id": "1"
     },
     {
       "speaker": "DGAC",
       "start": 6,
       "end": 8,
-      "text": "Yeah, I check what d"
+      "text": "Yeah, I check what d",
+      "id": "2"
     },
     {
       "speaker": "DGAC",
       "start": 7,
       "end": 9,
-      "text": "What I see, I cheque, I checked"
+      "text": "What I see, I cheque, I checked",
+      "id": "3"
     },
     {
       "speaker": "Pasajeros del vuelo",
       "start": 10,
       "end": 16,
-      "text": "pasajeros questionando las narrativas"
+      "text": "pasajeros questionando las narrativas",
+      "id": "4"
     },
     {
       "speaker": "Pasajera 2",
       "start": 17,
       "end": 18,
-      "text": "y otra que no pasó."
+      "text": "y otra que no pasó.",
+      "id": "5"
     },
     {
       "speaker": "Pasajera 3",
       "start": 19,
       "end": 24,
-      "text": "Están acusando de una cosa , que sea acusado de lo mismo, pero ahora vienen con otra versión."
+      "text": "Están acusando de una cosa , que sea acusado de lo mismo, pero ahora vienen con otra versión.",
+      "id": "6"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 24,
       "end": 25,
-      "text": "¿Por qué no, no, no?"
+      "text": "¿Por qué no, no, no?",
+      "id": "7"
     },
     {
       "speaker": "Pasajera 3",
       "start": 26,
       "end": 26,
-      "text": "...pego alguien.."
+      "text": "...pego alguien..",
+      "id": "8"
     },
     {
       "speaker": "Pasajera 3",
       "start": 26,
       "end": 30,
-      "text": "Ahora que pasó solo. Entonces está muy mal."
+      "text": "Ahora que pasó solo. Entonces está muy mal.",
+      "id": "9"
     },
     {
       "speaker": "DGAC",
       "start": 30,
       "end": 31,
-      "text": "Yo hablo por lo que yo Hablo"
+      "text": "Yo hablo por lo que yo Hablo",
+      "id": "10"
     },
     {
       "speaker": "Pasajera 3",
       "start": 31,
       "end": 38,
-      "text": "Claro, Pero es que aquí han venido con distintas versiones. Y los únicos que se han retrasado en el vuelo somos nosotros."
+      "text": "Claro, Pero es que aquí han venido con distintas versiones. Y los únicos que se han retrasado en el vuelo somos nosotros.",
+      "id": "11"
     },
     {
       "speaker": "DGAC",
       "start": 38,
       "end": 38,
-      "text": "exatamente"
+      "text": "exatamente",
+      "id": "12"
     },
     {
       "speaker": "Pasajera 3",
       "start": 38,
       "end": 43,
-      "text": "Y Queremos llegar, Hay gente que tiene combinacion a otra parte que va a perder su combinación"
+      "text": "Y Queremos llegar, Hay gente que tiene combinacion a otra parte que va a perder su combinación",
+      "id": "13"
     },
     {
       "speaker": "DGAC",
       "start": 45,
       "end": 45,
-      "text": "Eso es lo que queremos"
+      "text": "Eso es lo que queremos",
+      "id": "14"
     },
     {
       "speaker": "DGAC",
       "start": 45,
       "end": 46,
-      "text": "evitar que que vieran"
+      "text": "evitar que que vieran",
+      "id": "15"
     },
     {
       "speaker": "Pasajera 3",
       "start": 47,
       "end": 48,
-      "text": "Por que quando un vuelo retrasa, lo reprogramam pra tres dias despues desques de quando uno quiere llegar"
+      "text": "Por que quando un vuelo retrasa, lo reprogramam pra tres dias despues desques de quando uno quiere llegar",
+      "id": "16"
     },
     {
       "speaker": "DGAC",
       "start": 52,
       "end": 53,
-      "text": "Exactamente."
+      "text": "Exactamente.",
+      "id": "17"
     },
     {
       "speaker": "DGAC",
       "start": 53,
       "end": 56,
-      "text": "Es que como le digo, así es como funciona."
+      "text": "Es que como le digo, así es como funciona.",
+      "id": "18"
     },
     {
       "speaker": "Pasajera 3",
       "start": 56,
       "end": 58,
-      "text": "Vaya, vaian hablar con el capitan."
+      "text": "Vaya, vaian hablar con el capitan.",
+      "id": "19"
     },
     {
       "speaker": "DGAC",
       "start": 57,
       "end": 57,
-      "text": "Que pasa caballera es que"
+      "text": "Que pasa caballera es que",
+      "id": "20"
     },
     {
       "speaker": "DGAC",
       "start": 57,
       "end": 62,
-      "text": "esta hablando con la persona equivocada. No es decision mia, no es como depende de mi"
+      "text": "esta hablando con la persona equivocada. No es decision mia, no es como depende de mi",
+      "id": "21"
     },
     {
       "speaker": "DGAC",
       "start": 61,
       "end": 62,
-      "text": "Depende de mí."
+      "text": "Depende de mí.",
+      "id": "22"
     },
     {
       "speaker": "Pasajero 4",
       "start": 62,
       "end": 65,
-      "text": "Vas a tener que arrastralo por el pasillo"
+      "text": "Vas a tener que arrastralo por el pasillo",
+      "id": "23"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 64,
       "end": 64,
-      "text": "si"
+      "text": "si",
+      "id": "24"
     },
     {
       "speaker": "Pasajero 4",
       "start": 64,
       "end": 65,
-      "text": "Lo vamos a gravar todo"
+      "text": "Lo vamos a gravar todo",
+      "id": "25"
     },
     {
       "speaker": "DGAC",
       "start": 65,
       "end": 66,
-      "text": "Esperemos que no"
+      "text": "Esperemos que no",
+      "id": "26"
     },
     {
       "speaker": "Pasajero 4",
       "start": 66,
       "end": 67,
-      "text": "Va ser un escandalo"
+      "text": "Va ser un escandalo",
+      "id": "27"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 67,
       "end": 70,
-      "text": "Ok, por favor graben al máximo, cuando eso pase."
+      "text": "Ok, por favor graben al máximo, cuando eso pase.",
+      "id": "28"
     },
     {
       "speaker": "Pasajera 3",
       "start": 70,
       "end": 75,
-      "text": "Y ya fueron grabados, todo el mundo está grabado."
+      "text": "Y ya fueron grabados, todo el mundo está grabado.",
+      "id": "29"
     },
     {
       "speaker": "DGAC",
       "start": 81,
       "end": 82,
-      "text": "Aló, José."
+      "text": "Aló, José.",
+      "id": "30"
     },
     {
       "speaker": "DGAC",
       "start": 82,
       "end": 87,
-      "text": "No hay caso, no hay caso."
+      "text": "No hay caso, no hay caso.",
+      "id": "31"
     },
     {
       "speaker": "DGAC",
       "start": 88,
       "end": 88,
-      "text": "¡Adiós!"
+      "text": "¡Adiós!",
+      "id": "32"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 89,
       "end": 90,
-      "text": "Buenas tardes, ¿cómo estás?"
+      "text": "Buenas tardes, ¿cómo estás?",
+      "id": "33"
     },
     {
       "speaker": "PDI",
       "start": 90,
       "end": 94,
-      "text": "en la misma situación que mis compañeros. Estamos tratando de identificar qué es lo que pasó. ya"
+      "text": "en la misma situación que mis compañeros. Estamos tratando de identificar qué es lo que pasó. ya",
+      "id": "34"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 94,
       "end": 100,
-      "text": "Ya, pero usted tiene que primero llegar a una conclusión de lo que pasó para después intentar sacarme del vuelo."
+      "text": "Ya, pero usted tiene que primero llegar a una conclusión de lo que pasó para después intentar sacarme del vuelo.",
+      "id": "35"
     },
     {
       "speaker": "PDI 2",
       "start": 100,
       "end": 100,
-      "text": "Por eso"
+      "text": "Por eso",
+      "id": "36"
     },
     {
       "speaker": "PDI 2",
       "start": 100,
       "end": 101,
-      "text": "Por eso vieni"
+      "text": "Por eso vieni",
+      "id": "37"
     },
     {
       "speaker": "PDI 2",
       "start": 101,
       "end": 106,
-      "text": "¿Qué fue lo que ocurrió arriba? para tener ma, mayor idea"
+      "text": "¿Qué fue lo que ocurrió arriba? para tener ma, mayor idea",
+      "id": "38"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 102,
       "end": 103,
-      "text": "¿Ya?"
+      "text": "¿Ya?",
+      "id": "39"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 106,
       "end": 112,
-      "text": "Usted tiene cámaras, porque si tú no sabes lo que pasó arriba, y esta intentando me sacar del vuelo."
+      "text": "Usted tiene cámaras, porque si tú no sabes lo que pasó arriba, y esta intentando me sacar del vuelo.",
+      "id": "40"
     },
     {
       "speaker": "PDI 2",
       "start": 112,
       "end": 114,
-      "text": "Yo estoy conversando con usted, por eso yo estoy tratando de..."
+      "text": "Yo estoy conversando con usted, por eso yo estoy tratando de...",
+      "id": "41"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 114,
       "end": 119,
-      "text": "Yo estoy preguntando, ¿qué pasó arriba? ¿De qué está me acusando ahora?"
+      "text": "Yo estoy preguntando, ¿qué pasó arriba? ¿De qué está me acusando ahora?",
+      "id": "42"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 121,
       "end": 123,
-      "text": "¿De qué estás me acusando ahora?"
+      "text": "¿De qué estás me acusando ahora?",
+      "id": "43"
     },
     {
       "speaker": "PDI 2",
       "start": 123,
       "end": 128,
-      "text": "Yo solamente estoy tratando de que usted me diga que fue lo que ocurrió arriba, para que yo pueda entender y así ver..."
+      "text": "Yo solamente estoy tratando de que usted me diga que fue lo que ocurrió arriba, para que yo pueda entender y así ver...",
+      "id": "44"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 128,
       "end": 136,
-      "text": "No, yo imaginaba que tú, para estar acá hablando conmigo ahora, ya tuviese que tener entendido eso para estar hablando conmigo."
+      "text": "No, yo imaginaba que tú, para estar acá hablando conmigo ahora, ya tuviese que tener entendido eso para estar hablando conmigo.",
+      "id": "45"
     },
     {
       "speaker": "PDI",
       "start": 136,
       "end": 138,
-      "text": "Claro, a nosotros nos enviaron por una situación..."
+      "text": "Claro, a nosotros nos enviaron por una situación...",
+      "id": "46"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 138,
       "end": 139,
-      "text": "Y qual fue la situacion?"
+      "text": "Y qual fue la situacion?",
+      "id": "47"
     },
     {
       "speaker": "PDI 2",
       "start": 139,
       "end": 140,
-      "text": "La situacion que"
+      "text": "La situacion que",
+      "id": "48"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 141,
       "end": 142,
-      "text": "Fueron dos (2) distintas a esta hora."
+      "text": "Fueron dos (2) distintas a esta hora.",
+      "id": "49"
     },
     {
       "speaker": "PDI 2",
       "start": 143,
       "end": 143,
-      "text": "A mi, lo unico que han mencionado e que... nada"
+      "text": "A mi, lo unico que han mencionado e que... nada",
+      "id": "50"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 145,
       "end": 146,
-      "text": "estan te pasando poca información amigo."
+      "text": "estan te pasando poca información amigo.",
+      "id": "51"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 147,
       "end": 149,
-      "text": "estan te pasando poca información."
+      "text": "estan te pasando poca información.",
+      "id": "52"
     },
     {
       "speaker": "PDI 2",
       "start": 150,
       "end": 155,
-      "text": "que se nos informó fue que usted había hecho ingreso de la puerta de embarque hacia acá"
+      "text": "que se nos informó fue que usted había hecho ingreso de la puerta de embarque hacia acá",
+      "id": "53"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 155,
       "end": 156,
-      "text": "Esa fue la segunda."
+      "text": "Esa fue la segunda.",
+      "id": "54"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 158,
       "end": 160,
-      "text": "Yo le entregue en la"
+      "text": "Yo le entregue en la",
+      "id": "55"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 160,
       "end": 167,
-      "text": "mano de la persona que está acusando de que yo la pegué. Ahora, miraron la cámara, porque"
+      "text": "mano de la persona que está acusando de que yo la pegué. Ahora, miraron la cámara, porque",
+      "id": "56"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 167,
       "end": 168,
-      "text": "yo tengo eso grabado."
+      "text": "yo tengo eso grabado.",
+      "id": "57"
     },
     {
       "speaker": "PDI 2",
       "start": 168,
       "end": 168,
-      "text": "No, si ta bien."
+      "text": "No, si ta bien.",
+      "id": "58"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 168,
       "end": 181,
-      "text": "Que vieron acá y intentaron me sacar porque yo hice una agresión y que tenían eso en cámara, entonces yo pedi que mirasen las cameras... y ahora .. mira entonces ustedes tienen que trabajar mejor con la informacion interna de ustedes"
+      "text": "Que vieron acá y intentaron me sacar porque yo hice una agresión y que tenían eso en cámara, entonces yo pedi que mirasen las cameras... y ahora .. mira entonces ustedes tienen que trabajar mejor con la informacion interna de ustedes",
+      "id": "59"
     },
     {
       "speaker": "PDI 2",
       "start": 181,
       "end": 182,
-      "text": "Yo toy tratando de.. para entender"
+      "text": "Yo toy tratando de.. para entender",
+      "id": "60"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 182,
       "end": 195,
-      "text": "Yo estoy estresado, muy estresado, yo estoy con mucha vergüenza de estar atrasando el vuelo de todos los que están acá por una mentira, por algo que no es verdad."
+      "text": "Yo estoy estresado, muy estresado, yo estoy con mucha vergüenza de estar atrasando el vuelo de todos los que están acá por una mentira, por algo que no es verdad.",
+      "id": "61"
     },
     {
       "speaker": "DGAC",
       "start": 195,
       "end": 195,
-      "text": "¡Está bien!"
+      "text": "¡Está bien!",
+      "id": "62"
     },
     {
       "speaker": "DGAC",
       "start": 196,
       "end": 197,
-      "text": "No, sí, está bien. Está bien, mire."
+      "text": "No, sí, está bien. Está bien, mire.",
+      "id": "63"
     },
     {
       "speaker": "DGAC",
       "start": 198,
       "end": 209,
-      "text": "El lo que Yo, nosotros somos de la Dirección General de Aeronautica Civil, a nosotros, cuando se nos hace una solicitud, nosotros solo acudimos al lugar que fue lo que nos ocurrió ahora. ya?!"
+      "text": "El lo que Yo, nosotros somos de la Dirección General de Aeronautica Civil, a nosotros, cuando se nos hace una solicitud, nosotros solo acudimos al lugar que fue lo que nos ocurrió ahora. ya?!",
+      "id": "64"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 202,
       "end": 202,
-      "text": "Ya!?"
+      "text": "Ya!?",
+      "id": "65"
     },
     {
       "speaker": "DGAC",
       "start": 210,
       "end": 215,
-      "text": "Ahora, la persona de la compañía menciona su parte y usted también tiene lo suyo, y eso es totalmente..."
+      "text": "Ahora, la persona de la compañía menciona su parte y usted también tiene lo suyo, y eso es totalmente...",
+      "id": "66"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 215,
       "end": 217,
-      "text": "Pero entonces mira la cámara y listo, piede a un testigo"
+      "text": "Pero entonces mira la cámara y listo, piede a un testigo",
+      "id": "67"
     },
     {
       "speaker": "DGAC",
       "start": 217,
       "end": 223,
-      "text": "ya, pero, por eso, déjeme explicar, cuando el capitán hace una solicitud de desembarque del pasajero"
+      "text": "ya, pero, por eso, déjeme explicar, cuando el capitán hace una solicitud de desembarque del pasajero",
+      "id": "68"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 223,
       "end": 227,
-      "text": "Yo entiendo que el capitán es el que manda en el final, pero"
+      "text": "Yo entiendo que el capitán es el que manda en el final, pero",
+      "id": "69"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 227,
       "end": 227,
-      "text": "pero no voy."
+      "text": "pero no voy.",
+      "id": "70"
     },
     {
       "speaker": "DGAC",
       "start": 227,
       "end": 228,
-      "text": "Ya, pero"
+      "text": "Ya, pero",
+      "id": "71"
     },
     {
       "speaker": "DGAC",
       "start": 228,
       "end": 232,
-      "text": "Ya pero está bien. Es que no se puede porque... Pero estoy hablando con él, ya."
+      "text": "Ya pero está bien. Es que no se puede porque... Pero estoy hablando con él, ya.",
+      "id": "72"
     },
     {
       "speaker": "DGAC",
       "start": 233,
       "end": 236,
-      "text": "Entonces, ¿cómo le digo? Cuando existe una solicitud, nosotros debemos desembarcar a la persona. ¡Ahora!"
+      "text": "Entonces, ¿cómo le digo? Cuando existe una solicitud, nosotros debemos desembarcar a la persona. ¡Ahora!",
+      "id": "73"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 237,
       "end": 240,
-      "text": "Sin ningún tipo de..."
+      "text": "Sin ningún tipo de...",
+      "id": "74"
     },
     {
       "speaker": "DGAC",
       "start": 239,
       "end": 243,
-      "text": "Usted lo tiene que declarar ante PDI. Nosotros no somos PDI, ¿ya?"
+      "text": "Usted lo tiene que declarar ante PDI. Nosotros no somos PDI, ¿ya?",
+      "id": "75"
     },
     {
       "speaker": "DGAC",
       "start": 244,
       "end": 245,
-      "text": "¿Pero no va a descender entonces?"
+      "text": "¿Pero no va a descender entonces?",
+      "id": "76"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 245,
       "end": 246,
-      "text": "¡Claramente que no!"
+      "text": "¡Claramente que no!",
+      "id": "77"
     },
     {
       "speaker": "DGAC",
       "start": 246,
       "end": 247,
-      "text": "Claramente que no"
+      "text": "Claramente que no",
+      "id": "78"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 247,
       "end": 248,
-      "text": "Claramente, que no"
+      "text": "Claramente, que no",
+      "id": "79"
     },
     {
       "speaker": "Pasajero 5",
       "start": 249,
       "end": 251,
-      "text": "ya tiene media hora que ta en esse chamuyo"
+      "text": "ya tiene media hora que ta en esse chamuyo",
+      "id": "80"
     },
     {
       "speaker": "Pasajero 5",
       "start": 252,
       "end": 255,
-      "text": "Vay y viene, vai funcionario, viene funcionario."
+      "text": "Vay y viene, vai funcionario, viene funcionario.",
+      "id": "81"
     }
-  ],
-  "segmentNumber": 2,
-  "isInnerSegment": true,
-  "parentFilename": "Aeropuerto Arturo Merino Benítez 6",
-  "audio_file": "DGAC_contradictions_meet_jose.mp3",
-  "startTime": 0,
-  "endTime": 255,
-  "duration": 255,
-  "audio_id": "aeropuerto_STG_6_segment_3"
+  ]
 }

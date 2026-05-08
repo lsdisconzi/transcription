@@ -1,0 +1,96 @@
+{
+  "title": "aeropuerto_STG_3",
+  "filename": "aeropuerto_STG_3",
+  "recordingdatetime": "2024-07-05T21:10:00",
+  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
+  "content": [
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 8.72,
+      "end": 10,
+      "text": " y un huevito de ping-pong.",
+      "id": "0"
+    },
+    {
+      "speaker": "Latam Staff",
+      "start": 10,
+      "end": 16.42,
+      "text": "¿Lo recordas? ",
+      "id": "1"
+    },
+    {
+      "speaker": "Latam Staff",
+      "start": 12.96,
+      "end": 13.75,
+      "text": "Permiso. No, no, no. Permiso, sí. ¿Alguien de ustedes es el supervisor?",
+      "id": "2"
+    },
+    {
+      "speaker": "Latam Staff",
+      "start": 16.6,
+      "end": 18,
+      "text": " Si, está al otro lado. Al otro lado, tío. G10. ¿Cómo? G10.",
+      "id": "3"
+    },
+    {
+      "speaker": "Latam Staff",
+      "start": 18.0,
+      "end": 19.23,
+      "text": " al otro lado.",
+      "id": "6"
+    },
+    {
+      "speaker": "Leandro Disconzi (passenger)",
+      "start": 21.01,
+      "end": 25.41,
+      "text": " G10. ¿Pueden mostrar quién es?.... Ya, muchas gracias.",
+      "id": "7"
+    },
+    {
+      "speaker": "Latam Staff",
+      "start": 23,
+      "end": 25,
+      "text": "A la vueltecita lo podrían contar. ",
+      "id": "7"
+    }
+  ],
+  "recordingDateTime": "2024-07-05T20:09",
+  "metadata": {
+    "timestamps": {
+      "QuickTime Movie Header.Created": "2024-07-06T04:09:15.000Z",
+      "QuickTime Movie Header[0].Preview Time": "0",
+      "QuickTime Movie Header[0].Poster Time": "0",
+      "QuickTime Movie Header[0].Selection Time": "0",
+      "QuickTime Movie Header[0].Current Time": "0",
+      "File[0].File Modified Date": "Sun Jul 06 12:53:47 -03:00 2025"
+    },
+    "audioProperties": {
+      "Duration": "00:00:53.5253333",
+      "QuickTime Movie Header[0].TrackId": "48000",
+      "QuickTime Movie Header[0].Duration": "00:00:53.5253333",
+      "QuickTime Movie Header[0].Preferred Volume": "1",
+      "QuickTime Movie Header[0].Preview Duration": "0",
+      "QuickTime Movie Header[0].Selection Duration": "0",
+      "QuickTime Movie Header[0].Next Track Id": "2",
+      "QuickTime Track Header[0].TrackId": "1",
+      "QuickTime Track Header[0].Duration": "2569216",
+      "QuickTime Track Header[0].Volume": "1"
+    },
+    "fileInfo": {
+      "File Size": "453219 bytes",
+      "Major Brand": "M4A ",
+      "fileName": "aeropuerto_STG_3.m4a",
+      "fileSizeBytes": 453219,
+      "fileSize": "442.60 KB",
+      "contentType": "audio/mp4",
+      "physicalPath": "/Users/leandrodisconzi/Documents/sa_server/ollama/static/transcripts/transcripts_audio/aeropuerto_STG_3.m4a"
+    },
+    "location": {},
+    "deviceInfo": {
+      "QuickTime Movie Header[0].Version": "0",
+      "QuickTime Track Header[0].Version": "0"
+    }
+  },
+  "metadata_extracted_at": "2025-10-22T07:37:44.970773",
+  "audio_id": "aeropuerto_STG_3"
+}

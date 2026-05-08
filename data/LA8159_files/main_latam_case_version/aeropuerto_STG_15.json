@@ -1,9 +1,10 @@
 {
   "title": "Aeropuerto Arturo Merino Benítez 15",
+  "audio_id": "aeropuerto_STG_15",
   "filename": "aeropuerto_STG_15",
-  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
   "recordingdatetime": "2024-07-05T16:26:00",
-  "segments": [
+  "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
+  "content": [
     {
       "speaker": "Passenger (Leandro Disconzi)",
       "start": 4.97534375,
@@ -641,43 +642,5 @@
       "text": " Estoy pasando un proceso y estoy tratando de ayudarlos, sin embargo necesito que nos ayuden.",
       "id": "90"
     }
-  ],
-  "metadata": {
-    "timestamps": {
-      "QuickTime Movie Header.Created": "2024-07-05T23:26:32.000Z",
-      "QuickTime Movie Header[0].Preview Time": "0",
-      "QuickTime Movie Header[0].Poster Time": "0",
-      "QuickTime Movie Header[0].Selection Time": "0",
-      "QuickTime Movie Header[0].Current Time": "0",
-      "File[0].File Modified Date": "Sun Jul 06 12:53:46 -03:00 2025"
-    },
-    "audioProperties": {
-      "Duration": "00:09:57.5893333",
-      "QuickTime Movie Header[0].TrackId": "48000",
-      "QuickTime Movie Header[0].Duration": "00:09:57.5893333",
-      "QuickTime Movie Header[0].Preferred Volume": "1",
-      "QuickTime Movie Header[0].Preview Duration": "0",
-      "QuickTime Movie Header[0].Selection Duration": "0",
-      "QuickTime Movie Header[0].Next Track Id": "2",
-      "QuickTime Track Header[0].TrackId": "1",
-      "QuickTime Track Header[0].Duration": "28684288",
-      "QuickTime Track Header[0].Volume": "1"
-    },
-    "fileInfo": {
-      "File Size": "5079387 bytes",
-      "Major Brand": "M4A ",
-      "fileName": "aeropuerto_STG_15.m4a",
-      "fileSizeBytes": 5079387,
-      "fileSize": "4960.34 KB",
-      "contentType": "audio/mp4",
-      "physicalPath": "/Users/leandrodisconzi/Documents/sa_server/ollama/static/transcripts/transcripts_audio/aeropuerto_STG_15.m4a"
-    },
-    "location": {},
-    "deviceInfo": {
-      "QuickTime Movie Header[0].Version": "0",
-      "QuickTime Track Header[0].Version": "0"
-    }
-  },
-  "metadata_extracted_at": "2025-10-22T10:25:45.288834",
-  "audio_id": "Aeropuerto Arturo Merino Benítez 15"
+  ]
 }

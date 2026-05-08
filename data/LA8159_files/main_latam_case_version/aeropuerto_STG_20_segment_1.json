@@ -1,38 +1,30 @@
 {
   "title": "aeropuerto_STG_20_segment_1",
-  "subtitle": "Imported segment",
-  "filename": "Aaeropuerto_STG_20_segment_1",
+  "audio_id": "aeropuerto_STG_20_segment_1",
+  "filename": "aeropuerto_STG_20_segment_1",
   "recordingdatetime": "2024-07-05T17:46:00",
   "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
   "content": [
     {
-      "id": "0",
       "speaker": "Leandro Disconzi (passenger)",
       "start": 6.81,
       "end": 9.58,
-      "text": "Tu es lo mas arriba que esta de la Latam aca?"
+      "text": "Tu es lo mas arriba que esta de la Latam aca?",
+      "id": "0"
     },
     {
-      "id": "1",
       "speaker": "Joaquin Barraa (Chief of security Latam?)",
       "start": 9.58,
       "end": 13.53,
-      "text": " Yo soy el que decide los procedimientos con los pasajeros como usted."
+      "text": " Yo soy el que decide los procedimientos con los pasajeros como usted.",
+      "id": "1"
     },
     {
-      "id": "2",
       "speaker": "Joaquin Barraa (Chief of security Latam?)",
       "start": 17.5,
       "end": 17.9,
-      "text": " ¿Alguna?"
+      "text": " ¿Alguna?",
+      "id": "2"
     }
-  ],
-  "segmentNumber": 1,
-  "isInnerSegment": true,
-  "parentFilename": "aeropuerto_STG_20",
-  "audio_file": "transcript_1745532936.wav",
-  "startTime": 6.814718750000001,
-  "endTime": 17.90159375,
-  "duration": 11.086875,
-  "audio_id": "Aaeropuerto_STG_20_segment_1"
+  ]
 }

@@ -1,70 +1,79 @@
 {
   "title": "aeropuerto_STG_7_segment_3",
+  "audio_id": "aeropuerto_STG_7_segment_3",
   "filename": "aeropuerto_STG_7_segment_3",
   "recordingdatetime": "2024-07-05T15:16:00",
-  "audio_id": "aeropuerto_STG_7_segment_3",
   "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
   "content": [
     {
       "speaker": "PDI",
       "start": 0.03,
       "end": 11.52,
-      "text": " Al final nosotros lo que buscamos es ser lo más objetivo posible, ver qué pasó y escuchar ambas partes. Porque si viene una persona y decimos, oye me agredió y nunca pasó nada, de hecho hasta nosotros mismos estamos incurriendo en un error."
+      "text": " Al final nosotros lo que buscamos es ser lo más objetivo posible, ver qué pasó y escuchar ambas partes. Porque si viene una persona y decimos, oye me agredió y nunca pasó nada, de hecho hasta nosotros mismos estamos incurriendo en un error.",
+      "id": "0"
     },
     {
       "speaker": "PDI",
       "start": 11.79,
       "end": 18.53,
-      "text": " y no es la idea, ya, por eso es que ves todo lo que hay en el antecedente y todo lo demás. Yo sí entiendo. Ya, yo hablé contigo directamente."
+      "text": " y no es la idea, ya, por eso es que ves todo lo que hay en el antecedente y todo lo demás. Yo sí entiendo. Ya, yo hablé contigo directamente.",
+      "id": "1"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 19.27,
       "end": 20.02,
-      "text": "yo entiendo el por que "
+      "text": "yo entiendo el por que ",
+      "id": "2"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 20.02,
       "end": 21.51,
-      "text": "estan haciendo eso pero"
+      "text": "estan haciendo eso pero",
+      "id": "3"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 21.51,
       "end": 24.5,
-      "text": "Es muy incorrecto"
+      "text": "Es muy incorrecto",
+      "id": "4"
     },
     {
       "speaker": "PDI",
       "start": 24.5,
       "end": 30.47,
-      "text": "Si! obviamente. Injusto! muy injusto!"
+      "text": "Si! obviamente. Injusto! muy injusto!",
+      "id": "5"
     },
     {
       "speaker": "PDI",
       "start": 30.47,
       "end": 35.84,
-      "text": " Así que ahora, como te digo, espérenos un momento, queremos que calme un poco el tema, y ya nos vemos."
+      "text": " Así que ahora, como te digo, espérenos un momento, queremos que calme un poco el tema, y ya nos vemos.",
+      "id": "6"
     },
     {
       "speaker": "PDI",
       "start": 36.9,
       "end": 37.53,
-      "text": "Finalizamos todo eso"
+      "text": "Finalizamos todo eso",
+      "id": "7"
     },
     {
       "speaker": "PDI",
       "start": 39.42,
       "end": 41.63,
-      "text": "Esperame aqui un momento no ma que yo te vengo a buscar"
+      "text": "Esperame aqui un momento no ma que yo te vengo a buscar",
+      "id": "8"
     },
     {
       "speaker": "PDI",
       "start": 41.63,
       "end": 43.63,
-      "text": "Si claro, gracias."
+      "text": "Si claro, gracias.",
+      "id": "9"
     }
-  ],
-  "audio_file": "transcript_1745447115.m4a"
+  ]
 }

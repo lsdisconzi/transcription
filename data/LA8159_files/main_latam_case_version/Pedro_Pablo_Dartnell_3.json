@@ -1,0 +1,6018 @@
+{
+  "transcript_id": "pyannote_d900d40c-3af8-45c9-818f-3b62c7d2fe76",
+  "segments": [
+    {
+      "index": 1,
+      "speaker": "SPEAKER_00",
+      "start": 0.505,
+      "end": 1.285,
+      "duration": 0.7799999999999999,
+      "text": "¿Tú solo entras?"
+    },
+    {
+      "index": 2,
+      "speaker": "SPEAKER_00",
+      "start": 3.805,
+      "end": 4.285,
+      "duration": 0.48,
+      "text": "Sí ¿Y"
+    },
+    {
+      "index": 3,
+      "speaker": "SPEAKER_02",
+      "start": 4.785,
+      "end": 6.565,
+      "duration": 1.7800000000000002,
+      "text": "Y ahí yo lo pensé"
+    },
+    {
+      "index": 4,
+      "speaker": "SPEAKER_02",
+      "start": 7.605,
+      "end": 8.045,
+      "duration": 0.4399999999999995,
+      "text": "fue"
+    },
+    {
+      "index": 5,
+      "speaker": "SPEAKER_02",
+      "start": 8.985,
+      "end": 12.805,
+      "duration": 3.8200000000000003,
+      "text": "porque era mi derecho a tener una documentación explicando por qué hicieron eso,"
+    },
+    {
+      "index": 6,
+      "speaker": "SPEAKER_02",
+      "start": 13.145,
+      "end": 13.605,
+      "duration": 0.46000000000000085,
+      "text": "¿cierto?"
+    },
+    {
+      "index": 7,
+      "speaker": "SPEAKER_02",
+      "start": 14.045,
+      "end": 14.705,
+      "duration": 0.6600000000000001,
+      "text": "Muchas gracias."
+    },
+    {
+      "index": 8,
+      "speaker": "SPEAKER_02",
+      "start": 15.505,
+      "end": 16.765,
+      "duration": 1.2599999999999998,
+      "text": "Me demoré hasta la"
+    },
+    {
+      "index": 9,
+      "speaker": "SPEAKER_02",
+      "start": 17.005,
+      "end": 17.865,
+      "duration": 0.8599999999999994,
+      "text": "meia noche para"
+    },
+    {
+      "index": 10,
+      "speaker": "SPEAKER_02",
+      "start": 18.365,
+      "end": 23.665,
+      "duration": 5.300000000000001,
+      "text": "conseguir que alguien de la tarde me dése un pedazo de papel, sin firma, sin nada,"
+    },
+    {
+      "index": 11,
+      "speaker": "SPEAKER_02",
+      "start": 24.525,
+      "end": 26.905,
+      "duration": 2.3800000000000026,
+      "text": "explicando las razones que la PDI"
+    },
+    {
+      "index": 12,
+      "speaker": "SPEAKER_02",
+      "start": 28.225,
+      "end": 30.625,
+      "duration": 2.3999999999999986,
+      "text": "ya confirmó,"
+    },
+    {
+      "index": 13,
+      "speaker": "SPEAKER_02",
+      "start": 34.905,
+      "end": 35.585,
+      "duration": 0.6799999999999997,
+      "text": "¿entiendes?"
+    },
+    {
+      "index": 14,
+      "speaker": "SPEAKER_02",
+      "start": 36.545,
+      "end": 39.445,
+      "duration": 2.8999999999999986,
+      "text": "Pero eso ya fue comprobado por la PDI, ¿no?"
+    },
+    {
+      "index": 15,
+      "speaker": "SPEAKER_01",
+      "start": 41.045,
+      "end": 45.525,
+      "duration": 4.479999999999997,
+      "text": "¿Qué le dijeron los de PDI? Es que si hubiese habido agresión, PDI los toma detenidos."
+    },
+    {
+      "index": 16,
+      "speaker": "SPEAKER_02",
+      "start": 45.565,
+      "end": 46.445,
+      "duration": 0.8800000000000026,
+      "text": "No, mira,"
+    },
+    {
+      "index": 17,
+      "speaker": "SPEAKER_01",
+      "start": 46.545,
+      "end": 49.725,
+      "duration": 3.1799999999999997,
+      "text": "Entonces, si no, ellos no pudieron comprobar una agresión."
+    },
+    {
+      "index": 18,
+      "speaker": "SPEAKER_02",
+      "start": 50.185,
+      "end": 54.885,
+      "duration": 4.699999999999996,
+      "text": "mira, exactamente, exactamente, pero la PDI que está haciendo no es con nosotros,"
+    },
+    {
+      "index": 19,
+      "speaker": "SPEAKER_02",
+      "start": 57.525,
+      "end": 59.305,
+      "duration": 1.7800000000000011,
+      "text": "es con la lata,"
+    },
+    {
+      "index": 20,
+      "speaker": "SPEAKER_02",
+      "start": 59.845,
+      "end": 62.885,
+      "duration": 3.039999999999999,
+      "text": "que la lata va a hablar con quien quiera,"
+    },
+    {
+      "index": 21,
+      "speaker": "SPEAKER_02",
+      "start": 63.245,
+      "end": 63.805,
+      "duration": 0.5600000000000023,
+      "text": "¿entiendes?"
+    },
+    {
+      "index": 22,
+      "speaker": "SPEAKER_02",
+      "start": 64.185,
+      "end": 64.805,
+      "duration": 0.6200000000000045,
+      "text": "Ah, sí."
+    },
+    {
+      "index": 23,
+      "speaker": "SPEAKER_01",
+      "start": 71.985,
+      "end": 74.205,
+      "duration": 2.219999999999999,
+      "text": "¿Usted qué nacionalidad tiene, brasilero?"
+    },
+    {
+      "index": 24,
+      "speaker": "SPEAKER_02",
+      "start": 74.885,
+      "end": 77.985,
+      "duration": 3.0999999999999943,
+      "text": "Sí, inicial brasileño y después italiano."
+    },
+    {
+      "index": 25,
+      "speaker": "SPEAKER_02",
+      "start": 79.305,
+      "end": 80.545,
+      "duration": 1.2399999999999949,
+      "text": "Ah, sí."
+    },
+    {
+      "index": 26,
+      "speaker": "SPEAKER_02",
+      "start": 93.585,
+      "end": 93.605,
+      "duration": 0.020000000000010232,
+      "text": "Ya,"
+    },
+    {
+      "index": 27,
+      "speaker": "SPEAKER_02",
+      "start": 101.825,
+      "end": 103.165,
+      "duration": 1.3400000000000034,
+      "text": "yo puedo con eso"
+    },
+    {
+      "index": 28,
+      "speaker": "SPEAKER_02",
+      "start": 104.825,
+      "end": 106.105,
+      "duration": 1.2800000000000011,
+      "text": "cuestionar la PDI."
+    },
+    {
+      "index": 29,
+      "speaker": "SPEAKER_01",
+      "start": 106.945,
+      "end": 107.325,
+      "duration": 0.38000000000000966,
+      "text": "¿Cómo?"
+    },
+    {
+      "index": 30,
+      "speaker": "SPEAKER_02",
+      "start": 107.465,
+      "end": 108.765,
+      "duration": 1.2999999999999972,
+      "text": "Yo puedo con esto"
+    },
+    {
+      "index": 31,
+      "speaker": "SPEAKER_02",
+      "start": 109.305,
+      "end": 111.205,
+      "duration": 1.8999999999999915,
+      "text": "cuestionar la PDI en el fato,"
+    },
+    {
+      "index": 32,
+      "speaker": "SPEAKER_02",
+      "start": 113.205,
+      "end": 116.665,
+      "duration": 3.460000000000008,
+      "text": "¿me pasen cualquier documentación que fue, de lo que pasó?"
+    },
+    {
+      "index": 33,
+      "speaker": "SPEAKER_01",
+      "start": 117.545,
+      "end": 120.445,
+      "duration": 2.8999999999999915,
+      "text": "Que ellos le pasen una voz que nosotros no los podemos obligar a ellos."
+    },
+    {
+      "index": 34,
+      "speaker": "SPEAKER_02",
+      "start": 118.625,
+      "end": 118.705,
+      "duration": 0.0799999999999983,
+      "text": "No,"
+    },
+    {
+      "index": 35,
+      "speaker": "SPEAKER_02",
+      "start": 120.445,
+      "end": 124.425,
+      "duration": 3.980000000000004,
+      "text": "no, no, no estoy diciendo que ustedes lo obliguen. Estoy diciendo, mira, yo ya fui a la policía,"
+    },
+    {
+      "index": 36,
+      "speaker": "SPEAKER_02",
+      "start": 125.265,
+      "end": 129.665,
+      "duration": 4.3999999999999915,
+      "text": "a los carabineros, yo voy a empezar el proceso. Acá explica"
+    },
+    {
+      "index": 37,
+      "speaker": "SPEAKER_02",
+      "start": 129.985,
+      "end": 134.665,
+      "duration": 4.679999999999978,
+      "text": "que ellos, la razón fue esa, pero ustedes ya confirmaron ayer"
+    },
+    {
+      "index": 38,
+      "speaker": "SPEAKER_02",
+      "start": 135.325,
+      "end": 135.965,
+      "duration": 0.6400000000000148,
+      "text": "que eso no"
+    },
+    {
+      "index": 39,
+      "speaker": "SPEAKER_02",
+      "start": 136.545,
+      "end": 137.765,
+      "duration": 1.2199999999999989,
+      "text": "era verdad."
+    },
+    {
+      "index": 40,
+      "speaker": "SPEAKER_01",
+      "start": 138.645,
+      "end": 143.445,
+      "duration": 4.799999999999983,
+      "text": "¿Sabe qué? Les recomiendo que haga un reclamo contra la aerolínea."
+    },
+    {
+      "index": 41,
+      "speaker": "SPEAKER_02",
+      "start": 143.805,
+      "end": 144.365,
+      "duration": 0.5600000000000023,
+      "text": "También."
+    },
+    {
+      "index": 42,
+      "speaker": "SPEAKER_01",
+      "start": 144.545,
+      "end": 147.785,
+      "duration": 3.240000000000009,
+      "text": "Eso, porque PDI lo más probable es que no quiera hacer nada."
+    },
+    {
+      "index": 43,
+      "speaker": "SPEAKER_02",
+      "start": 148.325,
+      "end": 149.505,
+      "duration": 1.1800000000000068,
+      "text": "Sí, pero, pero,"
+    },
+    {
+      "index": 44,
+      "speaker": "SPEAKER_02",
+      "start": 150.185,
+      "end": 154.025,
+      "duration": 3.8400000000000034,
+      "text": "si la PDI no quiere hacer nada, la CDA, DCAG,"
+    },
+    {
+      "index": 45,
+      "speaker": "SPEAKER_01",
+      "start": 154.025,
+      "end": 154.825,
+      "duration": 0.799999999999983,
+      "text": "¿DGAC, ya?"
+    },
+    {
+      "index": 46,
+      "speaker": "SPEAKER_02",
+      "start": 155.025,
+      "end": 157.905,
+      "duration": 2.8799999999999955,
+      "text": "ellos son los órganos que,"
+    },
+    {
+      "index": 47,
+      "speaker": "SPEAKER_01",
+      "start": 158.865,
+      "end": 159.205,
+      "duration": 0.3400000000000034,
+      "text": "Sí, ¿qué"
+    },
+    {
+      "index": 48,
+      "speaker": "SPEAKER_02",
+      "start": 159.205,
+      "end": 165.485,
+      "duration": 6.280000000000001,
+      "text": "pelo que yo entendí, que tienen que controlar que las aerolíneas están siguiendo la regulación."
+    },
+    {
+      "index": 49,
+      "speaker": "SPEAKER_01",
+      "start": 165.485,
+      "end": 167.665,
+      "duration": 2.1799999999999784,
+      "text": "puede hacer un reclamo en DGAC?"
+    },
+    {
+      "index": 50,
+      "speaker": "SPEAKER_02",
+      "start": 167.665,
+      "end": 169.585,
+      "duration": 1.920000000000016,
+      "text": "Yo fui a ellos, pero ellos también nada."
+    },
+    {
+      "index": 51,
+      "speaker": "SPEAKER_01",
+      "start": 169.585,
+      "end": 169.765,
+      "duration": 0.1799999999999784,
+      "text": "No,"
+    },
+    {
+      "index": 52,
+      "speaker": "SPEAKER_02",
+      "start": 169.765,
+      "end": 171.865,
+      "duration": 2.1000000000000227,
+      "text": "Entonces, yo voy a hacer a ellos también."
+    },
+    {
+      "index": 53,
+      "speaker": "SPEAKER_02",
+      "start": 172.105,
+      "end": 172.885,
+      "duration": 0.7800000000000011,
+      "text": "Ahí que está. Ah,"
+    },
+    {
+      "index": 54,
+      "speaker": "SPEAKER_02",
+      "start": 173.505,
+      "end": 175.165,
+      "duration": 1.6599999999999966,
+      "text": "lo que parece es un abuso de poder,"
+    },
+    {
+      "index": 55,
+      "speaker": "SPEAKER_02",
+      "start": 176.045,
+      "end": 177.825,
+      "duration": 1.7800000000000011,
+      "text": "porque lo que están haciendo"
+    },
+    {
+      "index": 56,
+      "speaker": "SPEAKER_02",
+      "start": 178.265,
+      "end": 179.805,
+      "duration": 1.5400000000000205,
+      "text": "tienen tres órganos, bueno,"
+    },
+    {
+      "index": 57,
+      "speaker": "SPEAKER_02",
+      "start": 180.065,
+      "end": 181.365,
+      "duration": 1.3000000000000114,
+      "text": "dos órganos y"
+    },
+    {
+      "index": 58,
+      "speaker": "SPEAKER_02",
+      "start": 181.665,
+      "end": 182.285,
+      "duration": 0.6200000000000045,
+      "text": "la lata que"
+    },
+    {
+      "index": 59,
+      "speaker": "SPEAKER_02",
+      "start": 183.065,
+      "end": 184.065,
+      "duration": 1,
+      "text": "están como se"
+    },
+    {
+      "index": 60,
+      "speaker": "SPEAKER_02",
+      "start": 184.745,
+      "end": 187.345,
+      "duration": 2.5999999999999943,
+      "text": "esquivando. Están saliendo de,"
+    },
+    {
+      "index": 61,
+      "speaker": "SPEAKER_02",
+      "start": 187.945,
+      "end": 188.485,
+      "duration": 0.5400000000000205,
+      "text": "¿entendés?"
+    },
+    {
+      "index": 62,
+      "speaker": "SPEAKER_02",
+      "start": 188.685,
+      "end": 193.325,
+      "duration": 4.639999999999986,
+      "text": "Entonces, mira, va para allá, va para allá, va para allá, como una pelota de ping pong."
+    },
+    {
+      "index": 63,
+      "speaker": "SPEAKER_01",
+      "start": 194.285,
+      "end": 194.725,
+      "duration": 0.4399999999999977,
+      "text": "espérame."
+    },
+    {
+      "index": 64,
+      "speaker": "SPEAKER_01",
+      "start": 199.245,
+      "end": 202.705,
+      "duration": 3.460000000000008,
+      "text": "Oiga, mi Sofía, ¿dónde pueden hacer reclamos contra la DGAC?"
+    },
+    {
+      "index": 65,
+      "speaker": "SPEAKER_01",
+      "start": 202.965,
+      "end": 205.565,
+      "duration": 2.5999999999999943,
+      "text": "Porque nadie quiere hacer nada, por ponerlo."
+    },
+    {
+      "index": 66,
+      "speaker": "SPEAKER_01",
+      "start": 206.165,
+      "end": 206.565,
+      "duration": 0.4000000000000057,
+      "text": "Hay"
+    },
+    {
+      "index": 67,
+      "speaker": "SPEAKER_01",
+      "start": 208.245,
+      "end": 213.385,
+      "duration": 5.139999999999986,
+      "text": "una página, reclamos y sugerencias DGAC, Dirección General de Aeronáutica Civil."
+    },
+    {
+      "index": 68,
+      "speaker": "SPEAKER_01",
+      "start": 213.825,
+      "end": 217.725,
+      "duration": 3.9000000000000057,
+      "text": "Por si ellos no quieren hacer nada, también les puede hacer un reclamo a ellos."
+    },
+    {
+      "index": 69,
+      "speaker": "SPEAKER_02",
+      "start": 217.725,
+      "end": 218.005,
+      "duration": 0.28000000000000114,
+      "text": "Ya,"
+    },
+    {
+      "index": 70,
+      "speaker": "SPEAKER_01",
+      "start": 218.005,
+      "end": 220.485,
+      "duration": 2.480000000000018,
+      "text": "A la TAM como aerolínea a DGAC."
+    },
+    {
+      "index": 71,
+      "speaker": "SPEAKER_02",
+      "start": 220.745,
+      "end": 221.145,
+      "duration": 0.4000000000000057,
+      "text": "sí,"
+    },
+    {
+      "index": 72,
+      "speaker": "SPEAKER_02",
+      "start": 221.525,
+      "end": 223.285,
+      "duration": 1.759999999999991,
+      "text": "sí, no, voy a hacer, voy a hacer a,"
+    },
+    {
+      "index": 73,
+      "speaker": "SPEAKER_00",
+      "start": 223.285,
+      "end": 223.925,
+      "duration": 0.6400000000000148,
+      "text": "querés enseñar?"
+    },
+    {
+      "index": 74,
+      "speaker": "SPEAKER_02",
+      "start": 224.345,
+      "end": 225.505,
+      "duration": 1.1599999999999966,
+      "text": "voy a hacer lo que puedo."
+    },
+    {
+      "index": 75,
+      "speaker": "SPEAKER_02",
+      "start": 226.285,
+      "end": 226.945,
+      "duration": 0.6599999999999966,
+      "text": "Muchas gracias."
+    },
+    {
+      "index": 76,
+      "speaker": "SPEAKER_02",
+      "start": 242.365,
+      "end": 244.745,
+      "duration": 2.3799999999999955,
+      "text": "Ah, no, no soy el primero ni el último."
+    },
+    {
+      "index": 77,
+      "speaker": "SPEAKER_01",
+      "start": 245.205,
+      "end": 245.245,
+      "duration": 0.03999999999999204,
+      "text": "Hay"
+    },
+    {
+      "index": 78,
+      "speaker": "SPEAKER_02",
+      "start": 246.465,
+      "end": 248.465,
+      "duration": 2,
+      "text": "Pero cuántas personas que van adelante con"
+    },
+    {
+      "index": 79,
+      "speaker": "SPEAKER_02",
+      "start": 248.725,
+      "end": 250.325,
+      "duration": 1.5999999999999943,
+      "text": "la, con la,"
+    },
+    {
+      "index": 80,
+      "speaker": "SPEAKER_02",
+      "start": 251.145,
+      "end": 253.265,
+      "duration": 2.119999999999976,
+      "text": "con hacer un reclamo, con,"
+    },
+    {
+      "index": 81,
+      "speaker": "SPEAKER_01",
+      "start": 253.265,
+      "end": 254.265,
+      "duration": 1,
+      "text": "hartas personas,"
+    },
+    {
+      "index": 82,
+      "speaker": "SPEAKER_02",
+      "start": 254.265,
+      "end": 254.665,
+      "duration": 0.4000000000000057,
+      "text": "sí,"
+    },
+    {
+      "index": 83,
+      "speaker": "SPEAKER_01",
+      "start": 254.745,
+      "end": 256.445,
+      "duration": 1.6999999999999886,
+      "text": "sí, pero hoy han pasado detenidos."
+    },
+    {
+      "index": 84,
+      "speaker": "SPEAKER_02",
+      "start": 256.865,
+      "end": 257.985,
+      "duration": 1.1200000000000045,
+      "text": "a pasar detenido."
+    },
+    {
+      "index": 85,
+      "speaker": "SPEAKER_01",
+      "start": 257.985,
+      "end": 262.825,
+      "duration": 4.839999999999975,
+      "text": "¿Han pasado detenidos? El problema es que cuando ellos dicen, por ejemplo, si a mí me vienen a denunciar"
+    },
+    {
+      "index": 86,
+      "speaker": "SPEAKER_01",
+      "start": 263.125,
+      "end": 264.185,
+      "duration": 1.0600000000000023,
+      "text": "una agresión,"
+    },
+    {
+      "index": 87,
+      "speaker": "SPEAKER_01",
+      "start": 265.465,
+      "end": 267.125,
+      "duration": 1.660000000000025,
+      "text": "tengo que adoptar el procedimiento."
+    },
+    {
+      "index": 88,
+      "speaker": "SPEAKER_02",
+      "start": 267.125,
+      "end": 267.385,
+      "duration": 0.2599999999999909,
+      "text": "Claro."
+    },
+    {
+      "index": 89,
+      "speaker": "SPEAKER_01",
+      "start": 267.385,
+      "end": 270.005,
+      "duration": 2.6200000000000045,
+      "text": "Que después ellos me pueden denunciar a mí. Dígame."
+    },
+    {
+      "index": 90,
+      "speaker": "SPEAKER_00",
+      "start": 270.385,
+      "end": 271.585,
+      "duration": 1.1999999999999886,
+      "text": "No, no, no, no, no, no, no, no, no sé."
+    },
+    {
+      "index": 91,
+      "speaker": "SPEAKER_02",
+      "start": 270.445,
+      "end": 270.645,
+      "duration": 0.19999999999998863,
+      "text": "No,"
+    },
+    {
+      "index": 92,
+      "speaker": "SPEAKER_01",
+      "start": 271.585,
+      "end": 271.825,
+      "duration": 0.2400000000000091,
+      "text": "Ah,"
+    },
+    {
+      "index": 93,
+      "speaker": "SPEAKER_02",
+      "start": 271.825,
+      "end": 273.925,
+      "duration": 2.1000000000000227,
+      "text": "claro, mira, es ahí que está también el punto."
+    },
+    {
+      "index": 94,
+      "speaker": "SPEAKER_02",
+      "start": 274.925,
+      "end": 277.445,
+      "duration": 2.519999999999982,
+      "text": "Si tuviese, como tú dices, si tuviese pasado algo de"
+    },
+    {
+      "index": 95,
+      "speaker": "SPEAKER_01",
+      "start": 277.445,
+      "end": 277.905,
+      "duration": 0.45999999999997954,
+      "text": "sí."
+    },
+    {
+      "index": 96,
+      "speaker": "SPEAKER_02",
+      "start": 278.405,
+      "end": 279.285,
+      "duration": 0.8800000000000523,
+      "text": "un día acá,"
+    },
+    {
+      "index": 97,
+      "speaker": "SPEAKER_02",
+      "start": 280.205,
+      "end": 282.745,
+      "duration": 2.5400000000000205,
+      "text": "o estaría, estaría más compleja la cosa,"
+    },
+    {
+      "index": 98,
+      "speaker": "SPEAKER_01",
+      "start": 282.745,
+      "end": 283.345,
+      "duration": 0.6000000000000227,
+      "text": "Claro."
+    },
+    {
+      "index": 99,
+      "speaker": "SPEAKER_02",
+      "start": 283.345,
+      "end": 283.765,
+      "duration": 0.4199999999999591,
+      "text": "¿cierto? Lo"
+    },
+    {
+      "index": 100,
+      "speaker": "SPEAKER_02",
+      "start": 288.965,
+      "end": 294.185,
+      "duration": 5.220000000000027,
+      "text": "que parece es que tienen como todo, lo decíamos en Brasil, como la cola, la cola presa,"
+    },
+    {
+      "index": 101,
+      "speaker": "SPEAKER_02",
+      "start": 294.645,
+      "end": 295.265,
+      "duration": 0.6200000000000045,
+      "text": "¿entiendes?"
+    },
+    {
+      "index": 102,
+      "speaker": "SPEAKER_02",
+      "start": 295.565,
+      "end": 298.345,
+      "duration": 2.7800000000000296,
+      "text": "Tú sabes cosas de yo, yo tengo cosas tuyas,"
+    },
+    {
+      "index": 103,
+      "speaker": "SPEAKER_02",
+      "start": 298.505,
+      "end": 300.365,
+      "duration": 1.8600000000000136,
+      "text": "entonces, nos quedamos quietos,"
+    },
+    {
+      "index": 104,
+      "speaker": "SPEAKER_00",
+      "start": 300.585,
+      "end": 300.725,
+      "duration": 0.1400000000000432,
+      "text": "¿Yo"
+    },
+    {
+      "index": 105,
+      "speaker": "SPEAKER_02",
+      "start": 301.105,
+      "end": 301.645,
+      "duration": 0.5399999999999636,
+      "text": "¿entiendes?"
+    },
+    {
+      "index": 106,
+      "speaker": "SPEAKER_02",
+      "start": 304.385,
+      "end": 305.185,
+      "duration": 0.8000000000000114,
+      "text": "Ah, ya, bueno."
+    },
+    {
+      "index": 107,
+      "speaker": "SPEAKER_02",
+      "start": 309.865,
+      "end": 310.445,
+      "duration": 0.5799999999999841,
+      "text": "Eh, yo..."
+    },
+    {
+      "index": 108,
+      "speaker": "SPEAKER_00",
+      "start": 310.445,
+      "end": 313.085,
+      "duration": 2.6399999999999864,
+      "text": "debo, ¿debo enseñar algo, hacer algo?"
+    },
+    {
+      "index": 109,
+      "speaker": "SPEAKER_01",
+      "start": 313.265,
+      "end": 314.285,
+      "duration": 1.0200000000000387,
+      "text": "No, acá no."
+    }
+  ],
+  "text": "¿Tú solo entras? Sí ¿Y Y ahí yo lo pensé fue porque era mi derecho a tener una documentación explicando por qué hicieron eso, ¿cierto? Muchas gracias. Me demoré hasta la meia noche para conseguir que alguien de la tarde me dése un pedazo de papel, sin firma, sin nada, explicando las razones que la PDI ya confirmó, ¿entiendes? Pero eso ya fue comprobado por la PDI, ¿no? ¿Qué le dijeron los de PDI? Es que si hubiese habido agresión, PDI los toma detenidos. No, mira, Entonces, si no, ellos no pudieron comprobar una agresión. mira, exactamente, exactamente, pero la PDI que está haciendo no es con nosotros, es con la lata, que la lata va a hablar con quien quiera, ¿entiendes? Ah, sí. ¿Usted qué nacionalidad tiene, brasilero? Sí, inicial brasileño y después italiano. Ah, sí. Ya, yo puedo con eso cuestionar la PDI. ¿Cómo? Yo puedo con esto cuestionar la PDI en el fato, ¿me pasen cualquier documentación que fue, de lo que pasó? Que ellos le pasen una voz que nosotros no los podemos obligar a ellos. No, no, no, no estoy diciendo que ustedes lo obliguen. Estoy diciendo, mira, yo ya fui a la policía, a los carabineros, yo voy a empezar el proceso. Acá explica que ellos, la razón fue esa, pero ustedes ya confirmaron ayer que eso no era verdad. ¿Sabe qué? Les recomiendo que haga un reclamo contra la aerolínea. También. Eso, porque PDI lo más probable es que no quiera hacer nada. Sí, pero, pero, si la PDI no quiere hacer nada, la CDA, DCAG, ¿DGAC, ya? ellos son los órganos que, Sí, ¿qué pelo que yo entendí, que tienen que controlar que las aerolíneas están siguiendo la regulación. puede hacer un reclamo en DGAC? Yo fui a ellos, pero ellos también nada. No, Entonces, yo voy a hacer a ellos también. Ahí que está. Ah, lo que parece es un abuso de poder, porque lo que están haciendo tienen tres órganos, bueno, dos órganos y la lata que están como se esquivando. Están saliendo de, ¿entendés? Entonces, mira, va para allá, va para allá, va para allá, como una pelota de ping pong. espérame. Oiga, mi Sofía, ¿dónde pueden hacer reclamos contra la DGAC? Porque nadie quiere hacer nada, por ponerlo. Hay una página, reclamos y sugerencias DGAC, Dirección General de Aeronáutica Civil. Por si ellos no quieren hacer nada, también les puede hacer un reclamo a ellos. Ya, A la TAM como aerolínea a DGAC. sí, sí, no, voy a hacer, voy a hacer a, querés enseñar? voy a hacer lo que puedo. Muchas gracias. Ah, no, no soy el primero ni el último. Hay Pero cuántas personas que van adelante con la, con la, con hacer un reclamo, con, hartas personas, sí, sí, pero hoy han pasado detenidos. a pasar detenido. ¿Han pasado detenidos? El problema es que cuando ellos dicen, por ejemplo, si a mí me vienen a denunciar una agresión, tengo que adoptar el procedimiento. Claro. Que después ellos me pueden denunciar a mí. Dígame. No, no, no, no, no, no, no, no, no sé. No, Ah, claro, mira, es ahí que está también el punto. Si tuviese, como tú dices, si tuviese pasado algo de sí. un día acá, o estaría, estaría más compleja la cosa, Claro. ¿cierto? Lo que parece es que tienen como todo, lo decíamos en Brasil, como la cola, la cola presa, ¿entiendes? Tú sabes cosas de yo, yo tengo cosas tuyas, entonces, nos quedamos quietos, ¿Yo ¿entiendes? Ah, ya, bueno. Eh, yo... debo, ¿debo enseñar algo, hacer algo? No, acá no.",
+  "language": "es",
+  "duration": 314.285,
+  "provider": "pyannote",
+  "timings": {
+    "total_s": null,
+    "provider": "pyannote",
+    "job_status": "succeeded"
+  },
+  "params": {
+    "language": "es",
+    "model_size": "large-v3",
+    "min_speakers": 1,
+    "max_speakers": 3,
+    "vad_threshold": 0.7,
+    "remove_silence": true,
+    "noise_reduce": true,
+    "word_timestamps": true,
+    "initial_prompt": "Conversación dentro de un avión, entre passageiros e tripulación. Se escuchan acusaciones, defensas e diálogos relacionados com normas de seguridad e direitos de los passageiros. Pessoas mencionam 'LATAM', 'aeropuerto', 'carabineros', 'niña', 'familia', 'abuso', 'acusação falsa'.",
+    "beam_size": 5,
+    "best_of": 5,
+    "whisper_temp": 0
+  },
+  "raw": {
+    "jobId": "d900d40c-3af8-45c9-818f-3b62c7d2fe76",
+    "status": "succeeded",
+    "createdAt": "2026-05-05T02:55:45.928Z",
+    "updatedAt": "2026-05-05T02:56:00.403Z",
+    "output": {
+      "diarization": [
+        {
+          "speaker": "SPEAKER_00",
+          "start": 0.505,
+          "end": 1.285
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 3.805,
+          "end": 4.285
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 4.785,
+          "end": 6.565
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 7.605,
+          "end": 8.045
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 8.985,
+          "end": 12.805
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 12.805,
+          "end": 13.045
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 13.145,
+          "end": 13.605
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 14.045,
+          "end": 14.705
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 15.505,
+          "end": 16.765
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 17.005,
+          "end": 17.865
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 18.065,
+          "end": 18.485
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 18.345,
+          "end": 23.665
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 24.525,
+          "end": 26.985
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 26.625,
+          "end": 28.205
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 28.225,
+          "end": 30.705
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 29.665,
+          "end": 32.305
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 34.905,
+          "end": 35.585
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 35.705,
+          "end": 36.005
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 36.545,
+          "end": 39.445
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 41.045,
+          "end": 45.525
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 45.565,
+          "end": 46.445
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 46.545,
+          "end": 46.945
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 46.545,
+          "end": 49.725
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 50.185,
+          "end": 54.885
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 57.525,
+          "end": 59.305
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 59.845,
+          "end": 60.925
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 60.985,
+          "end": 62.885
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 63.245,
+          "end": 63.805
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 64.185,
+          "end": 64.805
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 67.385,
+          "end": 68.145
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 69.305,
+          "end": 70.125
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 70.165,
+          "end": 70.245
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 71.985,
+          "end": 74.205
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 74.885,
+          "end": 77.985
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 79.305,
+          "end": 80.545
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 83.745,
+          "end": 86.165
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 87.805,
+          "end": 89.525
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 90.145,
+          "end": 91.605
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 93.345,
+          "end": 93.405
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 93.585,
+          "end": 93.605
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 101.185,
+          "end": 101.505
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 101.825,
+          "end": 103.165
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 103.725,
+          "end": 104.265
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 104.825,
+          "end": 106.105
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 106.945,
+          "end": 107.325
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 107.465,
+          "end": 108.765
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 109.305,
+          "end": 111.205
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 113.205,
+          "end": 116.665
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 117.545,
+          "end": 121.305
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 118.425,
+          "end": 118.845
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 120.325,
+          "end": 124.425
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 122.285,
+          "end": 122.605
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 124.445,
+          "end": 124.965
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 125.265,
+          "end": 126.225
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 126.265,
+          "end": 129.665
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 129.985,
+          "end": 134.665
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 134.965,
+          "end": 135.385
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 135.325,
+          "end": 135.965
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 136.405,
+          "end": 137.445
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 136.425,
+          "end": 137.765
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 138.645,
+          "end": 143.445
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 143.805,
+          "end": 144.365
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 144.545,
+          "end": 147.785
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 144.745,
+          "end": 145.705
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 148.325,
+          "end": 149.505
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 150.185,
+          "end": 154.065
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 153.925,
+          "end": 154.825
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 155.025,
+          "end": 157.905
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 158.865,
+          "end": 159.965
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 159.085,
+          "end": 164.445
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 161.105,
+          "end": 161.465
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 164.585,
+          "end": 165.705
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 165.045,
+          "end": 167.785
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 167.645,
+          "end": 171.225
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 169.545,
+          "end": 170.885
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 171.365,
+          "end": 171.865
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 172.105,
+          "end": 172.885
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 173.505,
+          "end": 175.165
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 176.045,
+          "end": 177.825
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 176.145,
+          "end": 176.445
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 178.265,
+          "end": 179.805
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 180.065,
+          "end": 181.365
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 181.665,
+          "end": 182.285
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 183.065,
+          "end": 184.065
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 184.745,
+          "end": 187.345
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 187.945,
+          "end": 188.485
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 188.685,
+          "end": 193.325
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 194.285,
+          "end": 194.725
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 196.145,
+          "end": 197.185
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 199.245,
+          "end": 202.705
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 202.965,
+          "end": 205.565
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 205.645,
+          "end": 205.925
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 206.165,
+          "end": 206.565
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 208.245,
+          "end": 213.385
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 212.545,
+          "end": 213.085
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 213.825,
+          "end": 217.745
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 216.405,
+          "end": 216.905
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 217.705,
+          "end": 218.025
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 218.005,
+          "end": 220.485
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 220.745,
+          "end": 221.145
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 221.525,
+          "end": 223.285
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 222.685,
+          "end": 223.125
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 223.125,
+          "end": 223.265
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 223.285,
+          "end": 223.925
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 223.925,
+          "end": 224.165
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 224.345,
+          "end": 225.505
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 226.285,
+          "end": 226.945
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 242.365,
+          "end": 244.745
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 245.205,
+          "end": 245.245
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 246.465,
+          "end": 248.465
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 248.725,
+          "end": 250.325
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 251.145,
+          "end": 253.325
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 253.225,
+          "end": 254.585
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 254.185,
+          "end": 254.665
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 254.745,
+          "end": 256.445
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 256.865,
+          "end": 258.105
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 257.925,
+          "end": 262.825
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 259.905,
+          "end": 260.365
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 263.125,
+          "end": 264.185
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 265.405,
+          "end": 265.465
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 265.465,
+          "end": 270.005
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 265.485,
+          "end": 265.585
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 266.985,
+          "end": 267.705
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 267.845,
+          "end": 268.305
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 270.025,
+          "end": 270.105
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 270.385,
+          "end": 270.445
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 270.445,
+          "end": 270.485
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 270.485,
+          "end": 270.565
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 270.565,
+          "end": 270.645
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 270.645,
+          "end": 271.585
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 271.585,
+          "end": 271.825
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 271.825,
+          "end": 273.925
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 273.445,
+          "end": 273.665
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 274.925,
+          "end": 277.445
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 277.225,
+          "end": 277.365
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 277.445,
+          "end": 277.905
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 278.405,
+          "end": 279.285
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 278.705,
+          "end": 279.085
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 279.345,
+          "end": 279.805
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 280.205,
+          "end": 282.745
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 282.745,
+          "end": 283.365
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 283.345,
+          "end": 283.765
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 283.365,
+          "end": 283.565
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 286.405,
+          "end": 287.785
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 288.965,
+          "end": 294.185
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 293.005,
+          "end": 293.905
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 294.185,
+          "end": 294.905
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 294.625,
+          "end": 295.265
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 295.565,
+          "end": 300.365
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 295.625,
+          "end": 298.905
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 299.505,
+          "end": 299.545
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 299.545,
+          "end": 299.865
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 299.865,
+          "end": 300.185
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 300.185,
+          "end": 300.205
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 300.205,
+          "end": 300.305
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 300.305,
+          "end": 300.325
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 300.365,
+          "end": 300.385
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 300.585,
+          "end": 300.685
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 300.685,
+          "end": 300.705
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 300.705,
+          "end": 300.725
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 301.105,
+          "end": 301.645
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 304.385,
+          "end": 305.185
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 305.465,
+          "end": 307.145
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "start": 309.865,
+          "end": 310.445
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 310.445,
+          "end": 313.085
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "start": 313.265,
+          "end": 314.285
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "start": 313.545,
+          "end": 313.805
+        }
+      ],
+      "wordLevelTranscription": [
+        {
+          "start": 0.505,
+          "end": 0.605,
+          "text": "¿Tú",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 0.605,
+          "end": 0.8049999999999999,
+          "text": "solo",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 0.8049999999999999,
+          "end": 1.085,
+          "text": "entras?",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 3.66687523427049,
+          "end": 4.046875234270489,
+          "text": "Sí",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 4.046875234270489,
+          "end": 4.58687523427049,
+          "text": "¿Y",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 4.785,
+          "end": 4.965,
+          "text": "Y",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 4.965,
+          "end": 5.085,
+          "text": "ahí",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 5.085,
+          "end": 5.385,
+          "text": "yo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 5.385,
+          "end": 5.845000000000001,
+          "text": "lo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 5.845000000000001,
+          "end": 6.445,
+          "text": "pensé",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 7.30687523427049,
+          "end": 7.846875234270489,
+          "text": "fue",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 8.608750468540979,
+          "end": 9.26875046854098,
+          "text": "porque",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 9.26875046854098,
+          "end": 9.52875046854098,
+          "text": "era",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 9.52875046854098,
+          "end": 9.688750468540977,
+          "text": "mi",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 9.688750468540977,
+          "end": 10.008750468540978,
+          "text": "derecho",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 10.008750468540978,
+          "end": 10.108750468540979,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 10.108750468540979,
+          "end": 10.328750468540978,
+          "text": "tener",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 10.328750468540978,
+          "end": 10.54875046854098,
+          "text": "una",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 10.54875046854098,
+          "end": 11.168750468540978,
+          "text": "documentación",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 11.168750468540978,
+          "end": 11.668750468540978,
+          "text": "explicando",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 11.668750468540978,
+          "end": 11.90875046854098,
+          "text": "por",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 11.90875046854098,
+          "end": 12.02875046854098,
+          "text": "qué",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 12.02875046854098,
+          "end": 12.508750468540978,
+          "text": "hicieron",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 12.508750468540978,
+          "end": 12.76875046854098,
+          "text": "eso,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 13.21062570281147,
+          "end": 13.430625702811469,
+          "text": "¿cierto?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 13.892500937081959,
+          "end": 14.252500937081958,
+          "text": "Muchas",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 14.252500937081958,
+          "end": 14.592500937081958,
+          "text": "gracias.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 15.514376171352449,
+          "end": 15.694376171352449,
+          "text": "Me",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 15.694376171352449,
+          "end": 16.114376171352447,
+          "text": "demoré",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 16.114376171352447,
+          "end": 16.35437617135245,
+          "text": "hasta",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 16.35437617135245,
+          "end": 16.554376171352448,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 16.616251405622933,
+          "end": 17.33625140562294,
+          "text": "meia",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 17.33625140562294,
+          "end": 17.716251405622934,
+          "text": "noche",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 17.716251405622934,
+          "end": 18.176251405622935,
+          "text": "para",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 18.498126639893428,
+          "end": 18.998126639893428,
+          "text": "conseguir",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 18.998126639893428,
+          "end": 19.258126639893426,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 19.258126639893426,
+          "end": 19.518126639893424,
+          "text": "alguien",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 19.518126639893424,
+          "end": 19.658126639893425,
+          "text": "de",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 19.658126639893425,
+          "end": 19.758126639893426,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 19.758126639893426,
+          "end": 19.898126639893427,
+          "text": "tarde",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 19.898126639893427,
+          "end": 20.038126639893427,
+          "text": "me",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 20.038126639893427,
+          "end": 20.27812663989343,
+          "text": "dése",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 20.27812663989343,
+          "end": 20.478126639893425,
+          "text": "un",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 20.478126639893425,
+          "end": 21.31812663989343,
+          "text": "pedazo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 21.31812663989343,
+          "end": 21.438126639893426,
+          "text": "de",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 21.438126639893426,
+          "end": 21.81812663989343,
+          "text": "papel,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 22.038126639893427,
+          "end": 22.538126639893427,
+          "text": "sin",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 22.538126639893427,
+          "end": 22.95812663989343,
+          "text": "firma,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 23.05812663989343,
+          "end": 23.158126639893432,
+          "text": "sin",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 23.158126639893432,
+          "end": 23.498126639893428,
+          "text": "nada,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 24.520001874163917,
+          "end": 25.200001874163917,
+          "text": "explicando",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 25.200001874163917,
+          "end": 25.420001874163916,
+          "text": "las",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 25.420001874163916,
+          "end": 25.860001874163913,
+          "text": "razones",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 25.860001874163913,
+          "end": 26.060001874163916,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 26.060001874163916,
+          "end": 26.26000187416392,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 26.26000187416392,
+          "end": 26.76000187416392,
+          "text": "PDI",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 27.90187710843441,
+          "end": 29.921877108434405,
+          "text": "ya",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 29.921877108434405,
+          "end": 30.58187710843441,
+          "text": "confirmó,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 34.9637523427049,
+          "end": 35.4637523427049,
+          "text": "¿entiendes?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 36.385627576975395,
+          "end": 36.725627576975384,
+          "text": "Pero",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 36.725627576975384,
+          "end": 36.96562757697539,
+          "text": "eso",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 36.96562757697539,
+          "end": 37.085627576975384,
+          "text": "ya",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 37.085627576975384,
+          "end": 37.225627576975384,
+          "text": "fue",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 37.225627576975384,
+          "end": 37.70562757697539,
+          "text": "comprobado",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 37.70562757697539,
+          "end": 37.865627576975385,
+          "text": "por",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 37.865627576975385,
+          "end": 38.785627576975386,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 38.785627576975386,
+          "end": 39.085627576975384,
+          "text": "PDI,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 39.285627576975386,
+          "end": 39.34562757697539,
+          "text": "¿no?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 40.794376171352454,
+          "end": 41.27437617135245,
+          "text": "¿Qué",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 41.27437617135245,
+          "end": 41.394376171352455,
+          "text": "le",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 41.394376171352455,
+          "end": 41.714376171352455,
+          "text": "dijeron",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 41.714376171352455,
+          "end": 41.85437617135245,
+          "text": "los",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 41.85437617135245,
+          "end": 41.97437617135245,
+          "text": "de",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 41.97437617135245,
+          "end": 42.254376171352455,
+          "text": "PDI?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 42.47437617135245,
+          "end": 42.754376171352455,
+          "text": "Es",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 42.754376171352455,
+          "end": 42.83437617135245,
+          "text": "que",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 42.83437617135245,
+          "end": 42.97437617135245,
+          "text": "si",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 42.97437617135245,
+          "end": 43.174376171352456,
+          "text": "hubiese",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 43.174376171352456,
+          "end": 43.41437617135245,
+          "text": "habido",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 43.41437617135245,
+          "end": 44.114376171352454,
+          "text": "agresión,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 44.294376171352454,
+          "end": 44.534376171352456,
+          "text": "PDI",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 44.534376171352456,
+          "end": 44.73437617135245,
+          "text": "los",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 44.73437617135245,
+          "end": 44.894376171352455,
+          "text": "toma",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 44.894376171352455,
+          "end": 45.434376171352454,
+          "text": "detenidos.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 45.28750281124587,
+          "end": 45.72750281124587,
+          "text": "No,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 45.96750281124588,
+          "end": 46.22750281124587,
+          "text": "mira,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 46.556251405622945,
+          "end": 46.95625140562294,
+          "text": "Entonces,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 47.21625140562294,
+          "end": 47.45625140562294,
+          "text": "si",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 47.45625140562294,
+          "end": 47.61625140562294,
+          "text": "no,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 47.77625140562294,
+          "end": 47.876251405622945,
+          "text": "ellos",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 47.876251405622945,
+          "end": 48.03625140562294,
+          "text": "no",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 48.03625140562294,
+          "end": 48.39625140562294,
+          "text": "pudieron",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 48.39625140562294,
+          "end": 48.85625140562294,
+          "text": "comprobar",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 48.85625140562294,
+          "end": 49.056251405622945,
+          "text": "una",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 49.056251405622945,
+          "end": 49.61625140562294,
+          "text": "agresión.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 50.14937804551636,
+          "end": 50.40937804551636,
+          "text": "mira,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 50.98937804551636,
+          "end": 51.42937804551636,
+          "text": "exactamente,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 51.90937804551636,
+          "end": 52.38937804551637,
+          "text": "exactamente,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 52.609378045516365,
+          "end": 52.72937804551637,
+          "text": "pero",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 52.72937804551637,
+          "end": 52.869378045516356,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 52.869378045516356,
+          "end": 53.16937804551637,
+          "text": "PDI",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 53.16937804551637,
+          "end": 53.329378045516364,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 53.329378045516364,
+          "end": 53.44937804551637,
+          "text": "está",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 53.44937804551637,
+          "end": 53.84937804551636,
+          "text": "haciendo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 53.84937804551636,
+          "end": 54.22937804551637,
+          "text": "no",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 54.22937804551637,
+          "end": 54.329378045516364,
+          "text": "es",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 54.329378045516364,
+          "end": 54.44937804551637,
+          "text": "con",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 54.44937804551637,
+          "end": 54.72937804551637,
+          "text": "nosotros,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 57.53125327978686,
+          "end": 57.67125327978686,
+          "text": "es",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 57.67125327978686,
+          "end": 57.85125327978685,
+          "text": "con",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 57.85125327978685,
+          "end": 58.97125327978686,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 58.97125327978686,
+          "end": 59.19125327978686,
+          "text": "lata,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 59.81312851405735,
+          "end": 59.95312851405735,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 59.95312851405735,
+          "end": 60.07312851405735,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 60.07312851405735,
+          "end": 60.31312851405735,
+          "text": "lata",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 60.31312851405735,
+          "end": 61.13312851405734,
+          "text": "va",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 61.13312851405734,
+          "end": 61.273128514057355,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 61.273128514057355,
+          "end": 61.37312851405735,
+          "text": "hablar",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 61.37312851405735,
+          "end": 61.57312851405735,
+          "text": "con",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 61.57312851405735,
+          "end": 62.45312851405735,
+          "text": "quien",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 62.45312851405735,
+          "end": 62.79312851405735,
+          "text": "quiera,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 63.25500374832784,
+          "end": 63.73500374832784,
+          "text": "¿entiendes?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 64.13687898259833,
+          "end": 64.35687898259833,
+          "text": "Ah,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 64.49687898259835,
+          "end": 64.69687898259834,
+          "text": "sí.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 71.97812663989343,
+          "end": 72.31812663989344,
+          "text": "¿Usted",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 72.31812663989344,
+          "end": 72.51812663989344,
+          "text": "qué",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 72.51812663989344,
+          "end": 73.05812663989343,
+          "text": "nacionalidad",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 73.05812663989343,
+          "end": 73.39812663989343,
+          "text": "tiene,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 73.61812663989343,
+          "end": 74.07812663989344,
+          "text": "brasilero?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 74.92250468540982,
+          "end": 75.50250468540982,
+          "text": "Sí,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 75.50250468540982,
+          "end": 76.08250468540983,
+          "text": "inicial",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 76.08250468540983,
+          "end": 76.88250468540983,
+          "text": "brasileño",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 76.88250468540983,
+          "end": 77.24250468540983,
+          "text": "y",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 77.24250468540983,
+          "end": 77.40250468540982,
+          "text": "después",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 77.40250468540982,
+          "end": 77.76250468540982,
+          "text": "italiano.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 79.46437991968033,
+          "end": 79.62437991968032,
+          "text": "Ah,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 80.02437991968033,
+          "end": 80.42437991968033,
+          "text": "sí.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 93.37375609103277,
+          "end": 93.95375609103279,
+          "text": "Ya,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 101.81750655957377,
+          "end": 101.99750655957378,
+          "text": "yo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 101.99750655957378,
+          "end": 102.33750655957375,
+          "text": "puedo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 102.33750655957375,
+          "end": 102.65750655957378,
+          "text": "con",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 102.65750655957378,
+          "end": 103.01750655957376,
+          "text": "eso",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 104.49938179384425,
+          "end": 105.37938179384425,
+          "text": "cuestionar",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 105.37938179384425,
+          "end": 105.53938179384427,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 105.53938179384427,
+          "end": 105.95938179384426,
+          "text": "PDI.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 106.70187710843439,
+          "end": 107.18187710843439,
+          "text": "¿Cómo?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 107.14125702811477,
+          "end": 107.62125702811475,
+          "text": "Yo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 107.62125702811475,
+          "end": 107.86125702811474,
+          "text": "puedo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 107.86125702811474,
+          "end": 108.14125702811477,
+          "text": "con",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 108.14125702811477,
+          "end": 108.62125702811475,
+          "text": "esto",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 108.98313226238525,
+          "end": 109.90313226238524,
+          "text": "cuestionar",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 109.90313226238524,
+          "end": 110.14313226238525,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 110.14313226238525,
+          "end": 110.42313226238525,
+          "text": "PDI",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 110.42313226238525,
+          "end": 110.58313226238525,
+          "text": "en",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 110.58313226238525,
+          "end": 110.66313226238526,
+          "text": "el",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 110.66313226238526,
+          "end": 111.00313226238524,
+          "text": "fato,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 112.98500749665574,
+          "end": 113.42500749665574,
+          "text": "¿me",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 113.42500749665574,
+          "end": 113.88500749665575,
+          "text": "pasen",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 113.88500749665575,
+          "end": 114.24500749665573,
+          "text": "cualquier",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 114.24500749665573,
+          "end": 115.10500749665574,
+          "text": "documentación",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 115.10500749665574,
+          "end": 115.32500749665574,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 115.32500749665574,
+          "end": 115.60500749665574,
+          "text": "fue,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 115.76500749665574,
+          "end": 115.92500749665574,
+          "text": "de",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 115.92500749665574,
+          "end": 116.00500749665575,
+          "text": "lo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 116.00500749665575,
+          "end": 116.06500749665572,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 116.06500749665572,
+          "end": 116.50500749665575,
+          "text": "pasó?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 117.42375234270487,
+          "end": 117.68375234270489,
+          "text": "Que",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 117.68375234270489,
+          "end": 117.86375234270487,
+          "text": "ellos",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 117.86375234270487,
+          "end": 118.00375234270489,
+          "text": "le",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 118.00375234270489,
+          "end": 118.3037523427049,
+          "text": "pasen",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 118.3037523427049,
+          "end": 118.4637523427049,
+          "text": "una",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 118.4637523427049,
+          "end": 118.5837523427049,
+          "text": "voz",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 118.54688273092621,
+          "end": 118.94688273092622,
+          "text": "No,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 118.5837523427049,
+          "end": 118.86375234270487,
+          "text": "que",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 118.86375234270487,
+          "end": 119.3037523427049,
+          "text": "nosotros",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 119.3037523427049,
+          "end": 119.48375234270488,
+          "text": "no",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 119.48375234270488,
+          "end": 119.62375234270489,
+          "text": "los",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 119.62375234270489,
+          "end": 119.88375234270488,
+          "text": "podemos",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 119.88375234270488,
+          "end": 120.3037523427049,
+          "text": "obligar",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 120.3037523427049,
+          "end": 120.40375234270489,
+          "text": "a",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 120.40375234270489,
+          "end": 120.56375234270489,
+          "text": "ellos.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 120.64875796519672,
+          "end": 120.64875796519672,
+          "text": "no,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 120.6687579651967,
+          "end": 120.84875796519671,
+          "text": "no,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 120.84875796519671,
+          "end": 120.98875796519673,
+          "text": "no",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 120.98875796519673,
+          "end": 121.08875796519672,
+          "text": "estoy",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 121.08875796519672,
+          "end": 121.34875796519671,
+          "text": "diciendo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 121.34875796519671,
+          "end": 121.46875796519672,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 121.46875796519672,
+          "end": 121.62875796519671,
+          "text": "ustedes",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 121.62875796519671,
+          "end": 121.76875796519673,
+          "text": "lo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 121.76875796519673,
+          "end": 122.08875796519672,
+          "text": "obliguen.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 122.32875796519673,
+          "end": 122.5487579651967,
+          "text": "Estoy",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 122.5487579651967,
+          "end": 122.78875796519671,
+          "text": "diciendo,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 122.90875796519671,
+          "end": 123.0487579651967,
+          "text": "mira,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 123.24875796519672,
+          "end": 123.38875796519673,
+          "text": "yo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 123.38875796519673,
+          "end": 123.5487579651967,
+          "text": "ya",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 123.5487579651967,
+          "end": 123.68875796519671,
+          "text": "fui",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 123.68875796519671,
+          "end": 123.78875796519671,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 123.78875796519671,
+          "end": 123.84875796519671,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 123.84875796519671,
+          "end": 124.34875796519671,
+          "text": "policía,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 125.33063319946721,
+          "end": 125.39063319946722,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 125.39063319946722,
+          "end": 125.55063319946721,
+          "text": "los",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 125.55063319946721,
+          "end": 126.0906331994672,
+          "text": "carabineros,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 126.27063319946721,
+          "end": 126.53063319946723,
+          "text": "yo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 126.53063319946723,
+          "end": 126.77063319946721,
+          "text": "voy",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 126.77063319946721,
+          "end": 126.83063319946721,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 126.83063319946721,
+          "end": 127.11063319946722,
+          "text": "empezar",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 127.11063319946722,
+          "end": 127.3106331994672,
+          "text": "el",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 127.3106331994672,
+          "end": 127.7506331994672,
+          "text": "proceso.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 128.2506331994672,
+          "end": 128.7306331994672,
+          "text": "Acá",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 128.7306331994672,
+          "end": 129.51063319946718,
+          "text": "explica",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 129.65250843373772,
+          "end": 130.2325084337377,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 130.2325084337377,
+          "end": 130.89250843373773,
+          "text": "ellos,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 131.15250843373772,
+          "end": 131.39250843373773,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 131.39250843373773,
+          "end": 131.7925084337377,
+          "text": "razón",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 131.7925084337377,
+          "end": 132.05250843373773,
+          "text": "fue",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 132.05250843373773,
+          "end": 132.33250843373773,
+          "text": "esa,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 132.45250843373773,
+          "end": 132.59250843373772,
+          "text": "pero",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 132.59250843373772,
+          "end": 133.03250843373772,
+          "text": "ustedes",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 133.03250843373772,
+          "end": 133.3525084337377,
+          "text": "ya",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 133.3525084337377,
+          "end": 133.99250843373773,
+          "text": "confirmaron",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 133.99250843373773,
+          "end": 134.51250843373774,
+          "text": "ayer",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 134.99438366800823,
+          "end": 135.49438366800823,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 135.49438366800823,
+          "end": 135.81438366800822,
+          "text": "eso",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 135.81438366800822,
+          "end": 136.2743836680082,
+          "text": "no",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 136.6762589022787,
+          "end": 136.9762589022787,
+          "text": "era",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 136.9762589022787,
+          "end": 137.5962589022787,
+          "text": "verdad.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 138.4312532797869,
+          "end": 138.9112532797869,
+          "text": "¿Sabe",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 138.9112532797869,
+          "end": 139.0712532797869,
+          "text": "qué?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 139.1712532797869,
+          "end": 139.2912532797869,
+          "text": "Les",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 139.2912532797869,
+          "end": 139.9312532797869,
+          "text": "recomiendo",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 139.9312532797869,
+          "end": 140.1312532797869,
+          "text": "que",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 140.1312532797869,
+          "end": 140.2912532797869,
+          "text": "haga",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 140.2912532797869,
+          "end": 140.5512532797869,
+          "text": "un",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 140.5512532797869,
+          "end": 142.2512532797869,
+          "text": "reclamo",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 142.2512532797869,
+          "end": 142.53125327978688,
+          "text": "contra",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 142.53125327978688,
+          "end": 142.7312532797869,
+          "text": "la",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 142.7312532797869,
+          "end": 143.3512532797869,
+          "text": "aerolínea.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 143.8381341365492,
+          "end": 144.0981341365492,
+          "text": "También.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 144.59312851405736,
+          "end": 145.0531285140574,
+          "text": "Eso,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 145.31312851405738,
+          "end": 145.51312851405737,
+          "text": "porque",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 145.51312851405737,
+          "end": 145.85312851405735,
+          "text": "PDI",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 145.85312851405735,
+          "end": 146.01312851405737,
+          "text": "lo",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 146.01312851405737,
+          "end": 146.15312851405736,
+          "text": "más",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 146.15312851405736,
+          "end": 146.4931285140574,
+          "text": "probable",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 146.4931285140574,
+          "end": 146.71312851405736,
+          "text": "es",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 146.71312851405736,
+          "end": 146.79312851405734,
+          "text": "que",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 146.79312851405734,
+          "end": 146.91312851405735,
+          "text": "no",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 146.91312851405735,
+          "end": 147.09312851405736,
+          "text": "quiera",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 147.09312851405736,
+          "end": 147.29312851405734,
+          "text": "hacer",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 147.29312851405734,
+          "end": 147.6131285140574,
+          "text": "nada.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 147.88000937081966,
+          "end": 148.62000937081967,
+          "text": "Sí,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 148.86000937081968,
+          "end": 148.9800093708197,
+          "text": "pero,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 149.00000937081967,
+          "end": 149.3400093708197,
+          "text": "pero,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 150.24188460509018,
+          "end": 150.32188460509016,
+          "text": "si",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 150.32188460509016,
+          "end": 150.44188460509017,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 150.44188460509017,
+          "end": 150.7218846050902,
+          "text": "PDI",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 150.7218846050902,
+          "end": 150.88188460509016,
+          "text": "no",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 150.88188460509016,
+          "end": 151.0418846050902,
+          "text": "quiere",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 151.0418846050902,
+          "end": 151.2218846050902,
+          "text": "hacer",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 151.2218846050902,
+          "end": 151.42188460509018,
+          "text": "nada,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 151.5418846050902,
+          "end": 151.62188460509017,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 151.62188460509017,
+          "end": 152.40188460509017,
+          "text": "CDA,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 152.88188460509016,
+          "end": 153.76188460509016,
+          "text": "DCAG,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 153.67500374832787,
+          "end": 154.41500374832785,
+          "text": "¿DGAC,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 154.55500374832786,
+          "end": 154.67500374832787,
+          "text": "ya?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 155.06375983936067,
+          "end": 155.3237598393607,
+          "text": "ellos",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 155.3237598393607,
+          "end": 155.8237598393607,
+          "text": "son",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 155.8237598393607,
+          "end": 156.34375983936067,
+          "text": "los",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 156.34375983936067,
+          "end": 157.44375983936067,
+          "text": "órganos",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 157.44375983936067,
+          "end": 157.66375983936067,
+          "text": "que,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 158.79687898259837,
+          "end": 159.03687898259835,
+          "text": "Sí,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 159.08563507363118,
+          "end": 159.66563507363117,
+          "text": "pelo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 159.11687898259837,
+          "end": 159.15687898259836,
+          "text": "¿qué",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 159.66563507363117,
+          "end": 160.20563507363119,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 160.20563507363119,
+          "end": 160.3256350736312,
+          "text": "yo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 160.3256350736312,
+          "end": 160.80563507363118,
+          "text": "entendí,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 160.9456350736312,
+          "end": 161.0056350736312,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 161.0056350736312,
+          "end": 161.22563507363117,
+          "text": "tienen",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 161.22563507363117,
+          "end": 161.3856350736312,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 161.3856350736312,
+          "end": 161.92563507363118,
+          "text": "controlar",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 161.92563507363118,
+          "end": 162.20563507363119,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 162.20563507363119,
+          "end": 162.46563507363118,
+          "text": "las",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 162.46563507363118,
+          "end": 163.0056350736312,
+          "text": "aerolíneas",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 163.0056350736312,
+          "end": 163.16563507363117,
+          "text": "están",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 163.16563507363117,
+          "end": 163.58563507363118,
+          "text": "siguiendo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 163.58563507363118,
+          "end": 163.78563507363117,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 163.78563507363117,
+          "end": 164.30563507363118,
+          "text": "regulación.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 165.25875421686885,
+          "end": 165.63875421686885,
+          "text": "puede",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 165.63875421686885,
+          "end": 165.87875421686886,
+          "text": "hacer",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 165.87875421686886,
+          "end": 166.07875421686887,
+          "text": "un",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 166.07875421686887,
+          "end": 166.97875421686888,
+          "text": "reclamo",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 166.97875421686888,
+          "end": 167.07875421686887,
+          "text": "en",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 167.07875421686887,
+          "end": 167.57875421686887,
+          "text": "DGAC?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 167.68751030790168,
+          "end": 167.82751030790166,
+          "text": "Yo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 167.82751030790166,
+          "end": 168.02751030790165,
+          "text": "fui",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 168.02751030790165,
+          "end": 168.14751030790165,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 168.14751030790165,
+          "end": 168.38751030790166,
+          "text": "ellos,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 168.54751030790163,
+          "end": 168.64751030790165,
+          "text": "pero",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 168.64751030790165,
+          "end": 168.88751030790166,
+          "text": "ellos",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 168.88751030790166,
+          "end": 169.14751030790165,
+          "text": "también",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 169.14751030790165,
+          "end": 169.46751030790165,
+          "text": "nada.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 169.56062945113936,
+          "end": 169.76062945113938,
+          "text": "No,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 169.7093855421721,
+          "end": 169.9493855421721,
+          "text": "Entonces,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 169.96938554217215,
+          "end": 170.04938554217213,
+          "text": "yo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 170.04938554217213,
+          "end": 170.1493855421721,
+          "text": "voy",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 170.1493855421721,
+          "end": 170.16938554217214,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 170.16938554217214,
+          "end": 170.48938554217213,
+          "text": "hacer",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 170.48938554217213,
+          "end": 170.66938554217214,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 170.66938554217214,
+          "end": 170.96938554217215,
+          "text": "ellos",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 170.96938554217215,
+          "end": 171.60938554217213,
+          "text": "también.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 172.1512607764426,
+          "end": 172.37126077644257,
+          "text": "Ahí",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 172.37126077644257,
+          "end": 172.5712607764426,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 172.5712607764426,
+          "end": 172.75126077644256,
+          "text": "está.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 172.75126077644256,
+          "end": 172.75126077644256,
+          "text": "Ah,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 173.51313601071308,
+          "end": 173.6331360107131,
+          "text": "lo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 173.6331360107131,
+          "end": 173.7331360107131,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 173.7331360107131,
+          "end": 174.0531360107131,
+          "text": "parece",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 174.0531360107131,
+          "end": 174.2331360107131,
+          "text": "es",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 174.2331360107131,
+          "end": 174.3131360107131,
+          "text": "un",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 174.3131360107131,
+          "end": 174.59313601071312,
+          "text": "abuso",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 174.59313601071312,
+          "end": 174.7331360107131,
+          "text": "de",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 174.7331360107131,
+          "end": 175.03313601071306,
+          "text": "poder,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 176.13501124498362,
+          "end": 176.31501124498357,
+          "text": "porque",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 176.31501124498357,
+          "end": 176.87501124498357,
+          "text": "lo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 176.87501124498357,
+          "end": 176.99501124498357,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 176.99501124498357,
+          "end": 177.1550112449836,
+          "text": "están",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 177.1550112449836,
+          "end": 177.67501124498358,
+          "text": "haciendo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 177.9368864792541,
+          "end": 178.49688647925404,
+          "text": "tienen",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 178.49688647925404,
+          "end": 178.89688647925408,
+          "text": "tres",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 178.89688647925408,
+          "end": 179.3168864792541,
+          "text": "órganos,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 179.5568864792541,
+          "end": 179.6968864792541,
+          "text": "bueno,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 180.11876171352455,
+          "end": 180.33876171352458,
+          "text": "dos",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 180.33876171352458,
+          "end": 180.79876171352456,
+          "text": "órganos",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 180.79876171352456,
+          "end": 181.25876171352454,
+          "text": "y",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 181.38063694779504,
+          "end": 181.800636947795,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 181.800636947795,
+          "end": 182.08063694779503,
+          "text": "lata",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 182.08063694779503,
+          "end": 182.60063694779507,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 183.20251218206553,
+          "end": 183.42251218206556,
+          "text": "están",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 183.42251218206556,
+          "end": 183.76251218206554,
+          "text": "como",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 183.76251218206554,
+          "end": 184.42251218206556,
+          "text": "se",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 184.924387416336,
+          "end": 185.56438741633605,
+          "text": "esquivando.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 185.78438741633602,
+          "end": 185.88438741633604,
+          "text": "Están",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 185.88438741633604,
+          "end": 186.84438741633602,
+          "text": "saliendo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 186.84438741633602,
+          "end": 187.12438741633605,
+          "text": "de,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 187.92626265060653,
+          "end": 188.3262626506065,
+          "text": "¿entendés?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 188.648137884877,
+          "end": 188.86813788487703,
+          "text": "Entonces,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 189.028137884877,
+          "end": 189.12813788487702,
+          "text": "mira,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 189.228137884877,
+          "end": 189.388137884877,
+          "text": "va",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 189.388137884877,
+          "end": 189.62813788487702,
+          "text": "para",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 189.62813788487702,
+          "end": 189.80813788487697,
+          "text": "allá,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 190.00813788487702,
+          "end": 190.16813788487698,
+          "text": "va",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 190.16813788487698,
+          "end": 190.36813788487703,
+          "text": "para",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 190.36813788487703,
+          "end": 190.528137884877,
+          "text": "allá,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 190.62813788487702,
+          "end": 190.768137884877,
+          "text": "va",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 190.768137884877,
+          "end": 190.968137884877,
+          "text": "para",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 190.968137884877,
+          "end": 191.18813788487697,
+          "text": "allá,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 191.348137884877,
+          "end": 191.62813788487702,
+          "text": "como",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 191.62813788487702,
+          "end": 191.908137884877,
+          "text": "una",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 191.908137884877,
+          "end": 192.288137884877,
+          "text": "pelota",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 192.288137884877,
+          "end": 192.588137884877,
+          "text": "de",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 192.588137884877,
+          "end": 192.948137884877,
+          "text": "ping",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 192.948137884877,
+          "end": 193.16813788487698,
+          "text": "pong.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 194.30250468540987,
+          "end": 194.64250468540988,
+          "text": "espérame.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 199.2843799196804,
+          "end": 199.52437991968037,
+          "text": "Oiga,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 199.56437991968036,
+          "end": 199.68437991968037,
+          "text": "mi",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 199.68437991968037,
+          "end": 199.92437991968038,
+          "text": "Sofía,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 200.0043799196804,
+          "end": 200.14437991968038,
+          "text": "¿dónde",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 200.14437991968038,
+          "end": 200.4043799196804,
+          "text": "pueden",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 200.4043799196804,
+          "end": 200.62437991968036,
+          "text": "hacer",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 200.62437991968036,
+          "end": 201.16437991968039,
+          "text": "reclamos",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 201.16437991968039,
+          "end": 201.52437991968037,
+          "text": "contra",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 201.52437991968037,
+          "end": 201.70437991968038,
+          "text": "la",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 201.70437991968038,
+          "end": 202.36437991968037,
+          "text": "DGAC?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 202.78625515395086,
+          "end": 203.26625515395088,
+          "text": "Porque",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 203.26625515395088,
+          "end": 203.56625515395086,
+          "text": "nadie",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 203.56625515395086,
+          "end": 204.18625515395087,
+          "text": "quiere",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 204.18625515395087,
+          "end": 204.38625515395086,
+          "text": "hacer",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 204.38625515395086,
+          "end": 204.70625515395088,
+          "text": "nada,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 204.84625515395086,
+          "end": 204.96625515395087,
+          "text": "por",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 204.96625515395087,
+          "end": 205.38625515395086,
+          "text": "ponerlo.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 206.38813038822136,
+          "end": 206.90813038822134,
+          "text": "Hay",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 208.41000562249187,
+          "end": 208.61000562249185,
+          "text": "una",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 208.61000562249185,
+          "end": 209.03000562249184,
+          "text": "página,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 209.45000562249186,
+          "end": 209.87000562249185,
+          "text": "reclamos",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 209.87000562249185,
+          "end": 210.03000562249184,
+          "text": "y",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 210.03000562249184,
+          "end": 210.59000562249184,
+          "text": "sugerencias",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 210.59000562249184,
+          "end": 211.25000562249184,
+          "text": "DGAC,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 211.39000562249186,
+          "end": 211.71000562249185,
+          "text": "Dirección",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 211.71000562249185,
+          "end": 212.09000562249184,
+          "text": "General",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 212.09000562249184,
+          "end": 212.27000562249185,
+          "text": "de",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 212.27000562249185,
+          "end": 212.89000562249186,
+          "text": "Aeronáutica",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 212.89000562249186,
+          "end": 213.17000562249186,
+          "text": "Civil.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 213.81188085676234,
+          "end": 214.01188085676233,
+          "text": "Por",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 214.01188085676233,
+          "end": 214.13188085676234,
+          "text": "si",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 214.13188085676234,
+          "end": 214.29188085676236,
+          "text": "ellos",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 214.29188085676236,
+          "end": 214.41188085676237,
+          "text": "no",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 214.41188085676237,
+          "end": 214.65188085676232,
+          "text": "quieren",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 214.65188085676232,
+          "end": 214.95188085676233,
+          "text": "hacer",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 214.95188085676233,
+          "end": 215.35188085676236,
+          "text": "nada,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 215.57188085676233,
+          "end": 215.83188085676233,
+          "text": "también",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 215.83188085676233,
+          "end": 216.01188085676233,
+          "text": "les",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 216.01188085676233,
+          "end": 216.21188085676232,
+          "text": "puede",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 216.21188085676232,
+          "end": 216.41188085676237,
+          "text": "hacer",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 216.41188085676237,
+          "end": 216.79188085676236,
+          "text": "un",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 216.79188085676236,
+          "end": 217.33188085676233,
+          "text": "reclamo",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 217.33188085676233,
+          "end": 217.41188085676237,
+          "text": "a",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 217.41188085676237,
+          "end": 217.59188085676232,
+          "text": "ellos.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 217.45188835341798,
+          "end": 217.89188835341798,
+          "text": "Ya,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 217.89375609103286,
+          "end": 218.21375609103285,
+          "text": "A",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 218.21375609103285,
+          "end": 218.31375609103281,
+          "text": "la",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 218.31375609103281,
+          "end": 218.57375609103286,
+          "text": "TAM",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 218.57375609103286,
+          "end": 218.85375609103284,
+          "text": "como",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 218.85375609103284,
+          "end": 219.5137560910328,
+          "text": "aerolínea",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 219.5137560910328,
+          "end": 219.7537560910328,
+          "text": "a",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 219.7537560910328,
+          "end": 220.27375609103285,
+          "text": "DGAC.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 220.69376358768847,
+          "end": 220.99376358768848,
+          "text": "sí,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 221.555638821959,
+          "end": 221.755638821959,
+          "text": "sí,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 221.815638821959,
+          "end": 221.875638821959,
+          "text": "no,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 221.97563882195897,
+          "end": 222.315638821959,
+          "text": "voy",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 222.315638821959,
+          "end": 222.41563882195902,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 222.41563882195902,
+          "end": 222.515638821959,
+          "text": "hacer,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 222.515638821959,
+          "end": 222.675638821959,
+          "text": "voy",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 222.675638821959,
+          "end": 222.77563882195898,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 222.77563882195898,
+          "end": 222.935638821959,
+          "text": "hacer",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 222.935638821959,
+          "end": 223.055638821959,
+          "text": "a,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 222.95062570281146,
+          "end": 223.47062570281145,
+          "text": "querés",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 223.47062570281145,
+          "end": 223.87062570281145,
+          "text": "enseñar?",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 224.1175140562295,
+          "end": 224.5175140562295,
+          "text": "voy",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 224.5175140562295,
+          "end": 224.59751405622947,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 224.59751405622947,
+          "end": 224.73751405622951,
+          "text": "hacer",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 224.73751405622951,
+          "end": 224.85751405622946,
+          "text": "lo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 224.85751405622946,
+          "end": 224.93751405622945,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 224.93751405622945,
+          "end": 225.21751405622948,
+          "text": "puedo.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 226.25938929049997,
+          "end": 226.49938929049998,
+          "text": "Muchas",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 226.49938929049998,
+          "end": 226.81938929049997,
+          "text": "gracias.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 242.40126452477048,
+          "end": 242.5612645247705,
+          "text": "Ah,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 242.62126452477045,
+          "end": 242.78126452477048,
+          "text": "no,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 242.78126452477048,
+          "end": 243.0212645247705,
+          "text": "no",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 243.0212645247705,
+          "end": 243.2012645247705,
+          "text": "soy",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 243.2012645247705,
+          "end": 243.36126452477046,
+          "text": "el",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 243.36126452477046,
+          "end": 243.60126452477047,
+          "text": "primero",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 243.60126452477047,
+          "end": 243.7612645247705,
+          "text": "ni",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 243.7612645247705,
+          "end": 243.9412645247705,
+          "text": "el",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 243.9412645247705,
+          "end": 244.22126452477048,
+          "text": "último.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 245.05750655957385,
+          "end": 245.57750655957383,
+          "text": "Hay",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 246.203139759041,
+          "end": 246.643139759041,
+          "text": "Pero",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 246.643139759041,
+          "end": 247.003139759041,
+          "text": "cuántas",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 247.003139759041,
+          "end": 247.36313975904096,
+          "text": "personas",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 247.36313975904096,
+          "end": 247.56313975904095,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 247.56313975904095,
+          "end": 247.78313975904098,
+          "text": "van",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 247.78313975904098,
+          "end": 248.30313975904096,
+          "text": "adelante",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 248.30313975904096,
+          "end": 248.80313975904096,
+          "text": "con",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 248.88501499331144,
+          "end": 249.14501499331143,
+          "text": "la,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 249.38501499331144,
+          "end": 249.62501499331145,
+          "text": "con",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 249.62501499331145,
+          "end": 249.86501499331146,
+          "text": "la,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 250.94689022758197,
+          "end": 251.306890227582,
+          "text": "con",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 251.306890227582,
+          "end": 251.52689022758202,
+          "text": "hacer",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 251.52689022758202,
+          "end": 251.72689022758195,
+          "text": "un",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 251.72689022758195,
+          "end": 252.546890227582,
+          "text": "reclamo,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 252.70689022758197,
+          "end": 252.98689022758194,
+          "text": "con,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 253.41938179384434,
+          "end": 253.79938179384433,
+          "text": "hartas",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 253.79938179384433,
+          "end": 254.2593817938443,
+          "text": "personas,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 254.1487654618525,
+          "end": 254.44876546185245,
+          "text": "sí,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 254.84125702811485,
+          "end": 254.96125702811486,
+          "text": "sí,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 255.04125702811484,
+          "end": 255.24125702811483,
+          "text": "pero",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 255.24125702811483,
+          "end": 255.34125702811485,
+          "text": "hoy",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 255.34125702811485,
+          "end": 255.44125702811482,
+          "text": "han",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 255.44125702811482,
+          "end": 255.74125702811483,
+          "text": "pasado",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 255.74125702811483,
+          "end": 256.3212570281148,
+          "text": "detenidos.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 256.890640696123,
+          "end": 257.030640696123,
+          "text": "a",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 257.030640696123,
+          "end": 257.2306406961229,
+          "text": "pasar",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 257.2306406961229,
+          "end": 257.95064069612295,
+          "text": "detenido.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 257.9831322623853,
+          "end": 258.1431322623853,
+          "text": "¿Han",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 258.1431322623853,
+          "end": 258.4831322623853,
+          "text": "pasado",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 258.4831322623853,
+          "end": 258.92313226238537,
+          "text": "detenidos?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 258.92313226238537,
+          "end": 259.1631322623854,
+          "text": "El",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 259.1631322623854,
+          "end": 259.5031322623853,
+          "text": "problema",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 259.5031322623853,
+          "end": 259.6231322623853,
+          "text": "es",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 259.6231322623853,
+          "end": 259.7231322623853,
+          "text": "que",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 259.7231322623853,
+          "end": 259.96313226238533,
+          "text": "cuando",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 259.96313226238533,
+          "end": 260.20313226238534,
+          "text": "ellos",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 260.20313226238534,
+          "end": 260.6031322623853,
+          "text": "dicen,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 260.82313226238534,
+          "end": 260.96313226238533,
+          "text": "por",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 260.96313226238533,
+          "end": 261.2231322623853,
+          "text": "ejemplo,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 261.30313226238536,
+          "end": 261.4831322623853,
+          "text": "si",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 261.4831322623853,
+          "end": 261.54313226238537,
+          "text": "a",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 261.54313226238537,
+          "end": 261.6231322623853,
+          "text": "mí",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 261.6231322623853,
+          "end": 261.7831322623854,
+          "text": "me",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 261.7831322623854,
+          "end": 262.0231322623854,
+          "text": "vienen",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 262.0231322623854,
+          "end": 262.18313226238536,
+          "text": "a",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 262.18313226238536,
+          "end": 262.7431322623853,
+          "text": "denunciar",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 262.86500749665583,
+          "end": 263.36500749665583,
+          "text": "una",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 263.36500749665583,
+          "end": 264.0050074966558,
+          "text": "agresión,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 265.3068827309263,
+          "end": 265.7068827309263,
+          "text": "tengo",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 265.7068827309263,
+          "end": 265.8268827309263,
+          "text": "que",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 265.8268827309263,
+          "end": 266.1668827309263,
+          "text": "adoptar",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 266.1668827309263,
+          "end": 266.3068827309263,
+          "text": "el",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 266.3068827309263,
+          "end": 266.86688273092636,
+          "text": "procedimiento.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 266.974391164664,
+          "end": 267.37439116466396,
+          "text": "Claro.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 267.3287579651968,
+          "end": 267.5087579651968,
+          "text": "Que",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 267.5087579651968,
+          "end": 267.7487579651968,
+          "text": "después",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 267.7487579651968,
+          "end": 267.8887579651968,
+          "text": "ellos",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 267.8887579651968,
+          "end": 268.06875796519677,
+          "text": "me",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 268.06875796519677,
+          "end": 268.2887579651968,
+          "text": "pueden",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 268.2887579651968,
+          "end": 268.7887579651968,
+          "text": "denunciar",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 268.7887579651968,
+          "end": 268.8887579651968,
+          "text": "a",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 268.8887579651968,
+          "end": 269.1287579651968,
+          "text": "mí.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 269.5887579651968,
+          "end": 269.8887579651968,
+          "text": "Dígame.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 270.27250093708193,
+          "end": 270.61250093708196,
+          "text": "No,",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 270.41814163320487,
+          "end": 270.55814163320485,
+          "text": "No,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 270.73250093708197,
+          "end": 270.972500937082,
+          "text": "no,",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 270.972500937082,
+          "end": 271.13250093708194,
+          "text": "no,",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 271.13250093708194,
+          "end": 271.29250093708197,
+          "text": "no,",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 271.29250093708197,
+          "end": 271.43250093708195,
+          "text": "no,",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 271.43250093708195,
+          "end": 271.43250093708195,
+          "text": "no,",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 271.43250093708195,
+          "end": 271.49250093708196,
+          "text": "no,",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 271.49250093708196,
+          "end": 271.49250093708196,
+          "text": "no,",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 271.49250093708196,
+          "end": 271.49250093708196,
+          "text": "no",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 271.49250093708196,
+          "end": 271.49250093708196,
+          "text": "sé.",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 271.67063319946726,
+          "end": 271.7106331994672,
+          "text": "Ah,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 271.82001686747543,
+          "end": 272.0400168674754,
+          "text": "claro,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 272.1200168674754,
+          "end": 272.3000168674754,
+          "text": "mira,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 272.4200168674754,
+          "end": 272.6000168674754,
+          "text": "es",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 272.6000168674754,
+          "end": 272.7600168674754,
+          "text": "ahí",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 272.7600168674754,
+          "end": 272.8800168674754,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 272.8800168674754,
+          "end": 273.02001686747536,
+          "text": "está",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 273.02001686747536,
+          "end": 273.2800168674754,
+          "text": "también",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 273.2800168674754,
+          "end": 273.44001686747544,
+          "text": "el",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 273.44001686747544,
+          "end": 273.7600168674754,
+          "text": "punto.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 274.90189210174594,
+          "end": 275.12189210174586,
+          "text": "Si",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 275.12189210174586,
+          "end": 275.4618921017459,
+          "text": "tuviese,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 275.52189210174595,
+          "end": 275.64189210174595,
+          "text": "como",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 275.64189210174595,
+          "end": 275.76189210174596,
+          "text": "tú",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 275.76189210174596,
+          "end": 276.00189210174585,
+          "text": "dices,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 276.0618921017459,
+          "end": 276.2018921017459,
+          "text": "si",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 276.2018921017459,
+          "end": 276.4218921017459,
+          "text": "tuviese",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 276.4218921017459,
+          "end": 276.78189210174594,
+          "text": "pasado",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 276.78189210174594,
+          "end": 277.24189210174586,
+          "text": "algo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 277.24189210174586,
+          "end": 277.76189210174596,
+          "text": "de",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 277.45250843373776,
+          "end": 277.71250843373775,
+          "text": "sí.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 278.54376733601634,
+          "end": 278.64376733601637,
+          "text": "un",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 278.64376733601637,
+          "end": 278.8237673360164,
+          "text": "día",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 278.8237673360164,
+          "end": 279.14376733601637,
+          "text": "acá,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 280.30564257028686,
+          "end": 280.3856425702868,
+          "text": "o",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 280.3856425702868,
+          "end": 280.8656425702868,
+          "text": "estaría,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 281.1456425702868,
+          "end": 281.6656425702869,
+          "text": "estaría",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 281.6656425702869,
+          "end": 281.7856425702869,
+          "text": "más",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 281.7856425702869,
+          "end": 282.20564257028684,
+          "text": "compleja",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 282.20564257028684,
+          "end": 282.3456425702868,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 282.3456425702868,
+          "end": 282.58564257028684,
+          "text": "cosa,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 282.7143836680083,
+          "end": 283.01438366800835,
+          "text": "Claro.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 283.36751780455734,
+          "end": 283.5875178045573,
+          "text": "¿cierto?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 283.5875178045573,
+          "end": 284.1075178045573,
+          "text": "Lo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 289.12939303882786,
+          "end": 289.2093930388278,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 289.2093930388278,
+          "end": 289.5893930388278,
+          "text": "parece",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 289.5893930388278,
+          "end": 289.7293930388279,
+          "text": "es",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 289.7293930388279,
+          "end": 289.76939303882784,
+          "text": "que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 289.76939303882784,
+          "end": 290.0493930388278,
+          "text": "tienen",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 290.0493930388278,
+          "end": 290.3293930388278,
+          "text": "como",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 290.3293930388278,
+          "end": 290.74939303882786,
+          "text": "todo,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 290.9693930388278,
+          "end": 291.4493930388278,
+          "text": "lo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 291.4493930388278,
+          "end": 291.7293930388279,
+          "text": "decíamos",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 291.7293930388279,
+          "end": 291.84939303882777,
+          "text": "en",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 291.84939303882777,
+          "end": 292.0893930388278,
+          "text": "Brasil,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 292.2893930388278,
+          "end": 292.36939303882787,
+          "text": "como",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 292.36939303882787,
+          "end": 292.5493930388278,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 292.5493930388278,
+          "end": 292.8093930388278,
+          "text": "cola,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 292.9293930388278,
+          "end": 293.34939303882777,
+          "text": "la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 293.34939303882777,
+          "end": 293.5693930388278,
+          "text": "cola",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 293.5693930388278,
+          "end": 294.1093930388279,
+          "text": "presa,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 294.7112682730983,
+          "end": 295.15126827309825,
+          "text": "¿entiendes?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 295.4131435073688,
+          "end": 295.7731435073688,
+          "text": "Tú",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 295.7731435073688,
+          "end": 296.0131435073688,
+          "text": "sabes",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 296.0131435073688,
+          "end": 296.31314350736875,
+          "text": "cosas",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 296.31314350736875,
+          "end": 296.4931435073688,
+          "text": "de",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 296.4931435073688,
+          "end": 296.7331435073688,
+          "text": "yo,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 296.95314350736874,
+          "end": 297.07314350736874,
+          "text": "yo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 297.07314350736874,
+          "end": 297.2731435073688,
+          "text": "tengo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 297.2731435073688,
+          "end": 297.5931435073687,
+          "text": "cosas",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 297.5931435073687,
+          "end": 298.1331435073688,
+          "text": "tuyas,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 298.5550187416393,
+          "end": 299.0150187416392,
+          "text": "entonces,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 299.33501874163926,
+          "end": 299.5150187416392,
+          "text": "nos",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 299.5150187416392,
+          "end": 299.79501874163924,
+          "text": "quedamos",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 299.79501874163924,
+          "end": 300.3150187416393,
+          "text": "quietos,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 300.4637523427049,
+          "end": 300.9437523427049,
+          "text": "¿Yo",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 301.09876921018025,
+          "end": 301.59876921018025,
+          "text": "¿entiendes?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 304.3806444444508,
+          "end": 304.6406444444508,
+          "text": "Ah,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 304.70064444445075,
+          "end": 304.7606444444508,
+          "text": "ya,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 304.9006444444508,
+          "end": 305.10064444445084,
+          "text": "bueno.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 310.02251967872127,
+          "end": 310.18251967872123,
+          "text": "Eh,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 310.3625196787213,
+          "end": 310.4825196787213,
+          "text": "yo...",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 310.4856275769754,
+          "end": 310.9656275769754,
+          "text": "debo,",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 310.9856275769754,
+          "end": 311.50562757697537,
+          "text": "¿debo",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 311.50562757697537,
+          "end": 311.9656275769754,
+          "text": "enseñar",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 311.9656275769754,
+          "end": 312.2856275769754,
+          "text": "algo,",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 312.3656275769754,
+          "end": 312.5656275769754,
+          "text": "hacer",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 312.5656275769754,
+          "end": 312.88562757697537,
+          "text": "algo?",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 313.0381341365493,
+          "end": 313.5181341365493,
+          "text": "No,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 313.6581341365493,
+          "end": 313.91813413654927,
+          "text": "acá",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 313.91813413654927,
+          "end": 314.1381341365492,
+          "text": "no.",
+          "speaker": "SPEAKER_01"
+        }
+      ],
+      "turnLevelTranscription": [
+        {
+          "start": 0.505,
+          "end": 1.285,
+          "text": "¿Tú solo entras?",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 3.805,
+          "end": 4.285,
+          "text": "Sí ¿Y",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 4.785,
+          "end": 6.565,
+          "text": "Y ahí yo lo pensé",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 7.605,
+          "end": 8.045,
+          "text": "fue",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 8.985,
+          "end": 12.805,
+          "text": "porque era mi derecho a tener una documentación explicando por qué hicieron eso,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 13.145,
+          "end": 13.605,
+          "text": "¿cierto?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 14.045,
+          "end": 14.705,
+          "text": "Muchas gracias.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 15.505,
+          "end": 16.765,
+          "text": "Me demoré hasta la",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 17.005,
+          "end": 17.865,
+          "text": "meia noche para",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 18.365,
+          "end": 23.665,
+          "text": "conseguir que alguien de la tarde me dése un pedazo de papel, sin firma, sin nada,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 24.525,
+          "end": 26.905,
+          "text": "explicando las razones que la PDI",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 28.225,
+          "end": 30.625,
+          "text": "ya confirmó,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 34.905,
+          "end": 35.585,
+          "text": "¿entiendes?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 36.545,
+          "end": 39.445,
+          "text": "Pero eso ya fue comprobado por la PDI, ¿no?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 41.045,
+          "end": 45.525,
+          "text": "¿Qué le dijeron los de PDI? Es que si hubiese habido agresión, PDI los toma detenidos.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 45.565,
+          "end": 46.445,
+          "text": "No, mira,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 46.545,
+          "end": 49.725,
+          "text": "Entonces, si no, ellos no pudieron comprobar una agresión.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 50.185,
+          "end": 54.885,
+          "text": "mira, exactamente, exactamente, pero la PDI que está haciendo no es con nosotros,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 57.525,
+          "end": 59.305,
+          "text": "es con la lata,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 59.845,
+          "end": 62.885,
+          "text": "que la lata va a hablar con quien quiera,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 63.245,
+          "end": 63.805,
+          "text": "¿entiendes?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 64.185,
+          "end": 64.805,
+          "text": "Ah, sí.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 71.985,
+          "end": 74.205,
+          "text": "¿Usted qué nacionalidad tiene, brasilero?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 74.885,
+          "end": 77.985,
+          "text": "Sí, inicial brasileño y después italiano.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 79.305,
+          "end": 80.545,
+          "text": "Ah, sí.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 93.585,
+          "end": 93.605,
+          "text": "Ya,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 101.825,
+          "end": 103.165,
+          "text": "yo puedo con eso",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 104.825,
+          "end": 106.105,
+          "text": "cuestionar la PDI.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 106.945,
+          "end": 107.325,
+          "text": "¿Cómo?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 107.465,
+          "end": 108.765,
+          "text": "Yo puedo con esto",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 109.305,
+          "end": 111.205,
+          "text": "cuestionar la PDI en el fato,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 113.205,
+          "end": 116.665,
+          "text": "¿me pasen cualquier documentación que fue, de lo que pasó?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 117.545,
+          "end": 120.445,
+          "text": "Que ellos le pasen una voz que nosotros no los podemos obligar a ellos.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 118.625,
+          "end": 118.705,
+          "text": "No,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 120.445,
+          "end": 124.425,
+          "text": "no, no, no estoy diciendo que ustedes lo obliguen. Estoy diciendo, mira, yo ya fui a la policía,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 125.265,
+          "end": 129.665,
+          "text": "a los carabineros, yo voy a empezar el proceso. Acá explica",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 129.985,
+          "end": 134.665,
+          "text": "que ellos, la razón fue esa, pero ustedes ya confirmaron ayer",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 135.325,
+          "end": 135.965,
+          "text": "que eso no",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 136.545,
+          "end": 137.765,
+          "text": "era verdad.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 138.645,
+          "end": 143.445,
+          "text": "¿Sabe qué? Les recomiendo que haga un reclamo contra la aerolínea.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 143.805,
+          "end": 144.365,
+          "text": "También.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 144.545,
+          "end": 147.785,
+          "text": "Eso, porque PDI lo más probable es que no quiera hacer nada.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 148.325,
+          "end": 149.505,
+          "text": "Sí, pero, pero,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 150.185,
+          "end": 154.025,
+          "text": "si la PDI no quiere hacer nada, la CDA, DCAG,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 154.025,
+          "end": 154.825,
+          "text": "¿DGAC, ya?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 155.025,
+          "end": 157.905,
+          "text": "ellos son los órganos que,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 158.865,
+          "end": 159.205,
+          "text": "Sí, ¿qué",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 159.205,
+          "end": 165.485,
+          "text": "pelo que yo entendí, que tienen que controlar que las aerolíneas están siguiendo la regulación.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 165.485,
+          "end": 167.665,
+          "text": "puede hacer un reclamo en DGAC?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 167.665,
+          "end": 169.585,
+          "text": "Yo fui a ellos, pero ellos también nada.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 169.585,
+          "end": 169.765,
+          "text": "No,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 169.765,
+          "end": 171.865,
+          "text": "Entonces, yo voy a hacer a ellos también.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 172.105,
+          "end": 172.885,
+          "text": "Ahí que está. Ah,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 173.505,
+          "end": 175.165,
+          "text": "lo que parece es un abuso de poder,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 176.045,
+          "end": 177.825,
+          "text": "porque lo que están haciendo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 178.265,
+          "end": 179.805,
+          "text": "tienen tres órganos, bueno,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 180.065,
+          "end": 181.365,
+          "text": "dos órganos y",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 181.665,
+          "end": 182.285,
+          "text": "la lata que",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 183.065,
+          "end": 184.065,
+          "text": "están como se",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 184.745,
+          "end": 187.345,
+          "text": "esquivando. Están saliendo de,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 187.945,
+          "end": 188.485,
+          "text": "¿entendés?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 188.685,
+          "end": 193.325,
+          "text": "Entonces, mira, va para allá, va para allá, va para allá, como una pelota de ping pong.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 194.285,
+          "end": 194.725,
+          "text": "espérame.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 199.245,
+          "end": 202.705,
+          "text": "Oiga, mi Sofía, ¿dónde pueden hacer reclamos contra la DGAC?",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 202.965,
+          "end": 205.565,
+          "text": "Porque nadie quiere hacer nada, por ponerlo.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 206.165,
+          "end": 206.565,
+          "text": "Hay",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 208.245,
+          "end": 213.385,
+          "text": "una página, reclamos y sugerencias DGAC, Dirección General de Aeronáutica Civil.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 213.825,
+          "end": 217.725,
+          "text": "Por si ellos no quieren hacer nada, también les puede hacer un reclamo a ellos.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 217.725,
+          "end": 218.005,
+          "text": "Ya,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 218.005,
+          "end": 220.485,
+          "text": "A la TAM como aerolínea a DGAC.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 220.745,
+          "end": 221.145,
+          "text": "sí,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 221.525,
+          "end": 223.285,
+          "text": "sí, no, voy a hacer, voy a hacer a,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 223.285,
+          "end": 223.925,
+          "text": "querés enseñar?",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 224.345,
+          "end": 225.505,
+          "text": "voy a hacer lo que puedo.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 226.285,
+          "end": 226.945,
+          "text": "Muchas gracias.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 242.365,
+          "end": 244.745,
+          "text": "Ah, no, no soy el primero ni el último.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 245.205,
+          "end": 245.245,
+          "text": "Hay",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 246.465,
+          "end": 248.465,
+          "text": "Pero cuántas personas que van adelante con",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 248.725,
+          "end": 250.325,
+          "text": "la, con la,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 251.145,
+          "end": 253.265,
+          "text": "con hacer un reclamo, con,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 253.265,
+          "end": 254.265,
+          "text": "hartas personas,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 254.265,
+          "end": 254.665,
+          "text": "sí,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 254.745,
+          "end": 256.445,
+          "text": "sí, pero hoy han pasado detenidos.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 256.865,
+          "end": 257.985,
+          "text": "a pasar detenido.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 257.985,
+          "end": 262.825,
+          "text": "¿Han pasado detenidos? El problema es que cuando ellos dicen, por ejemplo, si a mí me vienen a denunciar",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 263.125,
+          "end": 264.185,
+          "text": "una agresión,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 265.465,
+          "end": 267.125,
+          "text": "tengo que adoptar el procedimiento.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 267.125,
+          "end": 267.385,
+          "text": "Claro.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 267.385,
+          "end": 270.005,
+          "text": "Que después ellos me pueden denunciar a mí. Dígame.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 270.385,
+          "end": 271.585,
+          "text": "No, no, no, no, no, no, no, no, no sé.",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 270.445,
+          "end": 270.645,
+          "text": "No,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 271.585,
+          "end": 271.825,
+          "text": "Ah,",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 271.825,
+          "end": 273.925,
+          "text": "claro, mira, es ahí que está también el punto.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 274.925,
+          "end": 277.445,
+          "text": "Si tuviese, como tú dices, si tuviese pasado algo de",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 277.445,
+          "end": 277.905,
+          "text": "sí.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 278.405,
+          "end": 279.285,
+          "text": "un día acá,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 280.205,
+          "end": 282.745,
+          "text": "o estaría, estaría más compleja la cosa,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 282.745,
+          "end": 283.345,
+          "text": "Claro.",
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "start": 283.345,
+          "end": 283.765,
+          "text": "¿cierto? Lo",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 288.965,
+          "end": 294.185,
+          "text": "que parece es que tienen como todo, lo decíamos en Brasil, como la cola, la cola presa,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 294.645,
+          "end": 295.265,
+          "text": "¿entiendes?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 295.565,
+          "end": 298.345,
+          "text": "Tú sabes cosas de yo, yo tengo cosas tuyas,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 298.505,
+          "end": 300.365,
+          "text": "entonces, nos quedamos quietos,",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 300.585,
+          "end": 300.725,
+          "text": "¿Yo",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 301.105,
+          "end": 301.645,
+          "text": "¿entiendes?",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 304.385,
+          "end": 305.185,
+          "text": "Ah, ya, bueno.",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 309.865,
+          "end": 310.445,
+          "text": "Eh, yo...",
+          "speaker": "SPEAKER_02"
+        },
+        {
+          "start": 310.445,
+          "end": 313.085,
+          "text": "debo, ¿debo enseñar algo, hacer algo?",
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "start": 313.265,
+          "end": 314.285,
+          "text": "No, acá no.",
+          "speaker": "SPEAKER_01"
+        }
+      ]
+    }
+  },
+  "filename": "Pedro Pablo Dartnell 3.m4a",
+  "source_file": "Pedro Pablo Dartnell 3.m4a",
+  "timestamp": "2026-05-05T02:56:04.088615Z",
+  "asset_storage": {
+    "ok": true,
+    "transcript_id": "pyannote_d900d40c-3af8-45c9-818f-3b62c7d2fe76",
+    "segments_saved": 109,
+    "base_dir": "/root/vps_ecosystem/vps_projects_/awareness-ai/pinocchio/data/audio",
+    "bundle_dir": "/root/vps_ecosystem/vps_projects_/awareness-ai/pinocchio/data/audio/Pedro_Pablo_Dartnell_3_segments_all (1)",
+    "bundle_zip_path": "/root/vps_ecosystem/vps_projects_/awareness-ai/pinocchio/data/audio/Pedro_Pablo_Dartnell_3_segments_all (1).zip",
+    "originals_dir": "/root/vps_ecosystem/vps_projects_/awareness-ai/pinocchio/data/originals",
+    "originals_path": "/root/vps_ecosystem/vps_projects_/awareness-ai/pinocchio/data/originals/Pedro Pablo Dartnell 3 (1).m4a",
+    "source_audio_path": "/root/vps_ecosystem/vps_projects_/awareness-ai/pinocchio/data/audio/Pedro_Pablo_Dartnell_3_segments_all (1)/source_Pedro_Pablo_Dartnell_3.m4a"
+  },
+  "__loadedFromJson": false
+}

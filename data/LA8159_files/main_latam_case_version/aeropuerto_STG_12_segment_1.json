@@ -1,6 +1,6 @@
 {
   "title": "aeropuerto_STG_12_segment_1",
-  "subtitle": "Imported segment",
+  "audio_id": "aeropuerto_STG_12_segment_1",
   "filename": "aeropuerto_STG_12_segment_1",
   "recordingdatetime": "2024-07-06T09:13:00",
   "location": "Arturo Merino Benítez International Airport, Santiago, Chile",
@@ -9,225 +9,253 @@
       "speaker": "Leandro Disconzi (passenger)",
       "start": 0.03,
       "end": 6.06,
-      "text": " Pueden pedirle mucho para que me pasen algo. ¿Signal? Pueden pedirle un señal, pero eso no es importante."
+      "text": " Pueden pedirle mucho para que me pasen algo. ¿Signal? Pueden pedirle un señal, pero eso no es importante.",
+      "id": "0"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 2.19,
       "end": 2.82,
-      "text": ""
+      "text": "",
+      "id": "1"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 6.93,
       "end": 9.14,
-      "text": " si hubiese pasado una agresión"
+      "text": " si hubiese pasado una agresión",
+      "id": "2"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 9.8,
       "end": 16.03,
-      "text": " La PDI se hubiera liberado y se hubiera llevado al tribunero para hacer una denuncia o algo, ¿cierto?"
+      "text": " La PDI se hubiera liberado y se hubiera llevado al tribunero para hacer una denuncia o algo, ¿cierto?",
+      "id": "3"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 17.04,
       "end": 22.78,
-      "text": " No, gente, por favor. Mira, está tan triste eso porque yo estoy sufriendo con eso."
+      "text": " No, gente, por favor. Mira, está tan triste eso porque yo estoy sufriendo con eso.",
+      "id": "4"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 23.94,
       "end": 29.97,
-      "text": " Yo no hice nada, tengo testigos dentro del vuelo, no tenía un testigo."
+      "text": " Yo no hice nada, tengo testigos dentro del vuelo, no tenía un testigo.",
+      "id": "5"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 30.76,
       "end": 51.8,
-      "text": " que vio, lo que están diciendo que vio, empezaron con la agresión, después vieron que no tenía agresión y pasaron que yo pasé sin mostrar mi bordo en paz."
+      "text": " que vio, lo que están diciendo que vio, empezaron con la agresión, después vieron que no tenía agresión y pasaron que yo pasé sin mostrar mi bordo en paz.",
+      "id": "6"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 52.85,
       "end": 56.53,
-      "text": " Claro, porque es lo que tú dices en cara de mí. Sí, claro, claro, pero yo te digo..."
+      "text": " Claro, porque es lo que tú dices en cara de mí. Sí, claro, claro, pero yo te digo...",
+      "id": "7"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 58.65,
       "end": 97.23,
-      "text": " No, yo pedí mucho y creí que para conseguir esto fue una lucha de la 3 de la tarde a la 11 de la noche. Entonces la pide y yo estoy intentando también, pero parece que están todos juntos en eso. Porque nadie quiere pasar información, pero yo voy a cenar, que yo voy a todo, voy a enojecer porque fue extremadamente injusto, fue información, fueron dos alegaciones falsas. Yo quiero el nombre del chico que estaba en la que hizo las acusaciones y también quiero el nombre del piloto porque voy a hacer una denuncia contra las dos personas también."
+      "text": " No, yo pedí mucho y creí que para conseguir esto fue una lucha de la 3 de la tarde a la 11 de la noche. Entonces la pide y yo estoy intentando también, pero parece que están todos juntos en eso. Porque nadie quiere pasar información, pero yo voy a cenar, que yo voy a todo, voy a enojecer porque fue extremadamente injusto, fue información, fueron dos alegaciones falsas. Yo quiero el nombre del chico que estaba en la que hizo las acusaciones y también quiero el nombre del piloto porque voy a hacer una denuncia contra las dos personas también.",
+      "id": "8"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 96.89,
       "end": 101.03,
-      "text": " va a hablar recién con él, se llama Nicolás, está dentro y viene para acá."
+      "text": " va a hablar recién con él, se llama Nicolás, está dentro y viene para acá.",
+      "id": "9"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 101.13,
       "end": 108.77,
-      "text": " Nicolás, ya no he oído de ayer entonces, que bueno. Voy a esperar acá, no me ayudo. Sí, mira, yo estoy esperando hasta hace más de 24 horas."
+      "text": " Nicolás, ya no he oído de ayer entonces, que bueno. Voy a esperar acá, no me ayudo. Sí, mira, yo estoy esperando hasta hace más de 24 horas.",
+      "id": "10"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 105.52,
       "end": 106.16,
-      "text": " ¿Sí?"
+      "text": " ¿Sí?",
+      "id": "11"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 109.97,
       "end": 113.06,
-      "text": " Ahí va a llegar el problema"
+      "text": " Ahí va a llegar el problema",
+      "id": "12"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 113.06,
       "end": 115.02,
-      "text": " Sí, hablé con él recién para que viniera."
+      "text": " Sí, hablé con él recién para que viniera.",
+      "id": "13"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 116.06,
       "end": 118.88,
-      "text": " Y cuando esté acá el Nicolás, ahí va a hablar contigo."
+      "text": " Y cuando esté acá el Nicolás, ahí va a hablar contigo.",
+      "id": "14"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 119.98,
       "end": 124.92,
-      "text": " pero lo que quiero es comprobar eso"
+      "text": " pero lo que quiero es comprobar eso",
+      "id": "15"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 125.87,
       "end": 126.22,
-      "text": " por qué"
+      "text": " por qué",
+      "id": "16"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 128.97,
       "end": 131.82,
-      "text": " ¿Puedo tener acceso para que podamos comprobar eso?"
+      "text": " ¿Puedo tener acceso para que podamos comprobar eso?",
+      "id": "17"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 131.82,
       "end": 137.16,
-      "text": " Ah, pregunte. Claro, ahí tendría que preguntar al Chico de Seguridad porque nosotros no tenemos..."
+      "text": " Ah, pregunte. Claro, ahí tendría que preguntar al Chico de Seguridad porque nosotros no tenemos...",
+      "id": "18"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 137.16,
       "end": 146.66,
-      "text": " Pero lo que digo es porque todo piensa o parece que yo soy lo incorrecto, que están contra mí. Mira, yo no hice nada a nadie."
+      "text": " Pero lo que digo es porque todo piensa o parece que yo soy lo incorrecto, que están contra mí. Mira, yo no hice nada a nadie.",
+      "id": "19"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 146.66,
       "end": 155.96,
-      "text": " Por eso es que para nosotros, por ejemplo, un golpe, yo como jefa de él, yo no le puedo decir ya pues apúrese, no, eso es ilegal."
+      "text": " Por eso es que para nosotros, por ejemplo, un golpe, yo como jefa de él, yo no le puedo decir ya pues apúrese, no, eso es ilegal.",
+      "id": "20"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 155.96,
       "end": 162.15,
-      "text": " Sí, claro. ¿Y hacer así? No, claro. En Chile, eso no corresponde. Yo puedo mostrar lo que hice. Y tampoco hacer..."
+      "text": " Sí, claro. ¿Y hacer así? No, claro. En Chile, eso no corresponde. Yo puedo mostrar lo que hice. Y tampoco hacer...",
+      "id": "21"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 156.7,
       "end": 157.19,
-      "text": ""
+      "text": "",
+      "id": "22"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 158.2,
       "end": 159.25,
-      "text": " ¡Yup, yup, yup, yup!"
+      "text": " ¡Yup, yup, yup, yup!",
+      "id": "23"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 160.97,
       "end": 165.71,
-      "text": " y tampoco hacer... ni siquiera yo hacerle a él."
+      "text": " y tampoco hacer... ni siquiera yo hacerle a él.",
+      "id": "24"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 165.71,
       "end": 168.68,
-      "text": " No, claro que no, claro que no."
+      "text": " No, claro que no, claro que no.",
+      "id": "25"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 168.71,
       "end": 174.08,
-      "text": " 12, ahí para que tú haces con el supervisor y vente para las cámaras, pero nosotros no tenemos acceso a las cámaras."
+      "text": " 12, ahí para que tú haces con el supervisor y vente para las cámaras, pero nosotros no tenemos acceso a las cámaras.",
+      "id": "26"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 174.08,
       "end": 180.17,
-      "text": " Si todos no tienen acceso a la cámara, como que..."
+      "text": " Si todos no tienen acceso a la cámara, como que...",
+      "id": "27"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 181.12,
       "end": 183.26,
-      "text": " hicieron dos acusaciones"
+      "text": " hicieron dos acusaciones",
+      "id": "28"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 185.08,
       "end": 186.84,
-      "text": " ¿Para qué propósito?"
+      "text": " ¿Para qué propósito?",
+      "id": "29"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 187.28,
       "end": 191.82,
-      "text": " que no sé qué le estuvo, él pasó con el chico, ¿qué pasó con el chico? ¡Ya, pero mire la cámara!"
+      "text": " que no sé qué le estuvo, él pasó con el chico, ¿qué pasó con el chico? ¡Ya, pero mire la cámara!",
+      "id": "30"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 189.64,
       "end": 201.13,
-      "text": " Me atrevió la cámara, yo cuestioné al piloto que estaba esperando que el vuelo estaba atreviendo y me hizo una pregunta que se picó."
+      "text": " Me atrevió la cámara, yo cuestioné al piloto que estaba esperando que el vuelo estaba atreviendo y me hizo una pregunta que se picó.",
+      "id": "31"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 201.2,
       "end": 203.86,
-      "text": " es que tú no puedes tener ese acto porque..."
+      "text": " es que tú no puedes tener ese acto porque...",
+      "id": "32"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 203.29,
       "end": 210.66,
-      "text": " No, no, yo hice una pregunta a la persona afuera antes del vuelo. ¿Pero qué problema tenés?"
+      "text": " No, no, yo hice una pregunta a la persona afuera antes del vuelo. ¿Pero qué problema tenés?",
+      "id": "33"
     },
     {
       "speaker": "Latam Supervisors",
       "start": 209.67,
       "end": 215.47,
-      "text": " ¿Pero qué problemas tenéis? ¿Qué problemas tenéis con el chico que estaba embarcando? ¿Te acuerdas? ¿Con el chico que está embarcando?"
+      "text": " ¿Pero qué problemas tenéis? ¿Qué problemas tenéis con el chico que estaba embarcando? ¿Te acuerdas? ¿Con el chico que está embarcando?",
+      "id": "34"
     },
     {
       "speaker": "Leandro Disconzi (passenger)",
       "start": 215.25,
       "end": 216.98,
-      "text": " ¿Sí?"
+      "text": " ¿Sí?",
+      "id": "35"
     }
-  ],
-  "segmentNumber": 1,
-  "isInnerSegment": true,
-  "parentFilename": "Aeropuerto Arturo Merino Benítez 12",
-  "audio_file": "transcript_1745460231.wav",
-  "startTime": 0.03096875,
-  "endTime": 216.97596875000002,
-  "duration": 216.94500000000002,
-  "audio_id": "aeropuerto_STG_12_segment_1"
+  ]
 }
