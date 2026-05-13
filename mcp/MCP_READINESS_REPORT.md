@@ -3,14 +3,14 @@
 ## Summary
 
 - state: ready
-- discovered_endpoints: 35
-- mapped_endpoints: 35
+- discovered_endpoints: 38
+- mapped_endpoints: 38
 - missing_endpoints: 0
 - coverage_percent: 100.0
 
 ## Naming Checks
 
-- tools_discovered: 35
+- tools_discovered: 38
 - prefix_violations: 0
 - snake_case_violations: 0
 
@@ -50,4 +50,7 @@
 - mapped: POST /api/transcripts/import -> transcription_import_transcripts
 - mapped: POST /api/transcripts/index-all -> transcription_index_all_transcripts
 - mapped: POST /api/transcripts/search -> transcription_search_transcripts
+- mapped: POST /api/transcripts/{transcript_id}/audit -> transcription_audit_transcript
 - mapped: POST /api/transcripts/{transcript_id}/index -> transcription_index_transcript
+- mapped: POST /api/transcripts/{transcript_id}/patch -> transcription_patch_transcript_segments
+- mapped: POST /api/transcripts/{transcript_id}/refine -> transcription_refine_transcript

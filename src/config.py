@@ -104,6 +104,10 @@ class Settings:
     REFINE_SILENCE_DROP_RATIO: float = float(os.getenv("REFINE_SILENCE_DROP_RATIO", "0.6"))
     REFINE_MAX_ACOUSTIC_WINDOWS: int = int(os.getenv("REFINE_MAX_ACOUSTIC_WINDOWS", "8"))
 
+    # Startup warmup can consume a lot of RAM on local CPU boxes.
+    PRELOAD_MODELS: bool = os.getenv("PRELOAD_MODELS", "false").lower() == "true"
+    PRELOAD_WHISPER_MODEL: str = os.getenv("PRELOAD_WHISPER_MODEL", "large-v3")
+
     def __init__(self):
         # Create data directories at runtime, not import time
         os.makedirs(self.AUDIO_DIR, exist_ok=True)

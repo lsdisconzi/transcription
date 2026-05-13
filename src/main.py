@@ -92,7 +92,13 @@ app.mount("/transcripts", StaticFiles(directory=settings.TRANSCRIPT_DIR), name="
 async def preload():
     """Kick off non-blocking background preload of heavy models."""
     log = logging.getLogger("startup")
+
+    if not settings.PRELOAD_MODELS:
+        log.info("Model preload disabled (PRELOAD_MODELS=false)")
+        return
+
     t = time.time()
+    whisper_model = (settings.PRELOAD_WHISPER_MODEL or "large-v3").strip() or "large-v3"
 
     async def _preload():
         try:
@@ -100,8 +106,8 @@ async def preload():
                 runtime.model_manager.get_diarization_pipeline,
                 settings.RESOLVED_HF_TOKEN,
             )
-            await asyncio.to_thread(runtime.model_manager.get_whisper_model, "large-v3")
-            log.info(f"Preload done in {time.time()-t:.2f}s")
+            await asyncio.to_thread(runtime.model_manager.get_whisper_model, whisper_model)
+            log.info("Preload done in %.2fs (whisper=%s)", time.time() - t, whisper_model)
         except Exception as e:
             log.warning(f"Preload skipped: {e}")
 

@@ -74,6 +74,46 @@ async def transcription_index_all_transcripts() -> dict[str, Any]:
     return await src_transcripts.index_all_transcripts()
 
 
+@mcp.tool()
+def transcription_audit_transcript(transcript_id: str) -> dict[str, Any]:
+    """Run structural audit for a transcript."""
+    return src_transcripts.audit_transcript(transcript_id)
+
+
+@mcp.tool()
+async def transcription_refine_transcript(
+    transcript_id: str,
+    canonical_name: str | None = None,
+    use_acoustic_probes: bool = True,
+    apply_patches: bool = True,
+    save_as_new_id: bool = True,
+    max_acoustic_windows: int = 8,
+) -> dict[str, Any]:
+    """Run validate-and-refine workflow for a transcript."""
+    return await src_transcripts.validate_and_refine_transcript(
+        transcript_id=transcript_id,
+        canonical_name=canonical_name,
+        use_acoustic_probes=use_acoustic_probes,
+        apply_patches=apply_patches,
+        save_as_new_id=save_as_new_id,
+        max_acoustic_windows=max_acoustic_windows,
+    )
+
+
+@mcp.tool()
+def transcription_patch_transcript_segments(
+    transcript_id: str,
+    patches: list[dict[str, Any]],
+    save_as_new_id: bool = True,
+) -> dict[str, Any]:
+    """Apply agent-supplied transcript patches."""
+    return src_transcripts.patch_transcript_segments(
+        transcript_id=transcript_id,
+        patches=patches,
+        save_as_new_id=save_as_new_id,
+    )
+
+
 def main() -> None:
     """Entrypoint for stdio MCP server."""
     mcp.run(transport="stdio")
