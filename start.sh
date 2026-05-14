@@ -1,82 +1,83 @@
 #!/usr/bin/env bash
-# transcription — start backend + optionally open app window
-# Standardized start script (compatible with ops-dashboard)
+# transcription - start API + MCP servers
 set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
-# Optional .env overrides
 if [[ -f "$SCRIPT_DIR/.env" ]]; then
-    set -a; source "$SCRIPT_DIR/.env"; set +a
+    set -a
+    source "$SCRIPT_DIR/.env"
+    set +a
 fi
 
 HOST="${HOST:-0.0.0.0}"
 PORT="${PORT:-${transcription_PORT:-8039}}"
 APP_URL="${APP_URL:-http://${HOST}:${PORT}/pinocchio}"
-VENV_BIN="$SCRIPT_DIR/.venv/bin"
-REQUIREMENTS_FILE="$SCRIPT_DIR/requirements.txt"
-REQUIREMENTS_STAMP="$SCRIPT_DIR/.venv/.requirements-stamp"
-PID_FILE="$SCRIPT_DIR/.transcription.pid"
-LOG_DIR="${LOG_DIR:-$HOME/.dev-logs}"
-LOG_FILE="$LOG_DIR/transcription.log"
 
-# ── stop any existing instance ───────────────────────────────────────────────
-if [[ -f "$PID_FILE" ]]; then
-    old_pid=$(<"$PID_FILE")
-    kill "$old_pid" 2>/dev/null || true
-    rm -f "$PID_FILE"
-fi
-lsof -ti :"$PORT" 2>/dev/null | xargs kill -9 2>/dev/null || true
+PYTHON_BIN="$SCRIPT_DIR/.venv/bin/python"
+UVICORN_BIN="$SCRIPT_DIR/.venv/bin/uvicorn"
+LOG_DIR="$SCRIPT_DIR/.logs"
+RUN_DIR="$SCRIPT_DIR/.run"
+LEGACY_PID_FILE="$SCRIPT_DIR/.transcription.pid"
 
-# ── python venv ──────────────────────────────────────────────────────────────
-if [[ ! -x "$VENV_BIN/python" ]]; then
-    echo "Creating Python venv…"
-    python3 -m venv "$SCRIPT_DIR/.venv"
+mkdir -p "$LOG_DIR" "$RUN_DIR"
+
+if [[ ! -x "$PYTHON_BIN" || ! -x "$UVICORN_BIN" ]]; then
+    echo "Missing project Python environment in $SCRIPT_DIR/.venv" >&2
+    exit 1
 fi
-if [[ -f "$REQUIREMENTS_FILE" ]]; then
-    if [[ ! -f "$REQUIREMENTS_STAMP" || "$REQUIREMENTS_FILE" -nt "$REQUIREMENTS_STAMP" ]]; then
-        echo "Installing Python dependencies…"
-        "$VENV_BIN/pip" install -q --upgrade pip
-        "$VENV_BIN/pip" install -q --prefer-binary -r "$REQUIREMENTS_FILE"
-        touch "$REQUIREMENTS_STAMP"
+
+"$SCRIPT_DIR/stop.sh" --quiet || true
+
+start_bg() {
+    local name="$1"
+    local pid_file="$2"
+    local log_file="$3"
+    shift 3
+
+    nohup "$@" >>"$log_file" 2>&1 &
+    local pid=$!
+    echo "$pid" >"$pid_file"
+
+    if ! kill -0 "$pid" 2>/dev/null; then
+        echo "Failed to start $name. Check $log_file" >&2
+        return 1
     fi
-fi
 
-# ── start backend ────────────────────────────────────────────────────────────
-echo "Starting transcription on :${PORT}…"
-mkdir -p "$LOG_DIR"
-nohup env PYTHONUNBUFFERED=1 \
-    "$VENV_BIN/uvicorn" src.main:app --host "$HOST" --port "$PORT" \
-    >> "$LOG_FILE" 2>&1 &
-echo $! > "$PID_FILE"
+    echo "Started $name (pid=$pid)"
+}
 
-# ── wait until backend is ready (up to 15 s) ─────────────────────────────────
-echo "Waiting for backend…"
-for i in $(seq 1 30); do
+echo "Starting transcription API on ${HOST}:${PORT}"
+start_bg "transcription-api" "$RUN_DIR/transcription-api.pid" "$LOG_DIR/api.log" \
+    env PYTHONUNBUFFERED=1 "$UVICORN_BIN" src.main:app --host "$HOST" --port "$PORT"
+cp "$RUN_DIR/transcription-api.pid" "$LEGACY_PID_FILE"
+
+echo "Starting transcription MCP servers"
+start_bg "mcp-transcription" "$RUN_DIR/mcp-transcription.pid" "$LOG_DIR/mcp-transcription.log" \
+    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" "$SCRIPT_DIR/mcp/servers/transcription_server.py"
+start_bg "mcp-transcripts" "$RUN_DIR/mcp-transcripts.pid" "$LOG_DIR/mcp-transcripts.log" \
+    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" "$SCRIPT_DIR/mcp/servers/transcripts_server.py"
+start_bg "mcp-meta" "$RUN_DIR/mcp-meta.pid" "$LOG_DIR/mcp-meta.log" \
+    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" "$SCRIPT_DIR/mcp/servers/meta_server.py"
+
+echo "Waiting for API health endpoint"
+for _ in $(seq 1 30); do
     if curl -sf "http://${HOST}:${PORT}/health" >/dev/null 2>&1; then
         break
     fi
     sleep 0.5
 done
 
-# ── optional headless app launch ─────────────────────────────────────────────
-if [[ -n "${OPEN_APP:-}" ]] && command -v open >/dev/null 2>&1; then
-    echo "Opening $APP_URL"
-    for candidate in \
-        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
-        "/Applications/Chromium.app/Contents/MacOS/Chromium" \
-        "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"; do
-        if [[ -x "$candidate" ]]; then
-            "$candidate" --app="$APP_URL" --window-size=1300,920 --no-first-run --no-default-browser-check 2>/dev/null &
-            break
-        fi
-    done
-    open "$APP_URL" 2>/dev/null &
+if [[ -n "${OPEN_APP:-}" ]]; then
+    if command -v xdg-open >/dev/null 2>&1; then
+        xdg-open "$APP_URL" >/dev/null 2>&1 || true
+    elif command -v open >/dev/null 2>&1; then
+        open "$APP_URL" >/dev/null 2>&1 || true
+    fi
 fi
 
 echo ""
-echo "transcription is running."
+echo "transcription is running"
 echo "  URL  : $APP_URL"
-echo "  PID  : $(cat "$PID_FILE")"
-echo "  Log  : $LOG_FILE"
+echo "  Logs : $LOG_DIR"
 echo "  Stop : ./stop.sh"
