@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 _THIS_FILE = Path(__file__).resolve()
 _transcription_ROOT = _THIS_FILE.parents[1]
 _REPO_ROOT = _THIS_FILE.parents[2]
+_DATA_ROOT = _transcription_ROOT / "data"
 _SHARED_ENV = _REPO_ROOT / "_shared" / ".env"
 _LOCAL_ENV = _transcription_ROOT / ".env"
 
@@ -78,12 +79,12 @@ class Settings:
     RUNPOD_ENDPOINT_ID: str = os.getenv("RUNPOD_ENDPOINT_ID", "")
     RUNPOD_API_URL: str = os.getenv("RUNPOD_API_URL", "https://api.runpod.ai/v2")
 
-    AUDIO_DIR: str = os.getenv("AUDIO_DIR", "data/audio")
-    ORIGINALS_DIR: str = os.getenv("ORIGINALS_DIR", "data/originals")
-    TRANSCRIPT_DIR: str = os.getenv("TRANSCRIPT_DIR", "data/transcripts")
-    REFERENCE_DIR: str = os.getenv("REFERENCE_DIR", "data/transcripts_by_audio")
-    NARRATIVE_DIR: str = os.getenv("NARRATIVE_DIR", "data/transcripts_narrative")
-    PROJECTS_DIR: str = os.getenv("PROJECTS_DIR", "data/projects")
+    AUDIO_DIR: str = os.getenv("AUDIO_DIR", str(_DATA_ROOT / "audio"))
+    ORIGINALS_DIR: str = os.getenv("ORIGINALS_DIR", str(_DATA_ROOT / "originals"))
+    TRANSCRIPT_DIR: str = os.getenv("TRANSCRIPT_DIR", str(_DATA_ROOT / "transcripts"))
+    REFERENCE_DIR: str = os.getenv("REFERENCE_DIR", str(_DATA_ROOT / "transcripts_by_audio"))
+    NARRATIVE_DIR: str = os.getenv("NARRATIVE_DIR", str(_DATA_ROOT / "transcripts_narrative"))
+    PROJECTS_DIR: str = os.getenv("PROJECTS_DIR", str(_DATA_ROOT / "projects"))
 
     # Hardware acceleration
     TORCH_DEVICE: str = "cuda" if torch.cuda.is_available() else "cpu"
