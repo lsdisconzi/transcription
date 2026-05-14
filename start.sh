@@ -10,6 +10,8 @@ if [[ -f "$SCRIPT_DIR/.env" ]]; then
     set +a
 fi
 
+cd "$SCRIPT_DIR"
+
 HOST="${HOST:-0.0.0.0}"
 PORT="${PORT:-${transcription_PORT:-8039}}"
 APP_URL="${APP_URL:-http://${HOST}:${PORT}/pinocchio}"
@@ -54,11 +56,11 @@ cp "$RUN_DIR/transcription-api.pid" "$LEGACY_PID_FILE"
 
 echo "Starting transcription MCP servers"
 start_bg "mcp-transcription" "$RUN_DIR/mcp-transcription.pid" "$LOG_DIR/mcp-transcription.log" \
-    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" "$SCRIPT_DIR/mcp/servers/transcription_server.py"
+    sh -c "tail -f /dev/null | env PYTHONUNBUFFERED=1 \"$PYTHON_BIN\" \"$SCRIPT_DIR/mcp/servers/transcription_server.py\""
 start_bg "mcp-transcripts" "$RUN_DIR/mcp-transcripts.pid" "$LOG_DIR/mcp-transcripts.log" \
-    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" "$SCRIPT_DIR/mcp/servers/transcripts_server.py"
+    sh -c "tail -f /dev/null | env PYTHONUNBUFFERED=1 \"$PYTHON_BIN\" \"$SCRIPT_DIR/mcp/servers/transcripts_server.py\""
 start_bg "mcp-meta" "$RUN_DIR/mcp-meta.pid" "$LOG_DIR/mcp-meta.log" \
-    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" "$SCRIPT_DIR/mcp/servers/meta_server.py"
+    sh -c "tail -f /dev/null | env PYTHONUNBUFFERED=1 \"$PYTHON_BIN\" \"$SCRIPT_DIR/mcp/servers/meta_server.py\""
 
 echo "Waiting for API health endpoint"
 for _ in $(seq 1 30); do
