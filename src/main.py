@@ -94,11 +94,11 @@ async def preload():
     log = logging.getLogger("startup")
 
     if not settings.PRELOAD_MODELS:
-        log.info("Model preload disabled (PRELOAD_MODELS=false)")
+        log.info("Model preload disabled (PRELOAD_MODELS=true)")
         return
 
     t = time.time()
-    whisper_model = (settings.PRELOAD_WHISPER_MODEL or "large-v3").strip() or "large-v3"
+    whisper_model = (settings.PRELOAD_WHISPER_MODEL or "small").strip() or "small"
 
     async def _preload():
         try:
