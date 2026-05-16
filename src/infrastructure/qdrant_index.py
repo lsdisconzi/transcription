@@ -1,6 +1,7 @@
 """Qdrant transcript index — implements TranscriptIndexPort."""
 from __future__ import annotations
 
+import asyncio
 import hashlib
 import logging
 from urllib.parse import urlparse
@@ -83,8 +84,6 @@ class QdrantTranscriptIndex:
         if not transcript.segments:
             return 0
 
-        import asyncio
-
         encoder = await asyncio.to_thread(self._get_encoder)
 
         texts = [seg.text for seg in transcript.segments]
@@ -110,8 +109,6 @@ class QdrantTranscriptIndex:
                 )
             )
 
-        import asyncio
-
         await asyncio.to_thread(
             self._client.upsert,
             collection_name=COLLECTION,
@@ -127,8 +124,6 @@ class QdrantTranscriptIndex:
 
     async def search(self, query: str, *, limit: int = 5) -> list[dict]:
         """Semantic search across all transcript segments."""
-        import asyncio
-
         encoder = await asyncio.to_thread(self._get_encoder)
         query_vector = await asyncio.to_thread(encoder.encode, query)
 
@@ -155,8 +150,6 @@ class QdrantTranscriptIndex:
 
     async def delete(self, transcript_id: str) -> None:
         """Remove all points for a given transcript."""
-        import asyncio
-
         from qdrant_client.models import FieldCondition, Filter, MatchValue
 
         await asyncio.to_thread(

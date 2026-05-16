@@ -16,24 +16,20 @@ from pathlib import Path
 
 import runpod
 
-from .application.use_cases.diarize_excerpt import DiarizeExcerptUseCase
 from .config import settings
+from .composition import build_runtime
 from .domain.chilean_spanish import post_process_chilean_spanish
-from .infrastructure.audio_file_adapter import AudioFileAdapter
-from .infrastructure.model_manager import ModelManager
-from .infrastructure.pyannote_adapter import PyAnnoteDiarizerAdapter
-from .infrastructure.pydub_processor import PydubProcessorAdapter
-from .infrastructure.whisper_adapter import WhisperASRAdapter
 
 logger = logging.getLogger(__name__)
 
-# Wire infrastructure for Runpod context
-_model_manager = ModelManager()
-_diarizer = PyAnnoteDiarizerAdapter(_model_manager, settings.PYANNOTE_AUTH_TOKEN)
-_audio_files = AudioFileAdapter()
-_processor = PydubProcessorAdapter()
-_asr = WhisperASRAdapter(_model_manager)
-_excerpt_use_case = DiarizeExcerptUseCase(diarizer=_diarizer, audio_files=_audio_files)
+# Wire infrastructure from shared composition root
+_runtime = build_runtime()
+_model_manager = _runtime.model_manager
+_diarizer = _runtime.diarizer_adapter
+_audio_files = _runtime.audio_file_adapter
+_processor = _runtime.processor_adapter
+_asr = _runtime.asr_adapter
+_excerpt_use_case = _runtime.excerpt_use_case
 
 # ── Language map ─────────────────────────────────────────────
 LANGUAGE_MAP = {"es-CL": "es", "es": "es", "en-US": "en", "en": "en", "pt": "pt", "pt-BR": "pt"}

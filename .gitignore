@@ -38,6 +38,10 @@ data/transcripts_narrative/
 .DS_Store
 Thumbs.db
 
+# Runtime artifacts
+.logs/
+.run/
+
 # Docker
 *.log
 .flash/

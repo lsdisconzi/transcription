@@ -41,8 +41,8 @@ if [[ -n "$pids" ]]; then
     [[ "$QUIET" == "--quiet" ]] || echo "Cleared port :$PORT"
 fi
 
-pkill -f "$SCRIPT_DIR/mcp/servers/transcription_server.py" 2>/dev/null || true
-pkill -f "$SCRIPT_DIR/mcp/servers/transcripts_server.py" 2>/dev/null || true
-pkill -f "$SCRIPT_DIR/mcp/servers/meta_server.py" 2>/dev/null || true
+pkill -f "src.mcp.servers.transcription_server" 2>/dev/null || true
+pkill -f "src.mcp.servers.transcripts_server" 2>/dev/null || true
+pkill -f "src.mcp.servers.meta_server" 2>/dev/null || true
 
 [[ "$QUIET" == "--quiet" ]] || echo "Done"

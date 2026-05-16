@@ -56,11 +56,11 @@ cp "$RUN_DIR/transcription-api.pid" "$LEGACY_PID_FILE"
 
 echo "Starting transcription MCP servers"
 start_bg "mcp-transcription" "$RUN_DIR/mcp-transcription.pid" "$LOG_DIR/mcp-transcription.log" \
-    sh -c "tail -f /dev/null | env PYTHONUNBUFFERED=1 \"$PYTHON_BIN\" \"$SCRIPT_DIR/mcp/servers/transcription_server.py\""
+    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" -m src.mcp.servers.transcription_server
 start_bg "mcp-transcripts" "$RUN_DIR/mcp-transcripts.pid" "$LOG_DIR/mcp-transcripts.log" \
-    sh -c "tail -f /dev/null | env PYTHONUNBUFFERED=1 \"$PYTHON_BIN\" \"$SCRIPT_DIR/mcp/servers/transcripts_server.py\""
+    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" -m src.mcp.servers.transcripts_server
 start_bg "mcp-meta" "$RUN_DIR/mcp-meta.pid" "$LOG_DIR/mcp-meta.log" \
-    sh -c "tail -f /dev/null | env PYTHONUNBUFFERED=1 \"$PYTHON_BIN\" \"$SCRIPT_DIR/mcp/servers/meta_server.py\""
+    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" -m src.mcp.servers.meta_server
 
 echo "Waiting for API health endpoint"
 for _ in $(seq 1 30); do

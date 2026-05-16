@@ -3,7 +3,7 @@
     "transcription-transcription": {
       "command": ".venv/bin/python3",
       "args": [
-        "mcp/servers/transcription_server.py"
+        "-m", "src.mcp.servers.transcription_server"
       ],
       "env": {
         "PYANNOTE_AUTH_TOKEN": "<your_token>",
@@ -18,7 +18,7 @@
     "transcription-transcripts": {
       "command": ".venv/bin/python3",
       "args": [
-        "mcp/servers/transcripts_server.py"
+        "-m", "src.mcp.servers.transcripts_server"
       ],
       "env": {
         "TRANSCRIPT_DIR": "data/transcripts",
@@ -31,7 +31,7 @@
     "transcription-meta": {
       "command": ".venv/bin/python3",
       "args": [
-        "mcp/servers/meta_server.py"
+        "-m", "src.mcp.servers.meta_server"
       ],
       "env": {
         "REFERENCE_DIR": "data/transcripts_by_audio",

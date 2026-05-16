@@ -94,7 +94,7 @@ async def preload():
     log = logging.getLogger("startup")
 
     if not settings.PRELOAD_MODELS:
-        log.info("Model preload disabled (PRELOAD_MODELS=true)")
+        log.info("Model preload disabled (PRELOAD_MODELS=false)")
         return
 
     t = time.time()

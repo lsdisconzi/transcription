@@ -50,22 +50,68 @@ The API will be available at `http://localhost:8039`.
 
 ## API Endpoints
 
+### Health & System
+
 | Method | Path | Description |
 |--------|------|-------------|
 | `GET` | `/` | System info (GPU status, device) |
 | `GET` | `/health` | Health check |
+
+### Transcription & Diarization (`/api/diarization`)
+
+| Method | Path | Description |
+|--------|------|-------------|
 | `GET` | `/api/diarization/parameters` | Available parameters metadata |
 | `GET` | `/api/diarization/models/whisper` | Available Whisper models |
 | `POST` | `/api/diarization/transcribe` | Full transcription with diarization |
+| `POST` | `/api/diarization/transcribe/async` | Async transcription (returns job ID) |
+| `POST` | `/api/diarization/transcribe/guided` | Reference-guided transcription |
+| `POST` | `/api/diarization/transcribe/guided/async` | Async reference-guided transcription |
 | `POST` | `/api/diarization/excerpt` | Diarize a time range (upload or path) |
 | `POST` | `/api/diarization/excerpt_by_path` | Diarize excerpt by server path (JSON) |
+
+### Transcripts (`/api/transcripts`)
+
+| Method | Path | Description |
+|--------|------|-------------|
 | `GET` | `/api/transcripts` | List all transcript IDs |
-| `GET` | `/api/transcripts/{id}` | Retrieve full transcript |
-| `POST` | `/api/transcripts/analyze` | AI analysis via Claude (optional) |
+| `GET` | `/api/transcripts/{transcript_id}` | Retrieve full transcript |
+| `POST` | `/api/transcripts/import` | Import transcripts from directory |
+| `POST` | `/api/transcripts/analyze` | AI analysis via LLM (optional) |
 | `POST` | `/api/transcripts/search` | Semantic search across transcripts (optional) |
-| `POST` | `/api/transcripts/{id}/index` | Re-index single transcript into Qdrant |
+| `POST` | `/api/transcripts/{transcript_id}/index` | Re-index single transcript into Qdrant |
 | `POST` | `/api/transcripts/index-all` | Bulk re-index all transcripts |
-| `GET` | `/api/transcripts/stream/{job_id}` | SSE progress streaming |
+| `POST` | `/api/transcripts/{transcript_id}/audit` | Audit transcript for quality issues |
+| `POST` | `/api/transcripts/{transcript_id}/refine` | Refine transcript via reconciliation |
+| `POST` | `/api/transcripts/{transcript_id}/patch` | Apply patches to a transcript |
+| `GET` | `/api/transcripts/status/{job_id}` | Async job status |
+| `GET` | `/api/transcripts/stream/{job_id}` | SSE progress stream for async jobs |
+
+### Projects (`/api/projects`)
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/projects` | List all projects |
+| `GET` | `/api/projects/{project_id}` | Get project details |
+| `POST` | `/api/projects` | Create a new project |
+| `PATCH` | `/api/projects/{project_id}` | Update project metadata |
+| `DELETE` | `/api/projects/{project_id}` | Delete a project |
+| `POST` | `/api/projects/{project_id}/audios` | Add an audio file to a project |
+| `DELETE` | `/api/projects/{project_id}/audios/{canonical_name}` | Remove an audio file |
+| `POST` | `/api/projects/{project_id}/context_docs` | Add context documents |
+| `DELETE` | `/api/projects/{project_id}/context_docs` | Remove context documents |
+| `POST` | `/api/projects/{project_id}/narratives` | Add incident narratives |
+
+### References (`/api/references`)
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/references` | List all canonical audio names |
+| `GET` | `/api/references/{canonical_name}/manifest` | Get reference manifest |
+| `GET` | `/api/references/{canonical_name}` | Get all references for an audio |
+| `POST` | `/api/references/{canonical_name}/upload` | Upload reference transcript |
+| `POST` | `/api/references/{canonical_name}/link` | Link existing transcript as reference |
+| `GET` | `/api/references/{canonical_name}/narratives` | Get narratives for an audio |
 
 ### Transcribe Example
 
