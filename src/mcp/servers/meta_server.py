@@ -16,6 +16,8 @@ from typing import Any
 
 import torch
 from mcp.server.fastmcp import FastMCP
+from starlette.requests import Request
+from starlette.responses import JSONResponse
 from whisper import available_models
 
 from src.config import settings
@@ -143,7 +145,7 @@ def _upsert_reference_manifest(
 
 
 @mcp.tool()
-def health() -> dict[str, Any]:
+def transcription_health() -> dict[str, Any]:
     """Return basic service health metadata."""
     return {
         "status": "ok",
@@ -153,7 +155,7 @@ def health() -> dict[str, Any]:
 
 
 @mcp.tool()
-def health_full() -> dict[str, Any]:
+def transcription_health_full() -> dict[str, Any]:
     """Return extended runtime health metadata."""
     return {
         "status": "ok",
@@ -166,7 +168,7 @@ def health_full() -> dict[str, Any]:
 
 
 @mcp.tool()
-def list_parameter_definitions() -> dict[str, Any]:
+def transcription_list_parameter_definitions() -> dict[str, Any]:
     """Return full transcription parameter metadata."""
     return {
         "general": {
@@ -209,7 +211,7 @@ def list_parameter_definitions() -> dict[str, Any]:
 
 
 @mcp.tool()
-def list_whisper_models() -> dict[str, Any]:
+def transcription_list_whisper_models() -> dict[str, Any]:
     """Return locally available Whisper model names."""
     return {"available_models": available_models()}
 
@@ -218,7 +220,7 @@ def list_whisper_models() -> dict[str, Any]:
 
 
 @mcp.tool()
-def list_projects() -> dict[str, Any]:
+def transcription_list_projects() -> dict[str, Any]:
     """List all transcription projects (event journeys) on disk."""
     projects = _project_store.list_projects()
     return {
@@ -242,7 +244,7 @@ def list_projects() -> dict[str, Any]:
 
 
 @mcp.tool()
-def get_project(project_id: str) -> dict[str, Any]:
+def transcription_get_project(project_id: str) -> dict[str, Any]:
     """Return the full project record (audios, references, narratives, context docs)."""
     project = _project_store.load(project_id)
     if not project:
@@ -263,7 +265,7 @@ def get_project(project_id: str) -> dict[str, Any]:
 
 
 @mcp.tool()
-def list_project_references(project_id: str) -> dict[str, Any]:
+def transcription_list_project_references(project_id: str) -> dict[str, Any]:
     """For each audio in a project, list its reference versions."""
     project = _project_store.load(project_id)
     if not project:
@@ -289,7 +291,7 @@ def list_project_references(project_id: str) -> dict[str, Any]:
 
 
 @mcp.tool()
-def read_project_context_doc(project_id: str, path: str, max_chars: int = 12000) -> dict[str, Any]:
+def transcription_read_project_context_doc(project_id: str, path: str, max_chars: int = 12000) -> dict[str, Any]:
     """Read a context document attached to a project (limited to attached paths).
 
     The agent must pass a ``path`` that is registered as one of the project's
@@ -317,7 +319,7 @@ def read_project_context_doc(project_id: str, path: str, max_chars: int = 12000)
 
 
 @mcp.tool()
-def list_project_narratives(project_id: str) -> dict[str, Any]:
+def transcription_list_project_narratives(project_id: str) -> dict[str, Any]:
     """List narratives linked to a project (resolves via narrative store)."""
     project = _project_store.load(project_id)
     if not project:
@@ -339,20 +341,20 @@ def list_project_narratives(project_id: str) -> dict[str, Any]:
 
 
 @mcp.tool()
-def list_projects_api() -> dict[str, Any]:
+def transcription_list_projects_api() -> dict[str, Any]:
     """Return all projects, aligned with GET /api/projects."""
     projects = _project_store.list_projects()
     return {"projects": [_project_to_dict(project) for project in projects]}
 
 
 @mcp.tool()
-def get_project_api(project_id: str) -> dict[str, Any]:
+def transcription_get_project_api(project_id: str) -> dict[str, Any]:
     """Return one project, aligned with GET /api/projects/{project_id}."""
     return _project_to_dict(_get_project_or_raise(project_id))
 
 
 @mcp.tool()
-def create_project_api(
+def transcription_create_project_api(
     name: str,
     project_id: str | None = None,
     description: str = "",
@@ -384,7 +386,7 @@ def create_project_api(
 
 
 @mcp.tool()
-def update_project_api(
+def transcription_update_project_api(
     project_id: str,
     name: str | None = None,
     description: str | None = None,
@@ -411,7 +413,7 @@ def update_project_api(
 
 
 @mcp.tool()
-def delete_project_api(project_id: str) -> dict[str, Any]:
+def transcription_delete_project_api(project_id: str) -> dict[str, Any]:
     """Delete a project, aligned with DELETE /api/projects/{project_id}."""
     if not _project_store.delete(project_id):
         raise ValueError(f"Project {project_id} not found")
@@ -419,7 +421,7 @@ def delete_project_api(project_id: str) -> dict[str, Any]:
 
 
 @mcp.tool()
-def add_project_audio_api(
+def transcription_add_project_audio_api(
     project_id: str,
     canonical_name: str,
     audio_path: str = "",
@@ -446,7 +448,7 @@ def add_project_audio_api(
 
 
 @mcp.tool()
-def remove_project_audio_api(project_id: str, canonical_name: str) -> dict[str, Any]:
+def transcription_remove_project_audio_api(project_id: str, canonical_name: str) -> dict[str, Any]:
     """Remove one audio from a project, aligned with DELETE /api/projects/{project_id}/audios/{canonical_name}."""
     project = _get_project_or_raise(project_id)
     before = len(project.audios)
@@ -458,7 +460,7 @@ def remove_project_audio_api(project_id: str, canonical_name: str) -> dict[str, 
 
 
 @mcp.tool()
-def add_project_context_doc_api(
+def transcription_add_project_context_doc_api(
     project_id: str,
     path: str,
     title: str = "",
@@ -478,7 +480,7 @@ def add_project_context_doc_api(
 
 
 @mcp.tool()
-def remove_project_context_doc_api(project_id: str, path: str) -> dict[str, Any]:
+def transcription_remove_project_context_doc_api(project_id: str, path: str) -> dict[str, Any]:
     """Detach one context document, aligned with DELETE /api/projects/{project_id}/context_docs."""
     project = _get_project_or_raise(project_id)
     before = len(project.context_docs)
@@ -490,7 +492,7 @@ def remove_project_context_doc_api(project_id: str, path: str) -> dict[str, Any]
 
 
 @mcp.tool()
-def add_project_narrative_api(project_id: str, narrative_id: str) -> dict[str, Any]:
+def transcription_add_project_narrative_api(project_id: str, narrative_id: str) -> dict[str, Any]:
     """Link one narrative id, aligned with POST /api/projects/{project_id}/narratives."""
     project = _get_project_or_raise(project_id)
     if narrative_id in project.narrative_ids:
@@ -504,13 +506,13 @@ def add_project_narrative_api(project_id: str, narrative_id: str) -> dict[str, A
 
 
 @mcp.tool()
-def list_references_api() -> dict[str, Any]:
+def transcription_list_references_api() -> dict[str, Any]:
     """List canonical names, aligned with GET /api/references."""
     return {"canonical_names": _ref_store.list_audio_names()}
 
 
 @mcp.tool()
-def get_reference_manifest_api(canonical_name: str) -> dict[str, Any]:
+def transcription_get_reference_manifest_api(canonical_name: str) -> dict[str, Any]:
     """Return reference manifest, aligned with GET /api/references/{canonical_name}/manifest."""
     canonical = _safe_canonical_name(canonical_name)
     manifest = _ref_store.load_manifest(canonical)
@@ -520,7 +522,7 @@ def get_reference_manifest_api(canonical_name: str) -> dict[str, Any]:
 
 
 @mcp.tool()
-def get_reference_api(canonical_name: str) -> dict[str, Any]:
+def transcription_get_reference_api(canonical_name: str) -> dict[str, Any]:
     """Return references for one canonical audio, aligned with GET /api/references/{canonical_name}."""
     canonical = _safe_canonical_name(canonical_name)
     refs = _ref_store.load_references(canonical)
@@ -553,7 +555,7 @@ def get_reference_api(canonical_name: str) -> dict[str, Any]:
 
 
 @mcp.tool()
-def upload_reference_api(
+def transcription_upload_reference_api(
     canonical_name: str,
     source_path: str,
     quality_score: float = 0.9,
@@ -590,7 +592,7 @@ def upload_reference_api(
 
 
 @mcp.tool()
-def link_reference_api(
+def transcription_link_reference_api(
     canonical_name: str,
     source_path: str,
     quality_score: float = 0.9,
@@ -634,7 +636,7 @@ def link_reference_api(
 
 
 @mcp.tool()
-def get_reference_narratives_api(canonical_name: str) -> dict[str, Any]:
+def transcription_get_reference_narratives_api(canonical_name: str) -> dict[str, Any]:
     """Return narratives for one canonical audio, aligned with GET /api/references/{canonical_name}/narratives."""
     canonical = _safe_canonical_name(canonical_name)
     narratives = _narrative_store.load_narratives(canonical)
@@ -654,9 +656,35 @@ def get_reference_narratives_api(canonical_name: str) -> dict[str, Any]:
     }
 
 
+@mcp.custom_route("/health", methods=["GET"])
+async def health_check(request: Request) -> JSONResponse:
+    """Health check endpoint for remote connectivity tests."""
+    return JSONResponse({"status": "ok", "service": "transcription-meta"})
+
+
 def main() -> None:
-    """Entrypoint for stdio MCP server."""
-    mcp.run(transport="stdio")
+    """Entrypoint for MCP server with configurable transport."""
+    transport = os.getenv("MCP_TRANSPORT", "stdio").strip().lower()
+    host = os.getenv("MCP_HOST", "127.0.0.1")
+    port = int(os.getenv("MCP_PORT", "8123"))
+
+    if transport == "stdio":
+        mcp.run()
+        return
+
+    if transport not in {"sse", "streamable-http"}:
+        raise ValueError(f"Unsupported MCP_TRANSPORT '{transport}'. Use: stdio, sse, streamable-http")
+
+    if hasattr(mcp, "settings"):
+        if hasattr(mcp.settings, "host"):
+            mcp.settings.host = host
+        if hasattr(mcp.settings, "port"):
+            mcp.settings.port = port
+
+    try:
+        mcp.run(transport=transport, host=host, port=port)
+    except TypeError:
+        mcp.run(transport=transport)
 
 
 if __name__ == "__main__":

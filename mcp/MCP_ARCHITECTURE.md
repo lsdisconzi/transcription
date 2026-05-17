@@ -6,15 +6,15 @@ This folder follows the canonical MCP architecture standard at:
 ## Pattern
 
 - Pattern: `python-fastmcp-multi`
-- Servers live under `mcp/servers/`
+- Servers live under `src/mcp/servers/`
 - Transport: stdio
 - Runtime style: direct invocation via existing project composition/use cases
 
 ## Servers
 
-- `mcp/servers/transcription_server.py` (`transcription-transcription`)
-- `mcp/servers/transcripts_server.py` (`transcription-transcripts`)
-- `mcp/servers/meta_server.py` (`transcription-meta`)
+- `src/mcp/servers/transcription_server.py` (`transcription-transcription`)
+- `src/mcp/servers/transcripts_server.py` (`transcription-transcripts`)
+- `src/mcp/servers/meta_server.py` (`transcription-meta`)
 
 ## Naming Rules
 
@@ -30,16 +30,16 @@ This folder follows the canonical MCP architecture standard at:
 ## Coverage Strategy
 
 - Endpoint discovery source: `src/presentation/routers/*.py`
-- MCP tool discovery source: `mcp/servers/*.py`
+- MCP tool discovery source: `src/mcp/servers/*.py`
 - Mapping source of truth: `mcp/generate_readiness_report.py`
 
 ## Validation
 
 - Syntax check:
-  - `python -m py_compile mcp/servers/*.py mcp/generate_readiness_report.py`
+  - `python -m py_compile src/mcp/servers/*.py mcp/generate_readiness_report.py`
 - Readiness generation:
   - `python mcp/generate_readiness_report.py`
 - Startup check:
-  - `python mcp/servers/meta_server.py`
-  - `python mcp/servers/transcription_server.py`
-  - `python mcp/servers/transcripts_server.py`
+  - `python -m src.mcp.servers.meta_server`
+  - `python -m src.mcp.servers.transcription_server`
+  - `python -m src.mcp.servers.transcripts_server`

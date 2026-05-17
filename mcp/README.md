@@ -5,9 +5,9 @@ This directory provides a bootstrap MCP surface for this project using the
 
 ## Servers
 
-- `transcription-transcription` → `mcp/servers/transcription_server.py`
-- `transcription-transcripts` → `mcp/servers/transcripts_server.py`
-- `transcription-meta` → `mcp/servers/meta_server.py`
+- `transcription-transcription` → `src/mcp/servers/transcription_server.py`
+- `transcription-transcripts` → `src/mcp/servers/transcripts_server.py`
+- `transcription-meta` → `src/mcp/servers/meta_server.py`
 
 ## Tool Inventory
 
@@ -18,9 +18,7 @@ This directory provides a bootstrap MCP surface for this project using the
 - `transcription_transcribe_audio_guided`
 - `transcription_transcribe_audio_guided_async`
 - `transcription_get_transcription_job`
-- `transcription_stream_transcription_job`
 - `transcription_diarize_excerpt`
-- `transcription_diarize_excerpt_by_path`
 
 ### transcription-transcripts
 
@@ -31,29 +29,37 @@ This directory provides a bootstrap MCP surface for this project using the
 - `transcription_search_transcripts`
 - `transcription_index_transcript`
 - `transcription_index_all_transcripts`
+- `transcription_audit_transcript`
+- `transcription_validate_and_refine_transcript`
+- `transcription_patch_transcript_segments`
 
 ### transcription-meta
 
-- `transcription_health_root`
 - `transcription_health`
+- `transcription_health_full`
 - `transcription_list_parameter_definitions`
 - `transcription_list_whisper_models`
 - `transcription_list_projects`
 - `transcription_get_project`
-- `transcription_create_project`
-- `transcription_update_project`
-- `transcription_delete_project`
-- `transcription_add_project_audio`
-- `transcription_remove_project_audio`
-- `transcription_add_project_context_doc`
-- `transcription_remove_project_context_doc`
-- `transcription_add_project_narrative`
-- `transcription_list_references`
-- `transcription_get_reference`
-- `transcription_get_reference_manifest`
-- `transcription_get_reference_narratives`
-- `transcription_upload_reference`
-- `transcription_link_reference`
+- `transcription_list_project_references`
+- `transcription_read_project_context_doc`
+- `transcription_list_project_narratives`
+- `transcription_list_projects_api`
+- `transcription_get_project_api`
+- `transcription_create_project_api`
+- `transcription_update_project_api`
+- `transcription_delete_project_api`
+- `transcription_add_project_audio_api`
+- `transcription_remove_project_audio_api`
+- `transcription_add_project_context_doc_api`
+- `transcription_remove_project_context_doc_api`
+- `transcription_add_project_narrative_api`
+- `transcription_list_references_api`
+- `transcription_get_reference_api`
+- `transcription_get_reference_manifest_api`
+- `transcription_get_reference_narratives_api`
+- `transcription_upload_reference_api`
+- `transcription_link_reference_api`
 
 ## Generate Readiness Report
 
@@ -64,15 +70,15 @@ python mcp/generate_readiness_report.py
 ## Syntax Check
 
 ```bash
-python -m py_compile mcp/servers/*.py mcp/generate_readiness_report.py
+python -m py_compile src/mcp/servers/*.py mcp/generate_readiness_report.py
 ```
 
 ## Startup (Stdio)
 
 ```bash
-python mcp/servers/meta_server.py
-python mcp/servers/transcription_server.py
-python mcp/servers/transcripts_server.py
+python -m src.mcp.servers.meta_server
+python -m src.mcp.servers.transcription_server
+python -m src.mcp.servers.transcripts_server
 ```
 
 Important:

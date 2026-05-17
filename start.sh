@@ -16,6 +16,9 @@ HOST="${HOST:-0.0.0.0}"
 PORT="${PORT:-${transcription_PORT:-8039}}"
 APP_URL="${APP_URL:-http://${HOST}:${PORT}/pinocchio}"
 
+MCP_TRANSPORT="${MCP_TRANSPORT:-streamable-http}"
+MCP_HOST="${MCP_HOST:-0.0.0.0}"
+
 PYTHON_BIN="$SCRIPT_DIR/.venv/bin/python"
 UVICORN_BIN="$SCRIPT_DIR/.venv/bin/uvicorn"
 LOG_DIR="$SCRIPT_DIR/.logs"
@@ -54,13 +57,16 @@ start_bg "transcription-api" "$RUN_DIR/transcription-api.pid" "$LOG_DIR/api.log"
     env PYTHONUNBUFFERED=1 "$UVICORN_BIN" src.main:app --host "$HOST" --port "$PORT"
 cp "$RUN_DIR/transcription-api.pid" "$LEGACY_PID_FILE"
 
-echo "Starting transcription MCP servers"
+echo "Starting transcription MCP servers (${MCP_TRANSPORT})"
 start_bg "mcp-transcription" "$RUN_DIR/mcp-transcription.pid" "$LOG_DIR/mcp-transcription.log" \
-    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" -m src.mcp.servers.transcription_server
+    env PYTHONUNBUFFERED=1 MCP_TRANSPORT="$MCP_TRANSPORT" MCP_HOST="$MCP_HOST" MCP_PORT=8121 \
+    "$PYTHON_BIN" -m src.mcp.servers.transcription_server
 start_bg "mcp-transcripts" "$RUN_DIR/mcp-transcripts.pid" "$LOG_DIR/mcp-transcripts.log" \
-    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" -m src.mcp.servers.transcripts_server
+    env PYTHONUNBUFFERED=1 MCP_TRANSPORT="$MCP_TRANSPORT" MCP_HOST="$MCP_HOST" MCP_PORT=8122 \
+    "$PYTHON_BIN" -m src.mcp.servers.transcripts_server
 start_bg "mcp-meta" "$RUN_DIR/mcp-meta.pid" "$LOG_DIR/mcp-meta.log" \
-    env PYTHONUNBUFFERED=1 "$PYTHON_BIN" -m src.mcp.servers.meta_server
+    env PYTHONUNBUFFERED=1 MCP_TRANSPORT="$MCP_TRANSPORT" MCP_HOST="$MCP_HOST" MCP_PORT=8123 \
+    "$PYTHON_BIN" -m src.mcp.servers.meta_server
 
 echo "Waiting for API health endpoint"
 for _ in $(seq 1 30); do

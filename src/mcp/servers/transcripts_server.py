@@ -13,6 +13,8 @@ import time
 from typing import Any
 
 from mcp.server.fastmcp import FastMCP
+from starlette.requests import Request
+from starlette.responses import JSONResponse
 
 from src.composition import build_runtime
 from src.domain.entities.transcript import Segment, Speaker, Transcript
@@ -67,13 +69,13 @@ def _serialize_transcript(transcript: Transcript) -> dict[str, Any]:
 
 
 @mcp.tool()
-def list_transcripts() -> dict[str, Any]:
+def transcription_list_transcripts() -> dict[str, Any]:
     """Return all transcript ids, newest first by id sort."""
     return {"transcripts": sorted(_STORE.list_ids(), reverse=True)}
 
 
 @mcp.tool()
-def get_transcript(transcript_id: str) -> dict[str, Any]:
+def transcription_get_transcript(transcript_id: str) -> dict[str, Any]:
     """Load one transcript by id."""
     transcript = _STORE.load(transcript_id)
     if transcript is None:
@@ -82,7 +84,7 @@ def get_transcript(transcript_id: str) -> dict[str, Any]:
 
 
 @mcp.tool()
-def import_transcripts(
+def transcription_import_transcripts(
     runs: list[dict[str, Any]],
     overwrite: bool = False,
     rename_by_filename: bool = True,
@@ -189,7 +191,7 @@ def import_transcripts(
 
 
 @mcp.tool()
-async def analyze_transcript(transcript_id: str, instructions: str = "") -> dict[str, Any]:
+async def transcription_analyze_transcript(transcript_id: str, instructions: str = "") -> dict[str, Any]:
     """Run configured LLM analyzer for one transcript."""
     if _ANALYZE_USE_CASE is None:
         raise ValueError("Transcript analysis not configured. Set DEEPSEEK_API_KEY or ANTHROPIC_API_KEY.")
@@ -198,7 +200,7 @@ async def analyze_transcript(transcript_id: str, instructions: str = "") -> dict
 
 
 @mcp.tool()
-async def search_transcripts(query: str, limit: int = 5) -> dict[str, Any]:
+async def transcription_search_transcripts(query: str, limit: int = 5) -> dict[str, Any]:
     """Semantic search across all indexed transcript segments."""
     if _SEARCH_USE_CASE is None:
         raise ValueError("Transcript search not configured. Set QDRANT_URL.")
@@ -207,7 +209,7 @@ async def search_transcripts(query: str, limit: int = 5) -> dict[str, Any]:
 
 
 @mcp.tool()
-async def index_transcript(transcript_id: str) -> dict[str, Any]:
+async def transcription_index_transcript(transcript_id: str) -> dict[str, Any]:
     """Re-index a single transcript into Qdrant."""
     if _INDEX is None:
         raise ValueError("Vector indexing not configured. Set QDRANT_URL.")
@@ -219,7 +221,7 @@ async def index_transcript(transcript_id: str) -> dict[str, Any]:
 
 
 @mcp.tool()
-async def index_all_transcripts() -> dict[str, Any]:
+async def transcription_index_all_transcripts() -> dict[str, Any]:
     """Re-index all stored transcripts into Qdrant."""
     if _INDEX is None:
         raise ValueError("Vector indexing not configured. Set QDRANT_URL.")
@@ -249,7 +251,7 @@ async def index_all_transcripts() -> dict[str, Any]:
 
 
 @mcp.tool()
-def audit_transcript(transcript_id: str) -> dict[str, Any]:
+def transcription_audit_transcript(transcript_id: str) -> dict[str, Any]:
     """Run structural audit on a stored transcript. No audio, no LLM."""
     transcript = _STORE.load(transcript_id)
     if transcript is None:
@@ -275,7 +277,7 @@ def audit_transcript(transcript_id: str) -> dict[str, Any]:
 
 
 @mcp.tool()
-async def validate_and_refine_transcript(
+async def transcription_validate_and_refine_transcript(
     transcript_id: str,
     canonical_name: str | None = None,
     use_acoustic_probes: bool = True,
@@ -299,7 +301,7 @@ async def validate_and_refine_transcript(
 
 
 @mcp.tool()
-def patch_transcript_segments(
+def transcription_patch_transcript_segments(
     transcript_id: str,
     patches: list[dict[str, Any]],
     save_as_new_id: bool = True,
@@ -373,9 +375,35 @@ def patch_transcript_segments(
     }
 
 
+@mcp.custom_route("/health", methods=["GET"])
+async def health_check(request: Request) -> JSONResponse:
+    """Health check endpoint for remote connectivity tests."""
+    return JSONResponse({"status": "ok", "service": "transcription-transcripts"})
+
+
 def main() -> None:
-    """Entrypoint for stdio MCP server."""
-    mcp.run(transport="stdio")
+    """Entrypoint for MCP server with configurable transport."""
+    transport = os.getenv("MCP_TRANSPORT", "stdio").strip().lower()
+    host = os.getenv("MCP_HOST", "127.0.0.1")
+    port = int(os.getenv("MCP_PORT", "8122"))
+
+    if transport == "stdio":
+        mcp.run()
+        return
+
+    if transport not in {"sse", "streamable-http"}:
+        raise ValueError(f"Unsupported MCP_TRANSPORT '{transport}'. Use: stdio, sse, streamable-http")
+
+    if hasattr(mcp, "settings"):
+        if hasattr(mcp.settings, "host"):
+            mcp.settings.host = host
+        if hasattr(mcp.settings, "port"):
+            mcp.settings.port = port
+
+    try:
+        mcp.run(transport=transport, host=host, port=port)
+    except TypeError:
+        mcp.run(transport=transport)
 
 
 if __name__ == "__main__":

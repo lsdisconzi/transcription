@@ -19,6 +19,8 @@ from pathlib import Path
 from typing import Any
 
 from mcp.server.fastmcp import FastMCP
+from starlette.requests import Request
+from starlette.responses import JSONResponse
 
 from src.application.dto.helpers import build_transcribe_params as _build_transcribe_params
 from src.composition import build_runtime
@@ -128,7 +130,7 @@ mcp = FastMCP("transcription-transcription")
 
 
 @mcp.tool()
-async def transcribe_audio(
+async def transcription_transcribe_audio(
     file_path: str | None = None,
     audio_base64: str | None = None,
     filename: str | None = None,
@@ -360,7 +362,7 @@ async def _run_guided_job(job: JobState, kwargs: dict[str, Any]) -> None:
 
 
 @mcp.tool()
-async def transcribe_audio_async(
+async def transcription_transcribe_audio_async(
     file_path: str | None = None,
     audio_base64: str | None = None,
     filename: str | None = None,
@@ -441,7 +443,7 @@ async def transcribe_audio_async(
 
 
 @mcp.tool()
-async def transcribe_audio_guided(
+async def transcription_transcribe_audio_guided(
     file_path: str | None = None,
     audio_base64: str | None = None,
     filename: str | None = None,
@@ -506,7 +508,7 @@ async def transcribe_audio_guided(
 
 
 @mcp.tool()
-async def transcribe_audio_guided_async(
+async def transcription_transcribe_audio_guided_async(
     file_path: str | None = None,
     audio_base64: str | None = None,
     filename: str | None = None,
@@ -558,7 +560,7 @@ async def transcribe_audio_guided_async(
 
 
 @mcp.tool()
-def get_transcription_job(job_id: str) -> dict[str, Any]:
+def transcription_get_transcription_job(job_id: str) -> dict[str, Any]:
     """Fetch current status/result for an async transcription job."""
     job = _JOBS.get(job_id)
     if job is None:
@@ -567,7 +569,7 @@ def get_transcription_job(job_id: str) -> dict[str, Any]:
 
 
 @mcp.tool()
-def diarize_excerpt(
+def transcription_diarize_excerpt(
     start: float,
     end: float,
     file_path: str | None = None,
@@ -605,9 +607,35 @@ def diarize_excerpt(
                     os.remove(path)
 
 
+@mcp.custom_route("/health", methods=["GET"])
+async def health_check(request: Request) -> JSONResponse:
+    """Health check endpoint for remote connectivity tests."""
+    return JSONResponse({"status": "ok", "service": "transcription-transcription"})
+
+
 def main() -> None:
-    """Entrypoint for stdio MCP server."""
-    mcp.run(transport="stdio")
+    """Entrypoint for MCP server with configurable transport."""
+    transport = os.getenv("MCP_TRANSPORT", "stdio").strip().lower()
+    host = os.getenv("MCP_HOST", "127.0.0.1")
+    port = int(os.getenv("MCP_PORT", "8121"))
+
+    if transport == "stdio":
+        mcp.run()
+        return
+
+    if transport not in {"sse", "streamable-http"}:
+        raise ValueError(f"Unsupported MCP_TRANSPORT '{transport}'. Use: stdio, sse, streamable-http")
+
+    if hasattr(mcp, "settings"):
+        if hasattr(mcp.settings, "host"):
+            mcp.settings.host = host
+        if hasattr(mcp.settings, "port"):
+            mcp.settings.port = port
+
+    try:
+        mcp.run(transport=transport, host=host, port=port)
+    except TypeError:
+        mcp.run(transport=transport)
 
 
 if __name__ == "__main__":

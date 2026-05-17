@@ -6,7 +6,7 @@ Use this standard when a project has an `mcp/` folder but no discovered MCP tool
 
 Every project in the ecosystem should expose MCP tools using one of the approved patterns:
 
-- `python-fastmcp-multi` (multiple domain servers under `mcp/servers/`)
+- `python-fastmcp-multi` (multiple domain servers under `src/mcp/servers/`)
 - `node-mcp-single` (single JS server under `mcp/`)
 
 ## Minimum Required Artifacts
