@@ -45,3 +45,10 @@ Thumbs.db
 # Docker
 *.log
 .flash/
+
+
+.logs/
+.github/
+.run/
+.venv/
+.venv-mcp/
