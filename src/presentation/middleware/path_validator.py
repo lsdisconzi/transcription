@@ -25,6 +25,10 @@ def _get_allowed_roots() -> list[Path]:
                 roots.append(shared_media.resolve())
                 break
 
+        # Agent-MCP session scratch directory — sliced audio lands here.
+        # Directory may not exist yet at import time; add root unconditionally.
+        roots.append(Path("/tmp/agent-mcp/sessions").resolve())
+
         # Allow adding extra dirs via env (colon-separated).
         extra = os.getenv("transcription_EXTRA_ALLOWED_DIRS", "")
         if extra:
