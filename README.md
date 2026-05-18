@@ -199,6 +199,15 @@ Important:
 - After a server starts, do not type additional shell commands in that terminal. MCP servers read stdin as JSON-RPC transport.
 - To run multiple servers manually, use separate terminal tabs/windows.
 
+## Git Guidance
+
+Large generated data (under `data/`, `data/transcripts/`, etc.) should not be committed. These paths are in `.gitignore`. To remove an accidentally tracked file:
+
+```
+git rm --cached path/to/generated_file
+git commit -m "chore: remove generated file from repo"
+```
+
 ### Tools exposed (transcription server)
 
 - `transcribe_audio`
