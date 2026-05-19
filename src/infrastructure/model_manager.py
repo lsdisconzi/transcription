@@ -4,9 +4,10 @@ from __future__ import annotations
 import gc
 import logging
 import os
+import psutil                    # <-- ADD
 
 import torch
-import whisper
+from faster_whisper import WhisperModel   # <-- REPLACE openai-whisper
 
 try:
     import huggingface_hub
@@ -40,30 +41,100 @@ def _patch_hf_hub_download_compat() -> None:
 _patch_hf_hub_download_compat()
 
 from pyannote.audio import Pipeline
-from whisper import available_models
 
 logger = logging.getLogger(__name__)
+
+_WHISPER_VARIANTS = {
+    "tiny":     "tiny",
+    "tiny.en":  "tiny.en",
+    "base":     "base",
+    "base.en":  "base.en",
+    "small":    "small",
+    "small.en": "small.en",
+    "medium":   "medium",
+    "medium.en":"medium.en",
+    "large-v1": "large-v1",
+    "large-v2": "large-v2",
+    "large-v3": "large-v3",
+    "turbo":    "turbo",
+    "large":    "large-v3",       # alias
+    "distil-large-v3": "distil-large-v3",
+}
+
+# Rough RAM estimates for int8 quantized faster-whisper on CPU (GiB)
+_MODEL_RAM_ESTIMATES = {
+    "tiny": 0.4, "tiny.en": 0.4,
+    "base": 0.5, "base.en": 0.5,
+    "small": 0.9, "small.en": 0.9,
+    "medium": 2.0, "medium.en": 2.0,
+    "large-v1": 2.4, "large-v2": 2.4, "large-v3": 2.4,
+    "turbo": 1.8,
+    "distil-large-v3": 1.6,
+    "large": 2.4,
+}
+
+
 
 
 class ModelManager:
     """Manages heavy ML model instances (Whisper + Pyannote)."""
 
     def __init__(self):
-        self._whisper_models: dict[str, whisper.Whisper] = {}
+        self._whisper_models: dict[str, WhisperModel] = {}
         self._diarization_pipeline: Pipeline | None = None
 
-    def get_whisper_model(self, model_size: str = "large-v3") -> whisper.Whisper:
-        if model_size not in available_models():
-            logger.warning(
-                f"Model '{model_size}' not available. Falling back to 'large'. "
-                f"Available: {available_models()}"
+    def _available_ram_gib(self) -> float:
+        """Return available system RAM in GiB."""
+        return psutil.virtual_memory().available / (1024 ** 3)
+
+    def _select_model(self, requested: str) -> str:
+        """Pick the best model that fits in available RAM with 3 GiB headroom."""
+        canonical = _WHISPER_VARIANTS.get(requested, "large-v3")
+        available = self._available_ram_gib()
+        needed = _MODEL_RAM_ESTIMATES.get(canonical, 2.4)
+        headroom = 3.0  # keep 3 GiB for OS + other processes
+
+        if available >= needed + headroom:
+            return canonical
+
+        # Walk down in size until one fits
+        fallback_order = [
+            "distil-large-v3", "turbo", "medium", "small", "base", "tiny"
+        ]
+        logger.warning(
+            "[memory] only %.1f GiB available; %s needs ~%.1f GiB — trying fallbacks",
+            available, canonical, needed,
+        )
+
+        for fb in fallback_order:
+            fb_ram = _MODEL_RAM_ESTIMATES.get(fb, 0.9)
+            if available >= fb_ram + headroom:
+                logger.warning("[memory] falling back to '%s' (~%.1f GiB RAM needed)", fb, fb_ram)
+                return fb
+
+        # Last resort: use tiny
+        logger.error("[memory] extreme low memory (%.1f GiB) — using 'tiny'", available)
+        return "tiny"
+
+    def get_whisper_model(self, model_size: str = "large-v3") -> WhisperModel:
+        resolved = self._select_model(model_size)
+
+        if resolved not in self._whisper_models:
+            logger.info(
+                "Loading Whisper model '%s' (available RAM: %.1f GiB)",
+                resolved, self._available_ram_gib(),
             )
-            model_size = "large"
-        if model_size not in self._whisper_models:
-            logger.info(f"Loading Whisper model '{model_size}'")
-            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-            self._whisper_models[model_size] = whisper.load_model(model_size, device=device)
-        return self._whisper_models[model_size]
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            compute_type = "float16" if device == "cuda" else "int8"
+            self._whisper_models[resolved] = WhisperModel(
+                resolved,
+                device=device,
+                compute_type=compute_type,
+                cpu_threads=os.cpu_count() or 4,
+                num_workers=1,
+            )
+        return self._whisper_models[resolved]
+
 
     def get_diarization_pipeline(self, token: str | None = None) -> Pipeline:
         if self._diarization_pipeline is None:
