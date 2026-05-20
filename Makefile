@@ -2,10 +2,10 @@
 
 # ── Run ──────────────────────────────────────────────────────
 run:
-	PYTHONWARNINGS="ignore:invalid escape sequence:SyntaxWarning" uvicorn src.main:app --host 0.0.0.0 --port 8039
+	PYTHONWARNINGS="ignore:invalid escape sequence:SyntaxWarning" uvicorn src.main:app --host 0.0.0.0 --port 8049
 
 dev:
-	PYTHONWARNINGS="ignore:invalid escape sequence:SyntaxWarning" uvicorn src.main:app --host 0.0.0.0 --port 8039 --reload
+	PYTHONWARNINGS="ignore:invalid escape sequence:SyntaxWarning" uvicorn src.main:app --host 0.0.0.0 --port 8049 --reload
 
 run-mcp-transcription:
 	python -m src.mcp.servers.transcription_server

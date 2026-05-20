@@ -31,13 +31,13 @@ cp .env.example .env
 # Edit .env with your HuggingFace/Pyannote tokens
 
 # Install
-python3.12 -m venv venv && source venv/bin/activate
+python3.12 -m venv .venv && source .venv/bin/activate
 pip install --upgrade pip setuptools
 uv pip install -r requirements.txt
 
 # Run
 make run
-# or: uvicorn src.main:app --host 0.0.0.0 --port 8039 --reload
+# or: uvicorn src.main:app --host 0.0.0.0 --port 8049 --reload
 ```
 
 ### Docker
@@ -46,7 +46,7 @@ make run
 docker compose up --build
 ```
 
-The API will be available at `http://localhost:8039`.
+The API will be available at `http://localhost:8049`.
 
 ## API Endpoints
 
@@ -116,7 +116,7 @@ The API will be available at `http://localhost:8039`.
 ### Transcribe Example
 
 ```bash
-curl -X POST http://localhost:8039/api/diarization/transcribe \
+curl -X POST http://localhost:8049/api/diarization/transcribe \
   -F "audio=@recording.wav" \
   -F "language=es-CL" \
   -F "model_size=large-v3" \
@@ -151,7 +151,7 @@ All settings are loaded from environment variables. See [.env.example](.env.exam
 | `AUDIO_DIR` | Processed audio output directory | `data/audio` |
 | `ORIGINALS_DIR` | Original uploads directory | `data/originals` |
 | `TRANSCRIPT_DIR` | JSON transcript storage | `data/transcripts` |
-| `CORS_ORIGINS` | Comma-separated allowed origins | `http://localhost:3000,http://localhost:8039` |
+| `CORS_ORIGINS` | Comma-separated allowed origins | `http://localhost:3000,http://localhost:8049` |
 | `LOG_LEVEL` | Logging level | `INFO` |
 | `ANTHROPIC_API_KEY` | Anthropic-compatible API key (enables AI analysis) | — |
 | `ANTHROPIC_BASE_URL` | Anthropic-compatible base URL | `https://api.deepseek.com/anthropic` |

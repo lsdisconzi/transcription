@@ -13,7 +13,7 @@ fi
 cd "$SCRIPT_DIR"
 
 HOST="${HOST:-0.0.0.0}"
-PORT="${PORT:-${transcription_PORT:-8039}}"
+PORT="${PORT:-${transcription_PORT:-8049}}"
 APP_URL="${APP_URL:-http://${HOST}:${PORT}/pinocchio}"
 
 MCP_TRANSPORT="${MCP_TRANSPORT:-streamable-http}"

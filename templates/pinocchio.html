@@ -1801,7 +1801,7 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss√
         if (raw.endsWith('/api/pinocchio/transcribe_advanced')) {
           raw = raw.replace('/api/pinocchio/transcribe_advanced', '/api/pinocchio/transcribe');
         }
-        if (/^https?:\/\/(localhost|127\.0\.0\.1)(:8039)?\/api\/pinocchio\/transcribe/i.test(raw)) {
+        if (/^https?:\/\/(localhost|127\.0\.0\.1)(:8049)?\/api\/pinocchio\/transcribe/i.test(raw)) {
           raw = raw.replace('/api/pinocchio/transcribe', '/api/diarization/transcribe');
         }
         var isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
@@ -2135,7 +2135,7 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss√
           for (var c = 0; c < numChannels; c++) {
             var sample = channels[c][i] || 0;
             var clamped = Math.max(-1, Math.min(1, sample));
-            view.setInt16(offset, clamped < 0 ? clamped * 0x8039 : clamped * 0x7fff, true);
+            view.setInt16(offset, clamped < 0 ? clamped * 0x8049 : clamped * 0x7fff, true);
             offset += 2;
           }
         }
@@ -3514,7 +3514,7 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss√
         if(!endpoint) return showToast('Configure AI endpoint');
         $('preAnalyzerReasoning').textContent = 'Analisando‚Ä¶';
         $('preAnalyzerResults').textContent = '';
-        var prompt = 'You are a legal pre-analyzer. Analyze the following transcript for potential legal violations, rights infringements, and compliance issues. Structure your output as:\n1. REASONING (step by step)\n2. VIOLATIONS FOUND (structured list)\n3. RECOMMENDATIONS\n\nTranscript:\n'+input.substring(0,8039);
+        var prompt = 'You are a legal pre-analyzer. Analyze the following transcript for potential legal violations, rights infringements, and compliance issues. Structure your output as:\n1. REASONING (step by step)\n2. VIOLATIONS FOUND (structured list)\n3. RECOMMENDATIONS\n\nTranscript:\n'+input.substring(0,8049);
         try {
           var token = ($('cfg_llm_token')||{}).value||'';
           var headers = {'Content-Type':'application/json'};

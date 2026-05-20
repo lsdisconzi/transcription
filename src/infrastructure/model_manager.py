@@ -62,7 +62,19 @@ class ModelManager:
         if model_size not in self._whisper_models:
             logger.info(f"Loading Whisper model '{model_size}'")
             device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-            self._whisper_models[model_size] = whisper.load_model(model_size, device=device)
+            try:
+                self._whisper_models[model_size] = whisper.load_model(model_size, device=device)
+            except RuntimeError as e:
+                # Handle Blackwell GPU (sm_120) and other unsupported CUDA architectures
+                if "no kernel image is available" in str(e) or "sm_120" in str(e):
+                    logger.warning(
+                        f"GPU kernel incompatibility detected: {str(e)[:100]}. "
+                        f"Falling back to CPU for Whisper inference."
+                    )
+                    device = torch.device("cpu")
+                    self._whisper_models[model_size] = whisper.load_model(model_size, device=device)
+                else:
+                    raise
         return self._whisper_models[model_size]
 
     def get_diarization_pipeline(self, token: str | None = None) -> Pipeline:
@@ -83,9 +95,25 @@ class ModelManager:
             # pick it up automatically — no deprecated kwarg, no network validation.
             os.environ["HF_TOKEN"] = token
 
-            self._diarization_pipeline = Pipeline.from_pretrained(
-                "pyannote/speaker-diarization-3.1",
-            )
+            try:
+                self._diarization_pipeline = Pipeline.from_pretrained(
+                    "pyannote/speaker-diarization-3.1",
+                )
+            except RuntimeError as e:
+                # Handle Blackwell GPU and other unsupported CUDA architectures
+                if "no kernel image is available" in str(e) or "sm_120" in str(e):
+                    logger.warning(
+                        f"GPU kernel incompatibility detected in Pyannote: {str(e)[:100]}. "
+                        f"Falling back to CPU for diarization."
+                    )
+                    # Force CPU by setting device before loading
+                    os.environ["CUDA_VISIBLE_DEVICES"] = ""
+                    self._diarization_pipeline = Pipeline.from_pretrained(
+                        "pyannote/speaker-diarization-3.1",
+                    )
+                else:
+                    raise
+            
             try:
                 if (
                     hasattr(self._diarization_pipeline, "segmentation")

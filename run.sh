@@ -4,7 +4,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
-PORT="${PORT:-${transcription_PORT:-8039}}"
+PORT="${PORT:-${transcription_PORT:-8049}}"
 VENV_BIN="$SCRIPT_DIR/.venv/bin"
 
 require_py312() {

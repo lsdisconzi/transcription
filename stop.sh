@@ -5,7 +5,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 RUN_DIR="$SCRIPT_DIR/.run"
 LEGACY_PID_FILE="$SCRIPT_DIR/.transcription.pid"
-PORT="${PORT:-${transcription_PORT:-8039}}"
+PORT="${PORT:-${transcription_PORT:-8049}}"
 QUIET="${1:-}"
 
 stop_pid_file() {
