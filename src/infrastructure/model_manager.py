@@ -5,8 +5,57 @@ import gc
 import logging
 import os
 
+# CRITICAL: Set PyTorch to NOT use weights_only by default
+# This must be set BEFORE torch is imported
+os.environ["TORCH_FORCE_WEIGHTS_ONLY"] = "0"
+
 import torch
 import whisper
+
+logger = logging.getLogger(__name__)
+
+# Aggressive patch: Override torch._utils._rebuild_parameter to use weights_only=False
+try:
+    import torch._utils
+    _original_rebuild = torch._utils._rebuild_parameter
+    
+    def _rebuild_with_weights_false(*args, **kwargs):
+        kwargs.setdefault("weights_only", False)
+        return _original_rebuild(*args, **kwargs)
+    
+    torch._utils._rebuild_parameter = _rebuild_with_weights_false
+    logger.debug("Patched torch._utils._rebuild_parameter")
+except Exception as e:
+    logger.warning(f"Could not patch _rebuild_parameter: {e}")
+
+# Monkeypatch torch.load itself to force weights_only=False
+_torch_load_original = torch.load
+
+def _torch_load_force_weights_false(f, *args, **kwargs):
+    """Force weights_only=False to support legacy Pyannote models."""
+    kwargs["weights_only"] = False
+    return _torch_load_original(f, *args, **kwargs)
+
+torch.load = _torch_load_force_weights_false
+
+# Also add a blanket safe globals for all Pyannote classes (using wildcard if possible)
+try:
+    import pyannote.audio.core.task
+    import inspect
+    
+    # Get all classes from pyannote.audio.core.task
+    pyannote_classes = []
+    for name, obj in inspect.getmembers(pyannote.audio.core.task):
+        if inspect.isclass(obj) and obj.__module__.startswith('pyannote'):
+            pyannote_classes.append(obj)
+    
+    # Add torch version class
+    pyannote_classes.append(torch.torch_version.TorchVersion)
+    
+    torch.serialization.add_safe_globals(pyannote_classes)
+    logger.debug(f"Registered {len(pyannote_classes)} Pyannote classes as safe globals")
+except Exception as e:
+    logger.warning(f"Could not register Pyannote safe globals: {e}")
 
 try:
     import huggingface_hub
@@ -41,8 +90,6 @@ _patch_hf_hub_download_compat()
 
 from pyannote.audio import Pipeline
 from whisper import available_models
-
-logger = logging.getLogger(__name__)
 
 
 class ModelManager:
