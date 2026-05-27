@@ -37,7 +37,7 @@ uv pip install -r requirements.txt
 
 # Run
 make run
-# or: uvicorn src.main:app --host 0.0.0.0 --port 8049 --reload
+# or: uvicorn src.main:app --host 0.0.0.0 --port 8039 --reload
 ```
 
 ### Docker
