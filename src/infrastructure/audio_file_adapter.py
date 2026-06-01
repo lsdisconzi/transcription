@@ -3,12 +3,38 @@ from __future__ import annotations
 
 import logging
 import os
+import shutil
 import time
 from pathlib import Path
 
 from pydub import AudioSegment
+import pydub.utils
 
 logger = logging.getLogger(__name__)
+
+# Ensure ffprobe is available in the environment
+if not os.environ.get("PATH", ""):
+    os.environ["PATH"] = "/usr/local/bin:/usr/bin:/bin"
+elif "/usr/bin" not in os.environ.get("PATH", ""):
+    os.environ["PATH"] = "/usr/bin:" + os.environ["PATH"]
+
+# Set explicit ffprobe/ffmpeg paths if available
+ffprobe_path = shutil.which("ffprobe")
+ffmpeg_path = shutil.which("ffmpeg")
+
+if ffprobe_path:
+    pydub.utils.which("ffprobe")
+    # Monkey-patch pydub to use explicit paths
+    original_which = pydub.utils.which
+
+    def patched_which(name):
+        if name == "ffprobe":
+            return ffprobe_path
+        elif name == "ffmpeg":
+            return ffmpeg_path
+        return original_which(name)
+
+    pydub.utils.which = patched_which
 
 
 class AudioFileAdapter:

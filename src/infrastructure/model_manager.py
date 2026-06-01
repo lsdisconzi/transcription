@@ -108,7 +108,9 @@ class ModelManager:
             model_size = "large"
         if model_size not in self._whisper_models:
             logger.info(f"Loading Whisper model '{model_size}'")
-            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            # Check for explicit CPU force flag (for unsupported GPU architectures)
+            force_cpu = os.getenv("FORCE_CPU", "").lower() in ("true", "1", "yes")
+            device = torch.device("cpu" if force_cpu else ("cuda" if torch.cuda.is_available() else "cpu"))
             try:
                 self._whisper_models[model_size] = whisper.load_model(model_size, device=device)
             except RuntimeError as e:
@@ -140,6 +142,11 @@ class ModelManager:
             # Pass the token explicitly to Pipeline.from_pretrained so the HF auth
             # token is used in serverless environments where .env is not present.
             os.environ["HF_TOKEN"] = token
+            
+            # Check for explicit CPU force flag (for unsupported GPU architectures)
+            force_cpu = os.getenv("FORCE_CPU", "").lower() in ("true", "1", "yes")
+            if force_cpu:
+                os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
             try:
                 self._diarization_pipeline = Pipeline.from_pretrained(

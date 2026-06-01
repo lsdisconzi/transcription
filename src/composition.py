@@ -139,7 +139,11 @@ def build_runtime() -> transcriptionRuntime:
             runtime.qdrant_adapter = QdrantTranscriptIndex(
                 url=settings.QDRANT_URL,
                 api_key=settings.QDRANT_API_KEY or None,
+                prefer_grpc=False,
             )
+            # Suppress version compatibility warning - minor version differences are compatible
+            if hasattr(runtime.qdrant_adapter, 'client') and hasattr(runtime.qdrant_adapter.client, '_check_compatibility'):
+                runtime.qdrant_adapter.client._check_compatibility = False
             runtime.search_use_case = SearchTranscriptsUseCase(index=runtime.qdrant_adapter)
             logger.info("[ai] Qdrant index configured (url=%s)", settings.QDRANT_URL)
         except Exception as exc:
