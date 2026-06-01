@@ -885,6 +885,88 @@ tbody tr:hover td {
   font-size: 0.68rem;
 }
 
+/* ── Region indicator ── */
+.region-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 6px 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.62rem;
+  margin-top: 6px;
+}
+.region-indicator .time-label { color: var(--gray); }
+.region-indicator .time-value { font-family: var(--mono); color: var(--white); font-weight: 600; }
+.region-indicator .region-spacer { flex: 1; }
+
+/* ── Comparison panel ── */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 100px;
+  gap: 12px;
+  margin-top: 8px;
+}
+.comparison-column {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.comparison-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.comparison-row {
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 0.62rem;
+  border-left: 3px solid var(--border);
+  background: var(--bg-card);
+  margin-bottom: 4px;
+  transition: opacity 0.2s, background 0.2s;
+}
+.comparison-row .speaker { color: var(--amber); font-weight: 600; }
+.comparison-row .time { color: var(--gray); font-family: var(--mono); font-size: 0.55rem; }
+.comparison-row .text { color: var(--gray-hi); margin-top: 2px; line-height: 1.3; }
+.comparison-row.accepted { border-left-color: var(--green); background: var(--green-lo); }
+.comparison-row.rejected { opacity: 0.35; }
+.comparison-row.pending { border-left-color: var(--amber); }
+.comparison-row.is-new { border-left-color: var(--blue); }
+.comparison-actions { min-width: 90px; }
+.accept-btn, .reject-btn {
+  padding: 2px 7px;
+  font-size: 0.55rem;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--gray-hi);
+  transition: all 0.15s;
+  line-height: 1.4;
+}
+.accept-btn:hover { border-color: var(--green); color: var(--green); background: var(--green-lo); }
+.accept-btn.active { border-color: var(--green); background: var(--green); color: #191917; }
+.reject-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-lo); }
+.reject-btn.active { border-color: var(--red); background: var(--red); color: #fff; }
+.comparison-row .updated-badge {
+  display: inline-block;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--green);
+  color: #191917;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
@@ -1234,9 +1316,58 @@ tbody tr:hover td {
             </div>
           </div>
 
+          <!-- ── Region indicator + excerpt controls ── -->
+          <div id="regionIndicator" class="region-indicator" style="display:none;">
+            <span class="time-label">Range:</span>
+            <span id="regionTimeDisplay" class="time-value">—</span>
+            <span class="region-spacer"></span>
+            <button id="saveClipBtn" class="btn small" disabled><i class="fas fa-download"></i> Save Clip</button>
+            <button id="transcribeRegionBtn" class="btn primary small" disabled><i class="fas fa-microchip"></i> Transcribe Region</button>
+            <button id="clearRegionBtn" class="btn small ghost">Clear</button>
+          </div>
+          <div id="excerptProgress" style="display:none; margin-top:8px;">
+            <div class="progress-label" id="excerptProgressLabel">Transcribing region...</div>
+            <div class="progress-container"><div class="progress-bar" id="excerptProgressBar"></div></div>
+          </div>
+
           <div class="field">
             <label>Voiceprint Library</label>
             <div id="voiceprintList" style="display:flex; flex-wrap:wrap; gap:8px; min-height:50px; border:1px solid var(--border); border-radius:8px; padding:8px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Comparison Panel: Original vs New Transcription ── -->
+      <section id="comparisonPanel" class="card" style="display:none;">
+        <h3 style="display:flex;align-items:center;gap:12px;">
+          <i class="fas fa-not-equal" style="color:var(--amber);"></i>
+          Comparison: Original vs New Transcription
+        </h3>
+        <div class="content">
+          <div id="comparisonSummary" class="row" style="gap:12px;margin-bottom:8px;">
+            <span class="inline">Range: <strong id="compRangeStart">--</strong> → <strong id="compRangeEnd">--</strong></span>
+            <span class="inline">Original: <strong id="compOrigCount">--</strong> segs</span>
+            <span class="inline">New: <strong id="compNewCount">--</strong> segs</span>
+          </div>
+          <div id="comparisonGrid" class="comparison-grid">
+            <div class="comparison-column">
+              <div class="field-title" style="margin-bottom:6px;">Original Segments</div>
+              <div id="compOriginalList" class="comparison-list"></div>
+            </div>
+            <div class="comparison-column">
+              <div class="field-title" style="margin-bottom:6px;">New Transcription</div>
+              <div id="compNewList" class="comparison-list"></div>
+            </div>
+            <div class="comparison-column comparison-actions">
+              <div class="field-title" style="margin-bottom:6px;">Apply?</div>
+              <div id="compActionsList" class="comparison-list"></div>
+            </div>
+          </div>
+          <div class="row" style="justify-content:flex-end;margin-top:12px;gap:8px;">
+            <span id="pendingUpdateCount" class="inline"></span>
+            <button id="applyUpdatesBtn" class="btn primary small" disabled>Apply Updates</button>
+            <button id="discardUpdatesBtn" class="btn small ghost">Discard</button>
+            <button id="closeComparisonBtn" class="btn small">Close</button>
           </div>
         </div>
       </section>
@@ -1906,6 +2037,19 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
       let currentAudioFile = null;
       let currentWaveformUrl = null;
       let selectedSegmentIndex = null;
+      // ── Custom region (drag-to-select) ──
+      let customRegion = null;
+      let customRegionStart = null;
+      let customRegionEnd = null;
+      let hasCustomSelection = false;
+      // ── Excerpt transcription ──
+      let excerptResult = null;
+      let isExcerptRunning = false;
+      // ── Comparison / Accept-Reject ──
+      let comparisonVisible = false;
+      let pendingUpdates = [];
+      let acceptedUpdates = {};
+      let hasPendingUpdates = false;
       let localQueueJobs = [];
       let queueJobCounter = 0;
       let queueProcessing = false;
@@ -2316,6 +2460,11 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
         if (window.WaveSurfer.Regions && typeof window.WaveSurfer.Regions.create === 'function') {
           waveformRegions = window.WaveSurfer.Regions.create();
           plugins.push(waveformRegions);
+          // Enable drag-to-select for custom regions
+          waveformRegions.enableDragSelection({
+            color: 'rgba(91, 143, 168, 0.25)',
+            id: 'custom-selection'
+          });
         }
 
         wavesurfer = window.WaveSurfer.create({
@@ -2345,11 +2494,42 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
             currentWaveformUrl = null;
           }
         });
+
+        // ── Region event listeners for custom drag-to-select ──
+        if (waveformRegions && typeof waveformRegions.on === 'function') {
+          waveformRegions.on('region-created', function(region) {
+            if (region.id !== 'custom-selection') return;
+            customRegion = region;
+            hasCustomSelection = true;
+            customRegionStart = region.start;
+            customRegionEnd = region.end;
+            updateRegionIndicator();
+            updateTranscribeRegionBtn();
+          });
+          waveformRegions.on('region-updated', function(region) {
+            if (region.id !== 'custom-selection') return;
+            customRegionStart = region.start;
+            customRegionEnd = region.end;
+            updateRegionIndicator();
+          });
+          waveformRegions.on('region-removed', function(region) {
+            if (region.id !== 'custom-selection') return;
+            customRegion = null;
+            customRegionStart = null;
+            customRegionEnd = null;
+            hasCustomSelection = false;
+            var ind = $('regionIndicator');
+            if (ind) ind.style.display = 'none';
+            updateTranscribeRegionBtn();
+          });
+        }
       }
 
       function clearWaveformRegions() {
         if (!waveformRegions || typeof waveformRegions.getRegions !== 'function') return;
-        waveformRegions.getRegions().forEach(function(region) { region.remove(); });
+        waveformRegions.getRegions().forEach(function(region) {
+          if (region.id !== 'custom-selection') region.remove();
+        });
       }
 
       function refreshWaveformRegions() {
@@ -2381,6 +2561,303 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
         wavesurfer.zoom(waveformZoom);
       }
 
+      /* ====== CUSTOM REGION (drag-to-select) ====== */
+      function updateRegionIndicator(){
+        var ind = $('regionIndicator');
+        if (!ind) return;
+        if (hasCustomSelection && customRegionStart != null && customRegionEnd != null){
+          ind.style.display = 'flex';
+          $('regionTimeDisplay').textContent = fmtTime(customRegionStart) + ' — ' + fmtTime(customRegionEnd) + '  (dur ' + fmtDur(customRegionEnd - customRegionStart) + ')';
+          $('transcribeRegionBtn').disabled = false;
+        } else {
+          ind.style.display = 'none';
+        }
+      }
+
+      function clearCustomRegion(){
+        if (customRegion && typeof customRegion.remove === 'function'){
+          customRegion.remove();
+        }
+        customRegion = null;
+        customRegionStart = null;
+        customRegionEnd = null;
+        hasCustomSelection = false;
+        var ind = $('regionIndicator');
+        if (ind) ind.style.display = 'none';
+        refreshWaveformRegions();
+        updateTranscribeRegionBtn();
+      }
+
+      /* ====== EXCERPT: TRANSCRIBE SELECTED REGION ====== */
+      function updateTranscribeRegionBtn(){
+        var btn = $('transcribeRegionBtn');
+        if (!btn) return;
+        var hasRange = hasCustomSelection && customRegionStart != null && customRegionEnd != null;
+        var hasSelectedSeg = selectedSegmentIndex != null && currentResponse && currentResponse.segments && currentResponse.segments[selectedSegmentIndex];
+        btn.disabled = !(hasRange || hasSelectedSeg) || isExcerptRunning;
+      }
+
+      function getSelectedTimeRange(){
+        if (hasCustomSelection && customRegionStart != null && customRegionEnd != null){
+          return { start: customRegionStart, end: customRegionEnd, source: 'custom' };
+        }
+        if (selectedSegmentIndex != null && currentResponse && currentResponse.segments && currentResponse.segments[selectedSegmentIndex]){
+          var seg = currentResponse.segments[selectedSegmentIndex];
+          return { start: seg.start, end: seg.end, source: 'segment' };
+        }
+        return null;
+      }
+
+      function setExcerptProgress(pct, label){
+        var bar = $('excerptProgressBar');
+        var lbl = $('excerptProgressLabel');
+        var wrap = $('excerptProgress');
+        if (!bar || !wrap) return;
+        if (pct == null) { wrap.style.display = 'none'; return; }
+        wrap.style.display = 'block';
+        bar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+        if (label) lbl.textContent = label;
+      }
+
+      async function handleExcerptTranscription(){
+        if (isExcerptRunning) return;
+        var range = getSelectedTimeRange();
+        if (!range){
+          showToast('Selecione uma região no waveform ou um segmento na tabela');
+          return;
+        }
+        if (!currentAudioFile){
+          showToast('Nenhum arquivo de áudio carregado');
+          return;
+        }
+        isExcerptRunning = true;
+        updateTranscribeRegionBtn();
+        excerptResult = null;
+        if ($('comparisonPanel')) $('comparisonPanel').style.display = 'none';
+        var saveBtn = $('saveClipBtn');
+        if (saveBtn) saveBtn.disabled = true;
+        setExcerptProgress(5, 'Preparing excerpt...');
+        try {
+          var fd = new FormData();
+          fd.append('audio', currentAudioFile);
+          fd.append('start', String(range.start));
+          fd.append('end', String(range.end));
+          fd.append('min_speakers', String(Number($('criticalMinSpeakers') ? $('criticalMinSpeakers').value : 1) || 1));
+          fd.append('max_speakers', String(Number($('criticalMaxSpeakers') ? $('criticalMaxSpeakers').value : 2) || 2));
+          setExcerptProgress(20, 'Sending to server...');
+          var url = window.API_BASE_URL || DEFAULT_PINOCCHIO_API_URL;
+          url = normalizePinocchioApiUrl(url);
+          url = url.replace(/\/transcribe(?:\/.*)?$/, '/excerpt');
+          if (url.indexOf('/excerpt') === -1) {
+            var base = String(window.API_BASE_URL || DEFAULT_PINOCCHIO_API_URL).replace(/\/api\/pinocchio\/.*/, '').replace(/\/api\/diarization\/.*/, '') || '';
+            url = (base || '') + '/api/diarization/excerpt';
+          }
+          var resp = await fetch(url, { method: 'POST', body: fd });
+          if (!resp.ok){
+            var errText = await resp.text().catch(function(){ return 'Unknown error'; });
+            throw new Error('Server error ' + resp.status + ': ' + errText.slice(0, 300));
+          }
+          setExcerptProgress(60, 'Processing result...');
+          var data = await resp.json();
+          setExcerptProgress(85, 'Building comparison...');
+          excerptResult = data;
+          if (excerptResult.segments && Array.isArray(excerptResult.segments)){
+            excerptResult.segments.forEach(function(s, i){ if (s.index == null) s.index = i; });
+          } else { excerptResult.segments = []; }
+          showComparisonView();
+          if (saveBtn) saveBtn.disabled = false;
+          setExcerptProgress(100, 'Done');
+          showToast('Region transcribed: ' + (excerptResult.segments ? excerptResult.segments.length : 0) + ' segments');
+          setTimeout(function(){ setExcerptProgress(null); }, 2000);
+        } catch (err) {
+          setExcerptProgress(null);
+          showToast('Excerpt failed: ' + (err.message || err));
+        } finally {
+          isExcerptRunning = false;
+          updateTranscribeRegionBtn();
+        }
+      }
+
+      /* ====== SAVE AUDIO CLIP ====== */
+      async function handleSaveAudioClip(){
+        var range = getSelectedTimeRange();
+        if (!range){ showToast('Nenhuma região selecionada'); return; }
+        if (!currentAudioFile){ showToast('Nenhum arquivo de áudio carregado'); return; }
+        try {
+          var audioBuffer = await decodeAudioBufferFromFile(currentAudioFile);
+          var blob = buildSegmentAudioBlob(audioBuffer, range.start, range.end);
+          var baseName = sanitizeBaseName(currentAudioFile.name.replace(/\.[^.]+$/, ''));
+          var clipName = prompt('Save clip as:', baseName + '_clip_' + range.start.toFixed(1) + '-' + range.end.toFixed(1));
+          if (!clipName) return;
+          var fileName = clipName.replace(/[^a-zA-Z0-9_\-\.]/g, '_') + '.wav';
+          saveAs(blob, fileName);
+          showToast('Saved: ' + fileName);
+        } catch (err) { showToast('Error saving clip: ' + (err.message || err)); }
+      }
+
+      /* ====== COMPARISON VIEW ====== */
+      function showComparisonView(){
+        if (!excerptResult) return;
+        var panel = $('comparisonPanel');
+        if (!panel) return;
+        panel.style.display = '';
+        var excerptStart = excerptResult.start != null ? excerptResult.start : 0;
+        var excerptEnd = excerptResult.end != null ? excerptResult.end : 0;
+        var origSegs = [];
+        if (currentResponse && currentResponse.segments){
+          origSegs = currentResponse.segments.filter(function(s){ return (s.start < excerptEnd && s.end > excerptStart); });
+        }
+        var newSegs = excerptResult.segments || [];
+        if ($('compRangeStart')) $('compRangeStart').textContent = fmtTime(excerptStart);
+        if ($('compRangeEnd')) $('compRangeEnd').textContent = fmtTime(excerptEnd);
+        if ($('compOrigCount')) $('compOrigCount').textContent = origSegs.length;
+        if ($('compNewCount')) $('compNewCount').textContent = newSegs.length;
+        buildPendingUpdates(origSegs, newSegs);
+        renderComparisonColumns(origSegs, newSegs);
+        renderComparisonActions();
+        comparisonVisible = true;
+      }
+
+      function renderComparisonColumns(origSegs, newSegs){
+        function renderSegList(containerId, segs, isNew){
+          var list = $(containerId);
+          if (!list) return;
+          if (!segs || !segs.length){ list.innerHTML = '<div class=\"comparison-row\" style=\"color:var(--gray);\">No segments</div>'; return; }
+          list.innerHTML = segs.map(function(s, idx){
+            var speakerLabel = speakerLabels && speakerLabels[s.speaker] ? speakerLabels[s.speaker] : (s.speaker || 'UNKNOWN');
+            var state = isNew ? (pendingUpdates[idx] && pendingUpdates[idx].status || 'pending') : '';
+            var stateClass = state ? ' ' + state : '';
+            var text = (s.text || '').trim();
+            if (!text) text = '<span style=\"color:var(--gray);font-style:italic;\">(no text)</span>';
+            return '<div class=\"comparison-row' + stateClass + '\">' +
+              '<div><span class=\"speaker\">' + escapeHtml(speakerLabel) + '</span> ' +
+              '<span class=\"time\">' + fmtTime(s.start) + ' — ' + fmtTime(s.end) + '</span></div>' +
+              '<div class=\"text\">' + text + '</div></div>';
+          }).join('');
+        }
+        renderSegList('compOriginalList', origSegs, false);
+        renderSegList('compNewList', newSegs, true);
+      }
+
+      function buildPendingUpdates(origSegs, newSegs){
+        pendingUpdates = []; acceptedUpdates = {}; hasPendingUpdates = false;
+        if (!origSegs || !newSegs) return;
+        var count = Math.max(origSegs.length, newSegs.length);
+        for (var i = 0; i < count; i++){
+          pendingUpdates.push({
+            origIdx: (i < origSegs.length && origSegs[i]) ? origSegs[i].index : -1,
+            newSeg: newSegs[i] || null,
+            status: 'pending'
+          });
+        }
+        hasPendingUpdates = pendingUpdates.length > 0;
+      }
+
+      function renderComparisonActions(){
+        var list = $('compActionsList');
+        if (!list) return;
+        if (!pendingUpdates.length){ list.innerHTML = '<div class=\"comparison-row\" style=\"color:var(--gray);\">No actions needed</div>'; return; }
+        list.innerHTML = pendingUpdates.map(function(pu, idx){
+          return '<div class=\"comparison-row ' + (pu.status || 'pending') + '\" data-update-idx=\"' + idx + '\">' +
+            '<div style=\"margin-bottom:4px;\"><span class=\"speaker\">#' + (idx + 1) + '</span></div>' +
+            '<div class=\"action-btns\">' +
+            '<button class=\"accept-btn\" data-idx=\"' + idx + '\" title=\"Accept\">✓</button> ' +
+            '<button class=\"reject-btn\" data-idx=\"' + idx + '\" title=\"Reject\">✗</button>' +
+            '</div></div>';
+        }).join('');
+        list.querySelectorAll('.accept-btn').forEach(function(btn){
+          btn.addEventListener('click', function(){
+            var idx = Number(this.getAttribute('data-idx'));
+            if (!isNaN(idx) && pendingUpdates[idx]) {
+              pendingUpdates[idx].status = 'accepted';
+              acceptedUpdates[idx] = true;
+              updateRowVisual(idx);
+              updateApplyButtonState();
+            }
+          });
+        });
+        list.querySelectorAll('.reject-btn').forEach(function(btn){
+          btn.addEventListener('click', function(){
+            var idx = Number(this.getAttribute('data-idx'));
+            if (!isNaN(idx) && pendingUpdates[idx]) {
+              pendingUpdates[idx].status = 'rejected';
+              acceptedUpdates[idx] = false;
+              updateRowVisual(idx);
+              updateApplyButtonState();
+            }
+          });
+        });
+        updateApplyButtonState();
+      }
+
+      function updateRowVisual(idx){
+        var actionRow = $('compActionsList') && $('compActionsList').querySelector('[data-update-idx=\"' + idx + '\"]');
+        if (actionRow) actionRow.className = 'comparison-row ' + (pendingUpdates[idx] ? pendingUpdates[idx].status : 'pending');
+        var newRows = $('compNewList') && $('compNewList').querySelectorAll('.comparison-row');
+        if (newRows && newRows[idx]) newRows[idx].className = 'comparison-row ' + (pendingUpdates[idx] ? pendingUpdates[idx].status : 'pending');
+      }
+
+      function updateApplyButtonState(){
+        var btn = $('applyUpdatesBtn');
+        var countEl = $('pendingUpdateCount');
+        if (!btn) return;
+        var accepted = 0, rejected = 0, total = pendingUpdates.length;
+        pendingUpdates.forEach(function(pu){
+          if (pu.status === 'accepted') accepted++;
+          else if (pu.status === 'rejected') rejected++;
+        });
+        btn.disabled = accepted === 0;
+        if (countEl) countEl.textContent = accepted + ' accepted / ' + rejected + ' rejected / ' + total + ' total';
+      }
+
+      function applySelectedUpdates(){
+        if (!currentResponse || !currentResponse.segments) return;
+        var updated = 0;
+        pendingUpdates.forEach(function(pu){
+          if (pu.status !== 'accepted' || !pu.newSeg) return;
+          var segFound = false;
+          currentResponse.segments.forEach(function(seg){
+            if (pu.origIdx >= 0 && seg.index === pu.origIdx){
+              seg.text = pu.newSeg.text || seg.text;
+              seg.speaker = pu.newSeg.speaker || seg.speaker;
+              seg.start = pu.newSeg.start != null ? pu.newSeg.start : seg.start;
+              seg.end = pu.newSeg.end != null ? pu.newSeg.end : seg.end;
+              seg.duration = pu.newSeg.duration != null ? pu.newSeg.duration : (seg.end - seg.start);
+              seg._updated = true;
+              segFound = true;
+              updated++;
+            }
+          });
+          if (!segFound) {
+            currentResponse.segments.push({
+              index: currentResponse.segments.length,
+              speaker: pu.newSeg.speaker || 'SPEAKER_00',
+              start: pu.newSeg.start || 0,
+              end: pu.newSeg.end || 0,
+              duration: pu.newSeg.duration || 0,
+              text: pu.newSeg.text || '',
+              _updated: true
+            });
+            updated++;
+          }
+        });
+        if (updated > 0){
+          renderSegments(currentResponse.segments);
+          refreshWaveformRegions();
+          showToast(updated + ' segment(s) updated');
+        } else { showToast('Nenhum segmento aceito para atualizar'); }
+        discardAllUpdates();
+      }
+
+      function discardAllUpdates(){
+        pendingUpdates = [];
+        acceptedUpdates = {};
+        hasPendingUpdates = false;
+        comparisonVisible = false;
+        var panel = $('comparisonPanel');
+        if (panel) panel.style.display = 'none';
+      }
+
       function selectSegment(index, shouldSeek) {
         selectedSegmentIndex = index;
         document.querySelectorAll('#segmentsTable tbody tr').forEach(function(row) {
@@ -2394,6 +2871,7 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
         }
 
         refreshWaveformRegions();
+        updateTranscribeRegionBtn();
       }
 
       /* ====== PROGRESS ====== */
@@ -2514,7 +2992,8 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
           var tr = document.createElement('tr');
           tr.className = 'segment-row';
           tr.dataset.segmentIndex = String(i);
-          tr.innerHTML = '<td class="segment-select-cell"><input type="radio" name="selectedSegment" value="'+i+'" aria-label="Selecionar segmento '+(i + 1)+'"></td><td>'+escapeHtml(i)+'</td><td>'+escapeHtml(speaker)+'</td><td>'+fmtTime(seg.start)+'</td><td>'+fmtTime(seg.end)+'</td><td>'+fmtDur(dur)+'</td><td>'+escapeHtml(text)+'</td>';
+          var updatedBadge = seg._updated ? ' <span class="updated-badge">UPDATED</span>' : '';
+          tr.innerHTML = '<td class="segment-select-cell"><input type="radio" name="selectedSegment" value="'+i+'" aria-label="Selecionar segmento '+(i + 1)+'"></td><td>'+escapeHtml(i)+'</td><td>'+escapeHtml(speaker)+'</td><td>'+fmtTime(seg.start)+'</td><td>'+fmtTime(seg.end)+'</td><td>'+fmtDur(dur)+'</td><td>'+escapeHtml(text)+updatedBadge+'</td>';
           var radio = tr.querySelector('input[name="selectedSegment"]');
           tr.addEventListener('click', function(ev){
             if (radio && ev.target !== radio) radio.checked = true;
@@ -2857,6 +3336,7 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
 
       async function handleAudioSelection(file){
         if (!file) return;
+        discardAllUpdates();
         currentAudioFile = file;
         setupWaveform(file);
         if (currentResponse && currentResponse.__loadedFromJson && currentResponse.segments) {
@@ -2989,6 +3469,7 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
           try {
             var json = JSON.parse(ev.target.result);
             if (!json.segments || !Array.isArray(json.segments)) throw new Error('Invalid format: missing segments array');
+            discardAllUpdates();
             currentResponse = json;
             currentResponse.__loadedFromJson = true;
             currentConfig = json.config || null;
@@ -3404,6 +3885,17 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
           var ta = $('aiPrompt');
           if(ta) ta.value = btn.getAttribute('data-insert');
         });
+      });
+
+      /* ====== REGION / EXCERPT / COMPARISON CONTROLS ====== */
+      if($('transcribeRegionBtn')) $('transcribeRegionBtn').addEventListener('click', handleExcerptTranscription);
+      if($('clearRegionBtn')) $('clearRegionBtn').addEventListener('click', clearCustomRegion);
+      if($('saveClipBtn')) $('saveClipBtn').addEventListener('click', handleSaveAudioClip);
+      if($('applyUpdatesBtn')) $('applyUpdatesBtn').addEventListener('click', applySelectedUpdates);
+      if($('discardUpdatesBtn')) $('discardUpdatesBtn').addEventListener('click', discardAllUpdates);
+      if($('closeComparisonBtn')) $('closeComparisonBtn').addEventListener('click', function(){
+        discardAllUpdates();
+        showToast('Comparison closed');
       });
 
       /* ====== QUEUE MONITOR ====== */

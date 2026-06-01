@@ -4,7 +4,11 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
+<<<<<<< HEAD
 PORT="${PORT:-${transcription_PORT:-8049}}"
+=======
+PORT="${PORT:-${transcription_PORT:-8040}}"
+>>>>>>> ab0e50d (feat: implement region selection and comparison features)
 VENV_BIN="$SCRIPT_DIR/.venv/bin"
 
 require_py312() {
