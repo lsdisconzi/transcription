@@ -137,14 +137,14 @@ class ModelManager:
             if not token:
                 raise ValueError("Pyannote auth token missing.")
 
-            # huggingface_hub >=1.0 removed use_auth_token from hf_hub_download.
-            # Set HF_TOKEN in the environment so pyannote's internal hub calls
-            # pick it up automatically — no deprecated kwarg, no network validation.
+            # Pass the token explicitly to Pipeline.from_pretrained so the HF auth
+            # token is used in serverless environments where .env is not present.
             os.environ["HF_TOKEN"] = token
 
             try:
                 self._diarization_pipeline = Pipeline.from_pretrained(
                     "pyannote/speaker-diarization-3.1",
+                    use_auth_token=token,
                 )
             except RuntimeError as e:
                 # Handle Blackwell GPU and other unsupported CUDA architectures
@@ -157,6 +157,7 @@ class ModelManager:
                     os.environ["CUDA_VISIBLE_DEVICES"] = ""
                     self._diarization_pipeline = Pipeline.from_pretrained(
                         "pyannote/speaker-diarization-3.1",
+                        use_auth_token=token,
                     )
                 else:
                     raise
