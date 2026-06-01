@@ -12,13 +12,14 @@ _DATA_ROOT = _transcription_ROOT / "data"
 _SHARED_ENV = _REPO_ROOT / "_shared" / ".env"
 _LOCAL_ENV = _transcription_ROOT / ".env"
 
-# Load shared first, then allow local project overrides.
-if _SHARED_ENV.exists():
-    load_dotenv(_SHARED_ENV, override=False)
-if _LOCAL_ENV.exists():
-    load_dotenv(_LOCAL_ENV, override=True)
-else:
-    load_dotenv(override=False)
+# Only load dotenv in non-production environments.
+# In RunPod Serverless, the container should rely on real env vars set in the endpoint.
+ENV = os.getenv("ENV", "development").lower()
+if ENV != "production":
+    if _SHARED_ENV.exists():
+        load_dotenv(_SHARED_ENV, override=False)
+    if _LOCAL_ENV.exists():
+        load_dotenv(_LOCAL_ENV, override=True)
 
 
 class Settings:

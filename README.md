@@ -48,6 +48,8 @@ docker compose up --build
 
 The API will be available at `http://localhost:8049`.
 
+For RunPod pod template details, see [docs/RUNPOD_POD_TEMPLATE.md](docs/RUNPOD_POD_TEMPLATE.md).
+
 ## API Endpoints
 
 ### Health & System
