@@ -31,6 +31,25 @@ _processor = _runtime.processor_adapter
 _asr = _runtime.asr_adapter
 _excerpt_use_case = _runtime.excerpt_use_case
 
+# Validate critical environment variables on startup
+def _validate_runtime_config():
+    """Check that required credentials are available."""
+    if not settings.RESOLVED_HF_TOKEN:
+        raise RuntimeError(
+            "No HuggingFace token found. Set PYANNOTE_AUTH_TOKEN, HF_TOKEN, "
+            "HUGGINGFACE_HUB_TOKEN, or use_auth_token in RunPod endpoint config."
+        )
+    if not settings.DEEPSEEK_API_KEY and not settings.ANTHROPIC_API_KEY:
+        logger.warning(
+            "[runpod] No AI provider configured. Set DEEPSEEK_API_KEY or ANTHROPIC_API_KEY "
+            "for transcript analysis features."
+        )
+    if not settings.QDRANT_URL:
+        logger.warning("[runpod] Qdrant not configured. Vector search disabled.")
+    logger.info("[runpod] Runtime config validated. Ready to accept jobs.")
+
+_validate_runtime_config()
+
 # ── Language map ─────────────────────────────────────────────
 LANGUAGE_MAP = {"es-CL": "es", "es": "es", "en-US": "en", "en": "en", "pt": "pt", "pt-BR": "pt"}
 
