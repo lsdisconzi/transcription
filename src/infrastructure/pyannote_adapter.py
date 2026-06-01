@@ -26,6 +26,11 @@ class PyAnnoteDiarizerAdapter:
         vad_threshold: float = 0.25,
     ) -> list[DiarizationTurn]:
         pipeline = self._mm.get_diarization_pipeline(self._auth_token)
+        if pipeline is None:
+            raise RuntimeError(
+                "Diarization pipeline is not available — "
+                "ensure HF_TOKEN / PYANNOTE_AUTH_TOKEN is set and has access to pyannote/speaker-diarization-3.1"
+            )
         pipeline.segmentation.threshold = vad_threshold
         pipeline.min_speakers = min_speakers
         pipeline.max_speakers = max_speakers
@@ -46,6 +51,11 @@ class PyAnnoteDiarizerAdapter:
         num_speakers: int | None = None,
     ) -> list[DiarizationTurn]:
         pipeline = self._mm.get_diarization_pipeline(self._auth_token)
+        if pipeline is None:
+            raise RuntimeError(
+                "Diarization pipeline is not available — "
+                "ensure HF_TOKEN / PYANNOTE_AUTH_TOKEN is set and has access to pyannote/speaker-diarization-3.1"
+            )
 
         kwargs = {}
         if num_speakers is not None:

@@ -146,6 +146,11 @@ class ModelManager:
                     "pyannote/speaker-diarization-3.1",
                     use_auth_token=token,
                 )
+                if self._diarization_pipeline is None:
+                    raise RuntimeError(
+                        "Pipeline.from_pretrained returned None — "
+                        "check that your HF token has access to pyannote/speaker-diarization-3.1"
+                    )
             except RuntimeError as e:
                 # Handle Blackwell GPU and other unsupported CUDA architectures
                 if "no kernel image is available" in str(e) or "sm_120" in str(e):
@@ -159,6 +164,11 @@ class ModelManager:
                         "pyannote/speaker-diarization-3.1",
                         use_auth_token=token,
                     )
+                    if self._diarization_pipeline is None:
+                        raise RuntimeError(
+                            "Pipeline.from_pretrained returned None on CPU fallback — "
+                            "check that your HF token has access to pyannote/speaker-diarization-3.1"
+                        )
                 else:
                     raise
             
