@@ -954,7 +954,6 @@ tbody tr:hover td {
 .accept-btn.active { border-color: var(--green); background: var(--green); color: #191917; }
 .reject-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-lo); }
 .reject-btn.active { border-color: var(--red); background: var(--red); color: #fff; }
-.comparison-row .updated-badge { /* unused, kept for compat */ }
 .updated-badge {
   display: inline-block;
   font-size: 0.5rem;
@@ -1471,6 +1470,104 @@ tbody tr:hover td {
           </div>
         </div>
       </section>
+
+      <!-- ── Transcript Review & Curation Panel ── -->
+      <section id="transcriptReviewPanel" class="card">
+        <h3 style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span><i class="fas fa-clipboard-check" style="color:var(--amber);"></i> Curadoria e Revisão de Transcrição</span>
+          <span style="display:flex;gap:6px;align-items:center;">
+            <span id="reviewCompletenessBadge" class="badge">0% Completo</span>
+            <button class="btn small ghost" id="reviewPanelToggleBtn" type="button">Recolher</button>
+          </span>
+        </h3>
+        <div class="content" id="reviewPanelContent">
+          <p style="color:var(--gray-hi);font-size:13px;margin-bottom:14px;">
+            Carregue uma transcrição existente do backend ou importe um arquivo CSV de segmentos para iniciar o processo de curadoria.
+            Marque cada segmento revisado e clique em "Salvar Revisão" para bloquear as alterações.
+          </p>
+          
+          <div class="split-2" style="margin-bottom:14px;">
+            <div class="field">
+              <label>Selecionar Transcrição do Backend</label>
+              <div class="row" style="gap:8px;">
+                <select id="reviewTranscriptSelect" style="flex:1;">
+                  <option value="">— Selecione uma transcrição —</option>
+                </select>
+                <button class="btn small" id="refreshReviewListBtn" type="button" title="Recarregar lista"><i class="fas fa-sync"></i></button>
+              </div>
+            </div>
+            
+            <div class="field">
+              <label>Importar CSV de Segmentos (data/csv)</label>
+              <div class="row" style="gap:8px;">
+                <select id="csvFileSelect" style="flex:1;">
+                  <option value="">— Selecione um arquivo CSV —</option>
+                </select>
+                <button class="btn small primary" id="importCsvBtn" type="button"><i class="fas fa-file-import"></i> Importar</button>
+              </div>
+            </div>
+          </div>
+          
+          <div id="reviewMetaRow" class="row" style="gap:14px;margin-bottom:14px;display:none;font-size:12px;color:var(--gray-hi);border-bottom:1px solid var(--border);padding-bottom:10px;">
+            <span><i class="fas fa-file-audio"></i> Áudio Mapeado: <strong id="reviewAudioName" style="color:var(--white);">—</strong></span>
+            <span><i class="fas fa-list-ol"></i> Total: <strong id="reviewTotalSegs" style="color:var(--white);">0</strong> segs</span>
+            <span><i class="fas fa-check-circle" style="color:var(--green);"></i> Revisados: <strong id="reviewCheckedSegs" style="color:var(--white);">0</strong></span>
+            <span><i class="fas fa-database" style="color:var(--amber);"></i> Indexados (Qdrant): <strong id="reviewQdrantSegs" style="color:var(--white);">0</strong></span>
+          </div>
+
+          <div id="reviewSegmentsWrap" class="subcard" style="width:100%;overflow:auto;max-height:450px;display:none;margin-bottom:14px;">
+            <div class="row" style="justify-content:space-between;margin-bottom:6px;align-items:center;">
+              <span style="font-size:.7rem;font-weight:600;color:var(--white);">SEGMENTOS EM REVISÃO</span>
+              <div style="display:flex;gap:8px;">
+                <button id="selectAllUnreviewedBtn" class="tag-btn" style="font-size:0.55rem;">Selecionar Não Revisados</button>
+                <button id="clearSelectionBtn" class="tag-btn" style="font-size:0.55rem;">Limpar Seleção</button>
+              </div>
+            </div>
+            <table id="reviewSegmentsTable" style="font-size:0.75rem;">
+              <thead>
+                <tr>
+                  <th style="width: 40px; text-align: center;">Rev.</th>
+                  <th style="width: 40px; text-align: center;">Sel.</th>
+                  <th style="width: 40px;">#</th>
+                  <th style="width: 120px;">Falante</th>
+                  <th style="width: 80px;">Início</th>
+                  <th style="width: 80px;">Fim</th>
+                  <th>Texto da Transcrição</th>
+                </tr>
+              </thead>
+              <tbody id="reviewSegmentsBody"></tbody>
+            </table>
+          </div>
+
+          <div class="row" id="reviewActionsRow" style="justify-content:space-between;display:none;">
+            <div style="display:flex; gap:8px;">
+              <button id="saveReviewBtn" class="btn primary small" type="button"><i class="fas fa-save"></i> Salvar Revisão</button>
+              <button id="indexReviewedBtn" class="btn small" type="button" style="border-color:var(--amber);color:var(--white);"><i class="fas fa-database"></i> Indexar no Qdrant</button>
+            </div>
+            
+            <div style="display:flex; gap:8px; align-items:center;">
+              <span style="font-size:11px;color:var(--gray);">Transcrever selecionados (não revisados):</span>
+              <button id="runRetranscribeBtn" class="btn small" type="button" style="background:var(--amber);color:#fff;border-color:var(--amber);"><i class="fas fa-play"></i> Rodar Transcrição</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        #reviewSegmentsTable textarea.review-textarea {
+          min-height: 32px;
+          resize: vertical;
+          line-height: 1.4;
+        }
+        #reviewSegmentsTable tr.segment-row.reviewed td {
+          background: var(--green-lo);
+          border-left: 2px solid var(--green);
+        }
+        #reviewSegmentsTable tr.segment-row.reviewed textarea {
+          background: rgba(74,158,112,0.05) !important;
+          border-color: rgba(74,158,112,0.3) !important;
+        }
+      </style>
 
         <!-- RIGHT SIDE -->
         <aside class="card">
@@ -5121,6 +5218,373 @@ Reasoning for chain: Explanation of why this order is effective.">Lista de poss�
       document.addEventListener('DOMContentLoaded', loadIds);
     } else {
       loadIds();
+    }
+
+    // ── Transcript Curation & Review JS ───────────────────────────
+    const panel = document.getElementById('transcriptReviewPanel');
+    const toggleBtn = document.getElementById('reviewPanelToggleBtn');
+    const panelContent = document.getElementById('reviewPanelContent');
+    
+    toggleBtn.addEventListener('click', () => {
+      if (panelContent.style.display === 'none') {
+        panelContent.style.display = 'block';
+        toggleBtn.textContent = 'Recolher';
+      } else {
+        panelContent.style.display = 'none';
+        toggleBtn.textContent = 'Expandir';
+      }
+    });
+
+    const refreshReviewListBtn = document.getElementById('refreshReviewListBtn');
+    const reviewTranscriptSelect = document.getElementById('reviewTranscriptSelect');
+    const csvFileSelect = document.getElementById('csvFileSelect');
+    const importCsvBtn = document.getElementById('importCsvBtn');
+    
+    const reviewMetaRow = document.getElementById('reviewMetaRow');
+    const reviewAudioName = document.getElementById('reviewAudioName');
+    const reviewTotalSegs = document.getElementById('reviewTotalSegs');
+    const reviewCheckedSegs = document.getElementById('reviewCheckedSegs');
+    const reviewQdrantSegs = document.getElementById('reviewQdrantSegs');
+    const reviewCompletenessBadge = document.getElementById('reviewCompletenessBadge');
+    
+    const reviewSegmentsWrap = document.getElementById('reviewSegmentsWrap');
+    const reviewSegmentsBody = document.getElementById('reviewSegmentsBody');
+    
+    const selectAllUnreviewedBtn = document.getElementById('selectAllUnreviewedBtn');
+    const clearSelectionBtn = document.getElementById('clearSelectionBtn');
+    
+    const saveReviewBtn = document.getElementById('saveReviewBtn');
+    const indexReviewedBtn = document.getElementById('indexReviewedBtn');
+    const runRetranscribeBtn = document.getElementById('runRetranscribeBtn');
+    const reviewActionsRow = document.getElementById('reviewActionsRow');
+
+    let currentTranscript = null;
+
+    async function loadReviewLists() {
+      try {
+        const res = await fetch('/api/transcripts/review/list');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        
+        const prevSelected = reviewTranscriptSelect.value;
+        reviewTranscriptSelect.innerHTML = '<option value="">— Selecione uma transcrição —</option>';
+        data.transcripts.forEach(t => {
+          const opt = document.createElement('option');
+          opt.value = t.transcript_id;
+          const pct = (t.completeness * 100).toFixed(1) + '%';
+          const qdrantText = t.qdrant_indexed_segments ? ` [Qdrant: ${t.qdrant_indexed_segments}]` : '';
+          opt.textContent = `${t.transcript_id} (${pct} completo, ${t.reviewed_segments}/${t.total_segments})${qdrantText}`;
+          reviewTranscriptSelect.appendChild(opt);
+        });
+        if (prevSelected) reviewTranscriptSelect.value = prevSelected;
+        
+        const csvRes = await fetch('/api/transcripts/csv/list');
+        if (csvRes.ok) {
+          const csvData = await csvRes.json();
+          csvFileSelect.innerHTML = '<option value="">— Selecione um arquivo CSV —</option>';
+          (csvData.csvs || []).forEach(csvName => {
+            const opt = document.createElement('option');
+            opt.value = csvName;
+            opt.textContent = csvName;
+            csvFileSelect.appendChild(opt);
+          });
+        }
+      } catch (e) {
+        console.error('Failed to load review lists:', e);
+      }
+    }
+
+    importCsvBtn.addEventListener('click', async () => {
+      const csvName = csvFileSelect.value;
+      if (!csvName) {
+        alert('Selecione um arquivo CSV primeiro.');
+        return;
+      }
+      try {
+        importCsvBtn.disabled = true;
+        const res = await fetch('/api/transcripts/csv/import', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ filename: csvName })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'Falha na importação.');
+        alert(`CSV importado com sucesso: ${data.transcript_id}`);
+        await loadReviewLists();
+        reviewTranscriptSelect.value = data.transcript_id;
+        triggerTranscriptLoad();
+      } catch (e) {
+        alert('Erro ao importar CSV: ' + e.message);
+      } finally {
+        importCsvBtn.disabled = false;
+      }
+    });
+
+    refreshReviewListBtn.addEventListener('click', loadReviewLists);
+    reviewTranscriptSelect.addEventListener('change', triggerTranscriptLoad);
+
+    async function triggerTranscriptLoad() {
+      const tid = reviewTranscriptSelect.value;
+      if (!tid) {
+        reviewMetaRow.style.display = 'none';
+        reviewSegmentsWrap.style.display = 'none';
+        reviewActionsRow.style.display = 'none';
+        currentTranscript = null;
+        return;
+      }
+      try {
+        const res = await fetch('/api/transcripts/' + encodeURIComponent(tid));
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        currentTranscript = await res.json();
+        
+        const listRes = await fetch('/api/transcripts/review/list');
+        const listData = await listRes.json();
+        const info = listData.transcripts.find(x => x.transcript_id === tid) || {};
+        
+        reviewAudioName.textContent = currentTranscript.source_file || '—';
+        reviewTotalSegs.textContent = currentTranscript.segments.length;
+        reviewCheckedSegs.textContent = info.reviewed_segments || 0;
+        reviewQdrantSegs.textContent = info.qdrant_indexed_segments || 0;
+        
+        const pct = ((info.completeness || 0) * 100).toFixed(0) + '%';
+        reviewCompletenessBadge.textContent = pct + ' Completo';
+        reviewCompletenessBadge.className = 'badge ' + ((info.completeness || 0) >= 1.0 ? 'success' : 'working');
+        
+        reviewMetaRow.style.display = 'flex';
+        reviewSegmentsWrap.style.display = 'block';
+        reviewActionsRow.style.display = 'flex';
+        
+        renderReviewSegments();
+      } catch (e) {
+        alert('Erro ao carregar transcrição: ' + e.message);
+      }
+    }
+
+    function renderReviewSegments() {
+      reviewSegmentsBody.innerHTML = '';
+      if (!currentTranscript || !currentTranscript.segments) return;
+      
+      currentTranscript.segments.forEach(seg => {
+        const tr = document.createElement('tr');
+        tr.className = seg.reviewed ? 'segment-row reviewed' : 'segment-row';
+        tr.dataset.index = seg.index;
+        
+        const tdRev = document.createElement('td');
+        tdRev.style.textAlign = 'center';
+        const chkRev = document.createElement('input');
+        chkRev.type = 'checkbox';
+        chkRev.checked = !!seg.reviewed;
+        chkRev.className = 'segment-review-chk';
+        chkRev.addEventListener('change', () => {
+          if (chkRev.checked) {
+            tr.classList.add('reviewed');
+          } else {
+            tr.classList.remove('reviewed');
+          }
+          updateCountsFromUI();
+        });
+        tdRev.appendChild(chkRev);
+        
+        const tdSel = document.createElement('td');
+        tdSel.style.textAlign = 'center';
+        const chkSel = document.createElement('input');
+        chkSel.type = 'checkbox';
+        chkSel.className = 'segment-run-chk';
+        chkSel.disabled = !!seg.reviewed;
+        chkRev.addEventListener('change', () => {
+          chkSel.disabled = chkRev.checked;
+          if (chkRev.checked) chkSel.checked = false;
+        });
+        tdSel.appendChild(chkSel);
+        
+        const tdIdx = document.createElement('td');
+        tdIdx.textContent = seg.index;
+        
+        const tdSpk = document.createElement('td');
+        tdSpk.textContent = seg.speaker;
+        tdSpk.style.fontWeight = '500';
+        tdSpk.style.color = 'var(--gray-hi)';
+        
+        const tdStart = document.createElement('td');
+        tdStart.textContent = seg.start.toFixed(3);
+        const tdEnd = document.createElement('td');
+        tdEnd.textContent = seg.end.toFixed(3);
+        
+        const tdText = document.createElement('td');
+        const txt = document.createElement('textarea');
+        txt.value = seg.text;
+        txt.className = 'review-textarea';
+        txt.style.width = '100%';
+        txt.style.background = 'var(--bg-input)';
+        txt.style.border = '1px solid var(--border)';
+        txt.style.color = 'var(--white)';
+        txt.style.borderRadius = '6px';
+        txt.style.padding = '6px';
+        txt.style.fontSize = '0.75rem';
+        txt.style.resize = 'vertical';
+        txt.style.fontFamily = 'var(--sans)';
+        txt.rows = 1;
+        txt.addEventListener('input', () => {
+          txt.style.height = 'auto';
+          txt.style.height = txt.scrollHeight + 'px';
+        });
+        tdText.appendChild(txt);
+        
+        tr.appendChild(tdRev);
+        tr.appendChild(tdSel);
+        tr.appendChild(tdIdx);
+        tr.appendChild(tdSpk);
+        tr.appendChild(tdStart);
+        tr.appendChild(tdEnd);
+        tr.appendChild(tdText);
+        
+        reviewSegmentsBody.appendChild(tr);
+      });
+    }
+
+    function updateCountsFromUI() {
+      const rows = reviewSegmentsBody.querySelectorAll('tr');
+      let reviewedCount = 0;
+      rows.forEach(tr => {
+        const chk = tr.querySelector('.segment-review-chk');
+        if (chk && chk.checked) reviewedCount++;
+      });
+      reviewCheckedSegs.textContent = reviewedCount;
+      const total = currentTranscript ? currentTranscript.segments.length : 0;
+      const completeness = total > 0 ? (reviewedCount / total) : 0;
+      const pct = (completeness * 100).toFixed(0) + '%';
+      reviewCompletenessBadge.textContent = pct + ' Completo';
+      reviewCompletenessBadge.className = 'badge ' + (completeness >= 1.0 ? 'success' : 'working');
+    }
+
+    selectAllUnreviewedBtn.addEventListener('click', () => {
+      const rows = reviewSegmentsBody.querySelectorAll('tr');
+      rows.forEach(tr => {
+        const chkRev = tr.querySelector('.segment-review-chk');
+        const chkSel = tr.querySelector('.segment-run-chk');
+        if (chkRev && !chkRev.checked && chkSel) {
+          chkSel.checked = true;
+        }
+      });
+    });
+
+    clearSelectionBtn.addEventListener('click', () => {
+      const chks = reviewSegmentsBody.querySelectorAll('.segment-run-chk');
+      chks.forEach(chk => chk.checked = false);
+    });
+
+    saveReviewBtn.addEventListener('click', async () => {
+      if (!currentTranscript) return;
+      const tid = currentTranscript.transcript_id;
+      
+      const rows = reviewSegmentsBody.querySelectorAll('tr');
+      const reviewed_indices = [];
+      const edited_texts = {};
+      
+      rows.forEach(tr => {
+        const idx = parseInt(tr.dataset.index, 10);
+        const chkRev = tr.querySelector('.segment-review-chk');
+        const txtarea = tr.querySelector('textarea');
+        
+        if (chkRev && chkRev.checked) {
+          reviewed_indices.push(idx);
+        }
+        if (txtarea) {
+          edited_texts[idx] = txtarea.value;
+        }
+      });
+      
+      try {
+        saveReviewBtn.disabled = true;
+        const res = await fetch(`/api/transcripts/${encodeURIComponent(tid)}/review/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ reviewed_indices, edited_texts })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'Erro ao salvar.');
+        alert('Revisão salva com sucesso!');
+        await loadReviewLists();
+        await triggerTranscriptLoad();
+      } catch (e) {
+        alert('Erro ao salvar revisão: ' + e.message);
+      } finally {
+        saveReviewBtn.disabled = false;
+      }
+    });
+
+    indexReviewedBtn.addEventListener('click', async () => {
+      if (!currentTranscript) return;
+      const tid = currentTranscript.transcript_id;
+      try {
+        indexReviewedBtn.disabled = true;
+        const res = await fetch(`/api/transcripts/${encodeURIComponent(tid)}/review/index`, {
+          method: 'POST'
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'Erro ao indexar.');
+        alert(`Indexado com sucesso! ${data.segments_indexed} segmentos no Qdrant.`);
+        await loadReviewLists();
+        await triggerTranscriptLoad();
+      } catch (e) {
+        alert('Erro ao indexar segmentos: ' + e.message);
+      } finally {
+        indexReviewedBtn.disabled = false;
+      }
+    });
+
+    runRetranscribeBtn.addEventListener('click', async () => {
+      if (!currentTranscript) return;
+      const tid = currentTranscript.transcript_id;
+      
+      const rows = reviewSegmentsBody.querySelectorAll('tr');
+      const segment_indices = [];
+      rows.forEach(tr => {
+        const idx = parseInt(tr.dataset.index, 10);
+        const chkSel = tr.querySelector('.segment-run-chk');
+        if (chkSel && chkSel.checked) {
+          segment_indices.push(idx);
+        }
+      });
+      
+      if (segment_indices.length === 0) {
+        alert('Selecione pelo menos um segmento não revisado para transcrever.');
+        return;
+      }
+      
+      const whisper_model = document.getElementById('criticalModel').value;
+      const language = document.getElementById('criticalLanguage').value;
+      
+      try {
+        runRetranscribeBtn.disabled = true;
+        runRetranscribeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Transcrevendo...';
+        
+        const res = await fetch(`/api/transcripts/${encodeURIComponent(tid)}/retranscribe_segments`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            segment_indices,
+            whisper_model,
+            language
+          })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'Erro na retranscrição.');
+        
+        alert(`Transcrição concluída para ${data.updated_indices.length} segmentos.`);
+        await triggerTranscriptLoad();
+      } catch (e) {
+        alert('Erro na retranscrição de segmentos: ' + e.message);
+      } finally {
+        runRetranscribeBtn.disabled = false;
+        runRetranscribeBtn.innerHTML = '<i class="fas fa-play"></i> Rodar Transcrição';
+      }
+    });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadReviewLists);
+    } else {
+      loadReviewLists();
     }
   })();
 </script>

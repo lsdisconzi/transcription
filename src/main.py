@@ -52,6 +52,8 @@ init_transcript_router(
     auditor=runtime.auditor,
     patcher=runtime.patcher,
     validate_refine_use_case=runtime.validate_refine_use_case,
+    asr_adapter=runtime.asr_adapter,
+    audio_file_adapter=runtime.audio_file_adapter,
 )
 init_projects_router(runtime.project_store_adapter, runtime.ref_store_adapter)
 init_references_router(

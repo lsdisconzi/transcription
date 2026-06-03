@@ -18,6 +18,7 @@ class Segment:
     start: float
     end: float
     text: str = ""
+    reviewed: bool = False
 
     @property
     def duration(self) -> float:

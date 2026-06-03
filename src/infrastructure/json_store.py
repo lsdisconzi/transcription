@@ -27,6 +27,7 @@ class JSONTranscriptStore:
                 "end": seg.end,
                 "duration": seg.duration,
                 "text": seg.text,
+                "reviewed": getattr(seg, "reviewed", False),
             }
             for seg in transcript.segments
         ]
@@ -77,6 +78,7 @@ class JSONTranscriptStore:
                 start=item["start"],
                 end=item["end"],
                 text=item.get("text", ""),
+                reviewed=item.get("reviewed", False),
             )
             for item in items
         ]

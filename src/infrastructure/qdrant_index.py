@@ -56,14 +56,14 @@ class QdrantTranscriptIndex:
             return key
         return max(parts, key=len)
 
-    def _ensure_collection(self) -> None:
+    def _ensure_collection(self, collection_name: str = COLLECTION) -> None:
         collections = [c.name for c in self._client.get_collections().collections]
-        if COLLECTION not in collections:
+        if collection_name not in collections:
             self._client.create_collection(
-                collection_name=COLLECTION,
+                collection_name=collection_name,
                 vectors_config=VectorParams(size=VECTOR_DIM, distance=Distance.COSINE),
             )
-            logger.info("[qdrant] created collection %s", COLLECTION)
+            logger.info("[qdrant] created collection %s", collection_name)
 
     def _get_encoder(self):
         """Lazy-load the sentence transformer on first use."""
@@ -79,11 +79,12 @@ class QdrantTranscriptIndex:
         raw = f"{transcript_id}:{segment_index}"
         return hashlib.md5(raw.encode()).hexdigest()  # noqa: S324
 
-    async def index(self, transcript: Transcript) -> int:
+    async def index(self, transcript: Transcript, collection_name: str = COLLECTION) -> int:
         """Index all segments of a transcript. Returns number of points upserted."""
         if not transcript.segments:
             return 0
 
+        self._ensure_collection(collection_name)
         encoder = await asyncio.to_thread(self._get_encoder)
 
         texts = [seg.text for seg in transcript.segments]
@@ -111,25 +112,27 @@ class QdrantTranscriptIndex:
 
         await asyncio.to_thread(
             self._client.upsert,
-            collection_name=COLLECTION,
+            collection_name=collection_name,
             points=points,
         )
 
         logger.info(
-            "[qdrant] indexed %d segments for transcript=%s",
+            "[qdrant] indexed %d segments for transcript=%s in collection=%s",
             len(points),
             transcript.transcript_id,
+            collection_name,
         )
         return len(points)
 
-    async def search(self, query: str, *, limit: int = 5) -> list[dict]:
+    async def search(self, query: str, *, limit: int = 5, collection_name: str = COLLECTION) -> list[dict]:
         """Semantic search across all transcript segments."""
         encoder = await asyncio.to_thread(self._get_encoder)
         query_vector = await asyncio.to_thread(encoder.encode, query)
 
+        self._ensure_collection(collection_name)
         results = await asyncio.to_thread(
             self._client.query_points,
-            collection_name=COLLECTION,
+            collection_name=collection_name,
             query=query_vector.tolist(),
             limit=limit,
         )
@@ -148,13 +151,14 @@ class QdrantTranscriptIndex:
             for hit in results.points
         ]
 
-    async def delete(self, transcript_id: str) -> None:
+    async def delete(self, transcript_id: str, collection_name: str = COLLECTION) -> None:
         """Remove all points for a given transcript."""
         from qdrant_client.models import FieldCondition, Filter, MatchValue
 
+        self._ensure_collection(collection_name)
         await asyncio.to_thread(
             self._client.delete,
-            collection_name=COLLECTION,
+            collection_name=collection_name,
             points_selector=Filter(
                 must=[
                     FieldCondition(
@@ -164,4 +168,4 @@ class QdrantTranscriptIndex:
                 ]
             ),
         )
-        logger.info("[qdrant] deleted vectors for transcript=%s", transcript_id)
+        logger.info("[qdrant] deleted vectors for transcript=%s from collection=%s", transcript_id, collection_name)

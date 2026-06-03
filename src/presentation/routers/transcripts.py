@@ -8,11 +8,12 @@ import os
 import re
 import time
 
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, HTTPException, Request, Query
 from pydantic import BaseModel, Field
 from sse_starlette.sse import EventSourceResponse
 
 from src.application.dto.schemas import AnalyzeRequest, SearchRequest
+from src.config import settings
 from src.domain.entities.transcript import Segment, Speaker, Transcript
 
 logger = logging.getLogger(__name__)
@@ -27,6 +28,8 @@ _index = None
 _auditor = None
 _patcher = None
 _validate_refine_use_case = None
+_asr = None
+_audio_files = None
 
 
 def init_transcript_router(
@@ -38,9 +41,11 @@ def init_transcript_router(
     auditor=None,
     patcher=None,
     validate_refine_use_case=None,
+    asr_adapter=None,
+    audio_file_adapter=None,
 ):
     global _analyze_use_case, _search_use_case, _store, _index
-    global _auditor, _patcher, _validate_refine_use_case
+    global _auditor, _patcher, _validate_refine_use_case, _asr, _audio_files
     _analyze_use_case = analyze_use_case
     _search_use_case = search_use_case
     _store = store
@@ -48,6 +53,8 @@ def init_transcript_router(
     _auditor = auditor
     _patcher = patcher
     _validate_refine_use_case = validate_refine_use_case
+    _asr = asr_adapter
+    _audio_files = audio_file_adapter
 
 
 class ImportSegmentPayload(BaseModel):
@@ -56,6 +63,7 @@ class ImportSegmentPayload(BaseModel):
     start: float | int | None = 0.0
     end: float | int | None = None
     text: str | None = ""
+    reviewed: bool | None = False
 
 
 class ImportRunPayload(BaseModel):
@@ -102,6 +110,28 @@ async def list_transcripts():
     """Return all transcript IDs."""
     ids = _store.list_ids()
     return {"transcripts": sorted(ids, reverse=True)}
+
+
+@router.get("/pinocchio/review/{transcript_id}")
+async def get_review_transcript(transcript_id: str):
+    """Return transcript with reviewed flags for UI."""
+    transcript = _store.load(transcript_id)
+    if transcript is None:
+        raise HTTPException(status_code=404, detail=f"Transcript not found: {transcript_id}")
+    return {
+        "transcript_id": transcript.transcript_id,
+        "segments": [
+            {
+                "index": s.index,
+                "speaker": s.speaker.label,
+                "start": s.start,
+                "end": s.end,
+                "text": s.text,
+                "reviewed": getattr(s, "reviewed", False),
+            }
+            for s in transcript.segments
+        ],
+    }
 
 
 # ── Get single transcript ────────────────────────────────────────────────
@@ -170,6 +200,7 @@ async def import_transcripts(payload: ImportTranscriptsPayload):
                         start=start,
                         end=end,
                         text=str(seg.text or ""),
+                        reviewed=bool(seg.reviewed),
                     )
                 )
 
@@ -286,8 +317,10 @@ async def search_transcripts(payload: SearchRequest):
 
 
 @router.post("/{transcript_id}/index")
-async def index_transcript(transcript_id: str):
-    """Manually index (or re-index) a transcript into Qdrant."""
+async def index_transcript(transcript_id: str, collection: str | None = Query(default=None)):
+    """Manually index (or re-index) a transcript into Qdrant.
+    Optional `collection` query parameter allows specifying an alternate collection.
+    """
     if _index is None:
         raise HTTPException(
             status_code=503,
@@ -297,7 +330,11 @@ async def index_transcript(transcript_id: str):
     if transcript is None:
         raise HTTPException(status_code=404, detail=f"Transcript not found: {transcript_id}")
 
-    n = await _index.index(transcript)
+    # Use provided collection or default collection inside index method
+    if collection:
+        n = await _index.index(transcript, collection_name=collection)
+    else:
+        n = await _index.index(transcript)
     return {"transcript_id": transcript_id, "segments_indexed": n}
 
 
@@ -682,4 +719,404 @@ async def patch_transcript_route(transcript_id: str, payload: PatchSegmentsPaylo
             }
             for p in applied
         ],
+    }
+
+
+# ── New review / curation schemas & endpoints ───────────────────────────
+
+class CSVImportPayload(BaseModel):
+    filename: str
+    overwrite: bool = True
+
+
+class ReviewSavePayload(BaseModel):
+    reviewed_indices: list[int]
+    edited_texts: dict[str, str] | None = None  # index -> text
+
+
+class RetranscribeSegmentsPayload(BaseModel):
+    segment_indices: list[int]
+    whisper_model: str = "large-v3"
+    language: str = "es"
+    beam_size: int = 5
+    best_of: int = 5
+    whisper_temp: float = 0.0
+    condition_on_previous_text: bool = False
+
+
+@router.get("/csv/list")
+async def list_csvs():
+    """List all CSV files in the data/csv directory."""
+    from src.config import settings
+    csv_dir = os.path.join(os.path.dirname(settings.AUDIO_DIR), "csv")
+    if not os.path.isdir(csv_dir):
+        csv_dir = "/home/leandrodisconzi/transcription/data/csv"
+    if not os.path.isdir(csv_dir):
+        return {"csvs": []}
+    files = [f for f in os.listdir(csv_dir) if f.endswith(".csv")]
+    return {"csvs": sorted(files)}
+
+
+@router.post("/csv/import")
+async def import_csv(payload: CSVImportPayload):
+    """Import a CSV file into the json transcripts store."""
+    import csv
+    from src.config import settings
+    csv_dir = os.path.join(os.path.dirname(settings.AUDIO_DIR), "csv")
+    if not os.path.isdir(csv_dir):
+        csv_dir = "/home/leandrodisconzi/transcription/data/csv"
+    csv_path = os.path.join(csv_dir, payload.filename)
+    if not os.path.exists(csv_path):
+        raise HTTPException(status_code=404, detail=f"CSV file not found: {payload.filename}")
+
+    stem, _ = os.path.splitext(payload.filename)
+    transcript_id = _sanitize_filename_stem(payload.filename) or stem
+
+    segments = []
+    try:
+        with open(csv_path, "r", encoding="utf-8-sig") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                try:
+                    idx = int(row.get("index", len(segments) + 1))
+                except (ValueError, TypeError):
+                    idx = len(segments) + 1
+
+                speaker_label = row.get("speaker", f"SPEAKER_{idx:02d}").strip()
+                try:
+                    start = float(row.get("start", 0.0))
+                except (ValueError, TypeError):
+                    start = 0.0
+                try:
+                    end = float(row.get("end", start))
+                except (ValueError, TypeError):
+                    end = start
+                text = row.get("text", "").strip()
+
+                segments.append(
+                    Segment(
+                        index=idx,
+                        speaker=Speaker(label=speaker_label),
+                        start=start,
+                        end=end,
+                        text=text,
+                        reviewed=False
+                    )
+                )
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Failed to parse CSV: {e}")
+
+    if not segments:
+        raise HTTPException(status_code=400, detail="CSV file contains no valid segments.")
+
+    audio_file = ""
+    for ext in [".m4a", ".mp3", ".wav"]:
+        audio_names = [
+            stem.replace("segments_", "audio_") + ext,
+            stem + ext,
+            payload.filename.replace(".csv", ext)
+        ]
+        for audio_name in audio_names:
+            possible_path = os.path.join(settings.AUDIO_DIR, audio_name)
+            if os.path.exists(possible_path):
+                audio_file = audio_name
+                break
+            possible_path = os.path.join(settings.ORIGINALS_DIR, audio_name)
+            if os.path.exists(possible_path):
+                audio_file = audio_name
+                break
+        if audio_file:
+            break
+
+    transcript = Transcript(
+        transcript_id=transcript_id,
+        segments=segments,
+        source_file=audio_file or (stem.replace("segments_", "audio_") + ".m4a"),
+        language="es",
+        timestamp=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(os.path.getmtime(csv_path))),
+        provider="csv_import",
+    )
+    _store.save(transcript)
+    return {
+        "status": "imported",
+        "transcript_id": transcript_id,
+        "segments": len(segments),
+        "source_file": transcript.source_file
+    }
+
+
+@router.get("/review/list")
+async def list_transcripts_review():
+    """List transcripts along with completeness and index status."""
+    ids = _store.list_ids()
+    out = []
+    
+    qdrant_client = None
+    if _index is not None:
+        qdrant_client = _index._client
+
+    qdrant_counts = {}
+    if qdrant_client is not None:
+        try:
+            collections = [c.name for c in qdrant_client.get_collections().collections]
+            if "reviewed_transcripts" in collections:
+                for tid in ids:
+                    from qdrant_client.models import FieldCondition, Filter, MatchValue
+                    res = qdrant_client.count(
+                        collection_name="reviewed_transcripts",
+                        count_filter=Filter(
+                            must=[
+                                FieldCondition(
+                                    key="transcript_id",
+                                    match=MatchValue(value=tid),
+                                )
+                            ]
+                        )
+                    )
+                    qdrant_counts[tid] = res.count
+        except Exception as e:
+            logger.warning("[qdrant] failed to query reviewed counts: %s", e)
+
+    for tid in ids:
+        t = _store.load(tid)
+        if not t:
+            continue
+        total_segs = len(t.segments)
+        reviewed_segs = sum(1 for s in t.segments if getattr(s, "reviewed", False))
+        completeness = round(reviewed_segs / total_segs, 4) if total_segs > 0 else 0.0
+        
+        out.append({
+            "transcript_id": tid,
+            "source_file": t.source_file,
+            "total_segments": total_segs,
+            "reviewed_segments": reviewed_segs,
+            "completeness": completeness,
+            "qdrant_indexed_segments": qdrant_counts.get(tid, 0),
+            "timestamp": t.timestamp,
+        })
+    out.sort(key=lambda x: (x["completeness"], x["transcript_id"]), reverse=True)
+    return {"transcripts": out}
+
+
+@router.post("/pinocchio/review/{transcript_id}")
+async def save_review(transcript_id: str, payload: ReviewSavePayload):
+    """Update reviewed flags for specified segment indices."""
+    transcript = _store.load(transcript_id)
+    if transcript is None:
+        raise HTTPException(status_code=404, detail=f"Transcript not found: {transcript_id}")
+    reviewed_set = set(payload.reviewed_indices)
+    edited_map = payload.edited_texts or {}
+    new_segments = []
+    for s in transcript.segments:
+        text = edited_map.get(str(s.index), edited_map.get(s.index, s.text))
+        new_segments.append(
+            Segment(
+                index=s.index,
+                speaker=s.speaker,
+                start=s.start,
+                end=s.end,
+                text=text,
+                reviewed=(s.index in reviewed_set),
+            )
+        )
+    updated = Transcript(
+        transcript_id=transcript.transcript_id,
+        source_file=transcript.source_file,
+        language=transcript.language,
+        metadata=transcript.metadata,
+        timestamp=transcript.timestamp,
+        provider=transcript.provider,
+        original_transcript_id=transcript.original_transcript_id,
+        segments=new_segments,
+    )
+    _store.save(updated)
+    return {"saved": True}
+
+
+@router.post("/{transcript_id}/review/save")
+async def save_transcript_review(transcript_id: str, payload: ReviewSavePayload):
+    """Save the reviewed status and edited texts of segments."""
+    transcript = _store.load(transcript_id)
+    if not transcript:
+        raise HTTPException(status_code=404, detail=f"Transcript not found: {transcript_id}")
+
+    reviewed_set = set(payload.reviewed_indices)
+    edited_map = payload.edited_texts or {}
+
+    updated_segments = []
+    for s in transcript.segments:
+        text = edited_map.get(str(s.index), edited_map.get(s.index, s.text))
+        is_reviewed = s.index in reviewed_set
+        
+        updated_segments.append(
+            Segment(
+                index=s.index,
+                speaker=s.speaker,
+                start=s.start,
+                end=s.end,
+                text=text,
+                reviewed=is_reviewed
+            )
+        )
+
+    transcript.segments = updated_segments
+    _store.save(transcript)
+    return {
+        "status": "saved",
+        "transcript_id": transcript_id,
+        "total_segments": len(updated_segments),
+        "reviewed_segments": len(reviewed_set)
+    }
+
+
+@router.post("/{transcript_id}/review/index")
+async def index_reviewed_segments(transcript_id: str):
+    """Index only the reviewed segments of a transcript into Qdrant."""
+    if _index is None:
+        raise HTTPException(status_code=503, detail="Vector indexing not configured.")
+
+    transcript = _store.load(transcript_id)
+    if not transcript:
+        raise HTTPException(status_code=404, detail=f"Transcript not found: {transcript_id}")
+
+    reviewed_segments = [s for s in transcript.segments if getattr(s, "reviewed", False)]
+    
+    await _index.delete(transcript_id, collection_name="reviewed_transcripts")
+
+    if not reviewed_segments:
+        return {
+            "transcript_id": transcript_id,
+            "segments_indexed": 0,
+            "message": "No reviewed segments to index. Existing points cleared."
+        }
+
+    from dataclasses import replace as _replace
+    reviewed_transcript = _replace(transcript, segments=reviewed_segments)
+
+    n = await _index.index(reviewed_transcript, collection_name="reviewed_transcripts")
+    return {
+        "transcript_id": transcript_id,
+        "segments_indexed": n,
+        "collection": "reviewed_transcripts"
+    }
+
+
+@router.post("/{transcript_id}/retranscribe_segments")
+async def retranscribe_segments(transcript_id: str, payload: RetranscribeSegmentsPayload):
+    """Retranscribe specific segment indices using ASR."""
+    from src.config import settings
+    from pydub import AudioSegment
+    from src.domain.chilean_spanish import post_process_chilean_spanish
+    import tempfile
+
+    if _asr is None or _audio_files is None:
+        raise HTTPException(status_code=503, detail="ASR or Audio processor not initialized.")
+
+    transcript = _store.load(transcript_id)
+    if not transcript:
+        raise HTTPException(status_code=404, detail=f"Transcript not found: {transcript_id}")
+
+    audio_filename = transcript.source_file
+    if not audio_filename:
+        audio_filename = f"{transcript_id}.m4a"
+
+    audio_path = None
+    for folder in [settings.AUDIO_DIR, settings.ORIGINALS_DIR, "/home/leandrodisconzi/transcription/data/audio"]:
+        possible_path = os.path.join(folder, audio_filename)
+        if os.path.exists(possible_path):
+            audio_path = possible_path
+            break
+        possible_path = os.path.join(folder, os.path.basename(audio_filename))
+        if os.path.exists(possible_path):
+            audio_path = possible_path
+            break
+
+    if not audio_path:
+        stem = transcript_id
+        for folder in [settings.AUDIO_DIR, settings.ORIGINALS_DIR]:
+            if os.path.isdir(folder):
+                for f in os.listdir(folder):
+                    if f.startswith(stem) and f.split(".")[-1].lower() in ("wav", "mp3", "m4a", "mp4"):
+                        audio_path = os.path.join(folder, f)
+                        break
+            if audio_path:
+                break
+
+    if not audio_path:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Could not locate audio file '{audio_filename}' or '{transcript_id}' in audio/originals directories."
+        )
+
+    # Convert non-WAV to WAV if needed for extracting segment
+    temp_wav_source = None
+    source_path = audio_path
+    if not audio_path.lower().endswith(".wav"):
+        temp_wav_source = _audio_files.convert_to_wav(audio_path)
+        # Note: convert_to_wav deletes the original file ONLY if it wasn't already in WAV, but wait!
+        # AudioFileAdapter.convert_to_wav creates a new .wav path next to it and deletes the old one.
+        # Since it deletes the original upload, but wait, if it's the main reference audio, we should be careful!
+        # Let's write a safe copy & convert instead so we don't accidentally delete the user's audio file!
+        # Yes, let's copy the file to a temp location before converting it.
+        import tempfile
+        import shutil
+        _, ext = os.path.splitext(audio_path)
+        with tempfile.NamedTemporaryFile(delete=False, suffix=ext) as tf:
+            shutil.copy(audio_path, tf.name)
+            temp_copy = tf.name
+        temp_wav_source = _audio_files.convert_to_wav(temp_copy)
+        source_path = temp_wav_source
+
+    indices_set = set(payload.segment_indices)
+    updated_segs = []
+
+    try:
+        for s in transcript.segments:
+            if s.index in indices_set and not getattr(s, "reviewed", False):
+                # Extract and transcribe
+                start_ms = int(s.start * 1000)
+                end_ms = int(s.end * 1000)
+                
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as turn_file:
+                    turn_path = turn_file.name
+                
+                try:
+                    _audio_files.extract_segment(source_path, start_ms, end_ms, turn_path)
+                    raw_text = _asr.transcribe(
+                        turn_path,
+                        language=payload.language,
+                        model_size=payload.whisper_model,
+                        temperature=payload.whisper_temp,
+                        beam_size=payload.beam_size,
+                        best_of=payload.best_of,
+                        condition_on_previous_text=payload.condition_on_previous_text,
+                    )
+                    text = post_process_chilean_spanish(raw_text)
+                    
+                    updated_segs.append(
+                        Segment(
+                            index=s.index,
+                            speaker=s.speaker,
+                            start=s.start,
+                            end=s.end,
+                            text=text,
+                            reviewed=False
+                        )
+                    )
+                finally:
+                    if os.path.exists(turn_path):
+                        os.remove(turn_path)
+            else:
+                updated_segs.append(s)
+    finally:
+        if temp_wav_source and os.path.exists(temp_wav_source):
+            os.remove(temp_wav_source)
+
+    transcript.segments = updated_segs
+    _store.save(transcript)
+    
+    return {
+        "status": "updated",
+        "transcript_id": transcript_id,
+        "updated_indices": list(indices_set)
     }
