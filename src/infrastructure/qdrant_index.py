@@ -4,10 +4,11 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import logging
+from datetime import datetime, timedelta
 from urllib.parse import urlparse
 
 from qdrant_client import QdrantClient
-from qdrant_client.models import Distance, PointStruct, VectorParams
+from qdrant_client.models import Distance, PayloadSchemaType, PointStruct, VectorParams
 
 from src.domain.entities.transcript import Transcript
 
@@ -64,9 +65,9 @@ class QdrantTranscriptIndex:
                 vectors_config=VectorParams(size=VECTOR_DIM, distance=Distance.COSINE),
             )
             logger.info("[qdrant] created collection %s", collection_name)
-        # Ensure payload indexes for filterable fields
-        from qdrant_client.models import PayloadSchemaType
-        for field_name in ("transcript_id", "speaker"):
+        # Ensure payload indexes for commonly filtered fields
+        for field_name in ("transcript_id", "speaker", "case_id", "narrative_id",
+                           "tags", "forensic_cluster_ids", "key_finding_ids"):
             try:
                 self._client.create_payload_index(
                     collection_name=collection_name,
@@ -102,8 +103,9 @@ class QdrantTranscriptIndex:
         embeddings = await asyncio.to_thread(encoder.encode, texts)
 
         # Compute local_time per segment if recording_datetime is available
-        from datetime import datetime, timedelta
-        recording_dt = transcript.recording_datetime or (transcript.metadata or {}).get("recording_datetime", "")
+        recording_dt = transcript.recording_datetime or (
+            transcript.metadata or {}
+        ).get("recording_datetime", "")
         base_dt = None
         if recording_dt:
             try:
@@ -127,6 +129,53 @@ class QdrantTranscriptIndex:
             if base_dt:
                 local_dt = base_dt + timedelta(seconds=seg.start)
                 payload["local_time"] = local_dt.isoformat()
+
+            # ------------------------------------------------------------------
+            # NEW: parent metadata enrichment
+            # ------------------------------------------------------------------
+            payload["case_id"] = getattr(transcript, "case_id", None)
+            payload["narrative_id"] = getattr(transcript, "narrative_id", None)
+            payload["title"] = getattr(transcript, "title", None)
+            payload["location"] = getattr(transcript, "location", None)
+            payload["recording_datetime"] = (
+                str(transcript.recording_datetime)
+                if transcript.recording_datetime
+                else None
+            )
+            payload["chronological_order"] = getattr(transcript, "chronological_order", None)
+            payload["tags"] = getattr(transcript, "tags", [])
+            payload["violations_cited"] = getattr(transcript, "violations_cited", [])
+            payload["participants"] = getattr(transcript, "participants", [])
+
+            # Forensic clusters: store IDs of clusters that contain this segment
+            forensic_clusters = getattr(transcript, "forensic_clusters", None) or {}
+            cluster_ids = []
+            for cid, cluster in forensic_clusters.items():
+                segs = cluster.get("segments", [])
+                if isinstance(segs, list):
+                    for r in segs:
+                        if isinstance(r, int) and seg.index == r:
+                            cluster_ids.append(cid)
+                            break
+                        if isinstance(r, str) and "-" in r:
+                            try:
+                                low, high = map(int, r.split("-"))
+                                if low <= seg.index <= high:
+                                    cluster_ids.append(cid)
+                                    break
+                            except ValueError:
+                                pass
+            payload["forensic_cluster_ids"] = cluster_ids
+
+            # Key evidentiary findings: store finding IDs that cite this segment
+            findings = getattr(transcript, "key_evidentiary_findings", None) or []
+            finding_ids = []
+            for f in findings:
+                segs = f.get("segments", [])
+                if seg.index in segs:   # assumes segments is a list of ints
+                    finding_ids.append(f.get("id"))
+            payload["key_finding_ids"] = finding_ids
+
             points.append(
                 PointStruct(
                     id=point_id,
@@ -172,6 +221,11 @@ class QdrantTranscriptIndex:
                 "text": hit.payload["text"],
                 "source_file": hit.payload.get("source_file", ""),
                 "score": hit.score,
+                # Optionally return the new fields if needed
+                "case_id": hit.payload.get("case_id"),
+                "location": hit.payload.get("location"),
+                "tags": hit.payload.get("tags"),
+                "forensic_cluster_ids": hit.payload.get("forensic_cluster_ids"),
             }
             for hit in results.points
         ]
@@ -193,4 +247,8 @@ class QdrantTranscriptIndex:
                 ]
             ),
         )
-        logger.info("[qdrant] deleted vectors for transcript=%s from collection=%s", transcript_id, collection_name)
+        logger.info(
+            "[qdrant] deleted vectors for transcript=%s from collection=%s",
+            transcript_id,
+            collection_name,
+        )

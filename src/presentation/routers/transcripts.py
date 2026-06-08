@@ -62,7 +62,8 @@ def init_transcript_router(
     _validate_refine_use_case = validate_refine_use_case
     _asr = asr_adapter
     _audio_files = audio_file_adapter
-    _event_store = event_store  # 👈 ADD THIS
+    if event_store is not None:
+        _event_store = event_store
 
 # ------------------------------------------------------------------
 # Helper
@@ -911,6 +912,7 @@ async def save_review(transcript_id: str, payload: SegmentUpdate):
             + len(payload.edited_speakers)
             + len(payload.edited_starts)
             + len(payload.edited_ends)}
+            
 @router.post("/{transcript_id}/review/index")
 async def index_reviewed_segments(transcript_id: str, payload: ReviewIndexPayload = ReviewIndexPayload()):
     if _index is None:
