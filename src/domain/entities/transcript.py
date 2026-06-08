@@ -7,18 +7,24 @@ from dataclasses import dataclass, field
 @dataclass(frozen=True)
 class Speaker:
     """Identified speaker label from diarization."""
-    label: str  # e.g. "SPEAKER_00"
+    label: str
 
 
 @dataclass(frozen=True)
 class Segment:
     """A single transcribed audio segment."""
+
     index: int
     speaker: Speaker
     start: float
     end: float
+
     text: str = ""
     reviewed: bool = False
+
+    # NEW FIELDS
+    correction_note: str = ""
+    backchannel_events: str = ""
 
     @property
     def duration(self) -> float:
@@ -28,6 +34,7 @@ class Segment:
 @dataclass(frozen=True)
 class DiarizationTurn:
     """A raw diarization turn (before transcription)."""
+
     speaker: str
     start: float
     end: float
@@ -40,8 +47,10 @@ class DiarizationTurn:
 @dataclass
 class Transcript:
     """Complete transcription result."""
+
     transcript_id: str
     segments: list[Segment] = field(default_factory=list)
+
     source_file: str = ""
     language: str = "es"
     metadata: dict = field(default_factory=dict)
@@ -49,10 +58,34 @@ class Transcript:
     provider: str = ""
     original_transcript_id: str = ""
 
+    # metadata fields used by frontend
+    title: str = ""
+    subtitle: str = ""
+    recording_datetime: str = ""
+    location: str = ""
+    audio_id: str = ""
+    case_id: str = ""
+    narrative_id: str = ""
+
+    chronological_order: int | None = None
+
+    prior_stage: str = ""
+    next_stage: str = ""
+    classification: str = ""
+
+    participants: list = field(default_factory=list)
+    violations_cited: list = field(default_factory=list)
+    tags: list = field(default_factory=list)
+
+    forensic_clusters: dict = field(default_factory=dict)
+    key_evidentiary_findings: list = field(default_factory=list)
+    corrections_applied: list = field(default_factory=list)
+
 
 @dataclass(frozen=True)
 class AudioFile:
     """Value object representing an audio file on disk."""
+
     path: str
     format: str = "wav"
 

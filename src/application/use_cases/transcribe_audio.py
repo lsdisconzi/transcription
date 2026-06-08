@@ -153,14 +153,14 @@ class TranscribeAudioUseCase:
         t_global = time.time()
 
         # -- extract cli params --------------------------------------------------
-        language = params.get("language", "es-CL")
+        language = params.get("language", "es")
         model_size = params.get("model_size", "large-v3")
         min_speakers = params.get("min_speakers", 1)
         max_speakers = params.get("max_speakers", 2)
         vad_threshold = params.get("vad_threshold", 0.25)
         keep_cache = params.get("keep_cache", True)
         keep_audio_artifacts = params.get("keep_audio_artifacts", True)
-        diarization_timeout_s = float(params.get("diarization_timeout_s", 180.0))
+        diarization_timeout_s = float(params.get("diarization_timeout_s", 0))
         min_turn_duration_s = float(params.get("min_turn_duration_s", 0.0))
         merge_gap_s = float(params.get("merge_gap_s", 0.0))
         max_diarization_segments = int(params.get("max_diarization_segments", 1000))
@@ -273,8 +273,8 @@ class TranscribeAudioUseCase:
                     "language": language,
                     "diarization_fallback": diarization_fallback,
                     "diarization_fallback_reason": diarization_fallback_reason,
-                    "beam_size": params.get("beam_size", 5),
-                    "best_of": params.get("best_of", 5),
+                    "beam_size": params.get("beam_size", 9),
+                    "best_of": params.get("best_of", 8),
                     "temperature": params.get("whisper_temp", 0.0),
                     "vad_threshold": vad_threshold,
                     "diarization_timeout_s": diarization_timeout_s,

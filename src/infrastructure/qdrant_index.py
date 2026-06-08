@@ -64,6 +64,17 @@ class QdrantTranscriptIndex:
                 vectors_config=VectorParams(size=VECTOR_DIM, distance=Distance.COSINE),
             )
             logger.info("[qdrant] created collection %s", collection_name)
+        # Ensure payload indexes for filterable fields
+        from qdrant_client.models import PayloadSchemaType
+        for field_name in ("transcript_id", "speaker"):
+            try:
+                self._client.create_payload_index(
+                    collection_name=collection_name,
+                    field_name=field_name,
+                    field_schema=PayloadSchemaType.KEYWORD,
+                )
+            except Exception:
+                logger.debug("[qdrant] payload index %s.%s may already exist", collection_name, field_name)
 
     def _get_encoder(self):
         """Lazy-load the sentence transformer on first use."""
@@ -90,23 +101,37 @@ class QdrantTranscriptIndex:
         texts = [seg.text for seg in transcript.segments]
         embeddings = await asyncio.to_thread(encoder.encode, texts)
 
+        # Compute local_time per segment if recording_datetime is available
+        from datetime import datetime, timedelta
+        recording_dt = transcript.recording_datetime or (transcript.metadata or {}).get("recording_datetime", "")
+        base_dt = None
+        if recording_dt:
+            try:
+                base_dt = datetime.fromisoformat(recording_dt)
+            except (ValueError, TypeError):
+                pass
+
         points = []
         for seg, emb in zip(transcript.segments, embeddings, strict=False):
             point_id = self._make_point_id(transcript.transcript_id, seg.index)
+            payload = {
+                "transcript_id": transcript.transcript_id,
+                "segment_index": seg.index,
+                "speaker": seg.speaker.label,
+                "start": seg.start,
+                "end": seg.end,
+                "text": seg.text,
+                "source_file": transcript.source_file,
+                "language": transcript.language,
+            }
+            if base_dt:
+                local_dt = base_dt + timedelta(seconds=seg.start)
+                payload["local_time"] = local_dt.isoformat()
             points.append(
                 PointStruct(
                     id=point_id,
                     vector=emb.tolist(),
-                    payload={
-                        "transcript_id": transcript.transcript_id,
-                        "segment_index": seg.index,
-                        "speaker": seg.speaker.label,
-                        "start": seg.start,
-                        "end": seg.end,
-                        "text": seg.text,
-                        "source_file": transcript.source_file,
-                        "language": transcript.language,
-                    },
+                    payload=payload,
                 )
             )
 

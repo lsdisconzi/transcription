@@ -39,6 +39,23 @@ class JSONTranscriptStore:
             "provider": transcript.provider or "",
             "original_transcript_id": transcript.original_transcript_id or "",
             "metadata": transcript.metadata or {},
+            "title": transcript.title or "",
+            "subtitle": transcript.subtitle or "",
+            "recording_datetime": transcript.recording_datetime or "",
+            "location": transcript.location or "",
+            "audio_id": transcript.audio_id or "",
+            "case_id": transcript.case_id or "",
+            "narrative_id": transcript.narrative_id or "",
+            "chronological_order": transcript.chronological_order,
+            "prior_stage": transcript.prior_stage or "",
+            "next_stage": transcript.next_stage or "",
+            "classification": transcript.classification or "",
+            "participants": transcript.participants or [],
+            "violations_cited": transcript.violations_cited or [],
+            "tags": transcript.tags or [],
+            "forensic_clusters": transcript.forensic_clusters or {},
+            "key_evidentiary_findings": transcript.key_evidentiary_findings or [],
+            "corrections_applied": transcript.corrections_applied or [],
             "segments": segments,
         }
         with open(path, "w", encoding="utf-8") as f:
@@ -71,17 +88,30 @@ class JSONTranscriptStore:
             provider = raw.get("provider", "") or ""
             original_transcript_id = raw.get("original_transcript_id", "") or ""
 
-        segments = [
-            Segment(
-                index=item["index"],
-                speaker=Speaker(label=item["speaker"]),
-                start=item["start"],
-                end=item["end"],
+        segments = []
+        for i, item in enumerate(items):
+            # Determine the segment index. Prefer an explicit 'index' field, then fall back to the legacy 'id' field,
+            # and finally to the enumeration order. The legacy 'id' may be a string or a dotted identifier (e.g., "4.2");
+            # in such cases we coerce it to an int when possible, otherwise use the enumeration order.
+            raw_index = item.get("index")
+            if raw_index is None:
+                raw_index = item.get("id")
+            try:
+                # Some ids are strings like "0" or "12"; convert safely.
+                index = int(float(raw_index)) if raw_index is not None else i
+            except Exception:
+                # If conversion fails (e.g., "4.2"), default to enumeration order.
+                index = i
+            segment = Segment(
+                index=index,
+                speaker=Speaker(label=item.get("speaker", "")),
+                start=item.get("start", 0.0),
+                end=item.get("end", 0.0),
                 text=item.get("text", ""),
                 reviewed=item.get("reviewed", False),
             )
-            for item in items
-        ]
+            segments.append(segment)
+
         return Transcript(
             transcript_id=transcript_id,
             segments=segments,
@@ -91,6 +121,23 @@ class JSONTranscriptStore:
             timestamp=timestamp,
             provider=provider,
             original_transcript_id=original_transcript_id,
+            title=raw.get("title", ""),
+            subtitle=raw.get("subtitle", ""),
+            recording_datetime=raw.get("recording_datetime", ""),
+            location=raw.get("location", ""),
+            audio_id=raw.get("audio_id", ""),
+            case_id=raw.get("case_id", ""),
+            narrative_id=raw.get("narrative_id", ""),
+            chronological_order=raw.get("chronological_order"),
+            prior_stage=raw.get("prior_stage", ""),
+            next_stage=raw.get("next_stage", ""),
+            classification=raw.get("classification", ""),
+            participants=raw.get("participants", []),
+            violations_cited=raw.get("violations_cited", []),
+            tags=raw.get("tags", []),
+            forensic_clusters=raw.get("forensic_clusters", {}),
+            key_evidentiary_findings=raw.get("key_evidentiary_findings", []),
+            corrections_applied=raw.get("corrections_applied", []),
         )
 
     def list_ids(self) -> list[str]:
