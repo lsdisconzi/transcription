@@ -33,7 +33,7 @@ _patcher = None
 _validate_refine_use_case = None
 _asr = None
 _audio_files = None
-_event_store = None
+_event_store: list = []
 
 
 def init_transcript_router(
@@ -106,8 +106,9 @@ class MetadataUpdate(BaseModel):
 
 
 class SegmentUpdate(BaseModel):
-    """Segment‑level edits (reviewed status, text, speaker, start/end)."""
+    """Segment‑level edits (reviewed status, patches, text, speaker, start/end)."""
     reviewed_indices: List[int] = []
+    patches: List["PatchPayload"] = Field(default_factory=list)
     edited_texts: Dict[int, str] = {}
     edited_speakers: Dict[int, str] = {}
     edited_starts: Dict[int, float] = {}
@@ -855,31 +856,55 @@ async def save_review(transcript_id: str, payload: SegmentUpdate):
 
     now = time.time()
 
-    def emit(seg_idx: int, event_type: str, payload: dict):
-        _event_store.append(
-            ReviewEvent(
-                transcript_id=transcript_id,
-                segment_index=seg_idx,
-                type=event_type,
-                payload=payload,
-                timestamp=now,
-            )
-        )
+    def emit(seg_idx: int, event_type: str, event_payload: dict):
+        _event_store.append({
+            "transcript_id": transcript_id,
+            "segment_index": seg_idx,
+            "type": event_type,
+            "payload": event_payload,
+            "timestamp": now,
+        })
 
+    # Apply patches if patcher is available
+    if payload.patches and _patcher is not None:
+        parsed = []
+        for raw in payload.patches:
+            try:
+                op = PatchOp(raw.op)
+            except ValueError as exc:
+                raise HTTPException(status_code=400, detail=f"unknown patch op: {raw.op}") from exc
+            parsed.append(
+                Patch(
+                    op=op,
+                    segment_indices=tuple(int(i) for i in raw.segment_indices),
+                    new_text=raw.new_text,
+                    new_speaker=raw.new_speaker,
+                    new_start=raw.new_start,
+                    new_end=raw.new_end,
+                    insert_after_index=raw.insert_after_index,
+                    note=raw.note or "",
+                )
+            )
+        patched, applied = _patcher.apply(base, parsed)
+    else:
+        patched = base
+
+    # Mark reviewed segments
     for idx in payload.reviewed_indices:
-        emit(idx, "segment_reviewed", {})
+        if 0 <= idx < len(patched.segments):
+            patched.segments[idx] = _replace(patched.segments[idx], reviewed=True)
+            emit(idx, "segment_reviewed", {})
 
     for idx, text in payload.edited_texts.items():
         emit(idx, "segment_text_edited", {"text": text})
-
     for idx, spk in payload.edited_speakers.items():
         emit(idx, "segment_speaker_edited", {"speaker": spk})
-
     for idx, start in payload.edited_starts.items():
         emit(idx, "segment_time_edited", {"start": start})
-
     for idx, end in payload.edited_ends.items():
         emit(idx, "segment_time_edited", {"end": end})
+
+    _store.save(patched)
 
     return {"status": "ok", "events_written": len(payload.reviewed_indices)
             + len(payload.edited_texts)

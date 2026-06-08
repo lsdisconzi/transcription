@@ -94,6 +94,47 @@
       padding: 10px 12px;
     }
 
+    .meta-details {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .meta-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+    }
+
+    .meta-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .meta-summary::marker {
+      content: '';
+    }
+
+    .meta-summary::before {
+      content: '▶ ';
+      font-size: 0.7rem;
+      color: var(--gray);
+    }
+
+    .meta-details[open] .meta-summary::before {
+      content: '▼ ';
+    }
+
+    .meta-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+    }
+
     .field {
       display: flex;
       flex-direction: column;
@@ -130,6 +171,22 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 0.72rem;
+    }
+
+    .action-group-label {
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-right: 2px;
+    }
+
+    .action-divider {
+      width: 1px;
+      height: 28px;
+      background: var(--border);
+      flex-shrink: 0;
     }
 
     th,
@@ -376,68 +433,75 @@
                 <button id="importCsvBtn" class="btn small primary"><i class="fas fa-file-import"></i> Importar</button>
               </div>
             </div>
+          </div>
 
-            <!-- METADATA EDITOR -->
+            <!-- METADATA EDITOR (collapsible) -->
             <div id="metadataEditor" class="subcard metadata-editor" style="display:none; margin-bottom:14px;">
-              <div class="row" style="justify-content:space-between; margin-bottom:8px;">
-                <strong>📋 Metadados da Transcrição</strong>
-                <button id="saveMetadataBtn" class="btn small primary" style="padding:4px 12px;"><i
-                    class="fas fa-save"></i> Salvar Metadados</button>
-              </div>
-              <div class="split-2">
-                <div class="field"><label for="meta_title">Título</label><input type="text" id="meta_title" placeholder="title"
-                    name="meta_title"></div>
-                <div class="field"><label for="meta_subtitle">Subtítulo</label><input type="text" id="meta_subtitle" placeholder="subtitle"
-                    name="meta_subtitle"></div>
-                <div class="field"><label for="meta_recording_datetime">Data/Hora Gravação (ISO)</label><input type="text"
-                    id="meta_recording_datetime" placeholder="2024-07-05T13:08:00" name="meta_recording_datetime"></div>
-                <div class="field"><label for="meta_location">Localização</label><input type="text" id="meta_location"
-                    placeholder="location" name="meta_location"></div>
-                <div class="field"><label for="meta_audio_id">ID do Áudio</label><input type="text" id="meta_audio_id"
-                    placeholder="audio_id" name="meta_audio_id"></div>
-                <div class="field"><label for="meta_case_id">ID do Caso</label><input type="text" id="meta_case_id" placeholder="case_id"
-                    name="meta_case_id"></div>
-                <div class="field"><label for="meta_narrative_id">ID Narrativa</label><input type="text" id="meta_narrative_id"
-                    placeholder="narrative_id" name="meta_narrative_id"></div>
-                <div class="field"><label for="meta_chronological_order">Ordem Cronológica</label><input type="number" id="meta_chronological_order"
-                    placeholder="6" name="meta_chronological_order"></div>
-                <div class="field"><label for="meta_prior_stage">Estágio Anterior</label><input type="text" id="meta_prior_stage"
-                    placeholder="prior_stage" name="meta_prior_stage"></div>
-                <div class="field"><label for="meta_next_stage">Próximo Estágio</label><input type="text" id="meta_next_stage"
-                    placeholder="next_stage" name="meta_next_stage"></div>
-                <div class="field"><label for="meta_classification">Classificação</label><input type="text" id="meta_classification"
-                    placeholder="classification" name="meta_classification"></div>
-              </div>
-              <div class="field"><label for="meta_participants">Participantes (array de objetos)</label>
-                <textarea id="meta_participants" rows="3" class="json-field"
-                  placeholder='[{"canonical_name": "...", "role": "...", "speaker_label": "..."}]'
-                  name="meta_participants"></textarea>
-              </div>
-              <div class="field"><label for="meta_violations_cited">Violacões Citadas (array)</label>
-                <textarea id="meta_violations_cited" rows="2" class="json-field" placeholder='["BR-001", "CL-002"]'
-                  name="meta_violations_cited"></textarea>
-              </div>
-              <div class="field"><label for="meta_tags">Tags (array)</label>
-                <textarea id="meta_tags" rows="2" class="json-field" placeholder='["transcript", "narrative"]'
-                  name="meta_tags"></textarea>
-              </div>
-              <div class="field"><label for="meta_forensic_clusters">Clusters Forenses (objeto)</label>
-                <textarea id="meta_forensic_clusters" rows="4" class="json-field" placeholder='{"cluster_A": {...}}'
-                  name="meta_forensic_clusters"></textarea>
-              </div>
-              <div class="field"><label for="meta_key_evidentiary_findings">Evidências Chave (array)</label>
-                <textarea id="meta_key_evidentiary_findings" rows="4" class="json-field"
-                  placeholder='[{"id": "S2-1", "finding": "...", "strength": "High"}]'
-                  name="meta_key_evidentiary_findings"></textarea>
-              </div>
-              <div class="field"><label for="meta_corrections_applied">Correções Aplicadas (array)</label>
-                <textarea id="meta_corrections_applied" rows="3" class="json-field"
-                  placeholder='[{"segment": "2", "original": "...", "corrected": "..."}]'
-                  name="meta_corrections_applied"></textarea>
-              </div>
-              <div class="tip-card">Os campos em JSON devem ser válidos. Após salvar, use o botão "Indexar no Qdrant"
-                para
-                atualizar o índice.</div>
+              <details class="meta-details" open>
+                <summary class="meta-summary">
+                  <strong>📋 Metadados da Transcrição</strong>
+                  <button id="saveMetadataBtn" class="btn small primary" style="padding:4px 12px; flex-shrink:0;"
+                    onclick="event.stopPropagation()"><i class="fas fa-save"></i> Salvar Metadados</button>
+                </summary>
+                <div class="meta-body">
+                  <div class="split-2">
+                    <div class="field"><label for="meta_title">Título</label><input type="text" id="meta_title"
+                        placeholder="title" name="meta_title"></div>
+                    <div class="field"><label for="meta_subtitle">Subtítulo</label><input type="text" id="meta_subtitle"
+                        placeholder="subtitle" name="meta_subtitle"></div>
+                    <div class="field"><label for="meta_recording_datetime">Data/Hora Gravação (ISO)</label><input
+                        type="text" id="meta_recording_datetime" placeholder="2024-07-05T13:08:00"
+                        name="meta_recording_datetime"></div>
+                    <div class="field"><label for="meta_location">Localização</label><input type="text"
+                        id="meta_location" placeholder="location" name="meta_location"></div>
+                    <div class="field"><label for="meta_audio_id">ID do Áudio</label><input type="text"
+                        id="meta_audio_id" placeholder="audio_id" name="meta_audio_id"></div>
+                    <div class="field"><label for="meta_case_id">ID do Caso</label><input type="text" id="meta_case_id"
+                        placeholder="case_id" name="meta_case_id"></div>
+                    <div class="field"><label for="meta_narrative_id">ID Narrativa</label><input type="text"
+                        id="meta_narrative_id" placeholder="narrative_id" name="meta_narrative_id"></div>
+                    <div class="field"><label for="meta_chronological_order">Ordem Cronológica</label><input
+                        type="number" id="meta_chronological_order" placeholder="6" name="meta_chronological_order">
+                    </div>
+                    <div class="field"><label for="meta_prior_stage">Estágio Anterior</label><input type="text"
+                        id="meta_prior_stage" placeholder="prior_stage" name="meta_prior_stage"></div>
+                    <div class="field"><label for="meta_next_stage">Próximo Estágio</label><input type="text"
+                        id="meta_next_stage" placeholder="next_stage" name="meta_next_stage"></div>
+                    <div class="field"><label for="meta_classification">Classificação</label><input type="text"
+                        id="meta_classification" placeholder="classification" name="meta_classification"></div>
+                  </div>
+                  <div class="field"><label for="meta_participants">Participantes (array de objetos)</label>
+                    <textarea id="meta_participants" rows="3" class="json-field"
+                      placeholder='[{"canonical_name": "...", "role": "...", "speaker_label": "..."}]'
+                      name="meta_participants"></textarea>
+                  </div>
+                  <div class="field"><label for="meta_violations_cited">Violacões Citadas (array)</label>
+                    <textarea id="meta_violations_cited" rows="2" class="json-field" placeholder='["BR-001", "CL-002"]'
+                      name="meta_violations_cited"></textarea>
+                  </div>
+                  <div class="field"><label for="meta_tags">Tags (array)</label>
+                    <textarea id="meta_tags" rows="2" class="json-field" placeholder='["transcript", "narrative"]'
+                      name="meta_tags"></textarea>
+                  </div>
+                  <div class="field"><label for="meta_forensic_clusters">Clusters Forenses (objeto)</label>
+                    <textarea id="meta_forensic_clusters" rows="4" class="json-field" placeholder='{"cluster_A": {...}}'
+                      name="meta_forensic_clusters"></textarea>
+                  </div>
+                  <div class="field"><label for="meta_key_evidentiary_findings">Evidências Chave (array)</label>
+                    <textarea id="meta_key_evidentiary_findings" rows="4" class="json-field"
+                      placeholder='[{"id": "S2-1", "finding": "...", "strength": "High"}]'
+                      name="meta_key_evidentiary_findings"></textarea>
+                  </div>
+                  <div class="field"><label for="meta_corrections_applied">Correções Aplicadas (array)</label>
+                    <textarea id="meta_corrections_applied" rows="3" class="json-field"
+                      placeholder='[{"segment": "2", "original": "...", "corrected": "..."}]'
+                      name="meta_corrections_applied"></textarea>
+                  </div>
+                  <div class="tip-card">Os campos em JSON devem ser válidos. Após salvar, use o botão "Indexar no
+                    Qdrant"
+                    para atualizar o índice.</div>
+                </div>
+              </details>
             </div>
 
             <div id="reviewMetaRow" class="row"
@@ -464,7 +528,7 @@
               <table id="reviewSegmentsTable">
                 <thead>
                   <tr>
-                    <th>Rev.</th>
+                    <th>Rev. <input type="checkbox" id="selectAllRevChk" title="Selecionar todos"></th>
                     <th>Sel.</th>
                     <th>#</th>
                     <th>Local time</th>
@@ -717,6 +781,17 @@
       updateReviewCounts();
     }
 
+    function calcLocalTime(startSeconds) {
+      const dtStr = (currentTranscript && currentTranscript.recording_datetime) || $('#meta_recording_datetime').value;
+      if (!dtStr) return '—';
+      try {
+        const base = new Date(dtStr);
+        if (isNaN(base.getTime())) return '—';
+        const local = new Date(base.getTime() + startSeconds * 1000);
+        return local.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      } catch { return '—'; }
+    }
+
     function renderReviewSegments() {
       const tbody = $('#reviewSegmentsBody');
       tbody.innerHTML = '';
@@ -755,10 +830,10 @@
         const tdIdx = document.createElement('td');
         tdIdx.textContent = dseg.origIndex !== undefined ? dseg.origIndex : 'new';
 
-        // Local time (placeholder)
+        // Local time (calculated from recording_datetime + segment start)
         const tdLocal = document.createElement('td');
         tdLocal.style.fontSize = '0.65rem'; tdLocal.style.whiteSpace = 'nowrap';
-        tdLocal.textContent = '—';
+        tdLocal.textContent = calcLocalTime(dseg.start);
 
         // Speaker
         const tdSpk = document.createElement('td');
@@ -1162,6 +1237,12 @@
     });
     document.getElementById('clearSelectionBtn')?.addEventListener('click', () => {
       document.querySelectorAll('.segment-run-chk').forEach(chk => chk.checked = false);
+    });
+    document.getElementById('selectAllRevChk')?.addEventListener('change', function () {
+      document.querySelectorAll('.segment-review-chk').forEach(chk => {
+        chk.checked = this.checked;
+        chk.dispatchEvent(new Event('change'));
+      });
     });
 
     loadReviewLists();
